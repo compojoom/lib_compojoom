@@ -1,0 +1,6 @@
+/packages
+/.idea
+
+/tx.exe
+/builds/build.properties
+/docs/CMigrator.xml~

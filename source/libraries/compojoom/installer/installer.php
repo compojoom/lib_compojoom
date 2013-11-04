@@ -1,0 +1,509 @@
+<?php
+/**
+ * @package    Lib_Compojoom
+ * @author     DanielDimitrov <daniel@compojoom.com>
+ * @date       04.11.13
+ *
+ * @copyright  Copyright (C) 2008 - 2013 compojoom.com . All rights reserved.
+ * @license    GNU General Public License version 2 or later; see LICENSE
+ */
+
+defined('_JEXEC') or die('Restricted access');
+
+/**
+ * Class CompojoomInstaller
+ *
+ * @since  1.0
+ */
+class CompojoomInstaller
+{
+	/**
+	 * Loads a language during the installation
+	 *
+	 * @param   string  $extension  - extension name
+	 *
+	 * @return void
+	 */
+	public function loadLanguage($extension)
+	{
+		$jlang = JFactory::getLanguage();
+		$path = $this->parent->getParent()->getPath('source') . '/administrator';
+		$jlang->load($extension, $path, 'en-GB', true);
+		$jlang->load($extension, $path, $jlang->getDefault(), true);
+		$jlang->load($extension, $path, null, true);
+		$jlang->load($extension . '.sys', $path, 'en-GB', true);
+		$jlang->load($extension . '.sys', $path, $jlang->getDefault(), true);
+		$jlang->load($extension . '.sys', $path, null, true);
+	}
+
+	/**
+	 * Installs modules that come with the package
+	 *
+	 * @param   array  $modulesToInstall  - modues that need to be installed
+	 *
+	 * @return array
+	 */
+	public function installModules($modulesToInstall)
+	{
+		$src = $this->parent->getParent()->getPath('source');
+		$status = array();
+
+		// Modules installation
+		if (count($modulesToInstall))
+		{
+			foreach ($modulesToInstall as $folder => $modules)
+			{
+				if (count($modules))
+				{
+					foreach ($modules as $module => $modulePreferences)
+					{
+						// Install the module
+						if (empty($folder))
+						{
+							$folder = 'site';
+						}
+
+						$path = "$src/modules/$module";
+
+						if ($folder == 'admin')
+						{
+							$path = "$src/administrator/modules/$module";
+						}
+
+						if (!is_dir($path))
+						{
+							continue;
+						}
+
+						$db = JFactory::getDbo();
+
+						// Was the module alrady installed?
+						$query = $db->getQuery('true');
+						$query->select('COUNT(*)')->from($db->qn('#__modules'))
+							->where($db->qn('module') . '=' . $db->q($module));
+						$db->setQuery($query);
+
+						$count = $db->loadResult();
+
+						$installer = new JInstaller;
+						$result = $installer->install($path);
+						$status[] = array('name' => $module, 'client' => $folder, 'result' => $result);
+
+						// Modify where it's published and its published state
+						if (!$count)
+						{
+							list($modulePosition, $modulePublished) = $modulePreferences;
+							$query->clear();
+							$query->update($db->qn('#__modules'))->set($db->qn('position') . '=' . $db->q($modulePosition));
+
+							if ($modulePublished)
+							{
+								$query->set($db->qn('published') . '=' . $db->q(1));
+							}
+
+							$query->set($db->qn('params') . '=' . $db->q($installer->getParams()));
+							$query->where($db->qn('module') . '=' . $db->q($module));
+							$db->setQuery($query);
+							$db->query();
+						}
+
+						// Get module id
+						$query->clear();
+						$query->select('id')->from($db->qn('#__modules'))
+							->where($db->qn('module') . '=' . $db->q($module));
+						$db->setQuery($query);
+
+						$moduleId = $db->loadObject()->id;
+
+						$query->clear();
+						$query->select('COUNT(*) as count')->from($db->qn('#__modules_menu'))
+							->where($db->qn('moduleid') . '=' . $db->q($moduleId));
+
+						$db->setQuery($query);
+
+						if (!$db->loadObject()->count)
+						{
+							// Insert the module on all pages, otherwise we can't use it
+							$query->clear();
+							$query->insert($db->qn('#__modules_menu'))
+								->columns($db->qn('moduleid') . ',' . $db->qn('menuid'))
+								->values($db->q($moduleId) . ' , ' . $db->q('0'));
+							$db->setQuery($query);
+							$db->execute();
+						}
+					}
+				}
+			}
+		}
+
+		return $status;
+	}
+
+	/**
+	 * Uninstalls the given modules
+	 *
+	 * @param   array  $modulesToUninstall  - modues to uninstall
+	 *
+	 * @return array
+	 */
+	public function uninstallModules($modulesToUninstall = array())
+	{
+		$status = array();
+
+		if (count($modulesToUninstall))
+		{
+			$db = JFactory::getDbo();
+
+			foreach ($modulesToUninstall as $folder => $modules)
+			{
+				if (count($modules))
+				{
+					foreach ($modules as $module => $modulePreferences)
+					{
+						// Find the module ID
+						$query = $db->getQuery(true);
+						$query->select('extension_id')->from('#__extensions')->where($db->qn('element') . '=' . $db->q($module))
+							->where($db->qn('type') . '=' . $db->q('module'));
+						$db->setQuery($query);
+
+						$id = $db->loadResult();
+
+						// Uninstall the module
+						$installer = new JInstaller;
+						$result = $installer->uninstall('module', $id, 1);
+						$status[] = array('name' => $module, 'client' => $folder, 'result' => $result);
+					}
+				}
+			}
+		}
+
+		return $status;
+	}
+
+	/**
+	 * Install plugins
+	 *
+	 * @param   array  $plugins  - plugins to install
+	 *
+	 * @return array
+	 */
+	public function installPlugins($plugins)
+	{
+		$src = $this->parent->getParent()->getPath('source');
+
+		$db = JFactory::getDbo();
+		$status = array();
+
+		foreach ($plugins as $plugin => $published)
+		{
+			$parts = explode('_', $plugin);
+			$pluginType = $parts[1];
+			$pluginName = $parts[2];
+
+			$path = $src . "/plugins/$pluginType/$pluginName";
+
+			$query = $db->getQuery(true);
+			$query->select('COUNT(*)')
+				->from('#__extensions')
+				->where($db->qn('element') . '=' . $db->q($pluginName))
+				->where($db->qn('folder') . '=' . $db->q($pluginType));
+
+			$db->setQuery($query);
+			$count = $db->loadResult();
+
+			$installer = new JInstaller;
+			$result = $installer->install($path);
+			$status[] = array('name' => $plugin, 'group' => $pluginType, 'result' => $result);
+
+			if ($published && !$count)
+			{
+				$query->clear();
+				$query->update('#__extensions')
+					->set($db->qn('enabled') . '=' . $db->q(1))
+					->where($db->qn('element') . '=' . $db->q($pluginName))
+					->where($db->qn('folder') . '=' . $db->q($pluginType));
+				$db->setQuery($query);
+				$db->execute();
+			}
+		}
+
+		return $status;
+	}
+
+	/**
+	 * Uninstall modules
+	 *
+	 * @param   array  $plugins  - plugins to uninstall
+	 *
+	 * @return array
+	 */
+	public function uninstallPlugins($plugins)
+	{
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+		$status = array();
+
+		foreach ($plugins as $plugin => $published)
+		{
+			$parts = explode('_', $plugin);
+			$pluginType = $parts[1];
+			$pluginName = $parts[2];
+			$query->clear();
+			$query->select('extension_id')->from($db->qn('#__extensions'))
+				->where($db->qn('type') . '=' . $db->q('plugin'))
+				->where($db->qn('element') . '=' . $db->q($pluginName))
+				->where($db->qn('folder') . '=' . $db->q($pluginType));
+			$db->setQuery($query);
+
+			$id = $db->loadResult();
+
+			if ($id)
+			{
+				$installer = new JInstaller;
+				$result = $installer->uninstall('plugin', $id, 1);
+				$status[] = array('name' => $plugin, 'group' => $pluginType, 'result' => $result);
+			}
+		}
+
+		return $status;
+	}
+
+	/**
+	 * Gets a param value out of the manifest cache for this extension
+	 *
+	 * @param   string  $name    - the name of the param we are looking for
+	 * @param   string  $type    - the type of the extension
+	 * @param   string  $folder  - the folder (if plugin)
+	 *
+	 * @return mixed - the parameter value when found. False when the parameter doesn't exist
+	 */
+	public function getParam($name, $type = 'component', $folder = '')
+	{
+		$db = JFactory::getDbo();
+		$query = $db->getQuery('true');
+		$query->select($db->qn('manifest_cache'))
+			->from($db->qn('#__extensions'))
+			->where($db->qn('type') . '=' . $db->q($type))
+			->where($db->qn('element') . '=' . $db->q($this->extension));
+
+		if ($folder)
+		{
+			$query->where($db->qn('folder') . '=' . $db->q($folder));
+		}
+
+		$manifest = json_decode($db->loadResult(), true);
+
+		return isset($manifest[$name]) ? $manifest['name'] : false;
+	}
+
+	/**
+	 * Render the module information
+	 *
+	 * @param   array  $modules  - modules to render information for
+	 *
+	 * @return string
+	 */
+	public function renderModuleInfoInstall($modules)
+	{
+		$rows = 0;
+
+		$html = array();
+
+		if (count($modules))
+		{
+			$html[] = '<table class="table">';
+			$html[] = '<tr>';
+			$html[] = '<th>' . JText::_('LIB_COMPOJOOM_MODULE') . '</th>';
+			$html[] = '<th>' . JText::_('LIB_COMPOJOOM_MODULE_CLIENT') . '</th>';
+			$html[] = '<th>' . JText::_('LIB_COMPOJOOM_STATUS') . '</th>';
+			$html[] = '</tr>';
+
+			foreach ($modules as $module)
+			{
+				$html[] = '<tr class="row' . (++$rows % 2) . '">';
+				$html[] = '<td class="key">' . $module['name'] . '</td>';
+				$html[] = '<td class="key">' . ucfirst($module['client']) . '</td>';
+				$html[] = '<td>';
+				$html[] = '<span style="color:' . (($module['result']) ? 'green' : 'red') . '; font-weight: bold;">';
+				$html[] = ($module['result']) ? JText::_('LIB_COMPOJOOM_MODULE_INSTALLED') : JText::_('LIB_COMPOJOOM_MODULE_NOT_INSTALLED');
+				$html[] = '</span>';
+				$html[] = '</td>';
+				$html[] = '</tr>';
+			}
+
+			$html[] = '</table>';
+		}
+
+
+		return implode('', $html);
+	}
+
+	/**
+	 * Renders uninstall info for modules
+	 *
+	 * @param   array  $modules  - the modules to render uninstall info for
+	 *
+	 * @return string
+	 */
+	public function renderModuleInfoUninstall($modules)
+	{
+		$rows = 0;
+		$html = array();
+
+		if (count($modules))
+		{
+			$html[] = '<table class="table">';
+			$html[] = '<tr>';
+			$html[] = '<th>' . JText::_('LIB_COMPOJOOM_MODULE') . '</th>';
+			$html[] = '<th>' . JText::_('LIB_COMPOJOOM_MODULE_CLIENT') . '</th>';
+			$html[] = '<th>' . JText::_('LIB_COMPOJOOM_STATUS') . '</th>';
+			$html[] = '</tr>';
+
+			foreach ($modules as $module)
+			{
+				$html[] = '<tr class="row' . (++$rows % 2) . '">';
+				$html[] = '<td class="key">' . $module['name'] . '</td>';
+				$html[] = '<td class="key">' . ucfirst($module['client']) . '</td>';
+				$html[] = '<td>';
+				$html[] = '<span style="color:' . (($module['result']) ? 'green' : 'red') . '; font-weight: bold;">';
+				$html[] = ($module['result']) ? JText::_('LIB_COMPOJOOM_MODULE_UNINSTALLED') : JText::_('LIB_COMPOJOOM_MODULE_COULD_NOT_UNINSTALL');
+				$html[] = '</span>';
+				$html[] = '</td>';
+				$html[] = '</tr>';
+			}
+
+			$html[] = '</table>';
+		}
+
+		return implode('', $html);
+	}
+
+	/**
+	 * Renders information for the installed plugin
+	 *
+	 * @param   array  $plugins  - array with plugins
+	 *
+	 * @return string
+	 */
+	public function renderPluginInfoInstall($plugins)
+	{
+		$rows = 0;
+		$html[] = '<table class="table">';
+
+		if (count($plugins))
+		{
+			$html[] = '<tr>';
+			$html[] = '<th>' . JText::_('LIB_COMPOJOOM_PLUGIN') . '</th>';
+			$html[] = '<th>' . JText::_('LIB_COMPOJOOM_PLUGIN_GROUP') . '</th>';
+			$html[] = '<th>' . JText::_('LIB_COMPOJOOM_STATUS') . '</th>';
+			$html[] = '</tr>';
+
+			foreach ($plugins as $plugin)
+			{
+				$html[] = '<tr class="row' . (++$rows % 2) . '">';
+				$html[] = '<td class="key">' . $plugin['name'] . '</td>';
+				$html[] = '<td class="key">' . ucfirst($plugin['group']) . '</td>';
+				$html[] = '<td>';
+				$html[] = '<span style="color: ' . (($plugin['result']) ? 'green' : 'red') . '; font-weight: bold;">';
+				$html[] = ($plugin['result']) ? JText::_('LIB_COMPOJOOM_PLUGIN_INSTALLED') : JText::_('LIB_COMPOJOOM_PLUGIN_NOT_INSTALLED');
+				$html[] = '</span>';
+				$html[] = '</td>';
+				$html[] = '</tr>';
+			}
+		}
+
+		$html[] = '</table>';
+
+		return implode('', $html);
+	}
+
+	/**
+	 * Render uninstall info for plugins
+	 *
+	 * @param   array  $plugins  - the plugins that we should render information for
+	 *
+	 * @return string
+	 */
+	public function renderPluginInfoUninstall($plugins)
+	{
+		$rows = 0;
+		$html = array();
+
+		if (count($plugins))
+		{
+			$html[] = '<table class="table">';
+			$html[] = '<tbody>';
+			$html[] = '<tr>';
+			$html[] = '<th>' . JText::_('LIB_COMPOJOOM_PLUGIN') . '</th>';
+			$html[] = '<th>' . JText::_('LIB_COMPOJOOM_PLUGIN_GROUP') . '</th>';
+			$html[] = '<th>' . JText::_('LIB_COMPOJOOM_STATUS') . '</th>';
+			$html[] = '</tr>';
+
+			foreach ($plugins as $plugin)
+			{
+				$html[] = '<tr class="row' . (++$rows % 2) . '">';
+				$html[] = '<td class="key">' . $plugin['name'] . '</td>';
+				$html[] = '<td class="key">' . ucfirst($plugin['group']) . '</td>';
+				$html[] = '<td>';
+				$html[] = '	<span style="color:' . (($plugin['result']) ? 'green' : 'red') . '; font-weight: bold;">';
+				$html[] = ($plugin['result']) ? JText::_('LIB_COMPOJOOM_PLUGIN_UNINSTALLED') : JText::_('LIB_COMPOJOOM_PLUGIN_NOT_UNINSTALLED');
+				$html[] = '</span>';
+				$html[] = '</td>';
+				$html[] = ' </tr> ';
+			}
+
+			$html[] = '</tbody > ';
+			$html[] = '</table > ';
+		}
+
+		return implode('', $html);
+	}
+
+	/**
+	 * method to run before an install/update/discover method
+	 *
+	 * @param $type
+	 * @param $parent
+	 *
+	 * @return void
+	 */
+	public function preflight($type, $parent)
+	{
+		$jversion = new JVersion;
+		$appl = JFactory::getApplication();
+
+		// Extract the version number from the manifest file
+		$this->release = $parent->get("manifest")->version;
+
+		// Find mimimum required joomla version from the manifest file
+		$this->minimum_joomla_release = $parent->get("manifest")->attributes()->version;
+
+		if (version_compare($jversion->getShortVersion(), $this->minimum_joomla_release, 'lt'))
+		{
+			$appl->enqueueMessage(
+				'Cannot install ' . $this->extension . ' in a Joomla release prior to '
+				. $this->minimum_joomla_release, 'warning'
+			);
+
+			return false;
+		}
+
+		// Abort if the component being installed is not newer than the currently installed version
+		if ($type == 'update')
+		{
+			$oldRelease = $this->getParam('version');
+			$rel = $oldRelease . ' to ' . $this->release;
+
+			if (!strstr($this->release, 'git_'))
+			{
+				if (version_compare($this->release, $oldRelease, 'lt'))
+				{
+					$appl->enqueueMessage('Incorrect version sequence. Cannot upgrade ' . $rel, 'warning');
+
+					return false;
+				}
+			}
+		}
+
+	}
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+        CMandrill build file for Phing
+        written by Daniel Dimitrov - https://compojoom.com
+
+        Run "phing -f component.xml"
+        from the build directory to build the component, modules and plugins
+-->
+
+<project name="com_cmandrill" default="build-zip">
+	<property file="./build.properties"/>
+
+	<taskdef name="extfile" classname="phingext.listJPackageFilesTask" classpath="../../buildtools"/>
+	<taskdef name="gitversion" classname="phingext.GitVersionTask"  classpath="../../buildtools"/>
+	<taskdef name="explode" classname="phingext.explodeTask"  classpath="../../buildtools"/>
+
+	<import file="../../buildtools/helper.xml" optional="true"/>
+
+	<!-- Default properties, set only if not already assigned in the build.properties file -->
+
+
+	<target name="setup-properties">
+		<!-- Initialize the version if it's not set -->
+		<tstamp>
+			<format property="build.date" pattern="%Y-%m-%d"/>
+		</tstamp>
+
+		<property name="dirs.root" value="${project.basedir}/../"/>
+		<property name="dirs.source" value="${dirs.root}source"/>
+		<property name="dirs.library" value="${dirs.source}/libraries/compojoom" />
+
+		<if>
+			<equals arg1="${build.version}" arg2="dev"/>
+			<then>
+				<gitversion workingCopy="${dirs.root}" propertyName="git.lastrevision"/>
+				<property name="build.version" value="git_${git.lastrevision}" override="true"/>
+			</then>
+		</if>
+
+		<property name="destination.dir"
+		          value="${dirs.root}/packages/libraries/lib_${library.name}/com_${library.name}-${build.version}"/>
+		<mkdir dir="${destination.dir}"/>
+
+	</target>
+	<target name="build-zip" depends="setup-properties, build-library">
+		<echo msg="buildZip"/>
+
+
+		<zip destfile="${destination.dir}/../lib_${library.name}-${build.version}.zip"
+		     basedir="${destination.dir}/../lib_${library.name}-${build.version}"/>
+	</target>
+
+
+	<target name="build-library">
+		<!-- Generate XML file -->
+		<copy file="${dirs.source}/libraries/compojoom/lib_compojoom.xml" tofile="${destination.dir}/lib_compojoom.xml" overwrite="true">
+			<filterchain>
+				<replacetokens begintoken="##" endtoken="##">
+					<token key="DATE" value="${git.date}" />
+					<token key="VERSION" value="${version}" />
+				</replacetokens>
+			</filterchain>
+		</copy>
+	</target>
+
+</project>
