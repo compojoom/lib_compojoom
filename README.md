@@ -26,10 +26,10 @@ the following tools:
 - PEAR and Phing installed, with the Net_FTP and VersionControl_SVN PEAR
   packages installed
 
-  You will also need the following path structure on your system
+You will also need the following path structure on your system
 
-  - lib_compojoom - This repository
-  - buildtools - Compojoom build tools (https://github.com/compojoom/buildtools)
+- lib_compojoom - This repository
+- buildtools - Compojoom build tools (https://github.com/compojoom/buildtools)
 
 ## COPYRIGHT AND DISCLAIMER
 Compojoom library -  Copyright (c) 2008-2013 Compojoom.com
