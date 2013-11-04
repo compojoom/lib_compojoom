@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-        CMandrill build file for Phing
+        Compojoom library build file for Phing
         written by Daniel Dimitrov - https://compojoom.com
 
-        Run "phing -f component.xml"
+        Run "phing"
         from the build directory to build the component, modules and plugins
 -->
 
@@ -38,10 +38,13 @@
 		</if>
 
 		<property name="destination.dir"
-		          value="${dirs.root}/packages/libraries/lib_${library.name}/com_${library.name}-${build.version}"/>
+		          value="${dirs.root}/packages/libraries/lib_${library.name}/lib_${library.name}-${build.version}"/>
 		<mkdir dir="${destination.dir}"/>
 
+		<available file="${dirs.source}\media\lib_${library.name}"
+		           type="dir" property="media.exist" value="yes"/>
 	</target>
+
 	<target name="build-zip" depends="setup-properties, build-library">
 		<echo msg="buildZip"/>
 
@@ -53,14 +56,43 @@
 
 	<target name="build-library">
 		<!-- Generate XML file -->
-		<copy file="${dirs.source}/libraries/compojoom/lib_compojoom.xml" tofile="${destination.dir}/lib_compojoom.xml" overwrite="true">
+		<copy file="${dirs.source}/libraries/${library.name}/lib_${library.name}.xml"
+		      tofile="${destination.dir}/lib_${library.name}.xml" overwrite="true">
 			<filterchain>
-				<replacetokens begintoken="##" endtoken="##">
-					<token key="DATE" value="${git.date}" />
-					<token key="VERSION" value="${version}" />
+				<replacetokens begintoken="@@" endtoken="@@">
+					<token key="DATE" value="${build.date}" />
+					<token key="VERSION" value="${build.version}" />
 				</replacetokens>
 			</filterchain>
 		</copy>
+
+		<copy todir="${destination.dir}/libraries/${library.name}/">
+			<fileset dir="${dirs.source}/libraries/${library.name}/">
+				<include name="**/*.*"/>
+			</fileset>
+		</copy>
+
+		<copy todir="${destination.dir}/language/">
+			<fileset dir="${dirs.source}/language/">
+				<include name="**/*.lib_${library.name}.**"/>
+			</fileset>
+		</copy>
+
+		<if>
+			<isset property="media.exist"/>
+			<then>
+				<copy todir="${destination.dir}/media/lib_${library.name}">
+					<fileset dir="${dirs.source}/media/lib_${library.name}">
+						<include name="**/*.*"/>
+					</fileset>
+				</copy>
+			</then>
+		</if>
+
+		<extfile file="${destination.dir}/lib_${library.name}.xml"
+		         sourceDir="${dirs.source}"
+		         component="lib_${library.name}"
+			/>
 	</target>
 
 </project>

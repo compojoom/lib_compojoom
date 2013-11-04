@@ -16,5 +16,5 @@ if (!defined('COMPOJOOM_INCLUDED'))
 
 	// Register the CMandrill autoloader
 	require_once __DIR__ . '/autoloader/autoloader.php';
-	CMandrillAutoloader::init();
+	CompojoomAutoloader::init();
 }

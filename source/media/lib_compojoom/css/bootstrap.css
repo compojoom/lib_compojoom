@@ -1,0 +1,5345 @@
+.compojoom-bootstrap article,
+.compojoom-bootstrap aside,
+.compojoom-bootstrap details,
+.compojoom-bootstrap figcaption,
+.compojoom-bootstrap figure,
+.compojoom-bootstrap footer,
+.compojoom-bootstrap header,
+.compojoom-bootstrap hgroup,
+.compojoom-bootstrap nav,
+.compojoom-bootstrap section {
+	display: block;
+}
+.compojoom-bootstrap audio,
+.compojoom-bootstrap canvas,
+.compojoom-bootstrap video {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+.compojoom-bootstrap audio:not([controls]) {
+	display: none;
+}
+.compojoom-bootstrap html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+.compojoom-bootstrap a:focus {
+	outline: thin dotted #333;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+.compojoom-bootstrap a:hover,
+.compojoom-bootstrap a:active {
+	outline: 0;
+}
+.compojoom-bootstrap sub,
+.compojoom-bootstrap sup {
+	position: relative;
+	font-size: 75%;
+	line-height: 0;
+	vertical-align: baseline;
+}
+.compojoom-bootstrap sup {
+	top: -0.5em;
+}
+.compojoom-bootstrap sub {
+	bottom: -0.25em;
+}
+.compojoom-bootstrap img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+.compojoom-bootstrap #map_canvas img {
+	max-width: none;
+}
+.compojoom-bootstrap button,
+.compojoom-bootstrap input,
+.compojoom-bootstrap select,
+.compojoom-bootstrap textarea {
+	margin: 0;
+	font-size: 100%;
+	vertical-align: middle;
+}
+.compojoom-bootstrap button,
+.compojoom-bootstrap input {
+	*overflow: visible;
+	line-height: normal;
+}
+.compojoom-bootstrap button::-moz-focus-inner,
+.compojoom-bootstrap input::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+.compojoom-bootstrap button,
+.compojoom-bootstrap input[type="button"],
+.compojoom-bootstrap input[type="reset"],
+.compojoom-bootstrap input[type="submit"] {
+	cursor: pointer;
+	-webkit-appearance: button;
+}
+.compojoom-bootstrap input[type="search"] {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	-webkit-appearance: textfield;
+}
+.compojoom-bootstrap input[type="search"]::-webkit-search-decoration,
+.compojoom-bootstrap input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+}
+.compojoom-bootstrap textarea {
+	overflow: auto;
+	vertical-align: top;
+}
+.compojoom-bootstrap .clearfix {
+	*zoom: 1;
+}
+.compojoom-bootstrap .clearfix:before,
+.compojoom-bootstrap .clearfix:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.compojoom-bootstrap .clearfix:after {
+	clear: both;
+}
+.compojoom-bootstrap .hide-text {
+	font: 0/0 a;
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0;
+}
+.compojoom-bootstrap .input-block-level {
+	display: block;
+	width: 100%;
+	min-height: 30px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.compojoom-bootstrap body {
+	margin: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	line-height: 18px;
+	color: #333;
+	background-color: #fff;
+}
+.compojoom-bootstrap a {
+	color: #08c;
+	text-decoration: none;
+}
+.compojoom-bootstrap a:hover {
+	color: #005580;
+	text-decoration: underline;
+}
+.compojoom-bootstrap .img-rounded {
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+.compojoom-bootstrap .img-polaroid {
+	padding: 4px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.compojoom-bootstrap .img-circle {
+	-webkit-border-radius: 500px;
+	-moz-border-radius: 500px;
+	border-radius: 500px;
+}
+.compojoom-bootstrap .row {
+	margin-left: -20px;
+	*zoom: 1;
+}
+.compojoom-bootstrap .row:before,
+.compojoom-bootstrap .row:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.compojoom-bootstrap .row:after {
+	clear: both;
+}
+.compojoom-bootstrap [class*="span"] {
+	float: left;
+	margin-left: 20px;
+}
+.compojoom-bootstrap .container,
+.navbar-static-top .container,
+.compojoom-bootstrap .navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+	width: 940px;
+}
+.compojoom-bootstrap .span12 {
+	width: 940px;
+}
+.compojoom-bootstrap .span11 {
+	width: 860px;
+}
+.compojoom-bootstrap .span10 {
+	width: 780px;
+}
+.compojoom-bootstrap .span9 {
+	width: 700px;
+}
+.compojoom-bootstrap .span8 {
+	width: 620px;
+}
+.compojoom-bootstrap .span7 {
+	width: 540px;
+}
+.compojoom-bootstrap .span6 {
+	width: 460px;
+}
+.compojoom-bootstrap .span5 {
+	width: 380px;
+}
+.compojoom-bootstrap .span4 {
+	width: 300px;
+}
+.compojoom-bootstrap .span3 {
+	width: 220px;
+}
+.compojoom-bootstrap .span2 {
+	width: 140px;
+}
+.compojoom-bootstrap .span1 {
+	width: 60px;
+}
+.compojoom-bootstrap .offset12 {
+	margin-left: 980px;
+}
+.compojoom-bootstrap .offset11 {
+	margin-left: 900px;
+}
+.compojoom-bootstrap .offset10 {
+	margin-left: 820px;
+}
+.compojoom-bootstrap .offset9 {
+	margin-left: 740px;
+}
+.compojoom-bootstrap .offset8 {
+	margin-left: 660px;
+}
+.compojoom-bootstrap .offset7 {
+	margin-left: 580px;
+}
+.compojoom-bootstrap .offset6 {
+	margin-left: 500px;
+}
+.compojoom-bootstrap .offset5 {
+	margin-left: 420px;
+}
+.compojoom-bootstrap .offset4 {
+	margin-left: 340px;
+}
+.compojoom-bootstrap .offset3 {
+	margin-left: 260px;
+}
+.compojoom-bootstrap .offset2 {
+	margin-left: 180px;
+}
+.compojoom-bootstrap .offset1 {
+	margin-left: 100px;
+}
+.compojoom-bootstrap .row-fluid {
+	width: 100%;
+	*zoom: 1;
+}
+.compojoom-bootstrap .row-fluid:before,
+.compojoom-bootstrap .row-fluid:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.compojoom-bootstrap .row-fluid:after {
+	clear: both;
+}
+.compojoom-bootstrap .row-fluid [class*="span"] {
+	display: block;
+	width: 100%;
+	min-height: 30px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	float: left;
+	margin-left: 2.1276595744681%;
+	*margin-left: 2.0744680851064%;
+}
+.compojoom-bootstrap .row-fluid [class*="span"]:first-child {
+	margin-left: 0;
+}
+.compojoom-bootstrap .row-fluid .span12 {
+	width: 100%;
+	*width: 99.946808510638%;
+}
+.compojoom-bootstrap .row-fluid .span11 {
+	width: 91.489361702128%;
+	*width: 91.436170212766%;
+}
+.compojoom-bootstrap .row-fluid .span10 {
+	width: 82.978723404255%;
+	*width: 82.925531914894%;
+}
+.compojoom-bootstrap .row-fluid .span9 {
+	width: 74.468085106383%;
+	*width: 74.414893617021%;
+}
+.compojoom-bootstrap .row-fluid .span8 {
+	width: 65.957446808511%;
+	*width: 65.904255319149%;
+}
+.compojoom-bootstrap .row-fluid .span7 {
+	width: 57.446808510638%;
+	*width: 57.393617021277%;
+}
+.compojoom-bootstrap .row-fluid .span6 {
+	width: 48.936170212766%;
+	*width: 48.882978723404%;
+}
+.compojoom-bootstrap .row-fluid .span5 {
+	width: 40.425531914894%;
+	*width: 40.372340425532%;
+}
+.compojoom-bootstrap .row-fluid .span4 {
+	width: 31.914893617021%;
+	*width: 31.86170212766%;
+}
+.compojoom-bootstrap .row-fluid .span3 {
+	width: 23.404255319149%;
+	*width: 23.351063829787%;
+}
+.compojoom-bootstrap .row-fluid .span2 {
+	width: 14.893617021277%;
+	*width: 14.840425531915%;
+}
+.compojoom-bootstrap .row-fluid .span1 {
+	width: 6.3829787234043%;
+	*width: 6.3297872340426%;
+}
+.compojoom-bootstrap .row-fluid .offset12 {
+	margin-left: 104.25531914894%;
+	*margin-left: 104.14893617021%;
+}
+.compojoom-bootstrap .row-fluid .offset12:first-child {
+	margin-left: 102.12765957447%;
+	*margin-left: 102.02127659574%;
+}
+.compojoom-bootstrap .row-fluid .offset11 {
+	margin-left: 95.744680851064%;
+	*margin-left: 95.63829787234%;
+}
+.compojoom-bootstrap .row-fluid .offset11:first-child {
+	margin-left: 93.617021276596%;
+	*margin-left: 93.510638297872%;
+}
+.compojoom-bootstrap .row-fluid .offset10 {
+	margin-left: 87.234042553191%;
+	*margin-left: 87.127659574468%;
+}
+.compojoom-bootstrap .row-fluid .offset10:first-child {
+	margin-left: 85.106382978723%;
+	*margin-left: 85%;
+}
+.compojoom-bootstrap .row-fluid .offset9 {
+	margin-left: 78.723404255319%;
+	*margin-left: 78.617021276596%;
+}
+.compojoom-bootstrap .row-fluid .offset9:first-child {
+	margin-left: 76.595744680851%;
+	*margin-left: 76.489361702128%;
+}
+.compojoom-bootstrap .row-fluid .offset8 {
+	margin-left: 70.212765957447%;
+	*margin-left: 70.106382978723%;
+}
+.compojoom-bootstrap .row-fluid .offset8:first-child {
+	margin-left: 68.085106382979%;
+	*margin-left: 67.978723404255%;
+}
+.compojoom-bootstrap .row-fluid .offset7 {
+	margin-left: 61.702127659574%;
+	*margin-left: 61.595744680851%;
+}
+.compojoom-bootstrap .row-fluid .offset7:first-child {
+	margin-left: 59.574468085106%;
+	*margin-left: 59.468085106383%;
+}
+.compojoom-bootstrap .row-fluid .offset6 {
+	margin-left: 53.191489361702%;
+	*margin-left: 53.085106382979%;
+}
+.compojoom-bootstrap .row-fluid .offset6:first-child {
+	margin-left: 51.063829787234%;
+	*margin-left: 50.957446808511%;
+}
+.compojoom-bootstrap .row-fluid .offset5 {
+	margin-left: 44.68085106383%;
+	*margin-left: 44.574468085106%;
+}
+.compojoom-bootstrap .row-fluid .offset5:first-child {
+	margin-left: 42.553191489362%;
+	*margin-left: 42.446808510638%;
+}
+.compojoom-bootstrap .row-fluid .offset4 {
+	margin-left: 36.170212765957%;
+	*margin-left: 36.063829787234%;
+}
+.compojoom-bootstrap .row-fluid .offset4:first-child {
+	margin-left: 34.042553191489%;
+	*margin-left: 33.936170212766%;
+}
+.compojoom-bootstrap .row-fluid .offset3 {
+	margin-left: 27.659574468085%;
+	*margin-left: 27.553191489362%;
+}
+.compojoom-bootstrap .row-fluid .offset3:first-child {
+	margin-left: 25.531914893617%;
+	*margin-left: 25.425531914894%;
+}
+.compojoom-bootstrap .row-fluid .offset2 {
+	margin-left: 19.148936170213%;
+	*margin-left: 19.042553191489%;
+}
+.compojoom-bootstrap .row-fluid .offset2:first-child {
+	margin-left: 17.021276595745%;
+	*margin-left: 16.914893617021%;
+}
+.compojoom-bootstrap .row-fluid .offset1 {
+	margin-left: 10.63829787234%;
+	*margin-left: 10.531914893617%;
+}
+.compojoom-bootstrap .row-fluid .offset1:first-child {
+	margin-left: 8.5106382978723%;
+	*margin-left: 8.4042553191489%;
+}
+.compojoom-bootstrap [class*="span"].hide,
+.row-fluid [class*="span"].hide {
+	display: none;
+}
+.compojoom-bootstrap [class*="span"].pull-right,
+.row-fluid [class*="span"].pull-right {
+	float: right;
+}
+.compojoom-bootstrap .container {
+	margin-right: auto;
+	margin-left: auto;
+	*zoom: 1;
+}
+.compojoom-bootstrap .container:before,
+.container:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.compojoom-bootstrap .container:after {
+	clear: both;
+}
+.compojoom-bootstrap .container-fluid {
+	padding-right: 20px;
+	padding-left: 20px;
+	*zoom: 1;
+}
+.compojoom-bootstrap .container-fluid:before,
+.container-fluid:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.compojoom-bootstrap .container-fluid:after {
+	clear: both;
+}
+.compojoom-bootstrap p {
+	margin: 0 0 9px;
+}
+.compojoom-bootstrap .lead {
+	margin-bottom: 18px;
+	font-size: 20px;
+	font-weight: 200;
+	line-height: 27px;
+}
+.compojoom-bootstrap small {
+	font-size: 85%;
+}
+.compojoom-bootstrap strong {
+	font-weight: bold;
+}
+.compojoom-bootstrap em {
+	font-style: italic;
+}
+.compojoom-bootstrap cite {
+	font-style: normal;
+}
+.compojoom-bootstrap .muted {
+	color: #999;
+}
+.compojoom-bootstrap h1,
+h2,
+.compojoom-bootstrap h3,
+h4,
+.compojoom-bootstrap h5,
+h6 {
+	margin: 9px 0;
+	font-family: inherit;
+	font-weight: bold;
+	line-height: 1;
+	color: inherit;
+	text-rendering: optimizelegibility;
+}
+.compojoom-bootstrap h1 small,
+h2 small,
+.compojoom-bootstrap h3 small,
+h4 small,
+.compojoom-bootstrap h5 small,
+h6 small {
+	font-weight: normal;
+	line-height: 1;
+	color: #999;
+}
+.compojoom-bootstrap h1 {
+	font-size: 36px;
+	line-height: 40px;
+}
+.compojoom-bootstrap h2 {
+	font-size: 30px;
+	line-height: 40px;
+}
+.compojoom-bootstrap h3 {
+	font-size: 24px;
+	line-height: 40px;
+}
+.compojoom-bootstrap h4 {
+	font-size: 18px;
+	line-height: 20px;
+}
+.compojoom-bootstrap h5 {
+	font-size: 14px;
+	line-height: 20px;
+}
+.compojoom-bootstrap h6 {
+	font-size: 12px;
+	line-height: 20px;
+}
+.compojoom-bootstrap h1 small {
+	font-size: 24px;
+}
+.compojoom-bootstrap h2 small {
+	font-size: 18px;
+}
+.compojoom-bootstrap h3 small {
+	font-size: 14px;
+}
+.compojoom-bootstrap h4 small {
+	font-size: 14px;
+}
+.compojoom-bootstrap .page-header {
+	padding-bottom: 8px;
+	margin: 18px 0 27px;
+	border-bottom: 1px solid #eee;
+}
+.compojoom-bootstrap ul,
+ol {
+	padding: 0;
+	margin: 0 0 9px 25px;
+}
+.compojoom-bootstrap ul ul,
+ul ol,
+.compojoom-bootstrap ol ol,
+ol ul {
+	margin-bottom: 0;
+}
+.compojoom-bootstrap li {
+	line-height: 18px;
+}
+.compojoom-bootstrap ul.unstyled,
+ol.unstyled {
+	margin-left: 0;
+	list-style: none;
+}
+.compojoom-bootstrap dl {
+	margin-bottom: 18px;
+}
+.compojoom-bootstrap dt,
+dd {
+	line-height: 18px;
+}
+.compojoom-bootstrap dt {
+	font-weight: bold;
+}
+.compojoom-bootstrap dd {
+	margin-left: 9px;
+}
+.compojoom-bootstrap .dl-horizontal dt {
+	float: left;
+	width: 120px;
+	clear: left;
+	text-align: right;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.compojoom-bootstrap .dl-horizontal dd {
+	margin-left: 130px;
+}
+.compojoom-bootstrap hr {
+	margin: 18px 0;
+	border: 0;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #fff;
+}
+.compojoom-bootstrap abbr[title] {
+	cursor: help;
+	border-bottom: 1px dotted #999;
+}
+.compojoom-bootstrap abbr.initialism {
+	font-size: 90%;
+	text-transform: uppercase;
+}
+.compojoom-bootstrap blockquote {
+	padding: 0 0 0 15px;
+	margin: 0 0 18px;
+	border-left: 5px solid #eee;
+}
+.compojoom-bootstrap blockquote p {
+	margin-bottom: 0;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 22.5px;
+}
+.compojoom-bootstrap blockquote small {
+	display: block;
+	line-height: 18px;
+	color: #999;
+}
+.compojoom-bootstrap blockquote small:before {
+	content: '\2014 \00A0';
+}
+.compojoom-bootstrap blockquote.pull-right {
+	float: right;
+	padding-right: 15px;
+	padding-left: 0;
+	border-right: 5px solid #eee;
+	border-left: 0;
+}
+.compojoom-bootstrap blockquote.pull-right p,
+blockquote.pull-right small {
+	text-align: right;
+}
+.compojoom-bootstrap blockquote.pull-right small:before {
+	content: '';
+}
+.compojoom-bootstrap blockquote.pull-right small:after {
+	content: '\00A0 \2014';
+}
+.compojoom-bootstrap q:before,
+q:after,
+.compojoom-bootstrap blockquote:before,
+blockquote:after {
+	content: "";
+}
+.compojoom-bootstrap address {
+	display: block;
+	margin-bottom: 18px;
+	font-style: normal;
+	line-height: 18px;
+}
+.compojoom-bootstrap code,
+pre {
+	padding: 0 3px 2px;
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+	font-size: 11px;
+	color: #333;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.compojoom-bootstrap code {
+	padding: 2px 4px;
+	color: #d14;
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+}
+.compojoom-bootstrap pre {
+	display: block;
+	padding: 8.5px;
+	margin: 0 0 9px;
+	font-size: 12px;
+	line-height: 18px;
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: pre;
+	white-space: pre-wrap;
+	background-color: #f5f5f5;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0,0,0,0.15);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.compojoom-bootstrap pre.prettyprint {
+	margin-bottom: 18px;
+}
+.compojoom-bootstrap pre code {
+	padding: 0;
+	color: inherit;
+	background-color: transparent;
+	border: 0;
+}
+.compojoom-bootstrap .pre-scrollable {
+	max-height: 340px;
+	overflow-y: scroll;
+}
+.compojoom-bootstrap form {
+	margin: 0 0 18px;
+}
+.compojoom-bootstrap fieldset {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+.compojoom-bootstrap legend {
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin-bottom: 18px;
+	font-size: 19.5px;
+	line-height: 36px;
+	color: #333;
+	border: 0;
+	border-bottom: 1px solid #e5e5e5;
+}
+.compojoom-bootstrap legend small {
+	font-size: 13.5px;
+	color: #999;
+}
+.compojoom-bootstrap label,
+input,
+.compojoom-bootstrap button,
+select,
+.compojoom-bootstrap textarea {
+	font-size: 13px;
+	font-weight: normal;
+	line-height: 18px;
+}
+.compojoom-bootstrap input,
+button,
+.compojoom-bootstrap select,
+textarea {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.compojoom-bootstrap label {
+	display: block;
+	margin-bottom: 5px;
+}
+.compojoom-bootstrap select,
+textarea,
+.compojoom-bootstrap input[type="text"],
+input[type="password"],
+.compojoom-bootstrap input[type="datetime"],
+input[type="datetime-local"],
+.compojoom-bootstrap input[type="date"],
+input[type="month"],
+.compojoom-bootstrap input[type="time"],
+input[type="week"],
+.compojoom-bootstrap input[type="number"],
+input[type="email"],
+.compojoom-bootstrap input[type="url"],
+input[type="search"],
+.compojoom-bootstrap input[type="tel"],
+input[type="color"],
+.compojoom-bootstrap .uneditable-input {
+	display: inline-block;
+	height: 18px;
+	padding: 4px 6px;
+	margin-bottom: 9px;
+	font-size: 13px;
+	line-height: 18px;
+	color: #555;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.compojoom-bootstrap input,
+textarea {
+	width: 210px;
+}
+.compojoom-bootstrap textarea {
+	height: auto;
+}
+.compojoom-bootstrap textarea,
+input[type="text"],
+.compojoom-bootstrap input[type="password"],
+input[type="datetime"],
+.compojoom-bootstrap input[type="datetime-local"],
+input[type="date"],
+.compojoom-bootstrap input[type="month"],
+input[type="time"],
+.compojoom-bootstrap input[type="week"],
+input[type="number"],
+.compojoom-bootstrap input[type="email"],
+input[type="url"],
+.compojoom-bootstrap input[type="search"],
+input[type="tel"],
+.compojoom-bootstrap input[type="color"],
+.uneditable-input {
+	background-color: #fff;
+	border: 1px solid #ccc;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	-webkit-transition: border linear .2s, box-shadow linear .2s;
+	-moz-transition: border linear .2s, box-shadow linear .2s;
+	-o-transition: border linear .2s, box-shadow linear .2s;
+	transition: border linear .2s, box-shadow linear .2s;
+}
+.compojoom-bootstrap textarea:focus,
+input[type="text"]:focus,
+.compojoom-bootstrap input[type="password"]:focus,
+input[type="datetime"]:focus,
+.compojoom-bootstrap input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+.compojoom-bootstrap input[type="month"]:focus,
+input[type="time"]:focus,
+.compojoom-bootstrap input[type="week"]:focus,
+input[type="number"]:focus,
+.compojoom-bootstrap input[type="email"]:focus,
+input[type="url"]:focus,
+.compojoom-bootstrap input[type="search"]:focus,
+input[type="tel"]:focus,
+.compojoom-bootstrap input[type="color"]:focus,
+.uneditable-input:focus {
+	border-color: rgba(82,168,236,0.8);
+	outline: 0;
+	outline: thin dotted \9;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+}
+.compojoom-bootstrap input[type="radio"],
+input[type="checkbox"] {
+	margin: 4px 0 0;
+	*margin-top: 0;
+	margin-top: 1px \9;
+	line-height: normal;
+	cursor: pointer;
+}
+.compojoom-bootstrap input[type="file"],
+input[type="image"],
+.compojoom-bootstrap input[type="submit"],
+input[type="reset"],
+.compojoom-bootstrap input[type="button"],
+input[type="radio"],
+.compojoom-bootstrap input[type="checkbox"] {
+	width: auto;
+}
+.compojoom-bootstrap select,
+input[type="file"] {
+	height: 30px;
+	*margin-top: 4px;
+	line-height: 30px;
+}
+.compojoom-bootstrap select {
+	width: 220px;
+	border: 1px solid #bbb;
+	background-color: #fff;
+}
+.compojoom-bootstrap select[multiple],
+select[size] {
+	height: auto;
+}
+.compojoom-bootstrap select:focus,
+input[type="file"]:focus,
+.compojoom-bootstrap input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+	outline: thin dotted #333;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+.compojoom-bootstrap .uneditable-input,
+.uneditable-textarea {
+	color: #999;
+	background-color: #fcfcfc;
+	border-color: #ccc;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.025);
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.025);
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.025);
+	cursor: not-allowed;
+}
+.compojoom-bootstrap .uneditable-input {
+	overflow: hidden;
+	white-space: nowrap;
+}
+.compojoom-bootstrap .uneditable-textarea {
+	width: auto;
+	height: auto;
+}
+.compojoom-bootstrap input:-moz-placeholder,
+textarea:-moz-placeholder {
+	color: #999;
+}
+.compojoom-bootstrap input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+	color: #999;
+}
+.compojoom-bootstrap input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+	color: #999;
+}
+.compojoom-bootstrap .radio,
+.checkbox {
+	min-height: 18px;
+	padding-left: 18px;
+}
+.compojoom-bootstrap .radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+	float: left;
+	margin-left: -18px;
+}
+.compojoom-bootstrap .controls > .radio:first-child,
+.controls > .checkbox:first-child {
+	padding-top: 5px;
+}
+.compojoom-bootstrap .radio.inline,
+.checkbox.inline {
+	display: inline-block;
+	padding-top: 5px;
+	margin-bottom: 0;
+	vertical-align: middle;
+}
+.compojoom-bootstrap .radio.inline + .radio.inline,
+.checkbox.inline + .checkbox.inline {
+	margin-left: 10px;
+}
+.compojoom-bootstrap .input-mini {
+	width: 60px;
+}
+.compojoom-bootstrap .input-small {
+	width: 90px;
+}
+.compojoom-bootstrap .input-medium {
+	width: 150px;
+}
+.compojoom-bootstrap .input-large {
+	width: 210px;
+}
+.compojoom-bootstrap .input-xlarge {
+	width: 270px;
+}
+.compojoom-bootstrap .input-xxlarge {
+	width: 530px;
+}
+.compojoom-bootstrap input[class*="span"],
+select[class*="span"],
+.compojoom-bootstrap textarea[class*="span"],
+.uneditable-input[class*="span"],
+.compojoom-bootstrap .row-fluid input[class*="span"],
+.row-fluid select[class*="span"],
+.compojoom-bootstrap .row-fluid textarea[class*="span"],
+.row-fluid .uneditable-input[class*="span"] {
+	float: none;
+	margin-left: 0;
+}
+.compojoom-bootstrap .input-append input[class*="span"],
+.input-append .uneditable-input[class*="span"],
+.compojoom-bootstrap .input-prepend input[class*="span"],
+.input-prepend .uneditable-input[class*="span"],
+.compojoom-bootstrap .row-fluid input[class*="span"],
+.row-fluid select[class*="span"],
+.compojoom-bootstrap .row-fluid textarea[class*="span"],
+.row-fluid .uneditable-input[class*="span"],
+.compojoom-bootstrap .row-fluid .input-prepend [class*="span"],
+.row-fluid .input-append [class*="span"] {
+	display: inline-block;
+}
+.compojoom-bootstrap input,
+textarea,
+.compojoom-bootstrap .uneditable-input {
+	margin-left: 0;
+}
+.compojoom-bootstrap .controls-row [class*="span"] + [class*="span"] {
+	margin-left: 20px;
+}
+.compojoom-bootstrap input.span12, textarea.span12, .uneditable-input.span12 {
+	width: 926px;
+}
+.compojoom-bootstrap input.span11, textarea.span11, .uneditable-input.span11 {
+	width: 846px;
+}
+.compojoom-bootstrap input.span10, textarea.span10, .uneditable-input.span10 {
+	width: 766px;
+}
+.compojoom-bootstrap input.span9, textarea.span9, .uneditable-input.span9 {
+	width: 686px;
+}
+.compojoom-bootstrap input.span8, textarea.span8, .uneditable-input.span8 {
+	width: 606px;
+}
+.compojoom-bootstrap input.span7, textarea.span7, .uneditable-input.span7 {
+	width: 526px;
+}
+.compojoom-bootstrap input.span6, textarea.span6, .uneditable-input.span6 {
+	width: 446px;
+}
+.compojoom-bootstrap input.span5, textarea.span5, .uneditable-input.span5 {
+	width: 366px;
+}
+.compojoom-bootstrap input.span4, textarea.span4, .uneditable-input.span4 {
+	width: 286px;
+}
+.compojoom-bootstrap input.span3, textarea.span3, .uneditable-input.span3 {
+	width: 206px;
+}
+.compojoom-bootstrap input.span2, textarea.span2, .uneditable-input.span2 {
+	width: 126px;
+}
+.compojoom-bootstrap input.span1, textarea.span1, .uneditable-input.span1 {
+	width: 46px;
+}
+.compojoom-bootstrap .controls-row {
+	*zoom: 1;
+}
+.compojoom-bootstrap .controls-row:before,
+.controls-row:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.compojoom-bootstrap .controls-row:after {
+	clear: both;
+}
+.compojoom-bootstrap .controls-row [class*="span"] {
+	float: left;
+}
+.compojoom-bootstrap input[disabled],
+select[disabled],
+.compojoom-bootstrap textarea[disabled],
+input[readonly],
+.compojoom-bootstrap select[readonly],
+textarea[readonly] {
+	cursor: not-allowed;
+	background-color: #eee;
+}
+.compojoom-bootstrap input[type="radio"][disabled],
+input[type="checkbox"][disabled],
+.compojoom-bootstrap input[type="radio"][readonly],
+input[type="checkbox"][readonly] {
+	background-color: transparent;
+}
+.compojoom-bootstrap .control-group.warning > label,
+.control-group.warning .help-block,
+.compojoom-bootstrap .control-group.warning .help-inline {
+	color: #c09853;
+}
+.compojoom-bootstrap .control-group.warning .checkbox,
+.control-group.warning .radio,
+.compojoom-bootstrap .control-group.warning input,
+.control-group.warning select,
+.compojoom-bootstrap .control-group.warning textarea {
+	color: #c09853;
+	border-color: #c09853;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+}
+.compojoom-bootstrap .control-group.warning .checkbox:focus,
+.control-group.warning .radio:focus,
+.compojoom-bootstrap .control-group.warning input:focus,
+.control-group.warning select:focus,
+.compojoom-bootstrap .control-group.warning textarea:focus {
+	border-color: #a47e3c;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #dbc59e;
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #dbc59e;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #dbc59e;
+}
+.compojoom-bootstrap .control-group.warning .input-prepend .add-on,
+.control-group.warning .input-append .add-on {
+	color: #c09853;
+	background-color: #fcf8e3;
+	border-color: #c09853;
+}
+.compojoom-bootstrap .control-group.error > label,
+.control-group.error .help-block,
+.compojoom-bootstrap .control-group.error .help-inline {
+	color: #b94a48;
+}
+.compojoom-bootstrap .control-group.error .checkbox,
+.control-group.error .radio,
+.compojoom-bootstrap .control-group.error input,
+.control-group.error select,
+.compojoom-bootstrap .control-group.error textarea {
+	color: #b94a48;
+	border-color: #b94a48;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+}
+.compojoom-bootstrap .control-group.error .checkbox:focus,
+.control-group.error .radio:focus,
+.compojoom-bootstrap .control-group.error input:focus,
+.control-group.error select:focus,
+.compojoom-bootstrap .control-group.error textarea:focus {
+	border-color: #953b39;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #d59392;
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #d59392;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #d59392;
+}
+.compojoom-bootstrap .control-group.error .input-prepend .add-on,
+.control-group.error .input-append .add-on {
+	color: #b94a48;
+	background-color: #f2dede;
+	border-color: #b94a48;
+}
+.compojoom-bootstrap .control-group.success > label,
+.control-group.success .help-block,
+.compojoom-bootstrap .control-group.success .help-inline {
+	color: #468847;
+}
+.compojoom-bootstrap .control-group.success .checkbox,
+.control-group.success .radio,
+.compojoom-bootstrap .control-group.success input,
+.control-group.success select,
+.compojoom-bootstrap .control-group.success textarea {
+	color: #468847;
+	border-color: #468847;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+}
+.compojoom-bootstrap .control-group.success .checkbox:focus,
+.control-group.success .radio:focus,
+.compojoom-bootstrap .control-group.success input:focus,
+.control-group.success select:focus,
+.compojoom-bootstrap .control-group.success textarea:focus {
+	border-color: #356635;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #7aba7b;
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #7aba7b;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #7aba7b;
+}
+.compojoom-bootstrap .control-group.success .input-prepend .add-on,
+.control-group.success .input-append .add-on {
+	color: #468847;
+	background-color: #dff0d8;
+	border-color: #468847;
+}
+.compojoom-bootstrap input:focus:required:invalid,
+textarea:focus:required:invalid,
+.compojoom-bootstrap select:focus:required:invalid {
+	color: #b94a48;
+	border-color: #ee5f5b;
+}
+.compojoom-bootstrap input:focus:required:invalid:focus,
+textarea:focus:required:invalid:focus,
+.compojoom-bootstrap select:focus:required:invalid:focus {
+	border-color: #e9322d;
+	-webkit-box-shadow: 0 0 6px #f8b9b7;
+	-moz-box-shadow: 0 0 6px #f8b9b7;
+	box-shadow: 0 0 6px #f8b9b7;
+}
+.compojoom-bootstrap .form-actions {
+	padding: 17px 20px 18px;
+	margin-top: 18px;
+	margin-bottom: 18px;
+	background-color: #f5f5f5;
+	border-top: 1px solid #e5e5e5;
+	*zoom: 1;
+}
+.compojoom-bootstrap .form-actions:before,
+.form-actions:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.compojoom-bootstrap .form-actions:after {
+	clear: both;
+}
+.compojoom-bootstrap .help-block,
+.help-inline {
+	color: #595959;
+}
+.compojoom-bootstrap .help-block {
+	display: block;
+	margin-bottom: 9px;
+}
+.compojoom-bootstrap .help-inline {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: middle;
+	padding-left: 5px;
+}
+.compojoom-bootstrap .input-append,
+.input-prepend {
+	margin-bottom: 5px;
+	font-size: 0;
+	white-space: nowrap;
+}
+.compojoom-bootstrap .input-append input,
+.input-append select,
+.compojoom-bootstrap .input-append .uneditable-input,
+.input-prepend input,
+.compojoom-bootstrap .input-prepend select,
+.input-prepend .uneditable-input {
+	position: relative;
+	margin-bottom: 0;
+	*margin-left: 0;
+	font-size: 13px;
+	vertical-align: top;
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
+.compojoom-bootstrap .input-append input:focus,
+.input-append select:focus,
+.compojoom-bootstrap .input-append .uneditable-input:focus,
+.input-prepend input:focus,
+.compojoom-bootstrap .input-prepend select:focus,
+.input-prepend .uneditable-input:focus {
+	z-index: 2;
+}
+.compojoom-bootstrap .input-append .add-on,
+.input-prepend .add-on {
+	display: inline-block;
+	width: auto;
+	height: 18px;
+	min-width: 16px;
+	padding: 4px 5px;
+	font-size: 13px;
+	font-weight: normal;
+	line-height: 18px;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff;
+	background-color: #eee;
+	border: 1px solid #ccc;
+}
+.compojoom-bootstrap .input-append .add-on,
+.input-append .btn,
+.compojoom-bootstrap .input-prepend .add-on,
+.input-prepend .btn {
+	margin-left: -1px;
+	vertical-align: top;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.compojoom-bootstrap .input-append .active,
+.input-prepend .active {
+	background-color: #a9dba9;
+	border-color: #46a546;
+}
+.compojoom-bootstrap .input-prepend .add-on,
+.input-prepend .btn {
+	margin-right: -1px;
+}
+.compojoom-bootstrap .input-prepend .add-on:first-child,
+.input-prepend .btn:first-child {
+	-webkit-border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+}
+.compojoom-bootstrap .input-append input,
+.input-append select,
+.compojoom-bootstrap .input-append .uneditable-input {
+	-webkit-border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+}
+.compojoom-bootstrap .input-append .add-on:last-child,
+.input-append .btn:last-child {
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
+.compojoom-bootstrap .input-prepend.input-append input,
+.input-prepend.input-append select,
+.compojoom-bootstrap .input-prepend.input-append .uneditable-input {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.compojoom-bootstrap .input-prepend.input-append .add-on:first-child,
+.input-prepend.input-append .btn:first-child {
+	margin-right: -1px;
+	-webkit-border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+}
+.compojoom-bootstrap .input-prepend.input-append .add-on:last-child,
+.input-prepend.input-append .btn:last-child {
+	margin-left: -1px;
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
+.compojoom-bootstrap input.search-query {
+	padding-right: 14px;
+	padding-right: 4px \9;
+	padding-left: 14px;
+	padding-left: 4px \9;
+	margin-bottom: 0;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+.compojoom-bootstrap .form-search .input-append .search-query,
+.form-search .input-prepend .search-query {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.compojoom-bootstrap .form-search .input-append .search-query {
+	-webkit-border-radius: 14px 0 0 14px;
+	-moz-border-radius: 14px 0 0 14px;
+	border-radius: 14px 0 0 14px;
+}
+.compojoom-bootstrap .form-search .input-append .btn {
+	-webkit-border-radius: 0 14px 14px 0;
+	-moz-border-radius: 0 14px 14px 0;
+	border-radius: 0 14px 14px 0;
+}
+.compojoom-bootstrap .form-search .input-prepend .search-query {
+	-webkit-border-radius: 0 14px 14px 0;
+	-moz-border-radius: 0 14px 14px 0;
+	border-radius: 0 14px 14px 0;
+}
+.compojoom-bootstrap .form-search .input-prepend .btn {
+	-webkit-border-radius: 14px 0 0 14px;
+	-moz-border-radius: 14px 0 0 14px;
+	border-radius: 14px 0 0 14px;
+}
+.compojoom-bootstrap .form-search input,
+.form-search textarea,
+.compojoom-bootstrap .form-search select,
+.form-search .help-inline,
+.compojoom-bootstrap .form-search .uneditable-input,
+.form-search .input-prepend,
+.compojoom-bootstrap .form-search .input-append,
+.form-inline input,
+.compojoom-bootstrap .form-inline textarea,
+.form-inline select,
+.compojoom-bootstrap .form-inline .help-inline,
+.form-inline .uneditable-input,
+.compojoom-bootstrap .form-inline .input-prepend,
+.form-inline .input-append,
+.compojoom-bootstrap .form-horizontal input,
+.form-horizontal textarea,
+.compojoom-bootstrap .form-horizontal select,
+.form-horizontal .help-inline,
+.compojoom-bootstrap .form-horizontal .uneditable-input,
+.form-horizontal .input-prepend,
+.compojoom-bootstrap .form-horizontal .input-append {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-bottom: 0;
+	vertical-align: middle;
+}
+.compojoom-bootstrap .form-search .hide,
+.form-inline .hide,
+.compojoom-bootstrap .form-horizontal .hide {
+	display: none;
+}
+.compojoom-bootstrap .form-search label,
+.form-inline label,
+.compojoom-bootstrap .form-search .btn-group,
+.form-inline .btn-group {
+	display: inline-block;
+}
+.compojoom-bootstrap .form-search .input-append,
+.form-inline .input-append,
+.compojoom-bootstrap .form-search .input-prepend,
+.form-inline .input-prepend {
+	margin-bottom: 0;
+}
+.compojoom-bootstrap .form-search .radio,
+.form-search .checkbox,
+.compojoom-bootstrap .form-inline .radio,
+.form-inline .checkbox {
+	padding-left: 0;
+	margin-bottom: 0;
+	vertical-align: middle;
+}
+.compojoom-bootstrap .form-search .radio input[type="radio"],
+.form-search .checkbox input[type="checkbox"],
+.compojoom-bootstrap .form-inline .radio input[type="radio"],
+.form-inline .checkbox input[type="checkbox"] {
+	float: left;
+	margin-right: 3px;
+	margin-left: 0;
+}
+.compojoom-bootstrap .control-group {
+	margin-bottom: 9px;
+}
+.compojoom-bootstrap legend + .control-group {
+	margin-top: 18px;
+	-webkit-margin-top-collapse: separate;
+}
+.compojoom-bootstrap .form-horizontal .control-group {
+	margin-bottom: 18px;
+	*zoom: 1;
+}
+.compojoom-bootstrap .form-horizontal .control-group:before,
+.form-horizontal .control-group:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.compojoom-bootstrap .form-horizontal .control-group:after {
+	clear: both;
+}
+.compojoom-bootstrap .form-horizontal .control-label {
+	float: left;
+	width: 140px;
+	padding-top: 5px;
+	text-align: right;
+}
+.compojoom-bootstrap .form-horizontal .controls {
+	*display: inline-block;
+	*padding-left: 20px;
+	margin-left: 160px;
+	*margin-left: 0;
+}
+.compojoom-bootstrap .form-horizontal .controls:first-child {
+	*padding-left: 160px;
+}
+.compojoom-bootstrap .form-horizontal .help-block {
+	margin-top: 9px;
+	margin-bottom: 0;
+}
+.compojoom-bootstrap .form-horizontal .form-actions {
+	padding-left: 160px;
+}
+.compojoom-bootstrap table {
+	max-width: 100%;
+	background-color: transparent;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.compojoom-bootstrap .table {
+	width: 100%;
+	margin-bottom: 18px;
+}
+.compojoom-bootstrap .table th,
+.table td {
+	padding: 8px;
+	line-height: 18px;
+	text-align: left;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+.compojoom-bootstrap .table th {
+	font-weight: bold;
+}
+.compojoom-bootstrap .table thead th {
+	vertical-align: bottom;
+}
+.compojoom-bootstrap .table caption + thead tr:first-child th,
+.table caption + thead tr:first-child td,
+.compojoom-bootstrap .table colgroup + thead tr:first-child th,
+.table colgroup + thead tr:first-child td,
+.compojoom-bootstrap .table thead:first-child tr:first-child th,
+.table thead:first-child tr:first-child td {
+	border-top: 0;
+}
+.compojoom-bootstrap .table tbody + tbody {
+	border-top: 2px solid #ddd;
+}
+.compojoom-bootstrap .table-condensed th,
+.table-condensed td {
+	padding: 4px 5px;
+}
+.compojoom-bootstrap .table-bordered {
+	border: 1px solid #ddd;
+	border-collapse: separate;
+	*border-collapse: collapse;
+	border-left: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.compojoom-bootstrap .table-bordered th,
+.table-bordered td {
+	border-left: 1px solid #ddd;
+}
+.compojoom-bootstrap .table-bordered caption + thead tr:first-child th,
+.table-bordered caption + tbody tr:first-child th,
+.compojoom-bootstrap .table-bordered caption + tbody tr:first-child td,
+.table-bordered colgroup + thead tr:first-child th,
+.compojoom-bootstrap .table-bordered colgroup + tbody tr:first-child th,
+.table-bordered colgroup + tbody tr:first-child td,
+.compojoom-bootstrap .table-bordered thead:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child th,
+.compojoom-bootstrap .table-bordered tbody:first-child tr:first-child td {
+	border-top: 0;
+}
+.compojoom-bootstrap .table-bordered thead:first-child tr:first-child th:first-child,
+.table-bordered tbody:first-child tr:first-child td:first-child {
+	-webkit-border-top-left-radius: 4px;
+	border-top-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+}
+.compojoom-bootstrap .table-bordered thead:first-child tr:first-child th:last-child,
+.table-bordered tbody:first-child tr:first-child td:last-child {
+	-webkit-border-top-right-radius: 4px;
+	border-top-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+}
+.compojoom-bootstrap .table-bordered thead:last-child tr:last-child th:first-child,
+.table-bordered tbody:last-child tr:last-child td:first-child,
+.compojoom-bootstrap .table-bordered tfoot:last-child tr:last-child td:first-child {
+	-webkit-border-radius: 0 0 0 4px;
+	-moz-border-radius: 0 0 0 4px;
+	border-radius: 0 0 0 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+}
+.compojoom-bootstrap .table-bordered thead:last-child tr:last-child th:last-child,
+.table-bordered tbody:last-child tr:last-child td:last-child,
+.compojoom-bootstrap .table-bordered tfoot:last-child tr:last-child td:last-child {
+	-webkit-border-bottom-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+}
+.compojoom-bootstrap .table-bordered caption + thead tr:first-child th:first-child,
+.table-bordered caption + tbody tr:first-child td:first-child,
+.compojoom-bootstrap .table-bordered colgroup + thead tr:first-child th:first-child,
+.table-bordered colgroup + tbody tr:first-child td:first-child {
+	-webkit-border-top-left-radius: 4px;
+	border-top-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+}
+.compojoom-bootstrap .table-bordered caption + thead tr:first-child th:last-child,
+.table-bordered caption + tbody tr:first-child td:last-child,
+.compojoom-bootstrap .table-bordered colgroup + thead tr:first-child th:last-child,
+.table-bordered colgroup + tbody tr:first-child td:last-child {
+	-webkit-border-top-right-radius: 4px;
+	border-top-right-radius: 4px;
+	-moz-border-right-topleft: 4px;
+}
+.compojoom-bootstrap .table-striped tbody tr:nth-child(odd) td,
+.table-striped tbody tr:nth-child(odd) th {
+	background-color: #f9f9f9;
+}
+.compojoom-bootstrap .table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+	background-color: #f5f5f5;
+}
+.compojoom-bootstrap table [class*=span],
+.row-fluid table [class*=span] {
+	display: table-cell;
+	float: none;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span1 {
+	float: none;
+	width: 44px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span2 {
+	float: none;
+	width: 124px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span3 {
+	float: none;
+	width: 204px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span4 {
+	float: none;
+	width: 284px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span5 {
+	float: none;
+	width: 364px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span6 {
+	float: none;
+	width: 444px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span7 {
+	float: none;
+	width: 524px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span8 {
+	float: none;
+	width: 604px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span9 {
+	float: none;
+	width: 684px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span10 {
+	float: none;
+	width: 764px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span11 {
+	float: none;
+	width: 844px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span12 {
+	float: none;
+	width: 924px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span13 {
+	float: none;
+	width: 1004px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span14 {
+	float: none;
+	width: 1084px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span15 {
+	float: none;
+	width: 1164px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span16 {
+	float: none;
+	width: 1244px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span17 {
+	float: none;
+	width: 1324px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span18 {
+	float: none;
+	width: 1404px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span19 {
+	float: none;
+	width: 1484px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span20 {
+	float: none;
+	width: 1564px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span21 {
+	float: none;
+	width: 1644px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span22 {
+	float: none;
+	width: 1724px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span23 {
+	float: none;
+	width: 1804px;
+	margin-left: 0;
+}
+.compojoom-bootstrap table .span24 {
+	float: none;
+	width: 1884px;
+	margin-left: 0;
+}
+.compojoom-bootstrap .table tbody tr.success td {
+	background-color: #dff0d8;
+}
+.compojoom-bootstrap .table tbody tr.error td {
+	background-color: #f2dede;
+}
+.compojoom-bootstrap .table tbody tr.info td {
+	background-color: #d9edf7;
+}
+.compojoom-bootstrap .dropup,
+.dropdown {
+	position: relative;
+}
+.compojoom-bootstrap .dropdown-toggle {
+	*margin-bottom: -3px;
+}
+.compojoom-bootstrap .dropdown-toggle:active,
+.open .dropdown-toggle {
+	outline: 0;
+}
+.compojoom-bootstrap .caret {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	vertical-align: top;
+	border-top: 4px solid #000;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	content: "";
+}
+.compojoom-bootstrap .dropdown .caret {
+	margin-top: 8px;
+	margin-left: 2px;
+}
+.compojoom-bootstrap .dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	display: none;
+	float: left;
+	min-width: 160px;
+	padding: 5px 0;
+	margin: 2px 0 0;
+	list-style: none;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0,0,0,0.2);
+	*border-right-width: 2px;
+	*border-bottom-width: 2px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+	box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+}
+.compojoom-bootstrap .dropdown-menu.pull-right {
+	right: 0;
+	left: auto;
+}
+.compojoom-bootstrap .dropdown-menu .divider {
+	*width: 100%;
+	height: 1px;
+	margin: 8px 1px;
+	*margin: -5px 0 5px;
+	overflow: hidden;
+	background-color: #e5e5e5;
+	border-bottom: 1px solid #fff;
+}
+.compojoom-bootstrap .dropdown-menu a {
+	display: block;
+	padding: 3px 20px;
+	clear: both;
+	font-weight: normal;
+	line-height: 18px;
+	color: #333;
+	white-space: nowrap;
+}
+.compojoom-bootstrap .dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus,
+.compojoom-bootstrap .dropdown-submenu:hover > a {
+	text-decoration: none;
+	color: #fff;
+	background-color: #08c;
+	background-color: #0081c2;
+	background-image: -moz-linear-gradient(top,#08c,#0077b3);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#08c),to(#0077b3));
+	background-image: -webkit-linear-gradient(top,#08c,#0077b3);
+	background-image: -o-linear-gradient(top,#08c,#0077b3);
+	background-image: linear-gradient(to bottom,#08c,#0077b3);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0076b2', GradientType=0);
+}
+.compojoom-bootstrap .dropdown-menu .active > a,
+.dropdown-menu .active > a:hover {
+	color: #fff;
+	text-decoration: none;
+	outline: 0;
+	background-color: #08c;
+	background-color: #0081c2;
+	background-image: -moz-linear-gradient(top,#08c,#0077b3);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#08c),to(#0077b3));
+	background-image: -webkit-linear-gradient(top,#08c,#0077b3);
+	background-image: -o-linear-gradient(top,#08c,#0077b3);
+	background-image: linear-gradient(to bottom,#08c,#0077b3);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0076b2', GradientType=0);
+}
+.compojoom-bootstrap .dropdown-menu .disabled > a,
+.dropdown-menu .disabled > a:hover {
+	color: #999;
+}
+.compojoom-bootstrap .dropdown-menu .disabled > a:hover {
+	text-decoration: none;
+	background-color: transparent;
+	cursor: default;
+}
+.compojoom-bootstrap .open {
+	*z-index: 1000;
+}
+.compojoom-bootstrap .open > .dropdown-menu {
+	display: block;
+}
+.compojoom-bootstrap .pull-right > .dropdown-menu {
+	right: 0;
+	left: auto;
+}
+.compojoom-bootstrap .dropup .caret,
+.navbar-fixed-bottom .dropdown .caret {
+	border-top: 0;
+	border-bottom: 4px solid #000;
+	content: "\2191";
+}
+.compojoom-bootstrap .dropup .dropdown-menu,
+.navbar-fixed-bottom .dropdown .dropdown-menu {
+	top: auto;
+	bottom: 100%;
+	margin-bottom: 1px;
+}
+.compojoom-bootstrap .dropdown-submenu {
+	position: relative;
+}
+.compojoom-bootstrap .dropdown-submenu > .dropdown-menu {
+	top: 0;
+	left: 100%;
+	margin-top: -6px;
+	margin-left: -1px;
+	-webkit-border-radius: 0 6px 6px 6px;
+	-moz-border-radius: 0 6px 6px 6px;
+	border-radius: 0 6px 6px 6px;
+}
+.compojoom-bootstrap .dropdown-submenu:hover .dropdown-menu {
+	display: block;
+}
+.compojoom-bootstrap .dropdown-submenu > a:after {
+	display: block;
+	content: " ";
+	float: right;
+	width: 0;
+	height: 0;
+	border-color: transparent;
+	border-style: solid;
+	border-width: 5px 0 5px 5px;
+	border-left-color: #cccccc;
+	margin-top: 5px;
+	margin-right: -10px;
+}
+.compojoom-bootstrap .dropdown-submenu:hover > a:after {
+	border-left-color: #fff;
+}
+.compojoom-bootstrap .dropdown .dropdown-menu .nav-header {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.compojoom-bootstrap .typeahead {
+	margin-top: 2px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.compojoom-bootstrap .well {
+	min-height: 20px;
+	padding: 19px;
+	margin-bottom: 20px;
+	background-color: #f5f5f5;
+	border: 1px solid #e3e3e3;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+}
+.compojoom-bootstrap .well blockquote {
+	border-color: #ddd;
+	border-color: rgba(0,0,0,0.15);
+}
+.compojoom-bootstrap .well-large {
+	padding: 24px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+.compojoom-bootstrap .well-small {
+	padding: 9px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.compojoom-bootstrap .fade {
+	opacity: 0;
+	-webkit-transition: opacity .15s linear;
+	-moz-transition: opacity .15s linear;
+	-o-transition: opacity .15s linear;
+	transition: opacity .15s linear;
+}
+.compojoom-bootstrap .fade.in {
+	opacity: 1;
+}
+.compojoom-bootstrap .collapse {
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	overflow: visible \9;
+	-webkit-transition: height .35s ease;
+	-moz-transition: height .35s ease;
+	-o-transition: height .35s ease;
+	transition: height .35s ease;
+}
+.compojoom-bootstrap .collapse.in {
+	height: auto;
+}
+.compojoom-bootstrap .close {
+	float: right;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 18px;
+	color: #000;
+	text-shadow: 0 1px 0 #ffffff;
+	opacity: 0.2;
+	filter: alpha(opacity=20);
+}
+.compojoom-bootstrap .close:hover {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+	opacity: 0.4;
+	filter: alpha(opacity=40);
+}
+.compojoom-bootstrap button.close {
+	padding: 0;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	-webkit-appearance: none;
+}
+.compojoom-bootstrap .btn {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	padding: 4px 14px;
+	margin-bottom: 0;
+	font-size: 13px;
+	line-height: 18px;
+	*line-height: 18px;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	color: #333;
+	text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+	background-color: #f5f5f5;
+	background-image: -moz-linear-gradient(top,#fff,#e6e6e6);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6e6e6));
+	background-image: -webkit-linear-gradient(top,#fff,#e6e6e6);
+	background-image: -o-linear-gradient(top,#fff,#e6e6e6);
+	background-image: linear-gradient(to bottom,#fff,#e6e6e6);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe5e5e5', GradientType=0);
+	border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+	border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+	*background-color: #e6e6e6;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	border: 1px solid #bbb;
+	*border: 0;
+	border-bottom-color: #a2a2a2;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	*margin-left: .3em;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+}
+.compojoom-bootstrap .btn:hover,
+.btn:active,
+.compojoom-bootstrap .btn.active,
+.btn.disabled,
+.compojoom-bootstrap .btn[disabled] {
+	color: #333;
+	background-color: #e6e6e6;
+	*background-color: #d9d9d9;
+}
+.compojoom-bootstrap .btn:active,
+.btn.active {
+	background-color: #cccccc \9;
+}
+.compojoom-bootstrap .btn:first-child {
+	*margin-left: 0;
+}
+.compojoom-bootstrap .btn:hover {
+	color: #333;
+	text-decoration: none;
+	background-color: #e6e6e6;
+	*background-color: #d9d9d9;
+	background-position: 0 -15px;
+	-webkit-transition: background-position .1s linear;
+	-moz-transition: background-position .1s linear;
+	-o-transition: background-position .1s linear;
+	transition: background-position .1s linear;
+}
+.compojoom-bootstrap .btn:focus {
+	outline: thin dotted #333;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
+}
+.compojoom-bootstrap .btn.active,
+.btn:active {
+	background-color: #e6e6e6;
+	background-color: #d9d9d9 \9;
+	background-image: none;
+	outline: 0;
+	-webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+	-moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+	box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+}
+.compojoom-bootstrap .btn.disabled,
+.btn[disabled] {
+	cursor: default;
+	background-color: #e6e6e6;
+	background-image: none;
+	opacity: 0.65;
+	filter: alpha(opacity=65);
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.compojoom-bootstrap .btn-large {
+	padding: 9px 14px;
+	font-size: 15px;
+	line-height: normal;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.compojoom-bootstrap .btn-large [class^="icon-"] {
+	margin-top: 2px;
+}
+.compojoom-bootstrap .btn-small {
+	padding: 3px 9px;
+	font-size: 11px;
+	line-height: 16px;
+}
+.compojoom-bootstrap .btn-small [class^="icon-"] {
+	margin-top: 0;
+}
+.compojoom-bootstrap .btn-mini {
+	padding: 2px 6px;
+	font-size: 10px;
+	line-height: 14px;
+}
+.compojoom-bootstrap .btn-block {
+	display: block;
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.compojoom-bootstrap .btn-block + .btn-block {
+	margin-top: 5px;
+}
+.compojoom-bootstrap .btn-primary.active,
+.btn-warning.active,
+.compojoom-bootstrap .btn-danger.active,
+.btn-success.active,
+.compojoom-bootstrap .btn-info.active,
+.btn-inverse.active {
+	color: rgba(255,255,255,0.75);
+}
+.compojoom-bootstrap .btn {
+	border-color: #c5c5c5;
+	border-color: rgba(0,0,0,0.15) rgba(0,0,0,0.15) rgba(0,0,0,0.25);
+}
+.compojoom-bootstrap .btn-primary {
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	background-color: #1d6cb0;
+	background-image: -moz-linear-gradient(top,#2384d3,#15497c);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#2384d3),to(#15497c));
+	background-image: -webkit-linear-gradient(top,#2384d3,#15497c);
+	background-image: -o-linear-gradient(top,#2384d3,#15497c);
+	background-image: linear-gradient(to bottom,#2384d3,#15497c);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2384d3', endColorstr='#ff15497c', GradientType=0);
+	border-color: #15497c #15497c #0a223b;
+	border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+	*background-color: #15497c;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.compojoom-bootstrap .btn-primary:hover,
+.btn-primary:active,
+.compojoom-bootstrap .btn-primary.active,
+.btn-primary.disabled,
+.compojoom-bootstrap .btn-primary[disabled] {
+	color: #fff;
+	background-color: #15497c;
+	*background-color: #113c66;
+}
+.compojoom-bootstrap .btn-primary:active,
+.btn-primary.active {
+	background-color: #0e2f50 \9;
+}
+.compojoom-bootstrap .btn-warning {
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	background-color: #faa732;
+	background-image: -moz-linear-gradient(top,#fbb450,#f89406);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#fbb450),to(#f89406));
+	background-image: -webkit-linear-gradient(top,#fbb450,#f89406);
+	background-image: -o-linear-gradient(top,#fbb450,#f89406);
+	background-image: linear-gradient(to bottom,#fbb450,#f89406);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffab44f', endColorstr='#fff89406', GradientType=0);
+	border-color: #f89406 #f89406 #ad6704;
+	border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+	*background-color: #f89406;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.compojoom-bootstrap .btn-warning:hover,
+.btn-warning:active,
+.compojoom-bootstrap .btn-warning.active,
+.btn-warning.disabled,
+.compojoom-bootstrap .btn-warning[disabled] {
+	color: #fff;
+	background-color: #f89406;
+	*background-color: #df8505;
+}
+.compojoom-bootstrap .btn-warning:active,
+.btn-warning.active {
+	background-color: #c67605 \9;
+}
+.compojoom-bootstrap .btn-danger {
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	background-color: #da4f49;
+	background-image: -moz-linear-gradient(top,#ee5f5b,#bd362f);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#ee5f5b),to(#bd362f));
+	background-image: -webkit-linear-gradient(top,#ee5f5b,#bd362f);
+	background-image: -o-linear-gradient(top,#ee5f5b,#bd362f);
+	background-image: linear-gradient(to bottom,#ee5f5b,#bd362f);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffbd362f', GradientType=0);
+	border-color: #bd362f #bd362f #802420;
+	border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+	*background-color: #bd362f;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.compojoom-bootstrap .btn-danger:hover,
+.btn-danger:active,
+.compojoom-bootstrap .btn-danger.active,
+.btn-danger.disabled,
+.compojoom-bootstrap .btn-danger[disabled] {
+	color: #fff;
+	background-color: #bd362f;
+	*background-color: #a9302a;
+}
+.compojoom-bootstrap .btn-danger:active,
+.btn-danger.active {
+	background-color: #942a25 \9;
+}
+.compojoom-bootstrap .btn-success {
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	background-color: #5bb75b;
+	background-image: -moz-linear-gradient(top,#62c462,#51a351);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#62c462),to(#51a351));
+	background-image: -webkit-linear-gradient(top,#62c462,#51a351);
+	background-image: -o-linear-gradient(top,#62c462,#51a351);
+	background-image: linear-gradient(to bottom,#62c462,#51a351);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+	border-color: #51a351 #51a351 #387038;
+	border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+	*background-color: #51a351;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.compojoom-bootstrap .btn-success:hover,
+.btn-success:active,
+.compojoom-bootstrap .btn-success.active,
+.btn-success.disabled,
+.compojoom-bootstrap .btn-success[disabled] {
+	color: #fff;
+	background-color: #51a351;
+	*background-color: #499249;
+}
+.compojoom-bootstrap .btn-success:active,
+.btn-success.active {
+	background-color: #408140 \9;
+}
+.compojoom-bootstrap .btn-info {
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	background-color: #49afcd;
+	background-image: -moz-linear-gradient(top,#5bc0de,#2f96b4);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#5bc0de),to(#2f96b4));
+	background-image: -webkit-linear-gradient(top,#5bc0de,#2f96b4);
+	background-image: -o-linear-gradient(top,#5bc0de,#2f96b4);
+	background-image: linear-gradient(to bottom,#5bc0de,#2f96b4);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0);
+	border-color: #2f96b4 #2f96b4 #1f6377;
+	border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+	*background-color: #2f96b4;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.compojoom-bootstrap .btn-info:hover,
+.btn-info:active,
+.compojoom-bootstrap .btn-info.active,
+.btn-info.disabled,
+.compojoom-bootstrap .btn-info[disabled] {
+	color: #fff;
+	background-color: #2f96b4;
+	*background-color: #2a85a0;
+}
+.compojoom-bootstrap .btn-info:active,
+.btn-info.active {
+	background-color: #24748c \9;
+}
+.compojoom-bootstrap .btn-inverse {
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	background-color: #363636;
+	background-image: -moz-linear-gradient(top,#444,#222);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#444),to(#222));
+	background-image: -webkit-linear-gradient(top,#444,#222);
+	background-image: -o-linear-gradient(top,#444,#222);
+	background-image: linear-gradient(to bottom,#444,#222);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff444444', endColorstr='#ff222222', GradientType=0);
+	border-color: #222 #222 #000000;
+	border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+	*background-color: #222;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.compojoom-bootstrap .btn-inverse:hover,
+.btn-inverse:active,
+.compojoom-bootstrap .btn-inverse.active,
+.btn-inverse.disabled,
+.compojoom-bootstrap .btn-inverse[disabled] {
+	color: #fff;
+	background-color: #222;
+	*background-color: #151515;
+}
+.compojoom-bootstrap .btn-inverse:active,
+.btn-inverse.active {
+	background-color: #090909 \9;
+}
+.compojoom-bootstrap button.btn,
+input[type="submit"].btn {
+	*padding-top: 3px;
+	*padding-bottom: 3px;
+}
+.compojoom-bootstrap button.btn::-moz-focus-inner,
+input[type="submit"].btn::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+.compojoom-bootstrap button.btn.btn-large,
+input[type="submit"].btn.btn-large {
+	*padding-top: 7px;
+	*padding-bottom: 7px;
+}
+.compojoom-bootstrap button.btn.btn-small,
+input[type="submit"].btn.btn-small {
+	*padding-top: 3px;
+	*padding-bottom: 3px;
+}
+.compojoom-bootstrap button.btn.btn-mini,
+input[type="submit"].btn.btn-mini {
+	*padding-top: 1px;
+	*padding-bottom: 1px;
+}
+.compojoom-bootstrap .btn-link,
+.btn-link:active {
+	background-color: transparent;
+	background-image: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.compojoom-bootstrap .btn-link {
+	border-color: transparent;
+	cursor: pointer;
+	color: #08c;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.compojoom-bootstrap .btn-link:hover {
+	color: #005580;
+	text-decoration: underline;
+	background-color: transparent;
+}
+.compojoom-bootstrap .btn-group {
+	position: relative;
+	font-size: 0;
+	white-space: nowrap;
+	*margin-left: .3em;
+}
+.compojoom-bootstrap .btn-group:first-child {
+	*margin-left: 0;
+}
+.compojoom-bootstrap .btn-group + .btn-group {
+	margin-left: 5px;
+}
+.compojoom-bootstrap .btn-toolbar {
+	font-size: 0;
+	margin-top: 9px;
+	margin-bottom: 9px;
+}
+.compojoom-bootstrap .btn-toolbar .btn-group {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+.compojoom-bootstrap .btn-toolbar .btn + .btn,
+.btn-toolbar .btn-group + .btn,
+.compojoom-bootstrap .btn-toolbar .btn + .btn-group {
+	margin-left: 5px;
+}
+.compojoom-bootstrap .btn-group > .btn {
+	position: relative;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.compojoom-bootstrap .btn-group > .btn + .btn {
+	margin-left: -1px;
+}
+.compojoom-bootstrap .btn-group > .btn,
+.btn-group > .dropdown-menu {
+	font-size: 13px;
+}
+.compojoom-bootstrap .btn-group > .btn-mini {
+	font-size: 11px;
+}
+.compojoom-bootstrap .btn-group > .btn-small {
+	font-size: 12px;
+}
+.compojoom-bootstrap .btn-group > .btn-large {
+	font-size: 16px;
+}
+.compojoom-bootstrap .btn-group > .btn:first-child {
+	margin-left: 0;
+	-webkit-border-top-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	border-top-left-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-bottom-left-radius: 4px;
+}
+.compojoom-bootstrap .btn-group > .btn:last-child,
+.btn-group > .dropdown-toggle {
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-right-radius: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	border-bottom-right-radius: 4px;
+}
+.compojoom-bootstrap .btn-group > .btn.large:first-child {
+	margin-left: 0;
+	-webkit-border-top-left-radius: 6px;
+	-moz-border-radius-topleft: 6px;
+	border-top-left-radius: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	border-bottom-left-radius: 6px;
+}
+.compojoom-bootstrap .btn-group > .btn.large:last-child,
+.btn-group > .large.dropdown-toggle {
+	-webkit-border-top-right-radius: 6px;
+	-moz-border-radius-topright: 6px;
+	border-top-right-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	-moz-border-radius-bottomright: 6px;
+	border-bottom-right-radius: 6px;
+}
+.compojoom-bootstrap .btn-group > .btn:hover,
+.btn-group > .btn:focus,
+.compojoom-bootstrap .btn-group > .btn:active,
+.btn-group > .btn.active {
+	z-index: 2;
+}
+.compojoom-bootstrap .btn-group .dropdown-toggle:active,
+.btn-group.open .dropdown-toggle {
+	outline: 0;
+}
+.compojoom-bootstrap .btn-group > .btn + .dropdown-toggle {
+	padding-left: 8px;
+	padding-right: 8px;
+	-webkit-box-shadow: inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+	-moz-box-shadow: inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+	box-shadow: inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+	*padding-top: 5px;
+	*padding-bottom: 5px;
+}
+.compojoom-bootstrap .btn-group > .btn-mini + .dropdown-toggle {
+	padding-left: 5px;
+	padding-right: 5px;
+	*padding-top: 2px;
+	*padding-bottom: 2px;
+}
+.compojoom-bootstrap .btn-group > .btn-small + .dropdown-toggle {
+	*padding-top: 5px;
+	*padding-bottom: 4px;
+}
+.compojoom-bootstrap .btn-group > .btn-large + .dropdown-toggle {
+	padding-left: 12px;
+	padding-right: 12px;
+	*padding-top: 7px;
+	*padding-bottom: 7px;
+}
+.compojoom-bootstrap .btn-group.open .dropdown-toggle {
+	background-image: none;
+	-webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+	-moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+	box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+}
+.compojoom-bootstrap .btn-group.open .btn.dropdown-toggle {
+	background-color: #e6e6e6;
+}
+.compojoom-bootstrap .btn-group.open .btn-primary.dropdown-toggle {
+	background-color: #15497c;
+}
+.compojoom-bootstrap .btn-group.open .btn-warning.dropdown-toggle {
+	background-color: #f89406;
+}
+.compojoom-bootstrap .btn-group.open .btn-danger.dropdown-toggle {
+	background-color: #bd362f;
+}
+.compojoom-bootstrap .btn-group.open .btn-success.dropdown-toggle {
+	background-color: #51a351;
+}
+.compojoom-bootstrap .btn-group.open .btn-info.dropdown-toggle {
+	background-color: #2f96b4;
+}
+.compojoom-bootstrap .btn-group.open .btn-inverse.dropdown-toggle {
+	background-color: #222;
+}
+.compojoom-bootstrap .btn .caret {
+	margin-top: 8px;
+	margin-left: 0;
+}
+.compojoom-bootstrap .btn-mini .caret,
+.btn-small .caret,
+.compojoom-bootstrap .btn-large .caret {
+	margin-top: 5px;
+}
+.compojoom-bootstrap .btn-large .caret {
+	border-left-width: 5px;
+	border-right-width: 5px;
+	border-top-width: 5px;
+}
+.compojoom-bootstrap .dropup .btn-large .caret {
+	border-bottom: 5px solid #000;
+	border-top: 0;
+}
+.compojoom-bootstrap .btn-primary .caret,
+.btn-warning .caret,
+.compojoom-bootstrap .btn-danger .caret,
+.btn-info .caret,
+.compojoom-bootstrap .btn-success .caret,
+.btn-inverse .caret {
+	border-top-color: #fff;
+	border-bottom-color: #fff;
+}
+.compojoom-bootstrap .btn-group-vertical {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+.compojoom-bootstrap .btn-group-vertical .btn {
+	display: block;
+	float: none;
+	width: 100%;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.compojoom-bootstrap .btn-group-vertical .btn + .btn {
+	margin-left: 0;
+	margin-top: -1px;
+}
+.compojoom-bootstrap .btn-group-vertical .btn:first-child {
+	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+}
+.compojoom-bootstrap .btn-group-vertical .btn:last-child {
+	-webkit-border-radius: 0 0 4px 4px;
+	-moz-border-radius: 0 0 4px 4px;
+	border-radius: 0 0 4px 4px;
+}
+.compojoom-bootstrap .btn-group-vertical .btn-large:first-child {
+	-webkit-border-radius: 6px 6px 0 0;
+	-moz-border-radius: 6px 6px 0 0;
+	border-radius: 6px 6px 0 0;
+}
+.compojoom-bootstrap .btn-group-vertical .btn-large:last-child {
+	-webkit-border-radius: 0 0 6px 6px;
+	-moz-border-radius: 0 0 6px 6px;
+	border-radius: 0 0 6px 6px;
+}
+.compojoom-bootstrap .alert {
+	padding: 8px 35px 8px 14px;
+	margin-bottom: 18px;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+	background-color: #fcf8e3;
+	border: 1px solid #fbeed5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	color: #c09853;
+}
+.compojoom-bootstrap .alert h4 {
+	margin: 0;
+}
+.compojoom-bootstrap .alert .close {
+	position: relative;
+	top: -2px;
+	right: -21px;
+	line-height: 18px;
+}
+.compojoom-bootstrap .alert-success {
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+	color: #468847;
+}
+.compojoom-bootstrap .alert-danger,
+.alert-error {
+	background-color: #f2dede;
+	border-color: #eed3d7;
+	color: #b94a48;
+}
+.compojoom-bootstrap .alert-info {
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+	color: #3a87ad;
+}
+.compojoom-bootstrap .alert-block {
+	padding-top: 14px;
+	padding-bottom: 14px;
+}
+.compojoom-bootstrap .alert-block > p,
+.alert-block > ul {
+	margin-bottom: 0;
+}
+.compojoom-bootstrap .alert-block p + p {
+	margin-top: 5px;
+}
+.compojoom-bootstrap .nav {
+	margin-left: 0;
+	margin-bottom: 18px;
+	list-style: none;
+}
+.compojoom-bootstrap .nav > li > a {
+	display: block;
+}
+.compojoom-bootstrap .nav > li > a:hover {
+	text-decoration: none;
+	background-color: #eee;
+}
+.compojoom-bootstrap .nav > .pull-right {
+	float: right;
+}
+.compojoom-bootstrap .nav-header {
+	display: block;
+	padding: 3px 15px;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 18px;
+	color: #999;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+	text-transform: uppercase;
+}
+.compojoom-bootstrap .nav li + .nav-header {
+	margin-top: 9px;
+}
+.compojoom-bootstrap .nav-list {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 0;
+}
+.compojoom-bootstrap .nav-list > li > a,
+.nav-list .nav-header {
+	margin-left: -15px;
+	margin-right: -15px;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+.compojoom-bootstrap .nav-list > li > a {
+	padding: 3px 15px;
+}
+.compojoom-bootstrap .nav-list > .active > a,
+.nav-list > .active > a:hover {
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+	background-color: #08c;
+}
+.compojoom-bootstrap .nav-list [class^="icon-"] {
+	margin-right: 2px;
+}
+.compojoom-bootstrap .nav-list .divider {
+	*width: 100%;
+	height: 1px;
+	margin: 8px 1px;
+	*margin: -5px 0 5px;
+	overflow: hidden;
+	background-color: #e5e5e5;
+	border-bottom: 1px solid #fff;
+}
+.compojoom-bootstrap .nav-tabs,
+.nav-pills {
+	*zoom: 1;
+}
+.compojoom-bootstrap .nav-tabs:before,
+.nav-tabs:after,
+.compojoom-bootstrap .nav-pills:before,
+.nav-pills:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.compojoom-bootstrap .nav-tabs:after,
+.nav-pills:after {
+	clear: both;
+}
+.compojoom-bootstrap .nav-tabs > li,
+.nav-pills > li {
+	float: left;
+}
+.compojoom-bootstrap .nav-tabs > li > a,
+.nav-pills > li > a {
+	padding-right: 12px;
+	padding-left: 12px;
+	margin-right: 2px;
+	line-height: 14px;
+}
+.compojoom-bootstrap .nav-tabs {
+	border-bottom: 1px solid #ddd;
+}
+.compojoom-bootstrap .nav-tabs > li {
+	margin-bottom: -1px;
+}
+.compojoom-bootstrap .nav-tabs > li > a {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	line-height: 18px;
+	border: 1px solid transparent;
+	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+}
+.compojoom-bootstrap .nav-tabs > li > a:hover {
+	border-color: #eee #eee #ddd;
+}
+.compojoom-bootstrap .nav-tabs > .active > a,
+.nav-tabs > .active > a:hover {
+	color: #555;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-bottom-color: transparent;
+	cursor: default;
+}
+.compojoom-bootstrap .nav-pills > li > a {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.compojoom-bootstrap .nav-pills > .active > a,
+.nav-pills > .active > a:hover {
+	color: #fff;
+	background-color: #08c;
+}
+.compojoom-bootstrap .nav-stacked > li {
+	float: none;
+}
+.compojoom-bootstrap .nav-stacked > li > a {
+	margin-right: 0;
+}
+.compojoom-bootstrap .nav-tabs.nav-stacked {
+	border-bottom: 0;
+}
+.compojoom-bootstrap .nav-tabs.nav-stacked > li > a {
+	border: 1px solid #ddd;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.compojoom-bootstrap .nav-tabs.nav-stacked > li:first-child > a {
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-right-radius: 4px;
+	-webkit-border-top-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	border-top-left-radius: 4px;
+}
+.compojoom-bootstrap .nav-tabs.nav-stacked > li:last-child > a {
+	-webkit-border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	border-bottom-right-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-bottom-left-radius: 4px;
+}
+.compojoom-bootstrap .nav-tabs.nav-stacked > li > a:hover {
+	border-color: #ddd;
+	z-index: 2;
+}
+.compojoom-bootstrap .nav-pills.nav-stacked > li > a {
+	margin-bottom: 3px;
+}
+.compojoom-bootstrap .nav-pills.nav-stacked > li:last-child > a {
+	margin-bottom: 1px;
+}
+.compojoom-bootstrap .nav-tabs .dropdown-menu {
+	-webkit-border-radius: 0 0 6px 6px;
+	-moz-border-radius: 0 0 6px 6px;
+	border-radius: 0 0 6px 6px;
+}
+.compojoom-bootstrap .nav-pills .dropdown-menu {
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+.compojoom-bootstrap .nav .dropdown-toggle .caret {
+	border-top-color: #08c;
+	border-bottom-color: #08c;
+	margin-top: 6px;
+}
+.compojoom-bootstrap .nav .dropdown-toggle:hover .caret {
+	border-top-color: #005580;
+	border-bottom-color: #005580;
+}
+.compojoom-bootstrap .nav-tabs .dropdown-toggle .caret {
+	margin-top: 8px;
+}
+.compojoom-bootstrap .nav .active .dropdown-toggle .caret {
+	border-top-color: #fff;
+	border-bottom-color: #fff;
+}
+.compojoom-bootstrap .nav-tabs .active .dropdown-toggle .caret {
+	border-top-color: #555;
+	border-bottom-color: #555;
+}
+.compojoom-bootstrap .nav > .dropdown.active > a:hover {
+	cursor: pointer;
+}
+.compojoom-bootstrap .nav-tabs .open .dropdown-toggle,
+.nav-pills .open .dropdown-toggle,
+.compojoom-bootstrap .nav > li.dropdown.open.active > a:hover {
+	color: #fff;
+	background-color: #999;
+	border-color: #999;
+}
+.compojoom-bootstrap .nav li.dropdown.open .caret,
+.nav li.dropdown.open.active .caret,
+.compojoom-bootstrap .nav li.dropdown.open a:hover .caret {
+	border-top-color: #fff;
+	border-bottom-color: #fff;
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.compojoom-bootstrap .tabs-stacked .open > a:hover {
+	border-color: #999;
+}
+.compojoom-bootstrap .tabbable {
+	*zoom: 1;
+}
+.compojoom-bootstrap .tabbable:before,
+.tabbable:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.compojoom-bootstrap .tabbable:after {
+	clear: both;
+}
+.compojoom-bootstrap .tab-content {
+	overflow: auto;
+}
+.compojoom-bootstrap .tabs-below > .nav-tabs,
+.tabs-right > .nav-tabs,
+.compojoom-bootstrap .tabs-left > .nav-tabs {
+	border-bottom: 0;
+}
+.compojoom-bootstrap .tab-content > .tab-pane,
+.pill-content > .pill-pane {
+	display: none;
+}
+.compojoom-bootstrap .tab-content > .active,
+.pill-content > .active {
+	display: block;
+}
+.compojoom-bootstrap .tabs-below > .nav-tabs {
+	border-top: 1px solid #ddd;
+}
+.compojoom-bootstrap .tabs-below > .nav-tabs > li {
+	margin-top: -1px;
+	margin-bottom: 0;
+}
+.compojoom-bootstrap .tabs-below > .nav-tabs > li > a {
+	-webkit-border-radius: 0 0 4px 4px;
+	-moz-border-radius: 0 0 4px 4px;
+	border-radius: 0 0 4px 4px;
+}
+.compojoom-bootstrap .tabs-below > .nav-tabs > li > a:hover {
+	border-bottom-color: transparent;
+	border-top-color: #ddd;
+}
+.compojoom-bootstrap .tabs-below > .nav-tabs > .active > a,
+.tabs-below > .nav-tabs > .active > a:hover {
+	border-color: transparent #ddd #ddd #ddd;
+}
+.compojoom-bootstrap .tabs-left > .nav-tabs > li,
+.tabs-right > .nav-tabs > li {
+	float: none;
+}
+.compojoom-bootstrap .tabs-left > .nav-tabs > li > a,
+.tabs-right > .nav-tabs > li > a {
+	min-width: 74px;
+	margin-right: 0;
+	margin-bottom: 3px;
+}
+.compojoom-bootstrap .tabs-left > .nav-tabs {
+	float: left;
+	margin-right: 19px;
+	border-right: 1px solid #ddd;
+}
+.compojoom-bootstrap .tabs-left > .nav-tabs > li > a {
+	margin-right: -1px;
+	-webkit-border-radius: 4px 0 0 4px;
+	-moz-border-radius: 4px 0 0 4px;
+	border-radius: 4px 0 0 4px;
+}
+.compojoom-bootstrap .tabs-left > .nav-tabs > li > a:hover {
+	border-color: #eee #ddd #eee #eee;
+}
+.compojoom-bootstrap .tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover {
+	border-color: #ddd transparent #ddd #ddd;
+	*border-right-color: #fff;
+}
+.compojoom-bootstrap .tabs-right > .nav-tabs {
+	float: right;
+	margin-left: 19px;
+	border-left: 1px solid #ddd;
+}
+.compojoom-bootstrap .tabs-right > .nav-tabs > li > a {
+	margin-left: -1px;
+	-webkit-border-radius: 0 4px 4px 0;
+	-moz-border-radius: 0 4px 4px 0;
+	border-radius: 0 4px 4px 0;
+}
+.compojoom-bootstrap .tabs-right > .nav-tabs > li > a:hover {
+	border-color: #eee #eee #eee #ddd;
+}
+.compojoom-bootstrap .tabs-right > .nav-tabs .active > a,
+.tabs-right > .nav-tabs .active > a:hover {
+	border-color: #ddd #ddd #ddd transparent;
+	*border-left-color: #fff;
+}
+.compojoom-bootstrap .nav > .disabled > a {
+	color: #999;
+}
+.compojoom-bootstrap .nav > .disabled > a:hover {
+	text-decoration: none;
+	background-color: transparent;
+	cursor: default;
+}
+.compojoom-bootstrap .navbar {
+	overflow: visible;
+	margin-bottom: 18px;
+	color: #555;
+	*position: relative;
+	*z-index: 2;
+}
+.compojoom-bootstrap .navbar-inner {
+	min-height: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #fafafa;
+	background-image: -moz-linear-gradient(top,#ffffff,#f2f2f2);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#ffffff),to(#f2f2f2));
+	background-image: -webkit-linear-gradient(top,#ffffff,#f2f2f2);
+	background-image: -o-linear-gradient(top,#ffffff,#f2f2f2);
+	background-image: linear-gradient(to bottom,#ffffff,#f2f2f2);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+	border: 1px solid #d4d4d4;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+	-moz-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+	box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+}
+.compojoom-bootstrap .navbar .container {
+	width: auto;
+}
+.compojoom-bootstrap .nav-collapse.collapse {
+	height: auto;
+}
+.compojoom-bootstrap .navbar .brand {
+	float: left;
+	display: block;
+	padding: 11px 20px 11px;
+	margin-left: -20px;
+	font-size: 20px;
+	font-weight: 200;
+	color: #555;
+	text-shadow: 0 1px 0 #ffffff;
+}
+.compojoom-bootstrap .navbar .brand:hover {
+	text-decoration: none;
+}
+.compojoom-bootstrap .navbar-text {
+	margin-bottom: 0;
+	line-height: 40px;
+}
+.compojoom-bootstrap .navbar-link {
+	color: #555;
+}
+.compojoom-bootstrap .navbar-link:hover {
+	color: #333;
+}
+.compojoom-bootstrap .navbar .divider-vertical {
+	height: 40px;
+	margin: 0 9px;
+	border-left: 1px solid #f2f2f2;
+	border-right: 1px solid #ffffff;
+}
+.compojoom-bootstrap .navbar .btn,
+.navbar .btn-group {
+	margin-top: 6px;
+}
+.compojoom-bootstrap .navbar .btn-group .btn {
+	margin: 0;
+}
+.compojoom-bootstrap .navbar-form {
+	margin-bottom: 0;
+	*zoom: 1;
+}
+.compojoom-bootstrap .navbar-form:before,
+.navbar-form:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.compojoom-bootstrap .navbar-form:after {
+	clear: both;
+}
+.compojoom-bootstrap .navbar-form input,
+.navbar-form select,
+.compojoom-bootstrap .navbar-form .radio,
+.navbar-form .checkbox {
+	margin-top: 5px;
+}
+.compojoom-bootstrap .navbar-form input,
+.navbar-form select,
+.compojoom-bootstrap .navbar-form .btn {
+	display: inline-block;
+	margin-bottom: 0;
+}
+.compojoom-bootstrap .navbar-form input[type="image"],
+.navbar-form input[type="checkbox"],
+.compojoom-bootstrap .navbar-form input[type="radio"] {
+	margin-top: 3px;
+}
+.compojoom-bootstrap .navbar-form .input-append,
+.navbar-form .input-prepend {
+	margin-top: 6px;
+	white-space: nowrap;
+}
+.compojoom-bootstrap .navbar-form .input-append input,
+.navbar-form .input-prepend input {
+	margin-top: 0;
+}
+.compojoom-bootstrap .navbar-search {
+	position: relative;
+	float: left;
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+.compojoom-bootstrap .navbar-search .search-query {
+	margin-bottom: 0;
+	padding: 4px 14px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+.compojoom-bootstrap .navbar-static-top {
+	position: static;
+	width: 100%;
+	margin-bottom: 0;
+}
+.compojoom-bootstrap .navbar-static-top .navbar-inner {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.compojoom-bootstrap .navbar-fixed-top,
+.navbar-fixed-bottom {
+	position: fixed;
+	right: 0;
+	left: 0;
+	z-index: 1030;
+	margin-bottom: 0;
+}
+.compojoom-bootstrap .navbar-fixed-top .navbar-inner,
+.navbar-fixed-bottom .navbar-inner,
+.compojoom-bootstrap .navbar-static-top .navbar-inner {
+	border: 0;
+}
+.compojoom-bootstrap .navbar-fixed-top .navbar-inner,
+.navbar-fixed-bottom .navbar-inner {
+	padding-left: 0;
+	padding-right: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.compojoom-bootstrap .navbar-static-top .container,
+.navbar-fixed-top .container,
+.compojoom-bootstrap .navbar-fixed-bottom .container {
+	width: 940px;
+}
+.compojoom-bootstrap .navbar-fixed-top {
+	top: 0;
+}
+.compojoom-bootstrap .navbar-fixed-top .navbar-inner,
+.navbar-static-top .navbar-inner {
+	-webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 10px rgba(0,0,0,.1);
+	-moz-box-shadow: inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 10px rgba(0,0,0,.1);
+	box-shadow: inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 10px rgba(0,0,0,.1);
+}
+.compojoom-bootstrap .navbar-fixed-bottom {
+	bottom: 0;
+}
+.compojoom-bootstrap .navbar-fixed-bottom .navbar-inner {
+	-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,.1), 0 -1px 10px rgba(0,0,0,.1);
+	-moz-box-shadow: inset 0 1px 0 rgba(0,0,0,.1), 0 -1px 10px rgba(0,0,0,.1);
+	box-shadow: inset 0 1px 0 rgba(0,0,0,.1), 0 -1px 10px rgba(0,0,0,.1);
+}
+.compojoom-bootstrap .navbar .nav {
+	position: relative;
+	left: 0;
+	display: block;
+	float: left;
+	margin: 0 10px 0 0;
+}
+.compojoom-bootstrap .navbar .nav.pull-right {
+	float: right;
+}
+.compojoom-bootstrap .navbar .nav > li {
+	float: left;
+}
+.compojoom-bootstrap .navbar .nav > li > a {
+	float: none;
+	padding: 11px 15px 11px;
+	color: #555;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #ffffff;
+}
+.compojoom-bootstrap .navbar .nav .dropdown-toggle .caret {
+	margin-top: 8px;
+}
+.compojoom-bootstrap .navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+	background-color: transparent;
+	color: #333;
+	text-decoration: none;
+}
+.compojoom-bootstrap .navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.compojoom-bootstrap .navbar .nav > .active > a:focus {
+	color: #555;
+	text-decoration: none;
+	background-color: #e6e6e6;
+	-webkit-box-shadow: inset 0 3px 8px rgba(0,0,0,0.125);
+	-moz-box-shadow: inset 0 3px 8px rgba(0,0,0,0.125);
+	box-shadow: inset 0 3px 8px rgba(0,0,0,0.125);
+}
+.compojoom-bootstrap .navbar .btn-navbar {
+	display: none;
+	float: right;
+	padding: 7px 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	background-color: #ededed;
+	background-image: -moz-linear-gradient(top,#f2f2f2,#e6e6e6);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#f2f2f2),to(#e6e6e6));
+	background-image: -webkit-linear-gradient(top,#f2f2f2,#e6e6e6);
+	background-image: -o-linear-gradient(top,#f2f2f2,#e6e6e6);
+	background-image: linear-gradient(to bottom,#f2f2f2,#e6e6e6);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2f2f2', endColorstr='#ffe5e5e5', GradientType=0);
+	border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+	border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+	*background-color: #e6e6e6;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);
+}
+.compojoom-bootstrap .navbar .btn-navbar:hover,
+.navbar .btn-navbar:active,
+.compojoom-bootstrap .navbar .btn-navbar.active,
+.navbar .btn-navbar.disabled,
+.compojoom-bootstrap .navbar .btn-navbar[disabled] {
+	color: #fff;
+	background-color: #e6e6e6;
+	*background-color: #d9d9d9;
+}
+.compojoom-bootstrap .navbar .btn-navbar:active,
+.navbar .btn-navbar.active {
+	background-color: #cccccc \9;
+}
+.compojoom-bootstrap .navbar .btn-navbar .icon-bar {
+	display: block;
+	width: 18px;
+	height: 2px;
+	background-color: #f5f5f5;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.25);
+	-moz-box-shadow: 0 1px 0 rgba(0,0,0,0.25);
+	box-shadow: 0 1px 0 rgba(0,0,0,0.25);
+}
+.compojoom-bootstrap .btn-navbar .icon-bar + .icon-bar {
+	margin-top: 3px;
+}
+.compojoom-bootstrap .navbar .nav > li > .dropdown-menu:before {
+	content: '';
+	display: inline-block;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 7px solid #ccc;
+	border-bottom-color: rgba(0,0,0,0.2);
+	position: absolute;
+	top: -7px;
+	left: 9px;
+}
+.compojoom-bootstrap .navbar .nav > li > .dropdown-menu:after {
+	content: '';
+	display: inline-block;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid #fff;
+	position: absolute;
+	top: -6px;
+	left: 10px;
+}
+.compojoom-bootstrap .navbar-fixed-bottom .nav > li > .dropdown-menu:before {
+	border-top: 7px solid #ccc;
+	border-top-color: rgba(0,0,0,0.2);
+	border-bottom: 0;
+	bottom: -7px;
+	top: auto;
+}
+.compojoom-bootstrap .navbar-fixed-bottom .nav > li > .dropdown-menu:after {
+	border-top: 6px solid #fff;
+	border-bottom: 0;
+	bottom: -6px;
+	top: auto;
+}
+.compojoom-bootstrap .navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle,
+.compojoom-bootstrap .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+	background-color: #e6e6e6;
+	color: #555;
+}
+.compojoom-bootstrap .navbar .nav li.dropdown > .dropdown-toggle .caret {
+	border-top-color: #555;
+	border-bottom-color: #555;
+}
+.compojoom-bootstrap .navbar .nav li.dropdown.open > .dropdown-toggle .caret,
+.navbar .nav li.dropdown.active > .dropdown-toggle .caret,
+.compojoom-bootstrap .navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
+	border-top-color: #555;
+	border-bottom-color: #555;
+}
+.compojoom-bootstrap .navbar .pull-right > li > .dropdown-menu,
+.navbar .nav > li > .dropdown-menu.pull-right {
+	left: auto;
+	right: 0;
+}
+.compojoom-bootstrap .navbar .pull-right > li > .dropdown-menu:before,
+.navbar .nav > li > .dropdown-menu.pull-right:before {
+	left: auto;
+	right: 12px;
+}
+.compojoom-bootstrap .navbar .pull-right > li > .dropdown-menu:after,
+.navbar .nav > li > .dropdown-menu.pull-right:after {
+	left: auto;
+	right: 13px;
+}
+.compojoom-bootstrap .navbar .pull-right > li > .dropdown-menu .dropdown-menu,
+.navbar .nav > li > .dropdown-menu.pull-right .dropdown-menu {
+	left: auto;
+	right: 100%;
+	margin-left: 0;
+	margin-right: -1px;
+	-webkit-border-radius: 6px 0 6px 6px;
+	-moz-border-radius: 6px 0 6px 6px;
+	border-radius: 6px 0 6px 6px;
+}
+.compojoom-bootstrap .navbar-inverse {
+	color: #d9d9d9;
+}
+.compojoom-bootstrap .navbar-inverse .navbar-inner {
+	background-color: #13294a;
+	background-image: -moz-linear-gradient(top,#152d53,#10223e);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#152d53),to(#10223e));
+	background-image: -webkit-linear-gradient(top,#152d53,#10223e);
+	background-image: -o-linear-gradient(top,#152d53,#10223e);
+	background-image: linear-gradient(to bottom,#152d53,#10223e);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff142c52', endColorstr='#ff0f213e', GradientType=0);
+	border-color: #0b172a;
+}
+.compojoom-bootstrap .navbar-inverse .brand,
+.navbar-inverse .nav > li > a {
+	color: #d9d9d9;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+}
+.compojoom-bootstrap .navbar-inverse .brand:hover,
+.navbar-inverse .nav > li > a:hover {
+	color: #fff;
+}
+.compojoom-bootstrap .navbar-inverse .nav > li > a:focus,
+.navbar-inverse .nav > li > a:hover {
+	background-color: transparent;
+	color: #fff;
+}
+.compojoom-bootstrap .navbar-inverse .nav .active > a,
+.navbar-inverse .nav .active > a:hover,
+.compojoom-bootstrap .navbar-inverse .nav .active > a:focus {
+	color: #fff;
+	background-color: #10223e;
+}
+.compojoom-bootstrap .navbar-inverse .navbar-link {
+	color: #d9d9d9;
+}
+.compojoom-bootstrap .navbar-inverse .navbar-link:hover {
+	color: #fff;
+}
+.compojoom-bootstrap .navbar-inverse .divider-vertical {
+	border-left-color: #10223e;
+	border-right-color: #152d53;
+}
+.compojoom-bootstrap .navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.active > .dropdown-toggle,
+.compojoom-bootstrap .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
+	background-color: #10223e;
+	color: #fff;
+}
+.compojoom-bootstrap .navbar-inverse .nav li.dropdown > .dropdown-toggle .caret {
+	border-top-color: #d9d9d9;
+	border-bottom-color: #d9d9d9;
+}
+.compojoom-bootstrap .navbar-inverse .nav li.dropdown.open > .dropdown-toggle .caret,
+.navbar-inverse .nav li.dropdown.active > .dropdown-toggle .caret,
+.compojoom-bootstrap .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle .caret {
+	border-top-color: #fff;
+	border-bottom-color: #fff;
+}
+.compojoom-bootstrap .navbar-inverse .navbar-search .search-query {
+	color: #fff;
+	background-color: #2959a4;
+	border-color: #10223e;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
+	box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
+	-webkit-transition: none;
+	-moz-transition: none;
+	-o-transition: none;
+	transition: none;
+}
+.compojoom-bootstrap .navbar-inverse .navbar-search .search-query:-moz-placeholder {
+	color: #ccc;
+}
+.compojoom-bootstrap .navbar-inverse .navbar-search .search-query:-ms-input-placeholder {
+	color: #ccc;
+}
+.compojoom-bootstrap .navbar-inverse .navbar-search .search-query::-webkit-input-placeholder {
+	color: #ccc;
+}
+.compojoom-bootstrap .navbar-inverse .navbar-search .search-query:focus,
+.navbar-inverse .navbar-search .search-query.focused {
+	padding: 5px 15px;
+	color: #333;
+	text-shadow: 0 1px 0 #fff;
+	background-color: #fff;
+	border: 0;
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.15);
+	-moz-box-shadow: 0 0 3px rgba(0,0,0,0.15);
+	box-shadow: 0 0 3px rgba(0,0,0,0.15);
+	outline: 0;
+}
+.compojoom-bootstrap .navbar-inverse .btn-navbar {
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	background-color: #0e1d36;
+	background-image: -moz-linear-gradient(top,#10223e,#0b172a);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#10223e),to(#0b172a));
+	background-image: -webkit-linear-gradient(top,#10223e,#0b172a);
+	background-image: -o-linear-gradient(top,#10223e,#0b172a);
+	background-image: linear-gradient(to bottom,#10223e,#0b172a);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0f213e', endColorstr='#ff0a1629', GradientType=0);
+	border-color: #0b172a #0b172a #000000;
+	border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+	*background-color: #0b172a;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.compojoom-bootstrap .navbar-inverse .btn-navbar:hover,
+.navbar-inverse .btn-navbar:active,
+.compojoom-bootstrap .navbar-inverse .btn-navbar.active,
+.navbar-inverse .btn-navbar.disabled,
+.compojoom-bootstrap .navbar-inverse .btn-navbar[disabled] {
+	color: #fff;
+	background-color: #0b172a;
+	*background-color: #050c16;
+}
+.compojoom-bootstrap .navbar-inverse .btn-navbar:active,
+.navbar-inverse .btn-navbar.active {
+	background-color: #000101 \9;
+}
+.compojoom-bootstrap .breadcrumb {
+	padding: 8px 15px;
+	margin: 0 0 18px;
+	list-style: none;
+	background-color: #f5f5f5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.compojoom-bootstrap .breadcrumb li {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	text-shadow: 0 1px 0 #fff;
+}
+.compojoom-bootstrap .breadcrumb .divider {
+	padding: 0 5px;
+	color: #ccc;
+}
+.compojoom-bootstrap .breadcrumb .active {
+	color: #999;
+}
+
+.compojoom-bootstrap .pager {
+	margin: 18px 0;
+	list-style: none;
+	text-align: center;
+	*zoom: 1;
+}
+.compojoom-bootstrap .pager:before,
+.compojoom-bootstrap .pager:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.compojoom-bootstrap .pager:after {
+	clear: both;
+}
+.compojoom-bootstrap .pager li {
+	display: inline;
+}
+.compojoom-bootstrap .pager a {
+	display: inline-block;
+	padding: 5px 14px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+}
+.compojoom-bootstrap .pager a:hover {
+	text-decoration: none;
+	background-color: #f5f5f5;
+}
+.compojoom-bootstrap .pager .next a {
+	float: right;
+}
+.compojoom-bootstrap .pager .previous a {
+	float: left;
+}
+.compojoom-bootstrap .pager .disabled a,
+.pager .disabled a:hover {
+	color: #999;
+	background-color: #fff;
+	cursor: default;
+}
+.compojoom-bootstrap .modal-open .dropdown-menu {
+	z-index: 2050;
+}
+.compojoom-bootstrap .modal-open .dropdown.open {
+	*z-index: 2050;
+}
+.compojoom-bootstrap .modal-open .popover {
+	z-index: 2060;
+}
+.compojoom-bootstrap .modal-open .tooltip {
+	z-index: 2080;
+}
+.compojoom-bootstrap .modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1040;
+	background-color: #000;
+}
+.compojoom-bootstrap .modal-backdrop.fade {
+	opacity: 0;
+}
+.compojoom-bootstrap .modal-backdrop,
+.compojoom-bootstrap .modal-backdrop.fade.in {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+.compojoom-bootstrap div.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 1050;
+	overflow: auto;
+	width: 560px;
+	margin: -250px 0 0 -280px;
+	background-color: #fff;
+	border: 1px solid #999;
+	border: 1px solid rgba(0,0,0,0.3);
+	*border: 1px solid #999;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+	box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+	background-clip: padding-box;
+}
+.compojoom-bootstrap div.modal.fade {
+	-webkit-transition: opacity .3s linear, top .3s ease-out;
+	-moz-transition: opacity .3s linear, top .3s ease-out;
+	-o-transition: opacity .3s linear, top .3s ease-out;
+	transition: opacity .3s linear, top .3s ease-out;
+	top: -25%;
+}
+.compojoom-bootstrap div.modal.fade.in {
+	top: 50%;
+}
+.compojoom-bootstrap .modal-header {
+	padding: 9px 15px;
+	border-bottom: 1px solid #eee;
+}
+.compojoom-bootstrap .modal-header .close {
+	margin-top: 2px;
+}
+.compojoom-bootstrap .modal-header h3 {
+	margin: 0;
+	line-height: 30px;
+}
+.compojoom-bootstrap .modal-body {
+	overflow-y: auto;
+	max-height: 400px;
+	padding: 15px;
+}
+.compojoom-bootstrap .modal-form {
+	margin-bottom: 0;
+}
+.compojoom-bootstrap .modal-footer {
+	padding: 14px 15px 15px;
+	margin-bottom: 0;
+	text-align: right;
+	background-color: #f5f5f5;
+	border-top: 1px solid #ddd;
+	-webkit-border-radius: 0 0 6px 6px;
+	-moz-border-radius: 0 0 6px 6px;
+	border-radius: 0 0 6px 6px;
+	-webkit-box-shadow: inset 0 1px 0 #fff;
+	-moz-box-shadow: inset 0 1px 0 #fff;
+	box-shadow: inset 0 1px 0 #fff;
+	*zoom: 1;
+}
+.compojoom-bootstrap .modal-footer:before,
+.compojoom-bootstrap .modal-footer:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.compojoom-bootstrap .modal-footer:after {
+	clear: both;
+}
+.compojoom-bootstrap .modal-footer .btn + .btn {
+	margin-left: 5px;
+	margin-bottom: 0;
+}
+.compojoom-bootstrap .modal-footer .btn-group .btn + .btn {
+	margin-left: -1px;
+}
+.compojoom-bootstrap .tooltip {
+	position: absolute;
+	z-index: 1030;
+	display: block;
+	visibility: visible;
+	padding: 5px;
+	font-size: 11px;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.compojoom-bootstrap .tooltip.in {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+.compojoom-bootstrap .tooltip.top {
+	margin-top: -3px;
+}
+.compojoom-bootstrap .tooltip.right {
+	margin-left: 3px;
+}
+.compojoom-bootstrap .tooltip.bottom {
+	margin-top: 3px;
+}
+.compojoom-bootstrap .tooltip.left {
+	margin-left: -3px;
+}
+.compojoom-bootstrap .tooltip-inner {
+	max-width: 200px;
+	padding: 3px 8px;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	background-color: #000;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.compojoom-bootstrap .tooltip-arrow {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-color: transparent;
+	border-style: solid;
+}
+.compojoom-bootstrap .tooltip.top .tooltip-arrow {
+	bottom: 0;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px 5px 0;
+	border-top-color: #000;
+}
+.compojoom-bootstrap .tooltip.right .tooltip-arrow {
+	top: 50%;
+	left: 0;
+	margin-top: -5px;
+	border-width: 5px 5px 5px 0;
+	border-right-color: #000;
+}
+.compojoom-bootstrap .tooltip.left .tooltip-arrow {
+	top: 50%;
+	right: 0;
+	margin-top: -5px;
+	border-width: 5px 0 5px 5px;
+	border-left-color: #000;
+}
+.compojoom-bootstrap .tooltip.bottom .tooltip-arrow {
+	top: 0;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 0 5px 5px;
+	border-bottom-color: #000;
+}
+.compojoom-bootstrap .popover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1010;
+	display: none;
+	width: 236px;
+	padding: 1px;
+	background-color: #fff;
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding;
+	background-clip: padding-box;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0,0,0,0.2);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+	box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.compojoom-bootstrap .popover.top {
+	margin-bottom: 10px;
+}
+.compojoom-bootstrap .popover.right {
+	margin-left: 10px;
+}
+.compojoom-bootstrap .popover.bottom {
+	margin-top: 10px;
+}
+.compojoom-bootstrap .popover.left {
+	margin-right: 10px;
+}
+.compojoom-bootstrap .popover-title {
+	margin: 0;
+	padding: 8px 14px;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 18px;
+	background-color: #f7f7f7;
+	border-bottom: 1px solid #ebebeb;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}
+.compojoom-bootstrap .popover-content {
+	padding: 9px 14px;
+}
+.compojoom-bootstrap .popover-content p,
+.compojoom-bootstrap .popover-content ul,
+.compojoom-bootstrap .popover-content ol {
+	margin-bottom: 0;
+}
+.compojoom-bootstrap .popover .arrow,
+.compojoom-bootstrap .popover .arrow:after {
+	position: absolute;
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-color: transparent;
+	border-style: solid;
+}
+.compojoom-bootstrap .popover .arrow:after {
+	content: "";
+	z-index: -1;
+}
+.compojoom-bootstrap .popover.top .arrow {
+	bottom: -10px;
+	left: 50%;
+	margin-left: -10px;
+	border-width: 10px 10px 0;
+	border-top-color: #fff;
+}
+.compojoom-bootstrap .popover.top .arrow:after {
+	border-width: 11px 11px 0;
+	border-top-color: rgba(0,0,0,0.25);
+	bottom: -1px;
+	left: -11px;
+}
+.compojoom-bootstrap .popover.right .arrow {
+	top: 50%;
+	left: -10px;
+	margin-top: -10px;
+	border-width: 10px 10px 10px 0;
+	border-right-color: #fff;
+}
+.compojoom-bootstrap .popover.right .arrow:after {
+	border-width: 11px 11px 11px 0;
+	border-right-color: rgba(0,0,0,0.25);
+	bottom: -11px;
+	left: -1px;
+}
+.compojoom-bootstrap .popover.bottom .arrow {
+	top: -10px;
+	left: 50%;
+	margin-left: -10px;
+	border-width: 0 10px 10px;
+	border-bottom-color: #fff;
+}
+.compojoom-bootstrap .popover.bottom .arrow:after {
+	border-width: 0 11px 11px;
+	border-bottom-color: rgba(0,0,0,0.25);
+	top: -1px;
+	left: -11px;
+}
+.compojoom-bootstrap .popover.left .arrow {
+	top: 50%;
+	right: -10px;
+	margin-top: -10px;
+	border-width: 10px 0 10px 10px;
+	border-left-color: #fff;
+}
+.compojoom-bootstrap .popover.left .arrow:after {
+	border-width: 11px 0 11px 11px;
+	border-left-color: rgba(0,0,0,0.25);
+	bottom: -11px;
+	right: -1px;
+}
+.compojoom-bootstrap .thumbnails {
+	margin-left: -20px;
+	list-style: none;
+	*zoom: 1;
+}
+.compojoom-bootstrap .thumbnails:before,
+.compojoom-bootstrap .thumbnails:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.compojoom-bootstrap .thumbnails:after {
+	clear: both;
+}
+.compojoom-bootstrap .row-fluid .thumbnails {
+	margin-left: 0;
+}
+.compojoom-bootstrap .thumbnails > li {
+	float: left;
+	margin-bottom: 18px;
+	margin-left: 20px;
+}
+.compojoom-bootstrap .thumbnail {
+	display: block;
+	padding: 4px;
+	line-height: 18px;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.055);
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+.compojoom-bootstrap a.thumbnail:hover {
+	border-color: #08c;
+	-webkit-box-shadow: 0 1px 4px rgba(0,105,214,0.25);
+	-moz-box-shadow: 0 1px 4px rgba(0,105,214,0.25);
+	box-shadow: 0 1px 4px rgba(0,105,214,0.25);
+}
+.compojoom-bootstrap .thumbnail > img {
+	display: block;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.compojoom-bootstrap .thumbnail .caption {
+	padding: 9px;
+	color: #555;
+}
+.compojoom-bootstrap .label,
+.compojoom-bootstrap .badge {
+	font-size: 10.998px;
+	font-weight: bold;
+	line-height: 14px;
+	color: #fff;
+	vertical-align: baseline;
+	white-space: nowrap;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	background-color: #999;
+}
+.compojoom-bootstrap .label {
+	padding: 1px 4px 2px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.compojoom-bootstrap .badge {
+	padding: 1px 9px 2px;
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	border-radius: 9px;
+}
+.compojoom-bootstrap a.label:hover,
+.compojoom-bootstrap a.badge:hover {
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+}
+.compojoom-bootstrap .label-important,
+.compojoom-bootstrap .badge-important {
+	background-color: #b94a48;
+}
+.compojoom-bootstrap .label-important[href],
+.compojoom-bootstrap .badge-important[href] {
+	background-color: #953b39;
+}
+.compojoom-bootstrap .label-warning,
+.compojoom-bootstrap .badge-warning {
+	background-color: #f89406;
+}
+.compojoom-bootstrap .label-warning[href],
+.compojoom-bootstrap .badge-warning[href] {
+	background-color: #c67605;
+}
+.compojoom-bootstrap .label-success,
+.compojoom-bootstrap .badge-success {
+	background-color: #468847;
+}
+.compojoom-bootstrap .label-success[href],
+.compojoom-bootstrap .badge-success[href] {
+	background-color: #356635;
+}
+.compojoom-bootstrap .label-info,
+.badge-info {
+	background-color: #3a87ad;
+}
+.compojoom-bootstrap .label-info[href],
+.badge-info[href] {
+	background-color: #2d6987;
+}
+.compojoom-bootstrap .label-inverse,
+.badge-inverse {
+	background-color: #333;
+}
+.compojoom-bootstrap .label-inverse[href],
+.badge-inverse[href] {
+	background-color: #1a1a1a;
+}
+.compojoom-bootstrap .btn .label,
+.btn .badge {
+	position: relative;
+	top: -1px;
+}
+.compojoom-bootstrap .btn-mini .label,
+.btn-mini .badge {
+	top: 0;
+}
+
+.compojoom-bootstrap .progress {
+	overflow: hidden;
+	height: 18px;
+	margin-bottom: 18px;
+	background-color: #f7f7f7;
+	background-image: -moz-linear-gradient(top,#f5f5f5,#f9f9f9);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#f5f5f5),to(#f9f9f9));
+	background-image: -webkit-linear-gradient(top,#f5f5f5,#f9f9f9);
+	background-image: -o-linear-gradient(top,#f5f5f5,#f9f9f9);
+	background-image: linear-gradient(to bottom,#f5f5f5,#f9f9f9);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#fff9f9f9', GradientType=0);
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+	box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.compojoom-bootstrap .progress .bar {
+	width: 0%;
+	height: 100%;
+	color: #fff;
+	float: left;
+	font-size: 12px;
+	text-align: center;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	background-color: #0e90d2;
+	background-image: -moz-linear-gradient(top,#149bdf,#0480be);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#149bdf),to(#0480be));
+	background-image: -webkit-linear-gradient(top,#149bdf,#0480be);
+	background-image: -o-linear-gradient(top,#149bdf,#0480be);
+	background-image: linear-gradient(to bottom,#149bdf,#0480be);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff149bdf', endColorstr='#ff0480be', GradientType=0);
+	-webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+	-moz-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+	box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: width .6s ease;
+	-moz-transition: width .6s ease;
+	-o-transition: width .6s ease;
+	transition: width .6s ease;
+}
+.compojoom-bootstrap .progress .bar + .bar {
+	-webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,.15), inset 0 -1px 0 rgba(0,0,0,.15);
+	-moz-box-shadow: inset 1px 0 0 rgba(0,0,0,.15), inset 0 -1px 0 rgba(0,0,0,.15);
+	box-shadow: inset 1px 0 0 rgba(0,0,0,.15), inset 0 -1px 0 rgba(0,0,0,.15);
+}
+.compojoom-bootstrap .progress-striped .bar {
+	background-color: #149bdf;
+	background-image: -webkit-gradient(linear,0 100%,100% 0,color-stop(.25,rgba(255,255,255,0.15)),color-stop(.25,transparent),color-stop(.5,transparent),color-stop(.5,rgba(255,255,255,0.15)),color-stop(.75,rgba(255,255,255,0.15)),color-stop(.75,transparent),to(transparent));
+	background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+	background-image: -moz-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+	background-image: -o-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+	background-image: linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+	-webkit-background-size: 40px 40px;
+	-moz-background-size: 40px 40px;
+	-o-background-size: 40px 40px;
+	background-size: 40px 40px;
+}
+.compojoom-bootstrap .progress.active .bar {
+	-webkit-animation: progress-bar-stripes 2s linear infinite;
+	-moz-animation: progress-bar-stripes 2s linear infinite;
+	-ms-animation: progress-bar-stripes 2s linear infinite;
+	-o-animation: progress-bar-stripes 2s linear infinite;
+	animation: progress-bar-stripes 2s linear infinite;
+}
+.compojoom-bootstrap .progress-danger .bar,
+.progress .bar-danger {
+	background-color: #dd514c;
+	background-image: -moz-linear-gradient(top,#ee5f5b,#c43c35);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#ee5f5b),to(#c43c35));
+	background-image: -webkit-linear-gradient(top,#ee5f5b,#c43c35);
+	background-image: -o-linear-gradient(top,#ee5f5b,#c43c35);
+	background-image: linear-gradient(to bottom,#ee5f5b,#c43c35);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffc43c35', GradientType=0);
+}
+.compojoom-bootstrap .progress-danger.progress-striped .bar,
+.progress-striped .bar-danger {
+	background-color: #ee5f5b;
+	background-image: -webkit-gradient(linear,0 100%,100% 0,color-stop(.25,rgba(255,255,255,0.15)),color-stop(.25,transparent),color-stop(.5,transparent),color-stop(.5,rgba(255,255,255,0.15)),color-stop(.75,rgba(255,255,255,0.15)),color-stop(.75,transparent),to(transparent));
+	background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+	background-image: -moz-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+	background-image: -o-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+	background-image: linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+}
+.compojoom-bootstrap .progress-success .bar,
+.progress .bar-success {
+	background-color: #5eb95e;
+	background-image: -moz-linear-gradient(top,#62c462,#57a957);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#62c462),to(#57a957));
+	background-image: -webkit-linear-gradient(top,#62c462,#57a957);
+	background-image: -o-linear-gradient(top,#62c462,#57a957);
+	background-image: linear-gradient(to bottom,#62c462,#57a957);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff57a957', GradientType=0);
+}
+.compojoom-bootstrap .progress-success.progress-striped .bar,
+.progress-striped .bar-success {
+	background-color: #62c462;
+	background-image: -webkit-gradient(linear,0 100%,100% 0,color-stop(.25,rgba(255,255,255,0.15)),color-stop(.25,transparent),color-stop(.5,transparent),color-stop(.5,rgba(255,255,255,0.15)),color-stop(.75,rgba(255,255,255,0.15)),color-stop(.75,transparent),to(transparent));
+	background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+	background-image: -moz-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+	background-image: -o-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+	background-image: linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+}
+.compojoom-bootstrap .progress-info .bar,
+.progress .bar-info {
+	background-color: #4bb1cf;
+	background-image: -moz-linear-gradient(top,#5bc0de,#339bb9);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#5bc0de),to(#339bb9));
+	background-image: -webkit-linear-gradient(top,#5bc0de,#339bb9);
+	background-image: -o-linear-gradient(top,#5bc0de,#339bb9);
+	background-image: linear-gradient(to bottom,#5bc0de,#339bb9);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff339bb9', GradientType=0);
+}
+.compojoom-bootstrap .progress-info.progress-striped .bar,
+.progress-striped .bar-info {
+	background-color: #5bc0de;
+	background-image: -webkit-gradient(linear,0 100%,100% 0,color-stop(.25,rgba(255,255,255,0.15)),color-stop(.25,transparent),color-stop(.5,transparent),color-stop(.5,rgba(255,255,255,0.15)),color-stop(.75,rgba(255,255,255,0.15)),color-stop(.75,transparent),to(transparent));
+	background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+	background-image: -moz-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+	background-image: -o-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+	background-image: linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+}
+.compojoom-bootstrap .progress-warning .bar,
+.progress .bar-warning {
+	background-color: #faa732;
+	background-image: -moz-linear-gradient(top,#fbb450,#f89406);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#fbb450),to(#f89406));
+	background-image: -webkit-linear-gradient(top,#fbb450,#f89406);
+	background-image: -o-linear-gradient(top,#fbb450,#f89406);
+	background-image: linear-gradient(to bottom,#fbb450,#f89406);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffab44f', endColorstr='#fff89406', GradientType=0);
+}
+.compojoom-bootstrap .progress-warning.progress-striped .bar,
+.progress-striped .bar-warning {
+	background-color: #fbb450;
+	background-image: -webkit-gradient(linear,0 100%,100% 0,color-stop(.25,rgba(255,255,255,0.15)),color-stop(.25,transparent),color-stop(.5,transparent),color-stop(.5,rgba(255,255,255,0.15)),color-stop(.75,rgba(255,255,255,0.15)),color-stop(.75,transparent),to(transparent));
+	background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+	background-image: -moz-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+	background-image: -o-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+	background-image: linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+}
+.compojoom-bootstrap .accordion {
+	margin-bottom: 18px;
+}
+.compojoom-bootstrap .accordion-group {
+	margin-bottom: 2px;
+	border: 1px solid #e5e5e5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.compojoom-bootstrap .accordion-heading {
+	border-bottom: 0;
+}
+.compojoom-bootstrap .accordion-heading .accordion-toggle {
+	display: block;
+	padding: 8px 15px;
+}
+.compojoom-bootstrap .accordion-toggle {
+	cursor: pointer;
+}
+.compojoom-bootstrap .accordion-inner {
+	padding: 9px 15px;
+	border-top: 1px solid #e5e5e5;
+}
+.compojoom-bootstrap .carousel {
+	position: relative;
+	margin-bottom: 18px;
+	line-height: 1;
+}
+.compojoom-bootstrap .carousel-inner {
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+}
+.compojoom-bootstrap .carousel .item {
+	display: none;
+	position: relative;
+	-webkit-transition: .6s ease-in-out left;
+	-moz-transition: .6s ease-in-out left;
+	-o-transition: .6s ease-in-out left;
+	transition: .6s ease-in-out left;
+}
+.compojoom-bootstrap .carousel .item > img {
+	display: block;
+	line-height: 1;
+}
+.compojoom-bootstrap .carousel .active,
+.carousel .next,
+.compojoom-bootstrap .carousel .prev {
+	display: block;
+}
+.compojoom-bootstrap .carousel .active {
+	left: 0;
+}
+.compojoom-bootstrap .carousel .next,
+.carousel .prev {
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.compojoom-bootstrap .carousel .next {
+	left: 100%;
+}
+.compojoom-bootstrap .carousel .prev {
+	left: -100%;
+}
+.compojoom-bootstrap .carousel .next.left,
+.carousel .prev.right {
+	left: 0;
+}
+.compojoom-bootstrap .carousel .active.left {
+	left: -100%;
+}
+.compojoom-bootstrap .carousel .active.right {
+	left: 100%;
+}
+.compojoom-bootstrap .carousel-control {
+	position: absolute;
+	top: 40%;
+	left: 15px;
+	width: 40px;
+	height: 40px;
+	margin-top: -20px;
+	font-size: 60px;
+	font-weight: 100;
+	line-height: 30px;
+	color: #fff;
+	text-align: center;
+	background: #222;
+	border: 3px solid #fff;
+	-webkit-border-radius: 23px;
+	-moz-border-radius: 23px;
+	border-radius: 23px;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+.compojoom-bootstrap .carousel-control.right {
+	left: auto;
+	right: 15px;
+}
+.compojoom-bootstrap .carousel-control:hover {
+	color: #fff;
+	text-decoration: none;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+}
+.compojoom-bootstrap .carousel-caption {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 15px;
+	background: #333;
+	background: rgba(0,0,0,0.75);
+}
+.compojoom-bootstrap .carousel-caption h4,
+.carousel-caption p {
+	color: #fff;
+	line-height: 18px;
+}
+.compojoom-bootstrap .carousel-caption h4 {
+	margin: 0 0 5px;
+}
+.compojoom-bootstrap .carousel-caption p {
+	margin-bottom: 0;
+}
+.compojoom-bootstrap .hero-unit {
+	padding: 60px;
+	margin-bottom: 30px;
+	background-color: #eee;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+.compojoom-bootstrap .hero-unit h1 {
+	margin-bottom: 0;
+	font-size: 60px;
+	line-height: 1;
+	color: inherit;
+	letter-spacing: -1px;
+}
+.compojoom-bootstrap .hero-unit p {
+	font-size: 18px;
+	font-weight: 200;
+	line-height: 27px;
+	color: inherit;
+}
+.compojoom-bootstrap .pull-right {
+	float: right;
+}
+.compojoom-bootstrap .pull-left {
+	float: left;
+}
+.compojoom-bootstrap .hide {
+	display: none;
+}
+.compojoom-bootstrap .show {
+	display: block;
+}
+.compojoom-bootstrap .invisible {
+	visibility: hidden;
+}
+.compojoom-bootstrap .affix {
+	position: fixed;
+}
+.compojoom-bootstrap .hidden {
+	display: none;
+	visibility: hidden;
+}
+.compojoom-bootstrap .visible-phone {
+	display: none !important;
+}
+.compojoom-bootstrap .visible-tablet {
+	display: none !important;
+}
+.compojoom-bootstrap .hidden-desktop {
+	display: none !important;
+}
+.compojoom-bootstrap .visible-desktop {
+	display: inherit !important;
+}
+
+.compojoom-bootstrap .small {
+	font-size: 11px;
+}
+.compojoom-bootstrap iframe,
+svg {
+	max-width: 100%;
+}
+.compojoom-bootstrap .nowrap {
+	white-space: nowrap;
+}
+.compojoom-bootstrap .center,
+.table td.center,
+.compojoom-bootstrap .table th.center {
+	text-align: center;
+}
+.compojoom-bootstrap a.disabled,
+a.disabled:hover {
+	color: #999999;
+	background-color: transparent;
+	cursor: default;
+	text-decoration: none;
+}
+.compojoom-bootstrap .hero-unit {
+	text-align: center;
+}
+.compojoom-bootstrap .hero-unit .lead {
+	margin-bottom: 18px;
+	font-size: 20px;
+	font-weight: 200;
+	line-height: 27px;
+}
+.compojoom-bootstrap .btn .caret {
+	margin-bottom: 5px;
+}
+.compojoom-bootstrap .table td.has-context {
+	line-height: 20px;
+}
+.compojoom-bootstrap .blog-row-rule,
+.blog-item-rule {
+	border: 0;
+}
+.compojoom-bootstrap body.modal {
+	padding-top: 0;
+}
+.compojoom-bootstrap .row-even,
+.row-odd {
+	padding: 5px;
+	width: 99%;
+	border-bottom: 1px solid #ddd;
+}
+.compojoom-bootstrap .row-odd {
+	background-color: transparent;
+}
+.compojoom-bootstrap .row-even {
+	background-color: #f9f9f9;
+}
+.compojoom-bootstrap .blog-row-rule,
+.blog-item-rule {
+	border: 0;
+}
+.compojoom-bootstrap .row-fluid .row-reveal {
+	visibility: hidden;
+}
+.compojoom-bootstrap .row-fluid:hover .row-reveal {
+	visibility: visible;
+}
+.compojoom-bootstrap .btn-wide {
+	width: 80%;
+}
+.compojoom-bootstrap .nav-list > li.offset > a {
+	padding-left: 30px;
+	font-size: 12px;
+}
+.compojoom-bootstrap .blog-row-rule,
+.blog-item-rule {
+	border: 0;
+}
+.compojoom-bootstrap .row-fluid .offset1 {
+	margin-left: 8.382978723%;
+}
+.compojoom-bootstrap .row-fluid .offset2 {
+	margin-left: 16.89361702%;
+}
+.compojoom-bootstrap .row-fluid .offset3 {
+	margin-left: 25.404255317%;
+}
+.compojoom-bootstrap .row-fluid .offset4 {
+	margin-left: 33.914893614%;
+}
+.compojoom-bootstrap .row-fluid .offset5 {
+	margin-left: 42.425531911%;
+}
+.compojoom-bootstrap .row-fluid .offset6 {
+	margin-left: 50.93617020799999%;
+}
+.compojoom-bootstrap .row-fluid .offset7 {
+	margin-left: 59.446808505%;
+}
+.compojoom-bootstrap .row-fluid .offset8 {
+	margin-left: 67.95744680199999%;
+}
+.compojoom-bootstrap .row-fluid .offset9 {
+	margin-left: 76.468085099%;
+}
+.compojoom-bootstrap .row-fluid .offset10 {
+	margin-left: 84.97872339599999%;
+}
+.compojoom-bootstrap .row-fluid .offset11 {
+	margin-left: 91.489361693%;
+}
+.compojoom-bootstrap .navbar .nav > li > a.btn {
+	padding: 4px 10px;
+	line-height: 18px;
+}
+.compojoom-bootstrap .nav-tabs.nav-dark {
+	border-bottom: 1px solid #333;
+	text-shadow: 1px 1px 1px #000;
+}
+.compojoom-bootstrap .nav-tabs.nav-dark > li > a {
+	color: #F8F8F8;
+}
+.compojoom-bootstrap .nav-tabs.nav-dark > li > a:hover {
+	border-color: #333 #333 #111;
+	background-color: #777777;
+}
+.compojoom-bootstrap .nav-tabs.nav-dark > .active > a,
+.nav-tabs.nav-dark > .active > a:hover {
+	color: #ffffff;
+	background-color: #555555;
+	border: 1px solid #222;
+	border-bottom-color: transparent;
+}
+.compojoom-bootstrap .thumbnail.pull-left {
+	margin: 0 10px 10px 0;
+}
+.compojoom-bootstrap .thumbnail.pull-right {
+	margin: 0 0 10px 10px;
+}
+.compojoom-bootstrap .width-10 {
+	width: 10px;
+}
+.compojoom-bootstrap .width-20 {
+	width: 20px;
+}
+.compojoom-bootstrap .width-30 {
+	width: 30px;
+}
+.compojoom-bootstrap .width-40 {
+	width: 40px;
+}
+.compojoom-bootstrap .width-50 {
+	width: 50px;
+}
+.compojoom-bootstrap .width-60 {
+	width: 60px;
+}
+.compojoom-bootstrap .width-70 {
+	width: 70px;
+}
+.compojoom-bootstrap .width-80 {
+	width: 80px;
+}
+.compojoom-bootstrap .width-90 {
+	width: 90px;
+}
+.compojoom-bootstrap .width-100 {
+	width: 100px;
+}
+.compojoom-bootstrap .height-10 {
+	height: 10px;
+}
+.compojoom-bootstrap .height-20 {
+	height: 20px;
+}
+.compojoom-bootstrap .height-30 {
+	height: 30px;
+}
+.compojoom-bootstrap .height-40 {
+	height: 40px;
+}
+.compojoom-bootstrap .height-50 {
+	height: 50px;
+}
+.compojoom-bootstrap .height-60 {
+	height: 60px;
+}
+.compojoom-bootstrap .height-70 {
+	height: 70px;
+}
+.compojoom-bootstrap .height-80 {
+	height: 80px;
+}
+.compojoom-bootstrap .height-90 {
+	height: 90px;
+}
+.compojoom-bootstrap .height-100 {
+	height: 100px;
+}
+.compojoom-bootstrap hr.hr-condensed {
+	margin: 10px 0;
+}
+.compojoom-bootstrap .list-striped,
+.row-striped {
+	list-style: none;
+	line-height: 18px;
+	text-align: left;
+	vertical-align: middle;
+	border-top: 1px solid #ddd;
+	margin-left: 0;
+}
+.compojoom-bootstrap .list-striped li,
+.list-striped dd,
+.compojoom-bootstrap .row-striped .row,
+.row-striped .row-fluid {
+	border-bottom: 1px solid #ddd;
+	padding: 8px;
+}
+.compojoom-bootstrap .list-striped li:nth-child(odd),
+.list-striped dd:nth-child(odd),
+.compojoom-bootstrap .row-striped .row:nth-child(odd),
+.row-striped .row-fluid:nth-child(odd) {
+	background-color: #f9f9f9;
+}
+.compojoom-bootstrap .list-striped li:hover,
+.list-striped dd:hover,
+.compojoom-bootstrap .row-striped .row:hover,
+.row-striped .row-fluid:hover {
+	background-color: #f5f5f5;
+}
+.compojoom-bootstrap .row-striped .row-fluid {
+	width: 97%;
+}
+.compojoom-bootstrap .row-striped .row-fluid [class*="span"] {
+	min-height: 10px;
+}
+.compojoom-bootstrap .row-striped .row-fluid [class*="span"] {
+	margin-left: 8px;
+}
+.compojoom-bootstrap .row-striped .row-fluid [class*="span"]:first-child {
+	margin-left: 0;
+}
+.compojoom-bootstrap .list-condensed li {
+	padding: 4px 5px;
+}
+.compojoom-bootstrap .row-condensed .row,
+.row-condensed .row-fluid {
+	padding: 4px 5px;
+}
+.compojoom-bootstrap .list-bordered,
+.row-bordered {
+	list-style: none;
+	line-height: 18px;
+	text-align: left;
+	vertical-align: middle;
+	margin-left: 0;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.compojoom-bootstrap .radio.btn-group input[type=radio] {
+	display: none;
+}
+.compojoom-bootstrap .radio.btn-group > label:first-of-type {
+	margin-left: 0;
+	-webkit-border-bottom-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	-webkit-border-top-left-radius: 4px;
+	border-top-left-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	-moz-border-radius-topleft: 4px;
+}
+.compojoom-bootstrap fieldset.radio.btn-group {
+	padding-left: 0;
+}
+.compojoom-bootstrap .iframe-bordered {
+	border: 1px solid #ddd;
+}
+.compojoom-bootstrap .tab-content {
+	overflow: visible;
+}
+.compojoom-bootstrap .tabs-left .tab-content {
+	overflow: auto;
+}
+.compojoom-bootstrap .nav-tabs > li > span {
+	display: block;
+	margin-right: 2px;
+	padding-right: 12px;
+	padding-left: 12px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	line-height: 18px;
+	border: 1px solid transparent;
+	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+}
+.compojoom-bootstrap .btn-micro {
+	padding: 1px 4px;
+	font-size: 10px;
+	line-height: 8px;
+}
+.compojoom-bootstrap .tip-wrap {
+	max-width: 200px;
+	padding: 3px 8px;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	background-color: #000;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	z-index: 100;
+}
+.compojoom-bootstrap .page-header {
+	margin: 2px 0px 10px 0px;
+	padding-bottom: 5px;
+}
+.compojoom-bootstrap .input-prepend .chzn-container-single .chzn-single {
+	border-color: #ccc;
+	height: 26px;
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.compojoom-bootstrap .input-prepend .chzn-container-active .chzn-single-with-drop {
+	-webkit-border-radius: 0 3px 0 0;
+	-moz-border-radius: 0 3px 0 0;
+	border-radius: 0 3px 0 0;
+}
+.compojoom-bootstrap .input-prepend .chzn-container-single .chzn-drop {
+	border-color: #ccc;
+}
+.compojoom-bootstrap .input-prepend > .add-on,
+.input-append > .add-on {
+	vertical-align: top;
+}
+.compojoom-bootstrap .element-invisible {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+.compojoom-bootstrap .form-vertical .control-label {
+	float: none;
+	width: auto;
+	padding-right: 0;
+	padding-top: 0;
+	text-align: left;
+}
+.compojoom-bootstrap .form-vertical .controls {
+	margin-left: 0;
+}
+.compojoom-bootstrap .width-auto {
+	width: auto;
+}
+.compojoom-bootstrap .btn-group .chzn-results {
+	white-space: normal;
+}
+.compojoom-bootstrap .accordion-body.in:hover {
+	overflow: visible;
+}
+.compojoom-bootstrap @font-face {
+	font-family: 'IcoMoon';
+	src: url('../../../../media/jui/fonts/IcoMoon.eot');
+	src: url('../../../../media/jui/fonts/IcoMoon.eot?#iefix') format('embedded-opentype'), url('../../../../media/jui/fonts/IcoMoon.svg#IcoMoon') format('svg'), url('../../../../media/jui/fonts/IcoMoon.woff') format('woff'), url('../../../../media/jui/fonts/IcoMoon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+.compojoom-bootstrap [data-icon]:before {
+	font-family: 'IcoMoon';
+	content: attr(data-icon);
+	speak: none;
+}
+.compojoom-bootstrap [class^="icon-"],
+.compojoom-bootstrap [class*=" icon-"] {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	*margin-right: .3em;
+	line-height: 14px;
+}
+.compojoom-bootstrap [class^="icon-"]:before,
+.compojoom-bootstrap [class*=" icon-"]:before {
+	font-family: 'IcoMoon';
+	font-style: normal;
+	speak: none;
+}
+.compojoom-bootstrap .icon-home:before {
+	content: "\21";
+}
+.compojoom-bootstrap .icon-user:before {
+	content: "\22";
+}
+.compojoom-bootstrap .icon-checkedout:before,
+.icon-lock:before,
+.compojoom-bootstrap .icon-locked:before {
+	content: "\23";
+}
+.compojoom-bootstrap .icon-comment:before,
+.icon-comments:before {
+	content: "\24";
+}
+.compojoom-bootstrap .icon-comments-2:before {
+	content: "\25";
+}
+.compojoom-bootstrap .icon-share-alt:before,
+.icon-out:before {
+	content: "\26";
+}
+.compojoom-bootstrap .icon-share:before,
+.icon-redo:before {
+	content: "\27";
+}
+.compojoom-bootstrap .icon-undo:before {
+	content: "\28";
+}
+.compojoom-bootstrap .icon-file-add:before {
+	content: "\29";
+}
+.compojoom-bootstrap .icon-new:before,
+.icon-plus:before {
+	content: "\2a";
+}
+.compojoom-bootstrap .icon-apply:before,
+.icon-edit:before,
+.compojoom-bootstrap .icon-pencil:before {
+	content: "\2b";
+}
+.compojoom-bootstrap .icon-edit:before,
+.icon-pencil:before {
+	color: #2f96b4;
+}
+.compojoom-bootstrap .icon-pencil-2:before {
+	content: "\2c";
+}
+.compojoom-bootstrap .icon-folder-open:before,
+.icon-folder:before {
+	content: "\2d";
+}
+.compojoom-bootstrap .icon-folder-close:before,
+.icon-folder-2:before {
+	content: "\2e";
+}
+.compojoom-bootstrap .icon-picture:before {
+	content: "\2f";
+}
+.compojoom-bootstrap .icon-pictures:before {
+	content: "\30";
+}
+.compojoom-bootstrap .icon-list:before,
+.icon-list-view:before {
+	content: "\31";
+}
+.compojoom-bootstrap .icon-power-cord:before {
+	content: "\32";
+}
+.compojoom-bootstrap .icon-cube:before {
+	content: "\33";
+}
+.compojoom-bootstrap .icon-puzzle:before {
+	content: "\34";
+}
+.compojoom-bootstrap .icon-flag:before {
+	content: "\35";
+}
+.compojoom-bootstrap .icon-tools:before {
+	content: "\36";
+}
+.compojoom-bootstrap .icon-cogs:before {
+	content: "\37";
+}
+.compojoom-bootstrap .icon-options:before,
+.icon-cog:before {
+	content: "\38";
+}
+.compojoom-bootstrap .icon-equalizer:before {
+	content: "\39";
+}
+.compojoom-bootstrap .icon-wrench:before {
+	content: "\3a";
+}
+.compojoom-bootstrap .icon-brush:before {
+	content: "\3b";
+}
+.compojoom-bootstrap .icon-eye-open:before,
+.icon-eye:before {
+	content: "\3c";
+}
+.compojoom-bootstrap .icon-checkbox-unchecked:before {
+	content: "\3d";
+}
+.compojoom-bootstrap .icon-checkin:before,
+.icon-checkbox:before {
+	content: "\3e";
+}
+.compojoom-bootstrap .icon-checkbox-partial:before {
+	content: "\3f";
+}
+.compojoom-bootstrap .icon-asterisk:before,
+.icon-star-empty:before {
+	content: "\40";
+}
+.compojoom-bootstrap .icon-star-2:before {
+	content: "\41";
+}
+.compojoom-bootstrap .icon-featured:before,
+.icon-star:before {
+	content: "\42";
+	color: #f89406;
+}
+.compojoom-bootstrap .icon-calendar:before {
+	content: "\43";
+}
+.compojoom-bootstrap .icon-calendar-2:before {
+	content: "\44";
+}
+.compojoom-bootstrap .icon-question-sign:before,
+.icon-help:before {
+	content: "\45";
+}
+.compojoom-bootstrap .icon-support:before {
+	content: "\46";
+}
+.compojoom-bootstrap .icon-warning:before {
+	content: "\48";
+}
+.compojoom-bootstrap .icon-publish:before,
+.icon-save:before,
+.compojoom-bootstrap .icon-ok:before,
+.icon-checkmark:before {
+	content: "\47";
+	color: #51a351;
+}
+.compojoom-bootstrap .icon-unpublish:before,
+.icon-cancel:before {
+	content: "\4a";
+	color: #bd362f;
+}
+.compojoom-bootstrap .icon-eye-close:before,
+.icon-minus:before {
+	content: "\4b";
+}
+.compojoom-bootstrap .icon-purge:before,
+.icon-trash:before {
+	content: "\4c";
+}
+.compojoom-bootstrap .icon-envelope:before,
+.icon-mail:before {
+	content: "\4d";
+}
+.compojoom-bootstrap .icon-mail-2:before {
+	content: "\4e";
+}
+.compojoom-bootstrap .icon-unarchive:before,
+.icon-drawer:before {
+	content: "\4f";
+}
+.compojoom-bootstrap .icon-archive:before,
+.icon-drawer-2:before {
+	content: "\50";
+}
+.compojoom-bootstrap .icon-box-add:before {
+	content: "\51";
+}
+.compojoom-bootstrap .icon-box-remove:before {
+	content: "\52";
+}
+.compojoom-bootstrap .icon-search:before {
+	content: "\53";
+}
+.compojoom-bootstrap .icon-filter:before {
+	content: "\54";
+}
+.compojoom-bootstrap .icon-camera:before {
+	content: "\55";
+}
+.compojoom-bootstrap .icon-play:before {
+	content: "\56";
+}
+.compojoom-bootstrap .icon-music:before {
+	content: "\57";
+}
+.compojoom-bootstrap .icon-grid-view:before {
+	content: "\58";
+}
+.compojoom-bootstrap .icon-grid-view-2:before {
+	content: "\59";
+}
+.compojoom-bootstrap .icon-menu:before {
+	content: "\5a";
+}
+.compojoom-bootstrap .icon-thumbs-up:before {
+	content: "\5b";
+}
+.compojoom-bootstrap .icon-thumbs-down:before {
+	content: "\5c";
+}
+.compojoom-bootstrap .icon-delete:before,
+.icon-remove:before,
+.compojoom-bootstrap .icon-cancel-2:before {
+	content: "\49";
+}
+.compojoom-bootstrap .icon-save-new:before,
+.icon-plus-2:before {
+	content: "\5d";
+	color: #51a351;
+}
+.compojoom-bootstrap .icon-ban-circle:before,
+.icon-minus-sign:before,
+.compojoom-bootstrap .icon-minus-2:before {
+	content: "\5e";
+	color: #bd362f;
+}
+.compojoom-bootstrap .icon-key:before {
+	content: "\5f";
+}
+.compojoom-bootstrap .icon-quote:before {
+	content: "\60";
+}
+.compojoom-bootstrap .icon-quote-2:before {
+	content: "\61";
+}
+.compojoom-bootstrap .icon-database:before {
+	content: "\62";
+}
+.compojoom-bootstrap .icon-location:before {
+	content: "\63";
+}
+.compojoom-bootstrap .icon-zoom-in:before {
+	content: "\64";
+}
+.compojoom-bootstrap .icon-zoom-out:before {
+	content: "\65";
+}
+.compojoom-bootstrap .icon-expand:before {
+	content: "\66";
+}
+.compojoom-bootstrap .icon-contract:before {
+	content: "\67";
+}
+.compojoom-bootstrap .icon-expand-2:before {
+	content: "\68";
+}
+.compojoom-bootstrap .icon-contract-2:before {
+	content: "\69";
+}
+.compojoom-bootstrap .icon-health:before {
+	content: "\6a";
+}
+.compojoom-bootstrap .icon-wand:before {
+	content: "\6b";
+}
+.compojoom-bootstrap .icon-unblock:before,
+.icon-refresh:before {
+	content: "\6c";
+}
+.compojoom-bootstrap .icon-vcard:before {
+	content: "\6d";
+}
+.compojoom-bootstrap .icon-clock:before {
+	content: "\6e";
+}
+.compojoom-bootstrap .icon-compass:before {
+	content: "\6f";
+}
+.compojoom-bootstrap .icon-address:before {
+	content: "\70";
+}
+.compojoom-bootstrap .icon-feed:before {
+	content: "\71";
+}
+.compojoom-bootstrap .icon-flag-2:before {
+	content: "\72";
+}
+.compojoom-bootstrap .icon-pin:before {
+	content: "\73";
+}
+.compojoom-bootstrap .icon-lamp:before {
+	content: "\74";
+}
+.compojoom-bootstrap .icon-chart:before {
+	content: "\75";
+}
+.compojoom-bootstrap .icon-bars:before {
+	content: "\76";
+}
+.compojoom-bootstrap .icon-pie:before {
+	content: "\77";
+}
+.compojoom-bootstrap .icon-dashboard:before {
+	content: "\78";
+}
+.compojoom-bootstrap .icon-lightning:before {
+	content: "\79";
+}
+.compojoom-bootstrap .icon-move:before {
+	content: "\7a";
+}
+.compojoom-bootstrap .icon-next:before {
+	content: "\7b";
+}
+.compojoom-bootstrap .icon-previous:before {
+	content: "\7c";
+}
+.compojoom-bootstrap .icon-first:before {
+	content: "\7d";
+}
+.compojoom-bootstrap .icon-last:before {
+	content: "\e000";
+}
+.compojoom-bootstrap .icon-loop:before {
+	content: "\e001";
+}
+.compojoom-bootstrap .icon-shuffle:before {
+	content: "\e002";
+}
+.compojoom-bootstrap .icon-arrow-first:before {
+	content: "\e003";
+}
+.compojoom-bootstrap .icon-arrow-last:before {
+	content: "\e004";
+}
+.compojoom-bootstrap .icon-chevron-up:before,
+.icon-uparrow:before,
+.compojoom-bootstrap .icon-arrow-up:before {
+	content: "\e005";
+}
+.compojoom-bootstrap .icon-chevron-right:before,
+.icon-arrow-right:before {
+	content: "\e006";
+}
+.compojoom-bootstrap .icon-chevron-down:before,
+.icon-downarrow:before,
+.compojoom-bootstrap .icon-arrow-down:before {
+	content: "\e007";
+}
+.compojoom-bootstrap .icon-chevron-left:before,
+.icon-arrow-left:before {
+	content: "\e008";
+}
+.compojoom-bootstrap .icon-arrow-up-2:before {
+	content: "\e009";
+}
+.compojoom-bootstrap .icon-arrow-right-2:before {
+	content: "\e00a";
+}
+.compojoom-bootstrap .icon-download:before,
+.icon-arrow-down-2:before {
+	content: "\e00b";
+}
+.compojoom-bootstrap .icon-arrow-left-2:before {
+	content: "\e00c";
+}
+.compojoom-bootstrap .icon-play-2:before {
+	content: "\e00d";
+}
+.compojoom-bootstrap .icon-menu-2:before {
+	content: "\e00e";
+}
+.compojoom-bootstrap .icon-arrow-up-3:before {
+	content: "\e00f";
+}
+.compojoom-bootstrap .icon-arrow-right-3:before {
+	content: "\e010";
+}
+.compojoom-bootstrap .icon-arrow-down-3:before {
+	content: "\e011";
+}
+.compojoom-bootstrap .icon-arrow-left-3:before {
+	content: "\e012";
+}
+.compojoom-bootstrap .icon-print:before,
+.icon-printer:before {
+	content: "\e013";
+}
+.compojoom-bootstrap .icon-color-palette:before {
+	content: "\e014";
+}
+.compojoom-bootstrap .icon-camera-2:before {
+	content: "\e015";
+}
+.compojoom-bootstrap .icon-file:before {
+	content: "\e016";
+}
+.compojoom-bootstrap .icon-file-remove:before {
+	content: "\e017";
+}
+.compojoom-bootstrap .icon-save-copy:before,
+.icon-copy:before {
+	content: "\e018";
+	color: #51a351;
+}
+.compojoom-bootstrap .icon-cart:before {
+	content: "\e019";
+}
+.compojoom-bootstrap .icon-basket:before {
+	content: "\e01a";
+}
+.compojoom-bootstrap .icon-broadcast:before {
+	content: "\e01b";
+}
+.compojoom-bootstrap .icon-screen:before {
+	content: "\e01c";
+}
+.compojoom-bootstrap .icon-tablet:before {
+	content: "\e01d";
+}
+.compojoom-bootstrap .icon-mobile:before {
+	content: "\e01e";
+}
+.compojoom-bootstrap .icon-users:before {
+	content: "\e01f";
+}
+.compojoom-bootstrap .icon-briefcase:before {
+	content: "\e020";
+}
+.compojoom-bootstrap .icon-download:before {
+	content: "\e021";
+}
+.compojoom-bootstrap .icon-upload:before {
+	content: "\e022";
+}
+.compojoom-bootstrap .icon-bookmark:before {
+	content: "\e023";
+}
+.compojoom-bootstrap .icon-out-2:before {
+	content: "\e024";
+}
+.compojoom-bootstrap html {
+	height: 100%;
+}
+.compojoom-bootstrap body {
+	height: 100%;
+}
+.compojoom-bootstrap .view-login {
+	padding-top: 0;
+	background-color: #142849;
+	background-image: -webkit-gradient(radial,center center,0,center center,460,from(#165387),to(#142849));
+	background-image: -webkit-radial-gradient(circle,#165387,#142849);
+	background-image: -moz-radial-gradient(circle,#165387,#142849);
+	background-image: -o-radial-gradient(circle,#165387,#142849);
+	background-repeat: no-repeat;
+}
+.compojoom-bootstrap .view-login .container {
+	width: 300px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -206px;
+	margin-left: -150px;
+}
+.compojoom-bootstrap .view-login .navbar-fixed-bottom {
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+}
+.compojoom-bootstrap .view-login .navbar-fixed-bottom,
+.view-login .navbar-fixed-bottom a {
+	color: #FCFCFC;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+.compojoom-bootstrap .view-login .well {
+	padding-bottom: 0;
+	-webkit-box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.9) inset;
+	-moz-box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.9) inset;
+	box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.9) inset;
+}
+
+.compojoom-bootstrap .small {
+	font-size: 11px;
+}
+.compojoom-bootstrap .row-even .small,
+.row-odd .small,
+.compojoom-bootstrap .row-even .small a,
+.row-odd .small a {
+	color: #888;
+}
+.compojoom-bootstrap body .navbar,
+body .navbar-fixed-top {
+	margin-bottom: 0;
+}
+.compojoom-bootstrap .navbar-inner {
+	min-height: 0;
+}
+.compojoom-bootstrap .navbar-inner .container-fluid {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.compojoom-bootstrap .navbar .navbar-text {
+	line-height: 30px;
+}
+.compojoom-bootstrap .navbar .brand {
+	padding: 5px 12px 5px 12px;
+	font-size: 16px;
+	margin-left: 0;
+}
+.compojoom-bootstrap .navbar .nav > li > a {
+	padding: 6px 10px;
+}
+.compojoom-bootstrap .header {
+	background-color: #184a7d;
+	background-image: -moz-linear-gradient(top,#17568c,#1a3867);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#17568c),to(#1a3867));
+	background-image: -webkit-linear-gradient(top,#17568c,#1a3867);
+	background-image: -o-linear-gradient(top,#17568c,#1a3867);
+	background-image: linear-gradient(to bottom,#17568c,#1a3867);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff17568c', endColorstr='#ff1a3867', GradientType=0);
+	border-top: 1px solid rgba(255,255,255,0.2);
+	padding: 5px;
+}
+.compojoom-bootstrap .navbar .btn-navbar {
+	background: #17568c;
+	background: -moz-linear-gradient(top,#17568c 0%,#1a3867 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#17568c),color-stop(100%,#1a3867));
+	background: -webkit-linear-gradient(top,#17568c 0%,#1a3867 100%);
+	background: -o-linear-gradient(top,#17568c 0%,#1a3867 100%);
+	background: -ms-linear-gradient(top,#17568c 0%,#1a3867 100%);
+	background: linear-gradient(top,#17568c 0%,#1a3867 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#17568c',endColorstr='#1a3867',GradientType=0);
+	border: 1px solid #0D2242;
+	margin-bottom: 2px;
+}
+
+.compojoom-bootstrap .header .navbar-search {
+	margin-top: 0;
+}
+
+.compojoom-bootstrap .navbar-search .search-query {
+	background: rgba(255,255,255,0.3);
+}
+.compojoom-bootstrap .logo {
+	width: 100%;
+	max-width: 143px;
+	height: auto;
+}
+.compojoom-bootstrap .container-logo {
+	text-align: center;
+}
+.compojoom-bootstrap .page-title {
+	color: white;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 36px;
+	margin: 0;
+}
+.compojoom-bootstrap .content-title {
+	font-size: 24px;
+	font-weight: normal;
+	line-height: 26px;
+	margin-top: 0;
+}
+.compojoom-bootstrap .subhead {
+	background: #ffffff;
+	background: -moz-linear-gradient(top,#ffffff 0%,#ededed 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#ffffff),color-stop(100%,#ededed));
+	background: -webkit-linear-gradient(top,#ffffff 0%,#ededed 100%);
+	background: -o-linear-gradient(top,#ffffff 0%,#ededed 100%);
+	background: -ms-linear-gradient(top,#ffffff 0%,#ededed 100%);
+	background: linear-gradient(top,#ffffff 0%,#ededed 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#ededed',GradientType=0);
+	border-bottom: 1px solid #D3D3D3;
+	color: #0C192E;
+	text-shadow: 0 1px 0 #FFF;
+	margin-bottom: 10px;
+}
+.compojoom-bootstrap .subhead-fixed {
+	position: fixed;
+	width: 100%;
+	top: 30px;
+	z-index: 100;
+	-moz-box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+	-webkit-box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+	box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+}
+.compojoom-bootstrap .subhead h1 {
+	font-size: 17px;
+	font-weight: normal;
+	margin-left: 10px;
+	margin-top: 6px;
+}
+.compojoom-bootstrap #toolbar .btn-success {
+	width: 148px;
+}
+.compojoom-bootstrap .well .page-header {
+	margin: -10px 0 18px 0;
+	padding-bottom: 5px;
+}
+.compojoom-bootstrap .well .row-even p,
+.well .row-odd p {
+	margin-bottom: 0;
+}
+.compojoom-bootstrap h1,
+h2,
+.compojoom-bootstrap h3,
+h4,
+.compojoom-bootstrap h5,
+h6 {
+	margin: 12px 0;
+}
+.compojoom-bootstrap h1 {
+	font-size: 26px;
+	line-height: 28px;
+}
+.compojoom-bootstrap h2 {
+	font-size: 22px;
+	line-height: 24px;
+}
+.compojoom-bootstrap h3 {
+	font-size: 18px;
+	line-height: 20px;
+}
+.compojoom-bootstrap h4 {
+	font-size: 14px;
+	line-height: 16px;
+}
+.compojoom-bootstrap h5 {
+	font-size: 13px;
+	line-height: 15px;
+}
+.compojoom-bootstrap h6 {
+	font-size: 12px;
+	line-height: 14px;
+}
+.compojoom-bootstrap .sidebar-nav .nav-list > li > a {
+	color: #555;
+}
+.compojoom-bootstrap .sidebar-nav .nav-list > li.active > a {
+	color: #fff;
+}
+.compojoom-bootstrap .container-main,
+#system-debug {
+	padding-bottom: 50px;
+}
+.compojoom-bootstrap #status {
+	background: #EDEDED;
+	border-top: 1px solid #DDDDDD;
+	padding: 2px 10px 4px 10px;
+	-webkit-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8) inset, 0px -15px 15px rgba(255, 255, 255, 0.6);
+	-moz-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8) inset, 0px -15px 15px rgba(255, 255, 255, 0.6);
+	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8) inset, 0px -15px 15px rgba(255, 255, 255, 0.6);
+	color: #999999;
+}
+.compojoom-bootstrap #status .btn-toolbar,
+#status p {
+	margin: 0px;
+}
+.compojoom-bootstrap #status .btn-toolbar,
+#status .btn-group {
+	font-size: 12px;
+}
+.compojoom-bootstrap #status a {
+	color: #999999;
+}
+.compojoom-bootstrap #status.status-top {
+	background: #1a3867;
+	-webkit-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2) inset, 0px -1px 0px rgba(0, 0, 0, 0.3) inset, 0px -1px 0px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2) inset, 0px -1px 0px rgba(0, 0, 0, 0.3) inset, 0px -1px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2) inset, 0px -1px 0px rgba(0, 0, 0, 0.3) inset, 0px -1px 0px rgba(0, 0, 0, 0.3);
+	border-top: 0;
+	color: #d9d9d9;
+	padding: 2px 20px 6px 20px;
+}
+.compojoom-bootstrap #status.status-top a {
+	color: #d9d9d9;
+}
+.compojoom-bootstrap .pagination-toolbar {
+	margin: 0;
+}
+.compojoom-bootstrap .pagination-toolbar a {
+	line-height: 26px;
+}
+.compojoom-bootstrap .pull-right > .dropdown-menu {
+	left: auto;
+	right: 0;
+}
+.compojoom-bootstrap .disabled {
+	cursor: default;
+	background-image: none;
+	opacity: 0.65;
+	filter: alpha(opacity=65);
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.compojoom-bootstrap .nav-filters hr {
+	margin: 5px 0;
+}
+.compojoom-bootstrap .view-module .tab-content {
+	overflow: visible;
+}
+.compojoom-bootstrap #assignment.tab-pane {
+	min-height: 500px;
+}
+.compojoom-bootstrap .btn-primary.active,
+.btn-warning.active,
+.compojoom-bootstrap .btn-danger.active,
+.btn-success.active,
+.compojoom-bootstrap .btn-info.active,
+.btn-inverse.active {
+	color: rgba(255,255,255,0.95);
+}
+.compojoom-bootstrap .chzn-container,
+.chzn-drop {
+	max-width: 100% !important;
+}
+.compojoom-bootstrap .CodeMirror-wrapping {
+	height: auto !important;
+}
+
+
+.compojoom-bootstrap .btn-subhead {
+	display: none;
+}
+
+.compojoom-bootstrap .sortable-handler.inactive {
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+}
+.compojoom-bootstrap .form-horizontal .control-label {
+	width: auto;
+	padding-right: 5px;
+	text-align: left;
+}
+.compojoom-bootstrap ul.manager .height-50 .icon-folder-2 {
+	height: 35px;
+	width: 35px;
+	line-height: 35px;
+	font-size: 30px;
+}
+.compojoom-bootstrap .upload-queue > li > span,
+.upload-queue > li > a {
+	margin: 0 2px;
+}
+.compojoom-bootstrap .upload-queue .file-remove {
+	float: right;
+}
+.compojoom-bootstrap .moor-box {
+	z-index: 3;
+}
+.compojoom-bootstrap .admin .chzn-container .chzn-drop {
+	z-index: 1200;
+}
+.compojoom-bootstrap ul.treeselect,
+ul.treeselect li {
+	margin: 0;
+	padding: 0;
+}
+.compojoom-bootstrap ul.treeselect {
+	margin-top: 8px;
+}
+.compojoom-bootstrap ul.treeselect li {
+	padding: 2px 10px 2px;
+	list-style: none;
+}
+.compojoom-bootstrap ul.treeselect i.treeselect-toggle {
+	line-height: 18px;
+}
+.compojoom-bootstrap ul.treeselect label {
+	font-size: 1em;
+	margin-left: 8px;
+}
+.compojoom-bootstrap ul.treeselect label.nav-header {
+	padding: 0;
+}
+.compojoom-bootstrap ul.treeselect input {
+	margin: 2px 0 0 8px;
+}
+.compojoom-bootstrap ul.treeselect .treeselect-menu {
+	margin: 0 6px;
+}
+.compojoom-bootstrap ul.treeselect ul.dropdown-menu {
+	margin: 0;
+}
+.compojoom-bootstrap ul.treeselect ul.dropdown-menu li {
+	padding: 0 5px;
+	border: none;
+}

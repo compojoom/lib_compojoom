@@ -2,7 +2,34 @@ Compojoom - Utilities library for Joomla
 =======================================================
 
 The goal of this library is to ease the development process by abstracting commonly used
-function in one place.
+functions in one place.
+
+## USAGE##
+
+Add the following line to your code:
+
+```
+require_once JPATH_LIBRARIES . '/compojoom/include.php';
+```
+
+## Building the package from github
+In order to build the installation packages of this library you need to have
+the following tools:
+
+- A command line environment. Bash under Linux / Mac OS X . On Windows
+  you will need to run most tools using an elevated privileges (administrator)
+  command prompt.
+- The PHP CLI binary in your path
+
+- Command line Subversion and Git binaries(*)
+
+- PEAR and Phing installed, with the Net_FTP and VersionControl_SVN PEAR
+  packages installed
+
+  You will also need the following path structure on your system
+
+  - lib_compojoom - This repository
+  - buildtools - Compojoom build tools (https://github.com/compojoom/buildtools)
 
 ## COPYRIGHT AND DISCLAIMER
 Compojoom library -  Copyright (c) 2008-2013 Compojoom.com
@@ -14,6 +41,3 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.
-
-##Joomla extensions using this library
-CMandrill - https://github.com/compojoom/cmandrill

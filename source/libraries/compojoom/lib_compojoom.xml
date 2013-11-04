@@ -13,7 +13,15 @@
 	<license>GNU GPLv2 or later</license>
 	<version>@@VERSION@@</version>
 
-	<files folder="compojoom">
+	<languages folder="language">
+		##FRONTENDLANGUAGEFILES##
+	</languages>
+
+	<files folder="libraries/compojoom">
 		##LIBRARYFILES##
 	</files>
+
+	<media destination="lib_compojoom" folder="media/lib_compojoom">
+		##MEDIAPACKAGEFILES##
+	</media>
 </extension>
