@@ -18,16 +18,39 @@ defined('_JEXEC') or die('Restricted access');
 class CompojoomInstaller
 {
 	/**
+	 * Constructor
+	 *
+	 * @param   string                      $type    - the installation type
+	 * @param   JInstallerAdapterComponent  $parent  - the parent object of the JInstaller
+	 */
+	public function __construct($type, $parent)
+	{
+		$this->type = $type;
+		$this->parent = $parent;
+
+		// Load the library lang files
+		if ($type == 'uninstall')
+		{
+			$this->loadLanguage('lib_compojoom', JPATH_ROOT);
+		}
+		else
+		{
+			$this->loadLanguage('lib_compojoom', $parent->getParent()->getPath('source') . '/libraries/compojoom');
+		}
+
+	}
+
+	/**
 	 * Loads a language during the installation
 	 *
 	 * @param   string  $extension  - extension name
+	 * @param   string  $path       - the path to the lang files
 	 *
 	 * @return void
 	 */
-	public function loadLanguage($extension)
+	public function loadLanguage($extension, $path)
 	{
 		$jlang = JFactory::getLanguage();
-		$path = $this->parent->getParent()->getPath('source') . '/administrator';
 		$jlang->load($extension, $path, 'en-GB', true);
 		$jlang->load($extension, $path, $jlang->getDefault(), true);
 		$jlang->load($extension, $path, null, true);
@@ -35,6 +58,55 @@ class CompojoomInstaller
 		$jlang->load($extension . '.sys', $path, $jlang->getDefault(), true);
 		$jlang->load($extension . '.sys', $path, null, true);
 	}
+
+	/**
+	 * Install libraries
+	 *
+	 * @param   array  $libraries  - libraries to install
+	 *
+	 * @return array
+	 */
+	public function installLibraries($libraries)
+	{
+		$src = $this->parent->getParent()->getPath('source');
+
+		$db = JFactory::getDbo();
+		$status = array();
+
+		foreach ($libraries as $library => $published)
+		{
+			$path = $src . "/libraries/$library";
+
+			$query = $db->getQuery(true);
+			$query->select('COUNT(*)')
+				->from('#__extensions')
+				->where($db->qn('element') . '=' . $db->q($library))
+				->where($db->qn('type') . '=' . $db->q('library'));
+
+			$db->setQuery($query);
+			$count = $db->loadResult();
+
+			$installer = new JInstaller;
+			$result = $installer->install($path);
+
+			$status[] = array('name' => $library, 'result' => $result);
+
+			// If the plugin was not unpublished by the user, enable it
+			if ($published && !$count)
+			{
+				$query->clear();
+				$query->update('#__extensions')
+					->set($db->qn('enabled') . '=' . $db->q(1))
+					->where($db->qn('element') . '=' . $db->q($library))
+					->where($db->qn('type') . '=' . $db->q('library'));
+				$db->setQuery($query);
+				$db->execute();
+			}
+		}
+
+		return $status;
+	}
+
 
 	/**
 	 * Installs modules that come with the package
@@ -104,7 +176,7 @@ class CompojoomInstaller
 							$query->set($db->qn('params') . '=' . $db->q($installer->getParams()));
 							$query->where($db->qn('module') . '=' . $db->q($module));
 							$db->setQuery($query);
-							$db->query();
+							$db->execute();
 						}
 
 						// Get module id
@@ -215,6 +287,7 @@ class CompojoomInstaller
 			$result = $installer->install($path);
 			$status[] = array('name' => $plugin, 'group' => $pluginType, 'result' => $result);
 
+			// If the plugin was not unpublished by the user, enable it
 			if ($published && !$count)
 			{
 				$query->clear();
@@ -271,20 +344,21 @@ class CompojoomInstaller
 	/**
 	 * Gets a param value out of the manifest cache for this extension
 	 *
-	 * @param   string  $name    - the name of the param we are looking for
-	 * @param   string  $type    - the type of the extension
-	 * @param   string  $folder  - the folder (if plugin)
+	 * @param   string  $name     - the name of the param we are looking for
+	 * @param   string  $element  - the extension name
+	 * @param   string  $type     - the type of the extension
+	 * @param   string  $folder   - the folder (if plugin)
 	 *
 	 * @return mixed - the parameter value when found. False when the parameter doesn't exist
 	 */
-	public function getParam($name, $type = 'component', $folder = '')
+	public function getParam($name, $element, $type = 'component', $folder = '')
 	{
 		$db = JFactory::getDbo();
 		$query = $db->getQuery('true');
 		$query->select($db->qn('manifest_cache'))
 			->from($db->qn('#__extensions'))
 			->where($db->qn('type') . '=' . $db->q($type))
-			->where($db->qn('element') . '=' . $db->q($this->extension));
+			->where($db->qn('element') . '=' . $db->q($element));
 
 		if ($folder)
 		{
@@ -379,6 +453,43 @@ class CompojoomInstaller
 	}
 
 	/**
+	 * Renders information for the installed libraries
+	 *
+	 * @param   array  $libraries  - array with libraries
+	 *
+	 * @return string
+	 */
+	public function renderLibraryInfoInstall($libraries)
+	{
+		$rows = 0;
+		$html[] = '<table class="table">';
+
+		if (count($libraries))
+		{
+			$html[] = '<tr>';
+			$html[] = '<th>' . JText::_('LIB_COMPOJOOM_LIBRARY') . '</th>';
+			$html[] = '<th>' . JText::_('LIB_COMPOJOOM_STATUS') . '</th>';
+			$html[] = '</tr>';
+
+			foreach ($libraries as $library)
+			{
+				$html[] = '<tr class="row' . (++$rows % 2) . '">';
+				$html[] = '<td class="key">' . $library['name'] . '</td>';
+				$html[] = '<td>';
+				$html[] = '<span style="color: ' . (($library['result']) ? 'green' : 'red') . '; font-weight: bold;">';
+				$html[] = ($library['result']) ? JText::_('LIB_COMPOJOOM_LIBRARY_INSTALLED') : JText::_('LIB_COMPOJOOM_LIBRARY_NOT_INSTALLED');
+				$html[] = '</span>';
+				$html[] = '</td>';
+				$html[] = '</tr>';
+			}
+		}
+
+		$html[] = '</table>';
+
+		return implode('', $html);
+	}
+
+	/**
 	 * Renders information for the installed plugin
 	 *
 	 * @param   array  $plugins  - array with plugins
@@ -460,50 +571,28 @@ class CompojoomInstaller
 	}
 
 	/**
-	 * method to run before an install/update/discover method
+	 * Check if the installation is allowed
 	 *
-	 * @param $type
-	 * @param $parent
-	 *
-	 * @return void
+	 * @return boolean
 	 */
-	public function preflight($type, $parent)
+	public function allowedInstall()
 	{
 		$jversion = new JVersion;
 		$appl = JFactory::getApplication();
-
-		// Extract the version number from the manifest file
-		$this->release = $parent->get("manifest")->version;
+		$manifest = $this->parent->get("manifest")->attributes();
 
 		// Find mimimum required joomla version from the manifest file
-		$this->minimum_joomla_release = $parent->get("manifest")->attributes()->version;
+		$minJVersion = $manifest->version;
 
-		if (version_compare($jversion->getShortVersion(), $this->minimum_joomla_release, 'lt'))
+		if (version_compare($jversion->getShortVersion(), $minJVersion, 'lt'))
 		{
 			$appl->enqueueMessage(
-				'Cannot install ' . $this->extension . ' in a Joomla release prior to '
-				. $this->minimum_joomla_release, 'warning'
+				JText::sprintf('LIB_COMPOJOOM_CANNOT_INSTALL_PRIOR_TO_JOOMLA', $manifest->name, $minJVersion), 'warning'
 			);
 
 			return false;
 		}
 
-		// Abort if the component being installed is not newer than the currently installed version
-		if ($type == 'update')
-		{
-			$oldRelease = $this->getParam('version');
-			$rel = $oldRelease . ' to ' . $this->release;
-
-			if (!strstr($this->release, 'git_'))
-			{
-				if (version_compare($this->release, $oldRelease, 'lt'))
-				{
-					$appl->enqueueMessage('Incorrect version sequence. Cannot upgrade ' . $rel, 'warning');
-
-					return false;
-				}
-			}
-		}
-
+		return true;
 	}
 }

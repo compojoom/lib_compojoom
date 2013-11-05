@@ -2,9 +2,7 @@
 <extension type="library" version="2.5" method="upgrade">
 	<name>Library - compojoom</name>
 	<libraryname>compojoom</libraryname>
-	<description><![CDATA[The compojoom library is utility library that helps us speed the development
-		of our joomla extensions, by abstracting functions that we use between our extensions
-		in one common place!]]></description>
+	<description>LIB_COMPOJOOM_DESC</description>
 	<creationDate>@@DATE@@</creationDate>
 	<author>compojoom.com</author>
 	<authorEmail>daniel@compojoom.com</authorEmail>
