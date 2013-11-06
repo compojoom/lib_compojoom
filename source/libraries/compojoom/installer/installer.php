@@ -31,32 +31,14 @@ class CompojoomInstaller
 		// Load the library lang files
 		if ($type == 'uninstall')
 		{
-			$this->loadLanguage('lib_compojoom', JPATH_ROOT);
+			CompojoomLanguage::load('lib_compojoom', JPATH_ROOT);
+			CompojoomLanguage::load('lib_compojoom.sys', JPATH_ROOT);
 		}
 		else
 		{
-			$this->loadLanguage('lib_compojoom', $parent->getParent()->getPath('source') . '/libraries/compojoom');
+			CompojoomLanguage::load('lib_compojoom', $parent->getParent()->getPath('source') . '/libraries/compojoom');
+			CompojoomLanguage::load('lib_compojoom.sys', $parent->getParent()->getPath('source') . '/libraries/compojoom');
 		}
-
-	}
-
-	/**
-	 * Loads a language during the installation
-	 *
-	 * @param   string  $extension  - extension name
-	 * @param   string  $path       - the path to the lang files
-	 *
-	 * @return void
-	 */
-	public function loadLanguage($extension, $path)
-	{
-		$jlang = JFactory::getLanguage();
-		$jlang->load($extension, $path, 'en-GB', true);
-		$jlang->load($extension, $path, $jlang->getDefault(), true);
-		$jlang->load($extension, $path, null, true);
-		$jlang->load($extension . '.sys', $path, 'en-GB', true);
-		$jlang->load($extension . '.sys', $path, $jlang->getDefault(), true);
-		$jlang->load($extension . '.sys', $path, null, true);
 	}
 
 	/**
