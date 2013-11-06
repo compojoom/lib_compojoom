@@ -20,10 +20,11 @@ class CompojoomInstaller
 	/**
 	 * Constructor
 	 *
-	 * @param   string                      $type    - the installation type
-	 * @param   JInstallerAdapterComponent  $parent  - the parent object of the JInstaller
+	 * @param   string                      $type     - the installation type
+	 * @param   JInstallerAdapterComponent  $parent   - the parent object of the JInstaller
+	 * @param   string                      $extName  - the extension name
 	 */
-	public function __construct($type, $parent)
+	public function __construct($type, $parent, $extName)
 	{
 		$this->type = $type;
 		$this->parent = $parent;
@@ -33,12 +34,25 @@ class CompojoomInstaller
 		{
 			CompojoomLanguage::load('lib_compojoom', JPATH_ROOT);
 			CompojoomLanguage::load('lib_compojoom.sys', JPATH_ROOT);
+
+			// Now les us load the extension files
+			CompojoomLanguage::load($extName, JPATH_ADMINISTRATOR);
+			CompojoomLanguage::load($extName . '.sys', JPATH_ADMINISTRATOR);
 		}
 		else
 		{
 			CompojoomLanguage::load('lib_compojoom', $parent->getParent()->getPath('source') . '/libraries/compojoom');
 			CompojoomLanguage::load('lib_compojoom.sys', $parent->getParent()->getPath('source') . '/libraries/compojoom');
+
+			// Now les us load the extension files
+			CompojoomLanguage::load($extName, $parent->getParent()->getPath('source') . '/administrator');
+			CompojoomLanguage::load($extName . '.sys', $parent->getParent()->getPath('source') . '/administrator');
 		}
+
+		// Since Joomla translates the message before it has loaded the correct lang files
+		// let us translate themessage again
+		$manifest = $parent->getParent()->getManifest();
+		$parent->getParent()->set('message', JText::_((string) $manifest->description));
 
 		$this->addCss();
 	}
