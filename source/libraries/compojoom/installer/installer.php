@@ -39,6 +39,27 @@ class CompojoomInstaller
 			CompojoomLanguage::load('lib_compojoom', $parent->getParent()->getPath('source') . '/libraries/compojoom');
 			CompojoomLanguage::load('lib_compojoom.sys', $parent->getParent()->getPath('source') . '/libraries/compojoom');
 		}
+
+		$this->addCss();
+	}
+
+	/**
+	 * This function ads the necessary CSS for the installation
+	 *
+	 * @return void
+	 */
+	private function addCss()
+	{
+		$document = JFactory::getDocument();
+		$document->addStyleDeclaration(".compojoom-info {
+						background-color: #D9EDF7;
+					    border-color: #BCE8F1;
+					    color: #3A87AD;
+					    border-radius: 4px 4px 4px 4px;
+					    padding: 8px 35px 8px 14px;
+					    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+					    margin-bottom: 18px;
+					}");
 	}
 
 	/**
