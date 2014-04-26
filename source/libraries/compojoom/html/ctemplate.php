@@ -162,7 +162,8 @@ class CompojoomHtmlCtemplate
 			<h1>Forms <small>lorem ipsum dolor</small></h1>
 		</div>';
 
-		return implode('', $html);	}
+		return implode('', $html);
+	}
 
 	/**
 	 * Gets the footer code
@@ -171,16 +172,15 @@ class CompojoomHtmlCtemplate
 	 */
 	public static function getFooter($footer)
 	{
-
 		$html[] = '<footer>';
 		$html[] = $footer;
-		$html[] = '</footer>
+		$html[] = '		</footer>
+					</div>
 				</div>
-			</div>
 			</div>
 
 			<div class="md-overlay"></div>
-			';
+			</div>';
 
 		return implode('', $html);
 	}
