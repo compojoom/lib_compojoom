@@ -14,7 +14,7 @@ if (!defined('COMPOJOOM_INCLUDED'))
 {
 	define('COMPOJOOM_INCLUDED', '1.0.0');
 
-	// Register the CMandrill autoloader
+	// Register the autoloader
 	require_once __DIR__ . '/autoloader/autoloader.php';
 	CompojoomAutoloader::init();
 }
