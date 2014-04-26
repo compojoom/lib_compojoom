@@ -363,7 +363,7 @@ i.danger{color: #E85344}
 	top: 0px;
 }
 .header.sidebar .logo{
-	padding: 35px 20px 0 0px;
+	padding: 38px 20px 0 0px;
 	color: #fff;
 }
 .header.sidebar .logo img{
@@ -582,17 +582,17 @@ i.danger{color: #E85344}
 }
 
 /* === RIGHT COLUMN (CONTENT HEADER / NAV) === */
-.header.rows { height: 70px;}
-.header.rows-content-header { height: 70px;}
+.header.rows { height: 75px;}
+.header.rows-content-header { height: 75px;}
 .header.content{background: #FFFFFF; border-bottom: 1px solid #E5E9EC}
 
 /* === RIGHT COLUMN (CONTENT BODY) === */
 .body.rows {
-	top: 70px;
+	top: 75px;
 	bottom: 70px;
 }
 .body.content.rows {
-	top: 70px;
+	top: 75px;
 	bottom: 0px;
 	background: #E5E9EC;
 	padding: 20px;
