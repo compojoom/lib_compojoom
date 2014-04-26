@@ -33,13 +33,14 @@ class CompojoomHtmlBehavior
 	/**
 	 * Loads our bootstrap 3.1.1 JS and css
 	 *
-	 * @param   bool  $js         - Load JS
-	 * @param   bool  $ctemplate  - Load boostrap backend template
-	 * @param   bool  $debug      - Debug mode? e.g. load non minimized versions?
+	 * @param   bool  $js          - Load JS
+	 * @param   bool  $ctemplate   - Load boostrap backend template
+	 * @param   bool  $thirdparty  - Load third party js for template
+	 * @param   bool  $debug       - Debug mode? e.g. load non minimized versions?
 	 *
 	 * @return void
 	 */
-	public static function bootstrap31($js = true, $ctemplate = true, $debug = false)
+	public static function bootstrap31($js = true, $ctemplate = true, $thirdparty = true, $debug = false)
 	{
 		// Always load the strapper css
 		JHTML::_('stylesheet', 'media/lib_compojoom/css/bootstrap-3.1.1.css');
@@ -74,6 +75,38 @@ class CompojoomHtmlBehavior
 
 			// Load compojoom js
 			JHTML::_('script', 'media/lib_compojoom/js/jquery.cjoom.js');
+
+			if ($thirdparty)
+			{
+				// Load 3rd Party css
+				JHTML::_('stylesheet', 'media/lib_compojoom/third/font-awesome/css/font-awesome.min.css');
+				JHTML::_('stylesheet', 'media/lib_compojoom/third/weather-icon/css/weather-icons.min.css');
+				JHTML::_('stylesheet', 'media/lib_compojoom/third/morris/morris.css');
+				JHTML::_('stylesheet', 'media/lib_compojoom/third/nifty-modal/css/component.css');
+				JHTML::_('stylesheet', 'media/lib_compojoom/third/sortable/sortable-theme-bootstrap.css');
+				JHTML::_('stylesheet', 'media/lib_compojoom/third/icheck/skins/minimal/grey.css');
+				JHTML::_('stylesheet', 'media/lib_compojoom/third/select/bootstrap-select.min.css');
+				JHTML::_('stylesheet', 'media/lib_compojoom/third/summernote/summernote.css');
+				JHTML::_('stylesheet', 'media/lib_compojoom/third/magnific-popup/magnific-popup.css');
+				JHTML::_('stylesheet', 'media/lib_compojoom/third/datepicker/css/datepicker.css');
+
+				// Load 3rd Party scripts for Laceng
+				JHTML::_('script', 'media/lib_compojoom/third/slimscroll/jquery.slimscroll.min.js');
+				JHTML::_('script', 'http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js');
+				JHTML::_('script', 'media/lib_compojoom/third/morris/morris.js');
+				JHTML::_('script', 'media/lib_compojoom/third/nifty-modal/js/classie.js');
+				JHTML::_('script', 'media/lib_compojoom/third/nifty-modal/js/modalEffects.js');
+				JHTML::_('script', 'media/lib_compojoom/third/sortable/sortable.min.js');
+				JHTML::_('script', 'media/lib_compojoom/third/select/bootstrap-select.min.js');
+				JHTML::_('script', 'media/lib_compojoom/third/summernote/summernote.js');
+				JHTML::_('script', 'media/lib_compojoom/third/magnific-popup/jquery.magnific-popup.min.js');
+				JHTML::_('script', 'media/lib_compojoom/third/input/bootstrap.file-input.js');
+				JHTML::_('script', 'media/lib_compojoom/datepicker/js/bootstrap-datepicker.js');
+				JHTML::_('script', 'media/lib_compojoom/icheck/icheck.min.js');
+				JHTML::_('script', 'media/lib_compojoom/wizard/jquery.snippet.min.js');
+				JHTML::_('script', 'media/lib_compojoom/wizard/jquery.easyWizard.js');
+				JHTML::_('script', 'media/lib_compojoom/wizard/scripts.js');
+			}
 
 			// Load backend template
 			if ($ctemplate)

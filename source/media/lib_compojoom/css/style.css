@@ -363,7 +363,7 @@ i.danger{color: #E85344}
 	top: 0px;
 }
 .header.sidebar .logo{
-	padding: 28px 20px 0 20px;
+	padding: 35px 20px 0 0px;
 	color: #fff;
 }
 .header.sidebar .logo img{
@@ -582,17 +582,17 @@ i.danger{color: #E85344}
 }
 
 /* === RIGHT COLUMN (CONTENT HEADER / NAV) === */
-.header.rows { height: 50px;}
-.header.rows-content-header { height: 50px;}
+.header.rows { height: 70px;}
+.header.rows-content-header { height: 70px;}
 .header.content{background: #FFFFFF; border-bottom: 1px solid #E5E9EC}
 
 /* === RIGHT COLUMN (CONTENT BODY) === */
 .body.rows {
-	top: 50px;
-	bottom: 50px;
+	top: 70px;
+	bottom: 70px;
 }
 .body.content.rows {
-	top: 50px;
+	top: 70px;
 	bottom: 0px;
 	background: #E5E9EC;
 	padding: 20px;
@@ -908,7 +908,7 @@ form.input-chat{margin-top: 20px;}
 	border: 1px solid #eaeaea
 }
 .chat-widget .media-list .media .media-body{
-	background: #f7f7f7;
+    background: #f7f7f7;
 	border-radius: 3px;
 	padding: 10px;
 	color: #677179;
@@ -2683,4 +2683,12 @@ a:focus .icon-vimeo {
 }
 .weatherseparator:after {
   clear: both;
+}
+
+.c-media-introtext {
+ margin-top: 14px;
+}
+
+.c-media-sidebar {
+ margin-top: 15px !important;
 }

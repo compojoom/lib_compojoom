@@ -25,7 +25,11 @@ class CompojoomHtmlCtemplate
 	 */
 	public static function getHead()
 	{
-		$html[] = '<div class=\"compojoom-bootstrap\">';
+		$user = JFactory::getUser();
+
+		$gravatar = CompojoomHtmlCtemplate::get_gravatar($user->email);
+
+		$html[] = '<div class="compojoom-bootstrap">';
 		// Loading animation
 		$html[] = '<div id="loading" style="display: none;">
 					<div class="loading-inner">
@@ -37,36 +41,31 @@ class CompojoomHtmlCtemplate
 				</div>';
 
 		$html[] = '<div class="container">
+					<div class="logo-brand header sidebar rows">
+						<div class="logo">
+							<h1><a href="#fakelink"><img src="../media/lib_compojoom/img/icon.png" alt="Compojoom" /> CForms</a></h1>
+						</div>
+					</div>
+					';
 
-		<!-- Your logo goes here -->
-		<div class="logo-brand header sidebar rows">
-			<div class="logo">
-				<h1><a href="#fakelink"><img src="../media/lib_compojoom/img/icon.png" alt="Logo"> CForms</a></h1>
-			</div>
-		</div><!-- End div .header .sidebar .rows -->
-
-		<!-- BEGIN SIDEBAR -->
-		<div class="left side-menu">
-
-
+		// BEGIN SIDEBAR
+		$html[] = '<div class="left side-menu">
             <div class="body rows scroll-y">
 
-				<!-- Scrolling sidebar -->
                 <div class="sidebar-inner slimscroller">
 
 					<!-- User Session -->
-					<div class="media">
+					<div class="media c-media-sidebar">
 						<a class="pull-left" href="#fakelink">
-							<img class="media-object img-circle" src="../media/lib_compojoom/img/avatar/masarie.jpg" alt="Avatar">
+							<img class="media-object img-circle" src="' . $gravatar . '" alt="Avatar">
 						</a>
-						<div class="media-body">
+						<div class="media-body c-media-introtext">
 							Welcome back,
-							<h4 class="media-heading"><strong>Mas Bro</strong></h4>
-							<a href="user-profile.html">Edit</a>
-							<a class="md-trigger" data-modal="logout-modal-alt">Logout</a>
+							<h4 class="media-heading"><strong>' . $user->name . '</strong></h4>
+							<!--<a href="user-profile.html">Edit</a>
+							<a class="md-trigger" data-modal="logout-modal-alt">Logout</a>-->
 						</div><!-- End div .media-body -->
 					</div><!-- End div .media -->
-
 
 					<!-- Search form -->
 					<div id="search">
@@ -75,7 +74,6 @@ class CompojoomHtmlCtemplate
 							<i class="fa fa-search"></i>
 						</form>
 					</div><!-- End div #search -->
-
 
 					<!-- Sidebar menu -->
 					<div id="sidebar-menu">
@@ -168,6 +166,8 @@ class CompojoomHtmlCtemplate
 	/**
 	 * Gets the footer code
 	 *
+	 * @param  $footer  - The footer html (e.g. Matukio by compojoom)
+	 *
 	 * @return string
 	 */
 	public static function getFooter($footer)
@@ -183,5 +183,31 @@ class CompojoomHtmlCtemplate
 			</div>';
 
 		return implode('', $html);
+	}
+
+
+	/**
+	 * Get either a Gravatar URL or complete image tag for a specified email address.
+	 *
+	 * @param string $email The email address
+	 * @param string $s Size in pixels, defaults to 80px [ 1 - 2048 ]
+	 * @param string $d Default imageset to use [ 404 | mm | identicon | monsterid | wavatar ]
+	 * @param string $r Maximum rating (inclusive) [ g | pg | r | x ]
+	 * @param boole $img True to return a complete IMG tag False for just the URL
+	 * @param array $atts Optional, additional key/value attributes to include in the IMG tag
+	 * @return String containing either just a URL or a complete image tag
+	 * @source http://gravatar.com/site/implement/images/php/
+	 */
+	public static function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array() ) {
+		$url = 'http://www.gravatar.com/avatar/';
+		$url .= md5( strtolower( trim( $email ) ) );
+		$url .= "?s=$s&d=$d&r=$r";
+		if ( $img ) {
+			$url = '<img src="' . $url . '"';
+			foreach ( $atts as $key => $val )
+				$url .= ' ' . $key . '="' . $val . '"';
+			$url .= ' />';
+		}
+		return $url;
 	}
 }
