@@ -50,27 +50,12 @@
 			wheelStep: 5
 		});
 
-
-		//KNOB
-		$(function() {
-			$(".dial").knob();
-		});
-
-
-
-		//TOOLTIP
-		$('.tooltips').tooltip({
-		  selector: "[data-toggle=tooltip]",
-		  container: "body"
-		})
-
 		//RESPONSIVE SIDEBAR
 		$("button.show-sidebar").click(function(){
-		$("div.left").toggleClass("mobile-sidebar");
-		$("div.right").toggleClass("mobile-content");
-		$("div.logo-brand").toggleClass("logo-brand-toggle");
+			$("div.left").toggleClass("mobile-sidebar");
+			$("div.right").toggleClass("mobile-content");
+			$("div.logo-brand").toggleClass("logo-brand-toggle");
 		});
-
 
 		//SIDEBAR MENU
 		$('#sidebar-menu > ul > li > a').click(function() {
@@ -91,24 +76,6 @@
 					return false;
 				}
 		});
-
-
-		//SUMMERNOTE
-		$('.summernote').summernote({
-		  height: 500
-		});
-
-
-		$('.summernote-small').summernote({
-		  toolbar: [
-			['style', ['bold', 'italic', 'underline', 'clear']],
-			['fontsize', ['fontsize']],
-			['color', ['color']],
-			['para', ['ul', 'ol', 'paragraph']]
-		  ],
-		  height: 200
-		});
-
 
 		//SELECT
 		$('.selectpicker').selectpicker();

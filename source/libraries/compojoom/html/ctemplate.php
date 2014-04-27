@@ -23,7 +23,7 @@ class CompojoomHtmlCtemplate
 	 *
 	 * @return string
 	 */
-	public static function getHead()
+	public static function getHead($menu, $title = '', $slogan = '')
 	{
 		$user = JFactory::getUser();
 
@@ -153,16 +153,21 @@ class CompojoomHtmlCtemplate
 				  <a data-toggle="tooltip" title="See task progress" class="btn btn-default md-trigger" data-modal="task-progress"><i class="fa fa-inbox"></i></a>
 				</div><!-- End div .progress .progress-xs -->
             </div><!-- End div .footer .rows -->
-        </div>
-		<!-- END SIDEBAR -->
+		</div>
+		';
 
-		<!-- BEGIN CONTENT -->
-        <div class="right content-page">
-		<!-- BEGIN CONTENT HEADER -->
-		<div class="body content rows scroll-y">
-		<div class="page-heading animated fadeInDownBig">
-			<h1>Forms <small>lorem ipsum dolor</small></h1>
-		</div>';
+		// BEGIN CONTENT
+		$html[] = '<div class="right content-page">';
+
+		// BEGIN CONTENT HEADER
+		$html[] = '<div class="body content rows scroll-y">';
+
+		if (!empty($title))
+		{
+			$html[] = '<div class="page-heading animated fadeInDownBig">
+							<h1>' . JText::_($title) .' <small>' . JText::_($slogan) . '</small></h1>
+						</div>';
+		}
 
 		return implode('', $html);
 	}

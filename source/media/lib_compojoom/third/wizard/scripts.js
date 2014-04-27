@@ -1,6 +1,8 @@
-$(function() {
-	$('#myWizard').easyWizard({
-		buttonsClass: 'btn btn-default',
-		submitButtonClass: 'btn btn-primary'
+(function ($) {
+	$(function() {
+		$('#myWizard').easyWizard({
+			buttonsClass: 'btn btn-default',
+			submitButtonClass: 'btn btn-primary'
+		});
 	});
-});
+})(jQuery);

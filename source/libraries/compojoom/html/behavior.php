@@ -125,21 +125,20 @@ class CompojoomHtmlBehavior
 
 				JHTML::_('script', 'media/lib_compojoom/third/magnific-popup/jquery.magnific-popup.min.js');
 				JHTML::_('script', 'media/lib_compojoom/third/input/bootstrap.file-input.js');
-				JHTML::_('script', 'media/lib_compojoom/datepicker/js/bootstrap-datepicker.js');
-				JHTML::_('script', 'media/lib_compojoom/icheck/icheck.min.js');
-				JHTML::_('script', 'media/lib_compojoom/wizard/jquery.snippet.min.js');
-				JHTML::_('script', 'media/lib_compojoom/wizard/jquery.easyWizard.js');
-				JHTML::_('script', 'media/lib_compojoom/wizard/scripts.js');
+				JHTML::_('script', 'media/lib_compojoom/third/datepicker/js/bootstrap-datepicker.js');
+				JHTML::_('script', 'media/lib_compojoom/third/icheck/icheck.min.js');
+				JHTML::_('script', 'media/lib_compojoom/third/wizard/jquery.snippet.min.js');
+				JHTML::_('script', 'media/lib_compojoom/third/wizard/jquery.easyWizard.js');
 			}
 
 			// Load backend template
 			if ($ctemplate)
 			{
-				JHTML::_('script', 'media/lib_compojoom/js/lanceng.js');
-
 				JHTML::_('stylesheet', 'media/lib_compojoom/css/style.css');
 				JHTML::_('stylesheet', 'media/lib_compojoom/css/style-responsive.css');
 				JHTML::_('stylesheet', 'media/lib_compojoom/css/animate.css');
+
+				JHTML::_('script', 'media/lib_compojoom/js/lanceng.js');
 			}
 		}
 	}
