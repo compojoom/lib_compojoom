@@ -42,8 +42,11 @@ class CompojoomHtmlCtemplate
 
 		$html[] = '<div class="container">
 					<div class="logo-brand header sidebar rows">
-						<div class="logo">
-							<h1><a href="#fakelink"><img src="../media/lib_compojoom/img/icon.png" alt="Compojoom" /> CForms</a></h1>
+						<div class="logo pull-left">
+							<h1><a href="#fakelink"> CForms</a></h1>
+						</div>
+						<div class="pull-right c-logo-icon">
+							<a href="https://compojoom.com" title="Compojoom"><img src="../media/lib_compojoom/img/logo-grey.png" alt="Compojoom" /></a>
 						</div>
 					</div>
 					';
@@ -66,17 +69,18 @@ class CompojoomHtmlCtemplate
 							<a class="md-trigger" data-modal="logout-modal-alt">Logout</a>-->
 						</div><!-- End div .media-body -->
 					</div><!-- End div .media -->
+				';
 
-					<!-- Search form -->
-					<div id="search">
+		// Search
+		$html[] = '<div id="search">
 						<form role="form">
 							<input type="text" class="form-control search" placeholder="Search here...">
 							<i class="fa fa-search"></i>
 						</form>
-					</div><!-- End div #search -->
+					</div>';
 
-					<!-- Sidebar menu -->
-					<div id="sidebar-menu">
+		// Sidebar menu
+		$html[] = '<div id="sidebar-menu">
 						<ul>
 							<li><a href="index.html"><i class="fa fa-home"></i> Dashboard</a></li>
 							<li><a href="#fakelink"><i class="fa fa-leaf"></i> Frontend <span class="label label-danger new-circle">COMING SOON</span></a></li>

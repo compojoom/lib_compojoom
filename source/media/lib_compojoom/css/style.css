@@ -2692,3 +2692,7 @@ a:focus .icon-vimeo {
 .c-media-sidebar {
  margin-top: 15px !important;
 }
+
+.c-logo-icon {
+    margin-top: 33px;
+}

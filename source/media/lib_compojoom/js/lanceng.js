@@ -1,260 +1,130 @@
-$(document).ready(function(){
-	
-	$(window).load(function() { $("#loading").fadeOut("slow"); })
-	
-	
-	//SLIM SCROLL
-	$('.slimscroller').slimscroll({
-		height: 'auto',
-		size: '3px',
-		railOpacity: 0.3,
-		wheelStep: 5
-	});
-	$('.chat-widget').slimScroll({
-		height: '300px',
-		color: '#868686',
-		size: '3px',
-		railOpacity: 0.3,
-		wheelStep: 5
-	});
-	$('.scroll-widget').slimScroll({
-		height: '325px',
-		position: 'left',
-		color: '#868686',
-		size: '3px',
-		railOpacity: 0.3,
-		wheelStep: 5
-	});
-	$('.scroll-user-widget').slimScroll({
-		height: '500px',
-		color: '#868686',
-		size: '3px',
-		railOpacity: 0.3,
-		wheelStep: 5
-	});
-	$('.dropdown-message-scroll').slimScroll({
-		height: '250px',
-		position: 'left',
-		color: '#868686',
-		size: '3px',
-		railOpacity: 0.3,
-		wheelStep: 5
-	});
-	$('.table-scroll').slimScroll({
-		height: '300px',
-		position: 'right',
-		color: '#868686',
-		size: '3px',
-		railOpacity: 0.3,
-		wheelStep: 5
-	});
+(function ($) {
+	$(document).ready(function(){
+
+		$(window).load(function() { $("#loading").fadeOut("slow"); })
 
 
-	//KNOB
-	$(function() {
-		$(".dial").knob();
-	});
-
-
-
-	//TOOLTIP
-	$('.tooltips').tooltip({
-	  selector: "[data-toggle=tooltip]",
-	  container: "body"
-	})
-
-	//RESPONSIVE SIDEBAR
-	$("button.show-sidebar").click(function(){
-	$("div.left").toggleClass("mobile-sidebar");
-	$("div.right").toggleClass("mobile-content");
-	$("div.logo-brand").toggleClass("logo-brand-toggle");
-	});
-
-
-	//SIDEBAR MENU
-	$('#sidebar-menu > ul > li > a').click(function() {
-		$('#sidebar-menu li').removeClass('selected');
-		$(this).closest('li').addClass('selected');	
-		var checkElement = $(this).next();
-			if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
-				$(this).closest('li').removeClass('selected');
-				checkElement.slideUp('fast');
-			}
-			if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
-				$('#sidebar-menu ul ul:visible').slideUp('fast');
-				checkElement.slideDown('fast');
-			}
-			if($(this).closest('li').find('ul').children().length == 0) {
-				return true;
-				} else {
-				return false;	
-			}		
-	});
-
-
-	//SUMMERNOTE
-	$('.summernote').summernote({
-	  height: 500
-	});
-
-
-	$('.summernote-small').summernote({
-	  toolbar: [
-		['style', ['bold', 'italic', 'underline', 'clear']],
-		['fontsize', ['fontsize']],
-		['color', ['color']],
-		['para', ['ul', 'ol', 'paragraph']]
-	  ],
-	  height: 200
-	});
-
-
-	//SELECT
-	$('.selectpicker').selectpicker();
-	//FILE INPUT
-	$('input[type=file]').bootstrapFileInput();
-	//DATE PICKER
-	$('.datepicker-input').datepicker();
-	//ICHECK
-	$('input').iCheck({
-	checkboxClass: 'icheckbox_minimal-grey',
-	radioClass: 'iradio_minimal-grey',
-	increaseArea: '20%' // optional
-	});
-
-
-	//GALLERY
-	$('.gallery-wrap').each(function() { // the containers for all your galleries
-		$(this).magnificPopup({
-			delegate: 'a.zooming', // the selector for gallery item
-			type: 'image',
-			removalDelay: 300,
-			mainClass: 'mfp-fade',
-			gallery: {
-			  enabled:true
-			}
+		//SLIM SCROLL
+		$('.slimscroller').slimscroll({
+			height: 'auto',
+			size: '3px',
+			railOpacity: 0.3,
+			wheelStep: 5
 		});
-	}); 
+		$('.chat-widget').slimScroll({
+			height: '300px',
+			color: '#868686',
+			size: '3px',
+			railOpacity: 0.3,
+			wheelStep: 5
+		});
+		$('.scroll-widget').slimScroll({
+			height: '325px',
+			position: 'left',
+			color: '#868686',
+			size: '3px',
+			railOpacity: 0.3,
+			wheelStep: 5
+		});
+		$('.scroll-user-widget').slimScroll({
+			height: '500px',
+			color: '#868686',
+			size: '3px',
+			railOpacity: 0.3,
+			wheelStep: 5
+		});
+		$('.dropdown-message-scroll').slimScroll({
+			height: '250px',
+			position: 'left',
+			color: '#868686',
+			size: '3px',
+			railOpacity: 0.3,
+			wheelStep: 5
+		});
+		$('.table-scroll').slimScroll({
+			height: '300px',
+			position: 'right',
+			color: '#868686',
+			size: '3px',
+			railOpacity: 0.3,
+			wheelStep: 5
+		});
 
 
-	if ($('#morris-bar-home').length > 0){
-		//MORRIS
-		Morris.Bar({
-		  element: 'morris-bar-home',
-		  data: [
-			{ y: 'Indonesia', a: 952},
-			{ y: 'India', a: 985},
-			{ y: 'Malaysia', a: 955},
-			{ y: 'China', a: 785 },
-			{ y: 'Philipina', a: 700 },
-			{ y: 'Autralia', a: 601 },
-			{ y: 'United Kingdom', a: 421 },
-			{ y: 'United States', a: 725 },
-			{ y: 'Taiwan', a: 350 },
-			{ y: 'New Zealand', a: 120 },
-			{ y: 'Singapore', a: 124}
+		//KNOB
+		$(function() {
+			$(".dial").knob();
+		});
+
+
+
+		//TOOLTIP
+		$('.tooltips').tooltip({
+		  selector: "[data-toggle=tooltip]",
+		  container: "body"
+		})
+
+		//RESPONSIVE SIDEBAR
+		$("button.show-sidebar").click(function(){
+		$("div.left").toggleClass("mobile-sidebar");
+		$("div.right").toggleClass("mobile-content");
+		$("div.logo-brand").toggleClass("logo-brand-toggle");
+		});
+
+
+		//SIDEBAR MENU
+		$('#sidebar-menu > ul > li > a').click(function() {
+			$('#sidebar-menu li').removeClass('selected');
+			$(this).closest('li').addClass('selected');
+			var checkElement = $(this).next();
+				if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+					$(this).closest('li').removeClass('selected');
+					checkElement.slideUp('fast');
+				}
+				if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+					$('#sidebar-menu ul ul:visible').slideUp('fast');
+					checkElement.slideDown('fast');
+				}
+				if($(this).closest('li').find('ul').children().length == 0) {
+					return true;
+					} else {
+					return false;
+				}
+		});
+
+
+		//SUMMERNOTE
+		$('.summernote').summernote({
+		  height: 500
+		});
+
+
+		$('.summernote-small').summernote({
+		  toolbar: [
+			['style', ['bold', 'italic', 'underline', 'clear']],
+			['fontsize', ['fontsize']],
+			['color', ['color']],
+			['para', ['ul', 'ol', 'paragraph']]
 		  ],
-		  xkey: 'y',
-		  ykeys: ['a'],
-		  labels: ['Visitor'],
-		  resize: true,
-		  barColors: ['#2C7439'],
-		  gridTextColor: ['#2C7439'],
-		  gridTextSize: 11,
-		  grid :false
+		  height: 200
 		});
 
-	}
 
-	if ($('#morris-home').length > 0){
-		//MORRIS
-		Morris.Area({
-		  element: 'morris-home',
-		  data: [
-			{ y: '2006', a: 100, b: 90, c: 112 },
-			{ y: '2007', a: 75,  b: 65, c: 95 },
-			{ y: '2008', a: 50,  b: 40, c: 80 },
-			{ y: '2009', a: 75,  b: 65, c: 96 },
-			{ y: '2010', a: 50,  b: 40, c: 75 },
-			{ y: '2011', a: 75,  b: 65, c: 110 },
-			{ y: '2012', a: 100, b: 90, c: 132 },
-			{ y: '2013', a: 125, b: 110, c: 152 },
-			{ y: '2014', a: 145, b: 135, c: 165 }
-		  ],
-		  xkey: 'y',
-		  ykeys: ['a', 'b', 'c'],
-		  labels: ['New Visitor', 'Visitor', 'Page Hits'],
-		  resize: true,
-		  lineColors: ['#5CB85C', '#FFD600', '#D10D0D']
+		//SELECT
+		$('.selectpicker').selectpicker();
+		//FILE INPUT
+		$('input[type=file]').bootstrapFileInput();
+		//DATE PICKER
+		$('.datepicker-input').datepicker();
+		//ICHECK
+		$('input').iCheck({
+		checkboxClass: 'icheckbox_minimal-grey',
+		radioClass: 'iradio_minimal-grey',
+		increaseArea: '20%' // optional
 		});
-	}
-	
-	
-	function respChart(selector, data, options){
 
-		// Define default option for line chart
-		var option = {
-			scaleOverlay : false,
-			scaleOverride : false,
-			scaleSteps : null,
-			scaleStepWidth : null,
-			scaleStartValue : null,
-			scaleLineColor : "rgba(0,0,0,.1)",
-			scaleLineWidth : 1,
-			scaleShowLabels : true,
-			scaleLabel : "<%=value%>",
-			scaleFontFamily : "'proxima-nova'",
-			scaleFontSize : 10,
-			scaleFontStyle : "normal",
-			scaleFontColor : "#909090",	
-			scaleShowGridLines : true,
-			scaleGridLineColor : "rgba(0,0,0,.05)",
-			scaleGridLineWidth : 1,	
-			bezierCurve : true,
-			pointDot : true,
-			pointDotRadius : 3,
-			pointDotStrokeWidth : 1,
-			datasetStroke : true,
-			datasetStrokeWidth : 2,
-			datasetFill : true,
-			animation : true,
-			animationSteps : 60,
-			animationEasing : "easeOutQuart",
-			onAnimationComplete : null
-		}
-
-		// check if the option is override to exact options 
-		// (bar, pie and other)
-		if (options == false || options == null){
-			options = option;
-		} 
-
-		// get selector by context
-		var ctx = selector.get(0).getContext("2d");
-		// pointing parent container to make chart js inherit its width
-		var container = $(selector).parent();
-
-		// enable resizing matter
-		$(window).resize( generateChart );
-
-		// this function produce the responsive Chart JS
-		function generateChart(){
-			// make chart width fit with its container
-			var ww = selector.attr('width', $(container).width() );
-			// Initiate new chart or Redraw
-			new Chart(ctx).Line(data, options);
-		};
-
-		// run function - render chart at first load
-		generateChart();
-
-	}
-	
-	respChart($("#canvas"),data);
-
-
-});
-
+	});
+})(jQuery);
 
 
 /* ===========================================================

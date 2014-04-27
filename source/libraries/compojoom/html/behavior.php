@@ -76,18 +76,40 @@ class CompojoomHtmlBehavior
 			// Load compojoom js
 			JHTML::_('script', 'media/lib_compojoom/js/jquery.cjoom.js');
 
+			// Load third party scripts and css? (Required for Template)
 			if ($thirdparty)
 			{
 				// Load 3rd Party css
+
+				// Font Awesome
 				JHTML::_('stylesheet', 'media/lib_compojoom/third/font-awesome/css/font-awesome.min.css');
-				JHTML::_('stylesheet', 'media/lib_compojoom/third/weather-icon/css/weather-icons.min.css');
+
+				// Weather?!
+				// JHTML::_('stylesheet', 'media/lib_compojoom/third/weather-icon/css/weather-icons.min.css');
+
+				// Chart API
 				JHTML::_('stylesheet', 'media/lib_compojoom/third/morris/morris.css');
+
+				// Dialogs with effects / CSS transitions and animations
 				JHTML::_('stylesheet', 'media/lib_compojoom/third/nifty-modal/css/component.css');
+
+				// Sortable / SASS by HubSpot
 				JHTML::_('stylesheet', 'media/lib_compojoom/third/sortable/sortable-theme-bootstrap.css');
+
+				// Checkboxes / Radiobuttons project by fronteed - see https://github.com/fronteed/iCheck
 				JHTML::_('stylesheet', 'media/lib_compojoom/third/icheck/skins/minimal/grey.css');
+
+				// Bootstrap select - is already implemented in joomla 3.2 (but with bootstrap 2.3.2)
+				// see http://silviomoreto.github.io/bootstrap-select/
 				JHTML::_('stylesheet', 'media/lib_compojoom/third/select/bootstrap-select.min.css');
-				JHTML::_('stylesheet', 'media/lib_compojoom/third/summernote/summernote.css');
+
+				// Bootstrap Editor
+				// JHTML::_('stylesheet', 'media/lib_compojoom/third/summernote/summernote.css');
+
+				// Popups (more..) but nice ones -> responsive, http://dimsemenov.com/plugins/magnific-popup/
 				JHTML::_('stylesheet', 'media/lib_compojoom/third/magnific-popup/magnific-popup.css');
+
+				// Datepicker for Bootstrap by Stefan Petre, http://www.eyecon.ro/bootstrap-datepicker/
 				JHTML::_('stylesheet', 'media/lib_compojoom/third/datepicker/css/datepicker.css');
 
 				// Load 3rd Party scripts for Laceng
@@ -98,7 +120,9 @@ class CompojoomHtmlBehavior
 				JHTML::_('script', 'media/lib_compojoom/third/nifty-modal/js/modalEffects.js');
 				JHTML::_('script', 'media/lib_compojoom/third/sortable/sortable.min.js');
 				JHTML::_('script', 'media/lib_compojoom/third/select/bootstrap-select.min.js');
-				JHTML::_('script', 'media/lib_compojoom/third/summernote/summernote.js');
+
+				// JHTML::_('script', 'media/lib_compojoom/third/summernote/summernote.js');
+
 				JHTML::_('script', 'media/lib_compojoom/third/magnific-popup/jquery.magnific-popup.min.js');
 				JHTML::_('script', 'media/lib_compojoom/third/input/bootstrap.file-input.js');
 				JHTML::_('script', 'media/lib_compojoom/datepicker/js/bootstrap-datepicker.js');
@@ -111,7 +135,7 @@ class CompojoomHtmlBehavior
 			// Load backend template
 			if ($ctemplate)
 			{
-				JHTML::_('script', 'media/lib_compojoom/js/laceng.js');
+				JHTML::_('script', 'media/lib_compojoom/js/lanceng.js');
 
 				JHTML::_('stylesheet', 'media/lib_compojoom/css/style.css');
 				JHTML::_('stylesheet', 'media/lib_compojoom/css/style-responsive.css');
