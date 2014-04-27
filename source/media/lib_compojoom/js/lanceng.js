@@ -3,7 +3,6 @@
 
 		$(window).load(function() { $("#loading").fadeOut("slow"); })
 
-
 		//SLIM SCROLL
 		$('.slimscroller').slimscroll({
 			height: 'auto',

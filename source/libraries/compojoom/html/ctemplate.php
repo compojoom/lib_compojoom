@@ -21,15 +21,19 @@ class CompojoomHtmlCtemplate
 	/**
 	 * Function to render a social media info
 	 *
+	 * @param   object  $menu    - The menu
+	 * @param   string  $title   - The title
+	 * @param   string  $slogan  - The slogan
+	 *
 	 * @return string
 	 */
 	public static function getHead($menu, $title = '', $slogan = '')
 	{
 		$user = JFactory::getUser();
-
 		$gravatar = CompojoomHtmlCtemplate::get_gravatar($user->email);
 
 		$html[] = '<div class="compojoom-bootstrap">';
+
 		// Loading animation
 		$html[] = '<div id="loading" style="display: none;">
 					<div class="loading-inner">
@@ -40,6 +44,7 @@ class CompojoomHtmlCtemplate
 					</div>
 				</div>';
 
+		// Container
 		$html[] = '<div class="container">
 					<div class="logo-brand header sidebar rows">
 						<div class="logo pull-left">
@@ -51,23 +56,21 @@ class CompojoomHtmlCtemplate
 					</div>
 					';
 
-		// BEGIN SIDEBAR
+		// Begin sidebar
 		$html[] = '<div class="left side-menu">
-            <div class="body rows scroll-y">
-
-                <div class="sidebar-inner slimscroller">
-
-					<!-- User Session -->
-					<div class="media c-media-sidebar">
-						<a class="pull-left" href="#fakelink">
-							<img class="media-object img-circle" src="' . $gravatar . '" alt="Avatar">
-						</a>
-						<div class="media-body c-media-introtext">
+						<div class="body rows scroll-y">
+							<div class="sidebar-inner slimscroller">
+							<!-- User Session -->
+								<div class="media c-media-sidebar">
+								<a class="pull-left" href="#fakelink">
+									<img class="media-object img-circle" src="' . $gravatar . '" alt="Avatar">
+								</a>
+							<div class="media-body c-media-introtext">
 							Welcome back,
 							<h4 class="media-heading"><strong>' . $user->name . '</strong></h4>
 							<!--<a href="user-profile.html">Edit</a>
 							<a class="md-trigger" data-modal="logout-modal-alt">Logout</a>-->
-						</div><!-- End div .media-body -->
+							</div><!-- End div .media-body -->
 					</div><!-- End div .media -->
 				';
 

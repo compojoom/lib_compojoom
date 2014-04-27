@@ -47,30 +47,40 @@ class CompojoomHtmlBehavior
 
 		if ($js)
 		{
-			// Load jQuery first
-			if ($debug)
+			if (JVERSION < '3')
 			{
-				JHTML::_('script', 'media/lib_compojoom/js/jquery.js');
+				// Load jQuery first
+				if ($debug)
+				{
+					JHTML::_('script', 'media/lib_compojoom/js/jquery.js');
+				}
+				else
+				{
+					JHTML::_('script', 'media/lib_compojoom/js/jquery-1.11.0.min.js');
+				}
+
+				// Load jQuery in no conflict mode
+				JHTML::_('script', 'media/lib_compojoom/js/jquery.noconflict.js');
+
+				// Load radio buttons JS
+				JHTML::_('script', 'media/lib_compojoom/js/radiobtns.js');
+
+				// Load bootstrap
+				if ($debug)
+				{
+					JHTML::_('script', 'media/lib_compojoom/js/bootstrap-3.1.1.js');
+				}
+				else
+				{
+					JHTML::_('script', 'media/lib_compojoom/js/bootstrap-3.1.1.min.js');
+				}
+
 			}
 			else
 			{
-				JHTML::_('script', 'media/lib_compojoom/js/jquery-1.11.0.min.js');
-			}
-
-			// Load jQuery in no conflict mode
-			JHTML::_('script', 'media/lib_compojoom/js/jquery.noconflict.js');
-
-			// Load radio buttons JS
-			JHTML::_('script', 'media/lib_compojoom/js/radiobtns.js');
-
-			// Load bootstrap
-			if ($debug)
-			{
-				JHTML::_('script', 'media/lib_compojoom/js/bootstrap-3.1.1.js');
-			}
-			else
-			{
-				JHTML::_('script', 'media/lib_compojoom/js/bootstrap-3.1.1.min.js');
+				// Load native
+				JHtml::_('jquery.framework',  true);
+				JHtml::_('bootstrap.framework', true);
 			}
 
 			// Load compojoom js
