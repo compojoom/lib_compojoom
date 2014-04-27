@@ -106,7 +106,7 @@ class CompojoomHtmlCtemplate
 							<li class="active"><a href="tables.html"><i class="fa fa-table"></i> Tables</a></li>
 							<li><a href="gallery.html"><i class="fa fa-picture-o"></i><i class="fa fa-star i-right yellow"></i> Gallery</a></li>
 							<li><a href="morris.html"><i class="fa fa-bar-chart-o"></i> Graph / Chart</a></li>
-							<li><a href="#fakelink"><i class="fa fa-home"></i><i class="fa fa-angle-double-down i-right"></i> Pages <span class="label label-success new-circle animated double shake span-left">13</span></a>
+							<li><a href="#fakelink"><i class="fa fa-home"></i><i class="fa fa-angle-double-down i-right"></i> Pages <span class="label label-success new-circle animated double shake c-sp-inline">13</span></a>
 								<ul>
 									<li><a href="login.html"><i class="fa fa-angle-right"></i> Login</a></li>
 									<li><a href="lock-screen.html"><i class="fa fa-angle-right"></i> Lock Screen</a></li>
@@ -130,7 +130,7 @@ class CompojoomHtmlCtemplate
 									<li><a href="weather-icons.html"><i class="fa fa-angle-right"></i> Weather icons <span class="label label-danger new-circle">NEW</span></a></li>
 								</ul>
 							</li>
-							<li><a href="#fakelink"><i class="fa fa-envelope"></i><i class="fa fa-angle-double-down i-right"></i> Message  <span class="label label-success new-circle span-left">UPDATED</span></a>
+							<li><a href="#fakelink"><i class="fa fa-envelope"></i><i class="fa fa-angle-double-down i-right"></i> Message  <span class="c-sp-inline label label-success new-circle">UPDATED</span></a>
 								<ul>
 									<li><a href="inbox.html"><i class="fa fa-angle-right"></i> Inbox</a></li>
 									<li><a href="new-message.html"><i class="fa fa-angle-right"></i> New Message</a></li>

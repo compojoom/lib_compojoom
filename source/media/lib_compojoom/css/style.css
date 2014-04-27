@@ -2655,35 +2655,6 @@ a:focus .icon-vimeo {
   margin-left: 10px;
   color: #333333;
 }
-.weatherseparator {
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 50px;
-}
-.weatherseparator:before,
-.weatherseparator:after {
-  content: " ";
-  /* 1 */
-
-  display: table;
-  /* 2 */
-
-}
-.weatherseparator:after {
-  clear: both;
-}
-.weatherseparator:before,
-.weatherseparator:after {
-  content: " ";
-  /* 1 */
-
-  display: table;
-  /* 2 */
-
-}
-.weatherseparator:after {
-  clear: both;
-}
 
 .c-media-introtext {
  margin-top: 14px;
@@ -2695,4 +2666,8 @@ a:focus .icon-vimeo {
 
 .c-logo-icon {
     margin-top: 33px;
+}
+
+.c-sp-inline {
+    float: none !important; margin-left: 5px; display: inline-block !important;
 }
