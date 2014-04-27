@@ -57,7 +57,7 @@ class CompojoomHtmlBehavior
 				JHTML::_('script', 'media/lib_compojoom/js/jquery-1.11.0.min.js');
 			}
 
-			// Load jQuery compat
+			// Load jQuery in no conflict mode
 			JHTML::_('script', 'media/lib_compojoom/js/jquery.noconflict.js');
 
 			// Load radio buttons JS
