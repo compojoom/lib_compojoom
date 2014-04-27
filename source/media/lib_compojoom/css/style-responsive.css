@@ -17,10 +17,10 @@
 	.pricing-tables table.table-inner > thead > tr > td,
 	.pricing-tables table.table-inner > tbody > tr > td,
 	.pricing-tables table.table-inner > tfoot > tr > td {
-	  padding: 15px;
-	  font-size: 14px;
-	  vertical-align: middle;
-	  border-top: 1px dotted #dddddd;
+		padding: 15px;
+		font-size: 14px;
+		vertical-align: middle;
+		border-top: 1px dotted #dddddd;
 	}
 }
 
@@ -115,7 +115,7 @@
 		background: #ddd;
 	}
 	.user-profile-sidebar{text-align: center;}
-	
+
 	/*
 	=========================================================================
 	UPDATE FOR VERSION 1.1
@@ -131,7 +131,7 @@
 	.weather-widget .overlay-weather-info .weather-info-city h4{font-size: 15px;}
 	.weather-widget .overlay-weather-info .weather-info-city h1{font-size: 24px;}
 	.weather-widget .overlay-weather-info i.weather-icon{font-size: 60px;}
-	
+
 }
 
 
@@ -158,13 +158,13 @@
 		z-index: 999991;
 	}
 	.navbar-default {
-	  border: none;
+		border: none;
 	}
 	.button-menu-mobile{
 		display: block;
 		z-index: 999993;
 	}
-	
+
 	button.navbar-toggle{
 		padding: 15px 15px;
 		border-radius: 0;
@@ -181,7 +181,7 @@
 		background: #1B1E24;
 		color: #A5B2BC;
 	}
-	
+
 	.navbar-collapse{
 		padding-right: 15px;
 		padding-left: 15px;
@@ -230,19 +230,19 @@
 		overflow: hidden;
 		background: #ddd;
 	}
-	
+
 	footer{text-align: center;}
-	
+
 	.lock-screen{text-align: center;}
 	.ava-lock-screen{text-align: center; margin-bottom: 20px;}
 	.ava-lock-screen img{
 		width: 100px;
 		margin: 0;
 	}
-	
+
 	.la-pricing-table .la-col-4{width: 50%;}
 	.user-profile-sidebar{text-align: center;}
-	
+
 	/*
 	=========================================================================
 	UPDATE FOR VERSION 1.1
@@ -290,7 +290,7 @@
 	.gallery-wrap .column,.gallery-wrap .column-3,.gallery-wrap .column-4{width: 33.33333333333333%;}
 	.gallery-wrap .column .inner .img-wrap,.gallery-wrap .column-3 .inner .img-wrap,.gallery-wrap .column-4 .inner .img-wrap{height: 70px;}
 	.login-wrap{margin: 20px 0 0 0;}
-	
+
 	/*
 	=========================================================================
 	UPDATE FOR VERSION 1.1
@@ -302,7 +302,7 @@
 	.pricing-tables .circle-price-wrap{
 		width: 120px;
 		height: 120px;
-		top: 80px;
+		top: 70px;
 		margin-left: -60px;
 	}
 	/** Weather widget **/

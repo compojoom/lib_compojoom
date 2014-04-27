@@ -93,24 +93,21 @@ class CompojoomHtmlBehavior
 				// Font Awesome
 				JHTML::_('stylesheet', 'media/lib_compojoom/third/font-awesome/css/font-awesome.min.css');
 
-				// Weather?!
-				// JHTML::_('stylesheet', 'media/lib_compojoom/third/weather-icon/css/weather-icons.min.css');
-
 				// Chart API
-				JHTML::_('stylesheet', 'media/lib_compojoom/third/morris/morris.css');
+				// JHTML::_('stylesheet', 'media/lib_compojoom/third/morris/morris.css');
 
 				// Dialogs with effects / CSS transitions and animations
 				JHTML::_('stylesheet', 'media/lib_compojoom/third/nifty-modal/css/component.css');
 
 				// Sortable / SASS by HubSpot
-				JHTML::_('stylesheet', 'media/lib_compojoom/third/sortable/sortable-theme-bootstrap.css');
+				// JHTML::_('stylesheet', 'media/lib_compojoom/third/sortable/sortable-theme-bootstrap.css');
 
 				// Checkboxes / Radiobuttons project by fronteed - see https://github.com/fronteed/iCheck
-				JHTML::_('stylesheet', 'media/lib_compojoom/third/icheck/skins/minimal/grey.css');
+				// JHTML::_('stylesheet', 'media/lib_compojoom/third/icheck/skins/minimal/grey.css');
 
 				// Bootstrap select - is already implemented in joomla 3.2 (but with bootstrap 2.3.2)
 				// see http://silviomoreto.github.io/bootstrap-select/
-				JHTML::_('stylesheet', 'media/lib_compojoom/third/select/bootstrap-select.min.css');
+				// JHTML::_('stylesheet', 'media/lib_compojoom/third/select/bootstrap-select.min.css');
 
 				// Bootstrap Editor
 				// JHTML::_('stylesheet', 'media/lib_compojoom/third/summernote/summernote.css');
@@ -123,21 +120,25 @@ class CompojoomHtmlBehavior
 
 				// Load 3rd Party scripts for Laceng
 				JHTML::_('script', 'media/lib_compojoom/third/slimscroll/jquery.slimscroll.min.js');
-				JHTML::_('script', 'http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js');
-				JHTML::_('script', 'media/lib_compojoom/third/morris/morris.js');
-				JHTML::_('script', 'media/lib_compojoom/third/nifty-modal/js/classie.js');
-				JHTML::_('script', 'media/lib_compojoom/third/nifty-modal/js/modalEffects.js');
-				JHTML::_('script', 'media/lib_compojoom/third/sortable/sortable.min.js');
-				JHTML::_('script', 'media/lib_compojoom/third/select/bootstrap-select.min.js');
+				// JHTML::_('script', 'http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js');
+				// JHTML::_('script', 'media/lib_compojoom/third/morris/morris.js');
+				// JHTML::_('script', 'media/lib_compojoom/third/nifty-modal/js/classie.js');
+				// JHTML::_('script', 'media/lib_compojoom/third/nifty-modal/js/modalEffects.js');
+				// JHTML::_('script', 'media/lib_compojoom/third/sortable/sortable.min.js');
+				// JHTML::_('script', 'media/lib_compojoom/third/select/bootstrap-select.min.js');
 
 				// JHTML::_('script', 'media/lib_compojoom/third/summernote/summernote.js');
 
 				JHTML::_('script', 'media/lib_compojoom/third/magnific-popup/jquery.magnific-popup.min.js');
 				JHTML::_('script', 'media/lib_compojoom/third/input/bootstrap.file-input.js');
 				JHTML::_('script', 'media/lib_compojoom/third/datepicker/js/bootstrap-datepicker.js');
-				JHTML::_('script', 'media/lib_compojoom/third/icheck/icheck.min.js');
-				JHTML::_('script', 'media/lib_compojoom/third/wizard/jquery.snippet.min.js');
-				JHTML::_('script', 'media/lib_compojoom/third/wizard/jquery.easyWizard.js');
+				// JHTML::_('script', 'media/lib_compojoom/third/icheck/icheck.min.js');
+				// JHTML::_('script', 'media/lib_compojoom/third/wizard/jquery.snippet.min.js');
+				// JHML::_('script', 'media/lib_compojoom/third/wizard/jquery.easyWizard.js');
+
+				JHTML::_('script', 'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js');
+				JHTML::_('script', 'https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js');
+
 			}
 
 			// Load backend template

@@ -76,19 +76,10 @@
 				}
 		});
 
-		//SELECT
-		$('.selectpicker').selectpicker();
 		//FILE INPUT
 		$('input[type=file]').bootstrapFileInput();
 		//DATE PICKER
 		$('.datepicker-input').datepicker();
-		//ICHECK
-		$('input').iCheck({
-		checkboxClass: 'icheckbox_minimal-grey',
-		radioClass: 'iradio_minimal-grey',
-		increaseArea: '20%' // optional
-		});
-
 	});
 })(jQuery);
 
