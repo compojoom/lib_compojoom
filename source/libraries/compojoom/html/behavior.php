@@ -74,7 +74,6 @@ class CompojoomHtmlBehavior
 				{
 					JHTML::_('script', 'media/lib_compojoom/js/bootstrap-3.1.1.min.js');
 				}
-
 			}
 			else
 			{

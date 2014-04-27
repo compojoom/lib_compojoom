@@ -2666,9 +2666,34 @@ a:focus .icon-vimeo {
 }
 
 .c-logo-icon {
-    margin-top: 3px;
+    margin-top: 8px;
+	position: absolute;
+	top: 0px;
+	right: 15px;
 }
 
 .c-sp-inline {
     float: none !important; margin-left: 5px; display: inline-block !important;
+}
+
+.c-toolbar {
+	padding: 0; margin: 0;
+}
+
+.c-extension-title {
+	max-width: 225px !important;
+}
+
+.c-toolbar-holder {
+	background: #fff;
+	clear: both;
+	position: absolute;
+	top: 0;
+	left: 225px;
+	width: 100%;
+	padding: 0 20px;
+}
+
+.c-toolbar-holder .btn {
+	padding: 3px 8px;
 }

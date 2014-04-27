@@ -21,14 +21,20 @@ class CompojoomHtmlCtemplate
 	/**
 	 * Function to render a social media info
 	 *
-	 * @param   object  $menu    - The menu
-	 * @param   string  $title   - The title
-	 * @param   string  $slogan  - The slogan
+	 * @param   object  $menu       - The menu
+	 * @param   string  $title      - The title
+	 * @param   string  $slogan     - The slogan
+	 * @param   string  $extension  - The extension (opt - if not set taken from input->get('option'))
 	 *
 	 * @return string
 	 */
-	public static function getHead($menu, $title = '', $slogan = '')
+	public static function getHead($menu, $title = '', $slogan = '', $extension = '')
 	{
+		if (empty($extension))
+		{
+			$extension = JFactory::getApplication()->input->get('option');
+		}
+
 		$user = JFactory::getUser();
 		$gravatar = CompojoomHtmlCtemplate::get_gravatar($user->email);
 
@@ -36,24 +42,29 @@ class CompojoomHtmlCtemplate
 
 		// Loading animation
 		$html[] = '<div id="loading" style="display: none;">
-					<div class="loading-inner">
-						<div class="spinner">
-							<div class="cube1"></div>
-							<div class="cube2"></div>
+						<div class="loading-inner">
+							<div class="spinner">
+								<div class="cube1"></div>
+								<div class="cube2"></div>
+							</div>
 						</div>
-					</div>
-				</div>';
+					</div>';
 
 		// Container
 		$html[] = '<div class="container">
-					<div class="logo-brand header sidebar rows">
-						<div class="logo pull-left">
-							<h1><a href="#fakelink"> CForms</a></h1>
+						<div class="logo-brand header sidebar rows">
+							<div class="c-extension-title logo pull-left">
+								<h1><a href="' . JRoute::_("index.php?option=" . JFactory::getApplication()->input->get('option')) . '">' . JText::_($extension) .'</a></h1>
+							</div>
+							<div class="c-toolbar-holder">
+								<div class="c-toolbar pull-left">
+								' . JToolbar::getInstance('toolbar')->render('toolbar') . '
+								</div>
+							</div>
+							<div class="c-logo-icon pull-left visible-lg">
+								<a href="https://compojoom.com" title="Compojoom"><img src="../media/lib_compojoom/img/logo-green.png" alt="Compojoom" /></a>
+							</div>
 						</div>
-						<div class="pull-right c-logo-icon">
-							<a href="https://compojoom.com" title="Compojoom"><img src="../media/lib_compojoom/img/logo-grey.png" alt="Compojoom" /></a>
-						</div>
-					</div>
 					';
 
 		// Begin sidebar
