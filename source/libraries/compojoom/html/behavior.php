@@ -62,9 +62,6 @@ class CompojoomHtmlBehavior
 				// Load jQuery in no conflict mode
 				JHTML::_('script', 'media/lib_compojoom/js/jquery.noconflict.js');
 
-				// Load radio buttons JS
-				JHTML::_('script', 'media/lib_compojoom/js/radiobtns.js');
-
 				// Load bootstrap
 				if ($debug)
 				{
@@ -74,6 +71,9 @@ class CompojoomHtmlBehavior
 				{
 					JHTML::_('script', 'media/lib_compojoom/js/bootstrap-3.1.1.min.js');
 				}
+
+				// Load radio buttons JS
+				JHTML::_('script', 'media/lib_compojoom/js/radiobtns.js');
 			}
 			else
 			{
@@ -138,7 +138,6 @@ class CompojoomHtmlBehavior
 
 				JHTML::_('script', 'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js');
 				JHTML::_('script', 'https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js');
-
 			}
 
 			// Load backend template

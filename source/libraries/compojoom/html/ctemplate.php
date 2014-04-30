@@ -21,18 +21,21 @@ class CompojoomHtmlCtemplate
 	/**
 	 * Function to render a social media info
 	 *
-	 * @param   object  $menu       - The menu
+	 * @param   array   $menu       - The menu
+	 * @param   string  $active     - The active entry
 	 * @param   string  $title      - The title
 	 * @param   string  $slogan     - The slogan
 	 * @param   string  $extension  - The extension (opt - if not set taken from input->get('option'))
 	 *
 	 * @return string
 	 */
-	public static function getHead($menu, $title = '', $slogan = '', $extension = '')
+	public static function getHead($menu, $active = 'dashboard', $title = '', $slogan = '', $extension = '')
 	{
+		$input = JFactory::getApplication()->input;
+
 		if (empty($extension))
 		{
-			$extension = JFactory::getApplication()->input->get('option');
+			$extension = $input->get('option');
 		}
 
 		$user = JFactory::getUser();
@@ -95,64 +98,99 @@ class CompojoomHtmlCtemplate
 
 		// Sidebar menu
 		$html[] = '<div id="sidebar-menu">
-						<ul>
-							<li><a href="index.html"><i class="fa fa-home"></i> Dashboard</a></li>
-							<li><a href="#fakelink"><i class="fa fa-leaf"></i> Frontend <span class="label label-danger new-circle">COMING SOON</span></a></li>
-							<li><a href="#fakelink"><i class="fa fa-bug"></i><i class="fa fa-angle-double-down i-right"></i> Elements</a>
-								<ul>
-									<li><a href="element-primary.html"><i class="fa fa-angle-right"></i> Primary <span class="label label-success new-circle">UPDATED</span></a></li>
-									<li><a href="element-extended.html"><i class="fa fa-angle-right"></i> Extended</a></li>
-								</ul>
-							</li>
-							<li><a href="#fakelink"><i class="fa fa-code"></i><i class="fa fa-angle-double-down i-right"></i> Widgets</a>
-								<ul>
-									<li><a href="widget-awesome.html"><i class="fa fa-angle-right"></i> Awesome <span class="label label-danger new-circle">+5 new</span></a></li>
-									<li><a href="widget-grid.html"><i class="fa fa-angle-right"></i> Grid</a></li>
-								</ul>
-							</li>
-							<li><a href="#fakelink"><i class="fa fa-edit"></i><i class="fa fa-angle-double-down i-right"></i> Forms</a>
-								<ul>
-									<li><a href="form-element.html"><i class="fa fa-angle-right"></i> Form Element</a></li>
-									<li><a href="form-wizard.html"><i class="fa fa-angle-right"></i> Form Wizard</a></li>
-									<li><a href="form-validation.html"><i class="fa fa-angle-right"></i> Form Validation</a></li>
-								</ul>
-							</li>
-							<li class="active"><a href="tables.html"><i class="fa fa-table"></i> Tables</a></li>
-							<li><a href="gallery.html"><i class="fa fa-picture-o"></i><i class="fa fa-star i-right yellow"></i> Gallery</a></li>
-							<li><a href="morris.html"><i class="fa fa-bar-chart-o"></i> Graph / Chart</a></li>
-							<li><a href="#fakelink"><i class="fa fa-home"></i><i class="fa fa-angle-double-down i-right"></i> Pages <span class="label label-success new-circle animated double shake c-sp-inline">13</span></a>
-								<ul>
-									<li><a href="login.html"><i class="fa fa-angle-right"></i> Login</a></li>
-									<li><a href="lock-screen.html"><i class="fa fa-angle-right"></i> Lock Screen</a></li>
-									<li><a href="forgot-password.html"><i class="fa fa-angle-right"></i> Forgot Password</a></li>
-									<li><a href="register.html"><i class="fa fa-angle-right"></i> Register</a></li>
-									<li><a href="user-profile.html"><i class="fa fa-angle-right"></i> User Profile</a></li>
-									<li><a href="user-profile-2.html"><i class="fa fa-angle-right"></i> User Profile 2 <span class="label label-danger new-circle">NEW</span></a></li>
-									<li><a href="empty-data.html"><i class="fa fa-angle-right"></i> Empty Data <span class="label label-danger new-circle">NEW</span></a></li>
-									<li><a href="invoice.html"><i class="fa fa-angle-right"></i> Invoice</a></li>
-									<li><a href="pricing-table.html"><i class="fa fa-angle-right"></i> Pricing Table <span class="label label-success new-circle">UPDATED</span></a></li>
-									<li><a href="faq.html"><i class="fa fa-angle-right"></i> FAQ</a></li>
-									<li><a href="search-result.html"><i class="fa fa-angle-right"></i> Search Result <span class="label label-success new-circle">UPDATED</span></a></li>
-									<li><a href="404.html"><i class="fa fa-angle-right"></i> 404</a></li>
-									<li><a href="blank.html"><i class="fa fa-angle-right"></i> Blank</a></li>
-								</ul>
-							</li>
-							<li><a href="#fakelink"><i class="fa fa-smile-o"></i><i class="fa fa-angle-double-down i-right"></i> Icons</a>
-								<ul>
-									<li><a href="font-awesome.html"><i class="fa fa-angle-right"></i> Font Awesome</a></li>
-									<li><a href="glyphicons.html"><i class="fa fa-angle-right"></i> Glyphicons</a></li>
-									<li><a href="weather-icons.html"><i class="fa fa-angle-right"></i> Weather icons <span class="label label-danger new-circle">NEW</span></a></li>
-								</ul>
-							</li>
-							<li><a href="#fakelink"><i class="fa fa-envelope"></i><i class="fa fa-angle-double-down i-right"></i> Message  <span class="c-sp-inline label label-success new-circle">UPDATED</span></a>
-								<ul>
-									<li><a href="inbox.html"><i class="fa fa-angle-right"></i> Inbox</a></li>
-									<li><a href="new-message.html"><i class="fa fa-angle-right"></i> New Message</a></li>
-									<li><a href="reply-message.html"><i class="fa fa-angle-right"></i> Reply Message <span class="label label-danger new-circle">NEW</span></a></li>
-									<li><a href="read-message.html"><i class="fa fa-angle-right"></i> Read Message</a></li>
-								</ul>
-							</li>
-						</ul>
+						<ul>';
+
+		foreach ($menu as $k => $m)
+		{
+			$act = "";
+
+			if ($k == $active)
+			{
+				$act = ' class="active"';
+			}
+
+			$html[] = '<li' . $act . '>';
+
+			// If we have an empty link we generate it on the key! like jtoolbarhelper does
+			if (empty($m['link']))
+			{
+				$m['link'] = 'index.php?option=' . $extension . '&view=' . $k;
+			}
+
+			// Link
+			$html[] = '<a href="' . JRoute::_($m['link']) . $m['anchor'] . '" title="' . JText::_($m['title']) . '">';
+
+			// Icon
+			if (!empty($m['icon']))
+			{
+				$html[] = '<i class="fa ' . $m['icon'] . '"></i> ';
+			}
+
+			if (count($m['children']))
+			{
+				$html[] = '<i class="fa fa-angle-double-down i-right"></i> ';
+			}
+
+			$html[] = JText::_($m['title']);
+
+			$html[] = '</a>';
+
+			if (count($m['children']))
+			{
+				$style = "";
+
+				if ($k == $active)
+				{
+					$style = ' style="display: block;"';
+				}
+
+				$html[] = '<ul' . $style . '>';
+
+				foreach($m['children'] as $kc => $c)
+				{
+					$act = "";
+
+					if ($kc == $active)
+					{
+						$act = ' class="active"';
+					}
+
+					$html[] = '<li key="' . $kc . '"' . $act . '>';
+
+					// If we have an empty link we generate it on the key! like jtoolbarhelper does
+					if (empty($c['link']))
+					{
+						$c['link'] = 'index.php?option=' . $extension . '&view=' . $kc;
+					}
+
+					// Link
+					$html[] = '<a href="' . JRoute::_($c['link']) . $c['anchor'] . '" title="' . JText::_($c['title']) . '">';
+
+					// Icon
+					if (!empty($c['icon']))
+					{
+						$html[] = '<i class="fa ' . $c['icon'] . '"></i> ';
+					}
+
+					$html[] = JText::_($c['title']);
+
+					$html[] = '</a>';
+
+					$html[] = '</li>';
+				}
+
+				$html[] = '</ul>';
+			}
+
+			if (!empty($m['label']))
+			{
+				$html[] = '<span class="label label-success new-circle animated double shake c-sp-inline">' . $m['label'] . '</span>';
+			}
+
+			$html[] = '</li>';
+		}
+
+			$html[] = '</ul>
 						<div class="clear"></div>
 					</div><!-- End div #sidebar-menu -->
 				</div><!-- End div .sidebar-inner .slimscroller -->
