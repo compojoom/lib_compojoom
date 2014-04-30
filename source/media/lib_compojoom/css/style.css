@@ -2697,3 +2697,7 @@ a:focus .icon-vimeo {
 .c-toolbar-holder .btn {
 	padding: 3px 8px;
 }
+
+i.i-right {
+	float: right;
+}

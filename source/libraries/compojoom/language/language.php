@@ -20,16 +20,24 @@ class CompojoomLanguage
 	/**
 	 * Loads a language during the installation
 	 *
-	 * @param   string  $extension  - extension name
-	 * @param   string  $path       - the path to the lang files
+	 * @param   string   $extension  - extension name
+	 * @param   string   $path       - the path to the lang files
+	 * @param   boolean  $liblang   - should the library language also be loaded?
 	 *
 	 * @return void
 	 */
-	public static function load($extension, $path)
+	public static function load($extension, $path, $liblang = true)
 	{
 		$jlang = JFactory::getLanguage();
 		$jlang->load($extension, $path, 'en-GB', true);
 		$jlang->load($extension, $path, $jlang->getDefault(), true);
 		$jlang->load($extension, $path, null, true);
+
+		// Load the library language files (default true)
+		if ($liblang)
+		{
+			$jlang->load('lib_compojoom', JPATH_ADMINISTRATOR);
+			$jlang->load('lib_compojoom', JPATH_SITE);
+		}
 	}
 }

@@ -74,24 +74,21 @@ class CompojoomHtmlCtemplate
 		$html[] = '<div class="left side-menu">
 						<div class="body rows scroll-y">
 							<div class="sidebar-inner slimscroller">
-							<!-- User Session -->
 								<div class="media c-media-sidebar">
-								<a class="pull-left" href="#fakelink">
-									<img class="media-object img-circle" src="' . $gravatar . '" alt="Avatar">
+								<a class="pull-left" href="index.php?option=com_users">
+									<img class="media-object img-circle" src="' . $gravatar . '" alt="Avatar" />
 								</a>
 							<div class="media-body c-media-introtext">
-							Welcome back,
-							<h4 class="media-heading"><strong>' . $user->name . '</strong></h4>
-							<!--<a href="user-profile.html">Edit</a>
-							<a class="md-trigger" data-modal="logout-modal-alt">Logout</a>-->
-							</div><!-- End div .media-body -->
-					</div><!-- End div .media -->
+								' . JText::_('LIB_COMPOJOOM_WELCOME_BACK') . ',
+								<h4 class="media-heading"><strong>' . $user->name . '</strong></h4>
+							</div>
+					</div>
 				';
 
 		// Search
 		$html[] = '<div id="search">
 						<form role="form">
-							<input type="text" class="form-control search" placeholder="Search here...">
+							<input type="text" id="csearch" class="form-control search" placeholder="' . JText::_('LIB_COMPOJOOM_SEARCH_HERE') . '" />
 							<i class="fa fa-search"></i>
 						</form>
 					</div>';
@@ -109,7 +106,14 @@ class CompojoomHtmlCtemplate
 				$act = ' class="active"';
 			}
 
-			$html[] = '<li' . $act . '>';
+			$keyw = "";
+
+			if (!empty($m['keywords']))
+			{
+				$keyw = ' keywords="' . $m['keywords'] . '"';
+			}
+
+			$html[] = '<li' . $act . $keyw . '>';
 
 			// If we have an empty link we generate it on the key! like jtoolbarhelper does
 			if (empty($m['link']))
@@ -167,6 +171,9 @@ class CompojoomHtmlCtemplate
 					$html[] = '<a href="' . JRoute::_($c['link']) . $c['anchor'] . '" title="' . JText::_($c['title']) . '">';
 
 					// Icon
+					// $html[] = '<i class="fa fa-angle-right"></i> ';
+
+					// Icon right
 					if (!empty($c['icon']))
 					{
 						$html[] = '<i class="fa ' . $c['icon'] . '"></i> ';
@@ -195,16 +202,6 @@ class CompojoomHtmlCtemplate
 					</div><!-- End div #sidebar-menu -->
 				</div><!-- End div .sidebar-inner .slimscroller -->
             </div><!-- End div .body .rows .scroll-y -->
-
-			<!-- Sidebar footer -->
-            <div class="footer rows animated fadeInUpBig">
-				<div class="progress progress-xs progress-striped active">
-				  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-					<span class="progress-precentage">80&#37;</span>
-				  </div><!-- End div .pogress-bar -->
-				  <a data-toggle="tooltip" title="See task progress" class="btn btn-default md-trigger" data-modal="task-progress"><i class="fa fa-inbox"></i></a>
-				</div><!-- End div .progress .progress-xs -->
-            </div><!-- End div .footer .rows -->
 		</div>
 		';
 

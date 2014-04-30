@@ -80,6 +80,34 @@
 		$('input[type=file]').bootstrapFileInput();
 		//DATE PICKER
 		$('.datepicker-input').datepicker();
+
+		// Anchor
+		var hash = window.location.hash.substring(1);
+
+		if (hash.length) {
+			$('[key=' + hash + ']').addClass('active');
+		}
+
+		$('[key]').click(function(){
+			$('[key]').removeClass('active');
+			var hash = $(this).attr('key');
+			$('[key=' + hash + ']').addClass('active');
+		});
+
+
+		// $('#sidebar-menu li[keywords~="home"]').hide();
+
+		// Search
+		$('#csearch').keyup(function(){
+			var sw = $(this).val();
+
+			if (sw.length > 1) {
+				$('#sidebar-menu li').hide();
+				$('#sidebar-menu li[keywords*="' +sw + '"]').show();
+			} else {
+				$('#sidebar-menu li').show();
+			}
+		});
 	});
 })(jQuery);
 
