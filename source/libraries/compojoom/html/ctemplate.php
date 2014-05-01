@@ -159,7 +159,14 @@ class CompojoomHtmlCtemplate
 						$act = ' class="active"';
 					}
 
-					$html[] = '<li key="' . $kc . '"' . $act . '>';
+					$keywc = "";
+
+					if (!empty($c['keywords']))
+					{
+						$keywc = ' keywords="' . $c['keywords'] . '"';
+					}
+
+					$html[] = '<li key="' . $kc . '"' . $act . $keywc . '>';
 
 					// If we have an empty link we generate it on the key! like jtoolbarhelper does
 					if (empty($c['link']))

@@ -94,9 +94,6 @@
 			$('[key=' + hash + ']').addClass('active');
 		});
 
-
-		// $('#sidebar-menu li[keywords~="home"]').hide();
-
 		// Search
 		$('#csearch').keyup(function(){
 			var sw = $(this).val();
