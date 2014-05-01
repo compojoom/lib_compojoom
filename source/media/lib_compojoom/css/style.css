@@ -339,8 +339,9 @@ BASIC SELECTOR
 	background: #1B1E24;
 	margin-left: -15px;
 	overflow: hidden;
-	position: absolute;
-	top: 0; bottom: 0;
+	position: fixed;
+	/*bottom: 0;*/
+	min-height: 100%;
 	left: 15px;
 }
 .compojoom-bootstrap .header.sidebar{
@@ -577,11 +578,9 @@ BASIC SELECTOR
 /* === RIGHT COLUMN (CONTENT BODY) === */
 .compojoom-bootstrap .body.rows {
 	top: 75px;
-	bottom: 70px;
 }
 .compojoom-bootstrap .body.content.rows {
 	top: 75px;
-	bottom: 0px;
 	background: #E5E9EC;
 	padding: 20px;
 	font-size: 13px;
@@ -2700,4 +2699,8 @@ i.i-right {
 
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
 	min-height: 27px !important;
+}
+
+#copyright_box {
+	margin-bottom: 20px;
 }
