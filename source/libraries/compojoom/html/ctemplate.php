@@ -41,7 +41,7 @@ class CompojoomHtmlCtemplate
 		$user = JFactory::getUser();
 		$gravatar = CompojoomHtmlCtemplate::get_gravatar($user->email);
 
-		$html[] = '<div class="compojoom-bootstrap">';
+		$html[] = '<div class="compojoom-bootstrap" style="clear: both">';
 
 		// Loading animation
 		$html[] = '<div id="loading" style="display: none;">
@@ -54,7 +54,7 @@ class CompojoomHtmlCtemplate
 					</div>';
 
 		// Container
-		$html[] = '<div class="container">
+		$html[] = '<div class="c-container">
 						<div class="logo-brand header sidebar rows">
 							<div class="c-extension-title logo pull-left">
 								<h1><a href="' . JRoute::_("index.php?option=" . JFactory::getApplication()->input->get('option')) . '">' . JText::_($extension) .'</a></h1>
@@ -217,6 +217,9 @@ class CompojoomHtmlCtemplate
 
 		// BEGIN CONTENT HEADER
 		$html[] = '<div class="body content rows scroll-y">';
+
+		$html[] = '<div id="c-system-message-container"> </div>';
+
 
 		if (!empty($title))
 		{

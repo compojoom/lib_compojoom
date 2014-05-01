@@ -147,6 +147,12 @@ class CompojoomHtmlBehavior
 				JHTML::_('stylesheet', 'media/lib_compojoom/css/style-responsive.css');
 				JHTML::_('stylesheet', 'media/lib_compojoom/css/animate.css');
 
+				if (JVERSION < 3)
+				{
+					JHTML::_('stylesheet', 'media/lib_compojoom/css/j25style.css');
+					JHTML::_('script', 'media/lib_compojoom/js/jquery.cjoom25.js');
+				}
+
 				JHTML::_('script', 'media/lib_compojoom/js/lanceng.js');
 			}
 		}

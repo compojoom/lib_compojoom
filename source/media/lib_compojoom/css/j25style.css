@@ -1,0 +1,64 @@
+/*
+=========================================================================
+Compojoom - Responsive Admin Template - Fixes for Joomla 2.5
+
+Author				Yves Hoppe - Compojoom
+URL					https://compojoom.com
+Version				1.0
+Update Released		Mai 15, 2014
+=========================================================================
+*/
+
+.container {
+	text-align: left !important;
+}
+
+.compojoom-bootstrap {
+	position: absolute;
+	top: 90px;
+	left: 0;
+	margin: 0 11px;
+	width: 90%;
+	width: calc(100% - 22px);
+	min-height: 80%;
+	min-height: calc(100% - 90px);
+	border-right: 1px solid #ccc;
+}
+
+.compojoom-bootstrap .header.sidebar {
+	top: 0;
+}
+
+.compojoom-bootstrap .body.content.rows {
+	top: 45px;
+}
+
+.compojoom-bootstrap .body.rows {
+	bottom: 70px;
+	top: 45px;
+}
+
+.compojoom-bootstrap .body.rows {
+	bottom: 70px;
+	top: 45px;
+}
+
+div.toolbar-list span {
+	height: 16px !important;
+	width: 16px !important;
+	display: inline-block !important;
+	background-size: 16px 32px;
+	background-repeat:no-repeat;
+	margin-top: 2px !important;
+	margin-right: 5px !important;
+	float: left !important;
+}
+
+
+#toolbar {
+	padding-top: 8px;
+}
+
+.compojoom-bootstrap .header.sidebar .logo {
+	padding: 15px 0 0 15px;
+}

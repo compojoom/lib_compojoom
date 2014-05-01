@@ -105,9 +105,11 @@
 				$('#sidebar-menu li').show();
 			}
 		});
+
+		// System message container fix
+		$('#c-system-message-container').html($("#system-message-container").html());
 	});
 })(jQuery);
-
 
 /* ===========================================================
  * Bootstrap: inputmask.js v3.0.0-p7
@@ -468,4 +470,3 @@
   })
 
 }(window.jQuery);
-
