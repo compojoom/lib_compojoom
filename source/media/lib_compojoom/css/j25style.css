@@ -22,6 +22,7 @@ Update Released		Mai 15, 2014
 	width: calc(100% - 22px);
 	min-height: 80%;
 	min-height: calc(100% - 90px);
+	/*bottom: 40px;*/
 	border-right: 1px solid #ccc;
 }
 
@@ -56,9 +57,21 @@ div.toolbar-list span {
 
 
 #toolbar {
-	padding-top: 8px;
+	padding-top: 3px;
 }
 
 .compojoom-bootstrap .header.sidebar .logo {
 	padding: 15px 0 0 15px;
+}
+
+.c-toolbar-holder .btn {
+	padding: 3px 8px;
+}
+
+#toolbar-new a {
+	background-color: #5CB85C;
+}
+
+.toolbar-list a {
+	padding: 5px 10px !important;
 }

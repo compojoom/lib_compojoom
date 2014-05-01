@@ -14,13 +14,7 @@ Update Released		February 13, 2014
 /* Import font from Google Font (Open sans) */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 
-/** Body style reset **/
-body{
-	background: #fff;
-	padding-top: 50px;
-	margin: 0; -webkit-text-size-adjust: 100%;
-	font-family: 'Open Sans', Arial;
-}
+.compojoom-bootstrap {position: absolute; left: 0; top: 0; width: 100%; min-height: 100%; clear: both; margin-bottom: 35px;}
 
 /** Heading style reset **/
  .compojoom-bootstrap h1, .compojoom-bootstrap h2, .compojoom-bootstrap h3,
@@ -569,7 +563,7 @@ BASIC SELECTOR
 .compojoom-bootstrap .right{
 	left: 225px;
 	right: 0;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -2693,4 +2687,17 @@ a:focus .icon-vimeo {
 
 i.i-right {
 	float: right;
+}
+
+.box-info .table {
+	margin-top: 20px
+}
+
+.compojoom-bootstrap .table {
+	margin-bottom: 0;
+	width: 100%;
+}
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	min-height: 27px !important;
 }

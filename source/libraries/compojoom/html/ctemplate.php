@@ -31,11 +31,19 @@ class CompojoomHtmlCtemplate
 	 */
 	public static function getHead($menu, $active = 'dashboard', $title = '', $slogan = '', $extension = '')
 	{
+		// Load bootstrap
+		CompojoomHtmlBehavior::bootstrap31(true, true, true, true);
+
 		$input = JFactory::getApplication()->input;
 
 		if (empty($extension))
 		{
 			$extension = $input->get('option');
+		}
+
+		if (empty($active))
+		{
+			$active = $input->getCmd('view');
 		}
 
 		$user = JFactory::getUser();
