@@ -108,6 +108,9 @@
 
 		// System message container fix
 		$('#c-system-message-container').html($("#system-message-container").html());
+
+		// Ugly hack to adjust height in all caeses..
+		$('.left').height($(document).height());
 	});
 })(jQuery);
 

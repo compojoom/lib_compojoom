@@ -317,13 +317,11 @@ BASIC SELECTOR
 .compojoom-bootstrap .rows-content-header {
 	left: 0;
 	right: 0;
-	position: absolute;
 }
 .compojoom-bootstrap .col {top: 0; bottom: 0;}
 .compojoom-bootstrap .scroll-x { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .compojoom-bootstrap .scroll-y { overflow-y: auto; -webkit-overflow-scrolling: touch; }
 .compojoom-bootstrap .fill,  .compojoom-bootstrap .pane {
-	position: absolute;
 	left: 0;
 	top: 0;
 	right: 0;
@@ -338,11 +336,12 @@ BASIC SELECTOR
 	width: 225px;
 	background: #1B1E24;
 	margin-left: -15px;
-	overflow: hidden;
-	position: fixed;
+	overflow: visible;
+	position: absolute;
 	/*bottom: 0;*/
 	min-height: 100%;
 	left: 15px;
+	clear: left;
 }
 .compojoom-bootstrap .header.sidebar{
 	background: #000;

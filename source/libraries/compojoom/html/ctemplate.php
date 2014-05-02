@@ -102,7 +102,7 @@ class CompojoomHtmlCtemplate
 					</div>';
 
 		// Sidebar menu
-		$html[] = '<div id="sidebar-menu">
+		$html[] = '<div id="sidebar-menu" style="clear: both;">
 						<ul>';
 
 		foreach ($menu as $k => $m)
@@ -213,7 +213,7 @@ class CompojoomHtmlCtemplate
 		}
 
 			$html[] = '</ul>
-						<div class="clear"></div>
+						<div class="clear clr"></div>
 					</div><!-- End div #sidebar-menu -->
 				</div><!-- End div .sidebar-inner .slimscroller -->
             </div><!-- End div .body .rows .scroll-y -->
@@ -254,7 +254,7 @@ class CompojoomHtmlCtemplate
 					</div>
 				</div>
 			</div>
-
+			<div class="clear clr">
 			<div class="md-overlay"></div>
 			</div>';
 
