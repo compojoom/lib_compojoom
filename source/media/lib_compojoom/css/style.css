@@ -2730,3 +2730,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 .chzn-single span {
 	line-height: 29px !important;
 }
+
+.compojoom-bootstrap .accordion-inner {
+	padding: 9px 0;
+}
