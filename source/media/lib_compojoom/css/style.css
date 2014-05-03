@@ -2694,8 +2694,8 @@ i.i-right {
 	width: 100%;
 }
 
-select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
-	min-height: 27px !important;
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input  {
+	min-height: 29px !important;
 }
 
 #copyright_box {
@@ -2704,4 +2704,29 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 
 .tab-pane {
 	padding: 20px;
+}
+
+.compojoom-bootstrap .table-responsive {
+	width: 100%;
+	margin-bottom: 15px;
+	overflow-x: scroll !important;
+	overflow-y: hidden;
+	border: 1px solid #dddddd;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	-webkit-overflow-scrolling: touch;
+}
+
+#filter-bar .btn-group .btn {
+	padding: 4px 8px;
+}
+
+#filter_search { margin-left: 5px;}
+.filter-select {margin-right: 5px;}
+
+.chzn-single{
+	min-height: 29px !important;
+}
+
+.chzn-single span {
+	line-height: 29px !important;
 }

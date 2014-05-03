@@ -144,8 +144,8 @@ class CompojoomHtmlBehavior
 				JHTML::_('stylesheet', 'media/lib_compojoom/css/bootstrap-3.1.1.css');
 
 				JHTML::_('stylesheet', 'media/lib_compojoom/css/style.css');
-				JHTML::_('stylesheet', 'media/lib_compojoom/css/style-responsive.css');
 				JHTML::_('stylesheet', 'media/lib_compojoom/css/animate.css');
+				JHTML::_('stylesheet', 'media/lib_compojoom/css/style-responsive.css');
 
 				if (JVERSION < 3)
 				{
