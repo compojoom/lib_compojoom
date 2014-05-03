@@ -2703,3 +2703,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 #copyright_box {
 	margin-bottom: 20px;
 }
+
+.tab-pane {
+	padding: 20px;
+}
