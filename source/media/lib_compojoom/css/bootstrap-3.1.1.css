@@ -3110,7 +3110,7 @@ box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
   margin-left: 5px;
 }
 .compojoom-bootstrap .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
-  border-radius: 0;
+  /*border-radius: 0;*/
 }
 .compojoom-bootstrap .btn-group > .btn:first-child {
   margin-left: 0;
