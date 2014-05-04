@@ -65,11 +65,6 @@ div.toolbar-list span {
 }
 
 
-
-#toolbar-new a {
-	background-color: #5CB85C;
-}
-
 .toolbar-list a {
 	padding: 5px 10px !important;
 }
@@ -498,16 +493,14 @@ a.badge:focus {
 }
 
 .compojoom-bootstrap  .toolbar-list a.toolbar {
-	background: #eaeaea;
-	border-radius: 3px;
+	/*border-radius: 3px;*/
 }
 
 .c-toolbar-holder .btn {
-	padding: 3px 5px;
 }
 
 .c-toolbar-holder {
-	padding: 0 14px;
+	padding: 3px 0 0 14px;
 }
 
 .compojoom-bootstrap .control-group .control-label {

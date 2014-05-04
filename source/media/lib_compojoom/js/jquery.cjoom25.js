@@ -6,6 +6,7 @@
 (function ($) {
 	$(document).ready(function(){
 		$('a.toolbar').button();
-		$('.button').addClass('btn');
+		$('a.toolbar').addClass('btn btn-default');
+		$('#toolbar-new a.toolbar').addClass('btn-success');
 	});
 })(jQuery);
