@@ -150,6 +150,7 @@ class CompojoomHtmlBehavior
 				if (JVERSION < 3)
 				{
 					JHTML::_('stylesheet', 'media/lib_compojoom/css/j25style.css');
+					JHTML::_('script', 'media/lib_compojoom/js/jquery.radiobtns.js');
 					JHTML::_('script', 'media/lib_compojoom/js/jquery.cjoom25.js');
 				}
 

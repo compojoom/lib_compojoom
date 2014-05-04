@@ -226,8 +226,9 @@ class CompojoomHtmlCtemplate
 		// BEGIN CONTENT HEADER
 		$html[] = '<div class="body content rows scroll-y">';
 
-		$html[] = '<div id="c-system-message-container"> </div>';
+		$html[] = '<div id="c-debug-container"> </div>';
 
+		$html[] = '<div id="c-system-message-container"> </div>';
 
 		if (!empty($title))
 		{

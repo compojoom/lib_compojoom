@@ -174,7 +174,7 @@ Update Released		February 13, 2014
 .compojoom-bootstrap .form-group .checkbox{margin-left: 0; padding-left: 0;}
 
 /** Button **/
-.compojoom-bootstrap .btn{border-radius: 2px;}
+.compojoom-bootstrap .btn{border-radius: 3px;}
 
 
 /** List group **/
@@ -2694,8 +2694,11 @@ i.i-right {
 	width: 100%;
 }
 
-select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input  {
-	min-height: 29px !important;
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"],
+input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"],
+input[type="week"], input[type="number"], input[type="email"], input[type="url"],
+input[type="search"], input[type="tel"], input[type="color"], .uneditable-input  {
+	min-height: 29px;
 }
 
 #copyright_box {
@@ -2709,28 +2712,43 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 .compojoom-bootstrap .table-responsive {
 	width: 100%;
 	margin-bottom: 15px;
-	overflow-x: scroll !important;
+	overflow-x: scroll;
 	overflow-y: hidden;
-	border: 1px solid #dddddd;
 	-ms-overflow-style: -ms-autohiding-scrollbar;
 	-webkit-overflow-scrolling: touch;
 }
 
-#filter-bar .btn-group .btn {
+.compojoom-bootstrap #filter-bar .btn-group .btn {
 	padding: 4px 8px;
 }
 
-#filter_search { margin-left: 5px;}
+#filter_search {margin-left: 5px;}
 .filter-select {margin-right: 5px;}
 
-.chzn-single{
-	min-height: 29px !important;
+.compojoom-bootstrap .chzn-single{
+	min-height: 29px;
 }
 
-.chzn-single span {
-	line-height: 29px !important;
+.compojoom-bootstrap .chzn-single span {
+	line-height: 29px;
 }
 
 .compojoom-bootstrap .accordion-inner {
 	padding: 9px 0;
+}
+
+.compojoom-bootstrap .table td {
+	vertical-align: middle;
+}
+
+.compojoom-bootstrap .input-append {
+	margin: 5px 0;
+}
+
+.compojoom-bootstrap .input-append button {
+	padding: 3px 10px;
+}
+
+body {
+	background: #E5E9EC !important;
 }
