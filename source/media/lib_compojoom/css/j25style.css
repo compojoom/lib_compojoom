@@ -149,8 +149,10 @@ input[type="search"], input[type="tel"], input[type="color"], .uneditable-input{
 }
 
 .hasTooltip {
-	display: inline-block !important;
+	display:inline-block !important;
+	margin: 2px 5px 0 5px;
 }
+
 
 .tooltip {
 	position: absolute;
@@ -506,4 +508,13 @@ a.badge:focus {
 
 .c-toolbar-holder {
 	padding: 0 14px;
+}
+
+.compojoom-bootstrap .control-group .control-label {
+	min-width: 200px;
+	text-align: left;
+}
+
+.compojoom-bootstrap table.adminlist thead th {
+	text-align: left;
 }
