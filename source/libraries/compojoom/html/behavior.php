@@ -137,12 +137,12 @@ class CompojoomHtmlBehavior
 				JHTML::_('script', 'https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js');
 			}
 
+			// Always load the strapper css
+			JHTML::_('stylesheet', 'media/lib_compojoom/css/bootstrap-3.1.1.css');
+
 			// Load backend template
 			if ($ctemplate)
 			{
-				// Always load the strapper css
-				JHTML::_('stylesheet', 'media/lib_compojoom/css/bootstrap-3.1.1.css');
-
 				JHTML::_('stylesheet', 'media/lib_compojoom/css/style.css');
 				JHTML::_('stylesheet', 'media/lib_compojoom/css/animate.css');
 				JHTML::_('stylesheet', 'media/lib_compojoom/css/style-responsive.css');

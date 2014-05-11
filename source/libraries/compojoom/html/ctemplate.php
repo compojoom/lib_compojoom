@@ -81,7 +81,7 @@ class CompojoomHtmlCtemplate
 		// Begin sidebar
 		$html[] = '<div class="left side-menu">
 						<div class="body rows scroll-y">
-							<div class="sidebar-inner slimscroller">
+							<div class="sidebar-inner slimscroller" style="min-height: 100%">
 								<div class="media c-media-sidebar">
 								<a class="pull-left" href="index.php?option=com_users">
 									<img class="media-object img-circle" src="' . $gravatar . '" alt="Avatar" />
@@ -109,7 +109,7 @@ class CompojoomHtmlCtemplate
 		{
 			$act = "";
 
-			if ($k == $active)
+			if ($k == $active || array_key_exists($active, $m['children']))
 			{
 				$act = ' class="active"';
 			}
@@ -151,7 +151,7 @@ class CompojoomHtmlCtemplate
 			{
 				$style = "";
 
-				if ($k == $active)
+				if ($k == $active || array_key_exists($active, $m['children']))
 				{
 					$style = ' style="display: block;"';
 				}
@@ -255,7 +255,7 @@ class CompojoomHtmlCtemplate
 					</div>
 				</div>
 			</div>
-			<div class="clear clr">
+			<div class="clear clr"></div>
 			<div class="md-overlay"></div>
 			</div>';
 

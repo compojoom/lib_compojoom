@@ -442,6 +442,7 @@ BASIC SELECTOR
 #sidebar-menu {
 	width: 100%;
 	border-top: 1px solid #1F2429;
+	min-height: 100%;
 }
 #sidebar-menu > ul > li > a {
 	font-size: 14px;

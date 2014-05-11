@@ -893,7 +893,7 @@
     width: 25%;
   }
 .compojoom-bootstrap   .col-sm-2 {
-    width: 16.66666667%;
+    width: 16.66666667% !important;
   }
 .compojoom-bootstrap   .col-sm-1 {
     width: 8.33333333%;
