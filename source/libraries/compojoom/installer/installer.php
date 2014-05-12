@@ -95,29 +95,38 @@ class CompojoomInstaller
 			$path = $src . "/libraries/$library";
 
 			$query = $db->getQuery(true);
-			$query->select('COUNT(*)')
+			$query->select('*')
 				->from('#__extensions')
 				->where($db->qn('element') . '=' . $db->q($library))
 				->where($db->qn('type') . '=' . $db->q('library'));
 
 			$db->setQuery($query);
-			$count = $db->loadResult();
+			$object = $db->loadObject();
 
 			$installer = new JInstaller;
-			$result = $installer->install($path);
 
-			$status[] = array('name' => $library, 'result' => $result);
-
-			// If the plugin was not unpublished by the user, enable it
-			if ($published && !$count)
+			// If we don't have an object, let us install the library
+			if (!$object)
 			{
-				$query->clear();
-				$query->update('#__extensions')
-					->set($db->qn('enabled') . '=' . $db->q(1))
-					->where($db->qn('element') . '=' . $db->q($library))
-					->where($db->qn('type') . '=' . $db->q('library'));
-				$db->setQuery($query);
-				$db->execute();
+				$result = $installer->install($path);
+				$status[] = array('name' => $library, 'result' => $result);
+			}
+			else
+			{
+				$manifest = simplexml_load_file($path . '/' . $library . '.xml');
+				$manifestCache = json_decode($object->manifest_cache);
+
+				if (version_compare($manifest->version, $manifestCache->version, '>='))
+				{
+					// Okay, the library with the extension is newer, we need to install it
+					$result = $installer->install($path);
+					$status[] = array('name' => $library, 'result' => $result);
+				}
+				else
+				{
+					$status[] = array('name' => $library, 'result' => false,
+						'message' => 'No need to install the library. You are already running a newer version of the library: ' . $manifestCache->version);
+				}
 			}
 		}
 
@@ -496,6 +505,12 @@ class CompojoomInstaller
 				$html[] = '<span style="color: ' . (($library['result']) ? 'green' : 'red') . '; font-weight: bold;">';
 				$html[] = ($library['result']) ? JText::_('LIB_COMPOJOOM_LIBRARY_INSTALLED') : JText::_('LIB_COMPOJOOM_LIBRARY_NOT_INSTALLED');
 				$html[] = '</span>';
+
+				if (isset($library['message']))
+				{
+					$html[] = ' (' . $library['message'] . ')';
+				}
+
 				$html[] = '</td>';
 				$html[] = '</tr>';
 			}
