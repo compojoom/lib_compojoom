@@ -1,2 +1,2 @@
 library.name=compojoom
-build.version=dev
+library.version=dev

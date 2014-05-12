@@ -29,15 +29,15 @@
 		<property name="dirs.source" value="${dirs.root}source"/>
 
 		<if>
-			<equals arg1="${build.version}" arg2="dev"/>
+			<equals arg1="${library.version}" arg2="dev"/>
 			<then>
 				<gitversion workingCopy="${dirs.root}" propertyName="git.lastrevision"/>
-				<property name="build.version" value="git_${git.lastrevision}" override="true"/>
+				<property name="library.version" value="git_${git.lastrevision}" override="true"/>
 			</then>
 		</if>
 
 		<property name="destination.dir"
-		          value="${dirs.root}/packages/libraries/lib_${library.name}/lib_${library.name}-${build.version}"/>
+		          value="${dirs.root}/packages/libraries/lib_${library.name}/lib_${library.name}-${library.version}"/>
 		<mkdir dir="${destination.dir}"/>
 
 	</target>
@@ -45,8 +45,8 @@
 	<target name="build-zip" depends="setup-properties, build-library" >
 		<echo msg="buildZip"/>
 
-		<zip destfile="${destination.dir}/../lib_${library.name}-${build.version}.zip"
-		     basedir="${destination.dir}/../lib_${library.name}-${build.version}"/>
+		<zip destfile="${destination.dir}/../lib_${library.name}-${library.version}.zip"
+		     basedir="${destination.dir}/../lib_${library.name}-${library.version}"/>
 	</target>
 
 	<target name="build-library">
