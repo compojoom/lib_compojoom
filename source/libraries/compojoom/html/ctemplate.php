@@ -32,7 +32,7 @@ class CompojoomHtmlCtemplate
 	public static function getHead($menu, $active = 'dashboard', $title = '', $slogan = '', $extension = '')
 	{
 		// Load bootstrap
-		CompojoomHtmlBehavior::bootstrap31(true, true, true, true);
+		CompojoomHtmlBehavior::bootstrap31(true, true, true, false);
 
 		$input = JFactory::getApplication()->input;
 
