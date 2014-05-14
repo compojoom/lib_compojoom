@@ -101,7 +101,8 @@
 			if (sw.length > 1) {
 				$('#sidebar-menu li').hide();
 				$('#sidebar-menu li[keywords*="' +sw + '"]').show();
-			} else {
+                $('#sidebar-menu li[keywords*="' +sw + '"]').parents('li').show();
+            } else {
 				$('#sidebar-menu li').show();
 			}
 		});
