@@ -81,7 +81,7 @@ class CompojoomHtmlCtemplate
 		// Begin sidebar
 		$html[] = '<div class="left side-menu">
 						<div class="body rows scroll-y">
-							<div class="sidebar-inner slimscroller" style="min-height: 100%">
+							<div class="sidebar-inner" style="min-height: 100%">
 								<div class="media c-media-sidebar">
 								<a class="pull-left" href="index.php?option=com_users">
 									<img class="media-object img-circle" src="' . $gravatar . '" alt="Avatar" />
