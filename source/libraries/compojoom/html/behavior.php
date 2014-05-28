@@ -42,6 +42,9 @@ class CompojoomHtmlBehavior
 	 */
 	public static function bootstrap31($js = true, $ctemplate = true, $thirdparty = true, $debug = false)
 	{
+		// Always load the strapper css
+		JHTML::_('stylesheet', 'media/lib_compojoom/css/bootstrap-3.1.1.css');
+
 		if ($js)
 		{
 			if (JVERSION < '3')
@@ -70,7 +73,7 @@ class CompojoomHtmlBehavior
 				}
 
 				// Load radio buttons JS
-				JHTML::_('script', 'media/lib_compojoom/js/radiobtns.js');
+				JHTML::_('script', 'media/lib_compojoom/js/jquery.radiobtns.js');
 			}
 			else
 			{
@@ -136,9 +139,6 @@ class CompojoomHtmlBehavior
 				JHTML::_('script', 'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js');
 				JHTML::_('script', 'https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js');
 			}
-
-			// Always load the strapper css
-			JHTML::_('stylesheet', 'media/lib_compojoom/css/bootstrap-3.1.1.css');
 
 			// Load backend template
 			if ($ctemplate)
