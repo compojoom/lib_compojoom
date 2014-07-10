@@ -2753,3 +2753,32 @@ input[type="search"], input[type="tel"], input[type="color"], .uneditable-input 
 body {
 	background: #E5E9EC !important;
 }
+
+.dashboard-icons {
+	list-style: none outside none;
+	margin-bottom: 20px;
+	overflow: hidden;
+	padding-bottom: 1px;
+	padding-left: 0;
+	text-align: center;
+}
+
+.dashboard-icons li {
+	width: 25%;
+	border: 1px solid #ddd;
+	font-size: 12px;
+	height: 115px;
+	line-height: 1.4;
+	margin: 0 -5px -1px 0;
+	padding: 10px;
+	text-align: center;
+	display: inline-block;
+}
+.dashboard-icons li a {
+	color: #1b1e24;
+}
+.dashboard-icons .text-icon {
+	display: block;
+	text-align: center;
+	word-wrap: break-word;
+}
