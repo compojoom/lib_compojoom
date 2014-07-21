@@ -18,6 +18,13 @@ defined('_JEXEC') or die('Restricted access');
 class CompojoomInstaller
 {
 	/**
+	 * The minimum PHP version required to install this extension
+	 *
+	 * @var   string
+	 */
+	protected $minimumPHPVersion = '5.3.3';
+
+	/**
 	 * Constructor
 	 *
 	 * @param   string                      $type     - the installation type
@@ -612,6 +619,33 @@ class CompojoomInstaller
 		$jversion = new JVersion;
 		$appl = JFactory::getApplication();
 		$manifest = $this->parent->get("manifest")->attributes();
+
+		// Check the minimum PHP version
+		if (!empty($this->minimumPHPVersion))
+		{
+			if (defined('PHP_VERSION'))
+			{
+				$version = PHP_VERSION;
+			}
+			elseif (function_exists('phpversion'))
+			{
+				$version = phpversion();
+			}
+			else
+			{
+				// All bets are off!
+				$version = '5.0.0';
+			}
+
+			if (!version_compare($version, $this->minimumPHPVersion, 'ge'))
+			{
+				$msg = "<p>You need PHP $this->minimumPHPVersion or later to install this component</p>";
+
+				$appl->enqueueMessage($msg);
+
+				return false;
+			}
+		}
 
 		// Find mimimum required joomla version from the manifest file
 		$minJVersion = $manifest->version;
