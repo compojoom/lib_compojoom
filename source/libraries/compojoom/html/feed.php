@@ -32,8 +32,28 @@ class CompojoomHtmlFeed
 		$rssitemdesc		= 1;
 
 
-		$feed   = new JFeedFactory;
-		$rssDoc = $feed->getFeed($url);
+		// Aaach, Joomla 2.5 please die faster...
+		if (JVERSION < '3') {
+			$rssDoc = JFactory::getFeedParser($url, 900);
+
+			if(!$rssDoc)
+			{
+				return JText::_('LIB_COMPOJOOM_FEED_COULDNT_BE_FETCHED');
+			}
+		}
+		else {
+			// Get RSS parsed object
+			try
+			{
+				jimport('joomla.feed.factory');
+				$feed   = new JFeedFactory;
+				$rssDoc = $feed->getFeed($url);
+			}
+			catch (Exception $e)
+			{
+				return JText::_('LIB_COMPOJOOM_FEED_COULDNT_BE_FETCHED');
+			}
+		}
 
 		$feed = $rssDoc;
 

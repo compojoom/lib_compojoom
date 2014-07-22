@@ -515,3 +515,9 @@ a.badge:focus {
 .compojoom-bootstrap .form-group .control-label {
 	padding-top: 7px;
 }
+
+.compojoom-bootstrap .c-toolbar .modal {
+	display: inherit;
+	overflow: hidden;
+	position: static;
+}

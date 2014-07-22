@@ -49,18 +49,7 @@ class CompojoomHtmlBehavior
 		{
 			if (JVERSION < '3')
 			{
-				// Load jQuery first
-				if ($debug)
-				{
-					JHTML::_('script', 'media/lib_compojoom/js/jquery.js');
-				}
-				else
-				{
-					JHTML::_('script', 'media/lib_compojoom/js/jquery-1.11.0.min.js');
-				}
-
-				// Load jQuery in no conflict mode
-				JHTML::_('script', 'media/lib_compojoom/js/jquery.noconflict.js');
+				self::jquery();
 
 				// Load bootstrap
 				if ($debug)
@@ -93,24 +82,8 @@ class CompojoomHtmlBehavior
 				// Font Awesome
 				JHTML::_('stylesheet', 'media/lib_compojoom/third/font-awesome/css/font-awesome.min.css');
 
-				// Chart API
-				// JHTML::_('stylesheet', 'media/lib_compojoom/third/morris/morris.css');
-
 				// Dialogs with effects / CSS transitions and animations
 				JHTML::_('stylesheet', 'media/lib_compojoom/third/nifty-modal/css/component.css');
-
-				// Sortable / SASS by HubSpot
-				// JHTML::_('stylesheet', 'media/lib_compojoom/third/sortable/sortable-theme-bootstrap.css');
-
-				// Checkboxes / Radiobuttons project by fronteed - see https://github.com/fronteed/iCheck
-				// JHTML::_('stylesheet', 'media/lib_compojoom/third/icheck/skins/minimal/grey.css');
-
-				// Bootstrap select - is already implemented in joomla 3.2 (but with bootstrap 2.3.2)
-				// see http://silviomoreto.github.io/bootstrap-select/
-				// JHTML::_('stylesheet', 'media/lib_compojoom/third/select/bootstrap-select.min.css');
-
-				// Bootstrap Editor
-				// JHTML::_('stylesheet', 'media/lib_compojoom/third/summernote/summernote.css');
 
 				// Popups (more..) but nice ones -> responsive, http://dimsemenov.com/plugins/magnific-popup/
 				JHTML::_('stylesheet', 'media/lib_compojoom/third/magnific-popup/magnific-popup.css');
@@ -120,21 +93,10 @@ class CompojoomHtmlBehavior
 
 				// Load 3rd Party scripts for Laceng
 				JHTML::_('script', 'media/lib_compojoom/third/slimscroll/jquery.slimscroll.min.js');
-				// JHTML::_('script', 'http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js');
-				// JHTML::_('script', 'media/lib_compojoom/third/morris/morris.js');
-				// JHTML::_('script', 'media/lib_compojoom/third/nifty-modal/js/classie.js');
-				// JHTML::_('script', 'media/lib_compojoom/third/nifty-modal/js/modalEffects.js');
-				// JHTML::_('script', 'media/lib_compojoom/third/sortable/sortable.min.js');
-				// JHTML::_('script', 'media/lib_compojoom/third/select/bootstrap-select.min.js');
-
-				// JHTML::_('script', 'media/lib_compojoom/third/summernote/summernote.js');
 
 				JHTML::_('script', 'media/lib_compojoom/third/magnific-popup/jquery.magnific-popup.min.js');
 				JHTML::_('script', 'media/lib_compojoom/third/input/bootstrap.file-input.js');
 				JHTML::_('script', 'media/lib_compojoom/third/datepicker/js/bootstrap-datepicker.js');
-				// JHTML::_('script', 'media/lib_compojoom/third/icheck/icheck.min.js');
-				// JHTML::_('script', 'media/lib_compojoom/third/wizard/jquery.snippet.min.js');
-				// JHML::_('script', 'media/lib_compojoom/third/wizard/jquery.easyWizard.js');
 
 				JHTML::_('script', 'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js');
 				JHTML::_('script', 'https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js');
@@ -156,6 +118,25 @@ class CompojoomHtmlBehavior
 
 				JHTML::_('script', 'media/lib_compojoom/js/lanceng.js');
 			}
+		}
+	}
+
+	/**
+	 * Load our jquery version on 2.5 and the default jquery on j3
+	 *
+	 * @return void
+	 */
+	public static function jquery()
+	{
+		// Load jQuery first
+		if (JVERSION < 3)
+		{
+			JHTML::_('script', 'media/lib_compojoom/js/jquery.js');
+			JHTML::_('script', 'media/lib_compojoom/js/jquery.noconflict.js');
+		}
+		else
+		{
+			JHtml::_('jquery.framework');
 		}
 	}
 }
