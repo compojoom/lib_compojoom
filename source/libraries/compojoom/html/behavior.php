@@ -18,19 +18,6 @@ defined('_JEXEC') or die('Restricted access');
 class CompojoomHtmlBehavior
 {
 	/**
-	 * Function to decide if we need to include our own boostrap.css file or not
-	 *
-	 * @return void
-	 */
-	public static function bootstrap()
-	{
-		if (JVERSION < 3.0)
-		{
-			JHTML::_('stylesheet', 'media/com_cmc/css/bootstrap.css');
-		}
-	}
-
-	/**
 	 * Loads our bootstrap 3.1.1 JS and css
 	 *
 	 * @param   bool  $js          - Load JS
