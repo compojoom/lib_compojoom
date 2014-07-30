@@ -2680,6 +2680,7 @@ a:focus .icon-vimeo {
 
 .c-toolbar-holder .btn {
 	padding: 3px 8px;
+	border: 1px solid #cccccc;
 }
 
 i.i-right {
@@ -2747,9 +2748,23 @@ input[type="search"], input[type="tel"], input[type="color"], .uneditable-input 
 }
 
 .compojoom-bootstrap .input-append button {
-	padding: 3px 10px;
+	padding: 5px 10px;
+	background-color: #fff;
+	border-color: #ccc;
+	color: #333;
 }
 
+.compojoom-bootstrap .form-horizontal .control-label {
+	width: inherit;
+}
+.compojoom-bootstrap .form-horizontal .input-append .form-control {
+	display: table-cell;
+}
+.compojoom-bootstrap .form-horizontal .input-append {
+	border-collapse: separate;
+	display: table;
+	position: relative;
+}
 body {
 	background: #E5E9EC !important;
 }
