@@ -25,6 +25,23 @@ class CompojoomInstaller
 	protected $minimumPHPVersion = '5.3.3';
 
 	/**
+	 * Obsolete files and folders to remove from both paid and free releases. This is used when you refactor code and
+	 * some files inevitably become obsolete and need to be removed.
+	 *
+	 * @var   array
+	 */
+	protected $removeFilesAllVersions = array(
+		'files'   => array(
+			// Use pathnames relative to your site's root, e.g.
+			// 'administrator/components/com_foobar/helpers/whatever.php'
+		),
+		'folders' => array(
+			// Use pathnames relative to your site's root, e.g.
+			// 'administrator/components/com_foobar/baz'
+		)
+	);
+
+	/**
 	 * Constructor
 	 *
 	 * @param   string                      $type     - the installation type
@@ -660,5 +677,47 @@ class CompojoomInstaller
 		}
 
 		return true;
+	}
+
+	/**
+	 * Removes obsolete files and folders
+	 *
+	 * @param   array  $removeList  The files and directories to remove
+	 *
+	 * @return void
+	 */
+	public function removeFilesAndFolders($removeList)
+	{
+		// Remove files
+		if (isset($removeList['files']) && !empty($removeList['files']))
+		{
+			foreach ($removeList['files'] as $file)
+			{
+				$f = JPATH_ROOT . '/' . $file;
+
+				if (!JFile::exists($f))
+				{
+					continue;
+				}
+
+				JFile::delete($f);
+			}
+		}
+
+		// Remove folders
+		if (isset($removeList['folders']) && !empty($removeList['folders']))
+		{
+			foreach ($removeList['folders'] as $folder)
+			{
+				$f = JPATH_ROOT . '/' . $folder;
+
+				if (!JFolder::exists($f))
+				{
+					continue;
+				}
+
+				JFolder::delete($f);
+			}
+		}
 	}
 }
