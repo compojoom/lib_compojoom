@@ -521,3 +521,9 @@ a.badge:focus {
 	overflow: hidden;
 	position: static;
 }
+
+.compojoom-bootstrap .checkbox input[type="checkbox"],
+.compojoom-bootstrap .checkbox-inline input[type="checkbox"] {
+	float: left;
+	margin-right: 10px !important;
+}

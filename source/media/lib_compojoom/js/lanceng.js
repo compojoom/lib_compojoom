@@ -113,6 +113,8 @@
 		// Debug
 		$('#c-system-message-container').html($('.c-debug-msg').html());
 
+		$('#c-system-message-container').append($("#system-debug").html());
+
 		// Ugly hack to adjust height in all caeses..
 		$('.left').css('min-height', $(document).height() - 35);
 	});
