@@ -32,6 +32,11 @@ class CompojoomHtmlBehavior
 		// Always load the strapper css
 		JHTML::_('stylesheet', 'media/lib_compojoom/css/bootstrap-3.1.1.css');
 
+		if (JVERSION < '3')
+		{
+			JHTML::_('stylesheet', 'media/lib_compojoom/css/bootstrap-j25-fixes.css');
+		}
+
 		if ($js)
 		{
 			if (JVERSION < '3')

@@ -1,0 +1,13 @@
+/*
+=========================================================================
+Fixes for Joomla 2.5
+=========================================================================
+*/
+
+.compojoom-bootstrap .radio.btn-group input[type=radio] {
+	display: none;
+}
+
+.compojoom-bootstrap .btn {
+	border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+}
