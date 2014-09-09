@@ -5,6 +5,14 @@
  */
 
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+.compojoom-bootstrap .minicolors-theme-bootstrap .minicolors-input {
+	width: 110px;
+}
+
+.compojoom-bootstrap .form-group .controls {
+	margin-left: 0;
+}
+
 .compojoom-bootstrap article,
 .compojoom-bootstrap aside,
 .compojoom-bootstrap details,
@@ -225,6 +233,12 @@
   display: block;
   max-width: 100%;
   height: auto;
+}
+.compojoom-bootstrap .form-horizontal .compojoom-control-label {
+	text-align: right;
+	padding-top: 7px;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 .compojoom-bootstrap .img-rounded {
   border-radius: 6px;
@@ -887,13 +901,13 @@
     width: 41.66666667%;
   }
 .compojoom-bootstrap   .col-sm-4 {
-    width: 33.33333333% !important;
+    width: 33.33333333%;
   }
 .compojoom-bootstrap   .col-sm-3 {
     width: 25%;
   }
 .compojoom-bootstrap   .col-sm-2 {
-    width: 16.66666667% !important;
+    width: 16.66666667%;
   }
 .compojoom-bootstrap   .col-sm-1 {
     width: 8.33333333%;

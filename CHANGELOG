@@ -1,3 +1,11 @@
 Changelog
 
+lib_compojoom 4.0.7
+# Small CSS Fixes in bootstrap (removed important from sm-2 and sm-4)
+# Bootstrap 3 should now work better with bootstrap 2 loaded
+# Small fixes in the backend (style.css)
++ Added qTip 2
+
+lib_compojoom 4.0.0
+
 + initial release

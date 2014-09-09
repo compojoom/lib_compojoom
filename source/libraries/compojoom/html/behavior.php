@@ -131,4 +131,18 @@ class CompojoomHtmlBehavior
 			JHtml::_('jquery.framework');
 		}
 	}
+
+	/**
+	 * Loads qTip2
+	 *
+	 * @return  void
+	 */
+	public static function qTip2()
+	{
+		// Load CSS
+		JHTML::_('stylesheet', 'media/lib_compojoom/css/jquery.qtip-2.2.1.min.css');
+
+		// Load JS
+		JHTML::_('script', 'media/lib_compojoom/js/jquery.qtip.min.js');
+	}
 }
