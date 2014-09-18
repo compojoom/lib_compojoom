@@ -2755,7 +2755,7 @@ input[type="search"], input[type="tel"], input[type="color"], .uneditable-input 
 }
 
 .compojoom-bootstrap .form-horizontal .control-label {
-	width: inherit;
+	text-align: left;
 }
 .compojoom-bootstrap .form-horizontal .input-append .form-control {
 	display: table-cell;
