@@ -2808,3 +2808,59 @@ body {
 	padding: 3px 12px;
 }
 
+
+.compojoom-bootstrap-modal div.changelog h3 {
+	font-size: 17px;
+	margin: 0 13px 0.5em 0;
+}
+.compojoom-bootstrap-modal div.changelog h3 span {
+	color: #999;
+	font-size: 0.8em;
+	font-style: italic;
+}
+.compojoom-bootstrap-modal div.changelog ul {
+	background-color: #fefefe;
+	border-color: #ccc;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: thin;
+	font-size: 13px;
+	list-style-type: none;
+	margin: 3px 13px 20px 3px;
+	padding: 7px;
+}
+.compojoom-bootstrap-modal div.changelog li {
+	line-height: 18px;
+	margin: 0 3px 3px;
+	padding: 0;
+}
+.compojoom-bootstrap-modal div.changelog li span {
+	display: inline-block;
+	margin-right: 7px;
+	text-align: center;
+	width: 32px;
+}
+.compojoom-bootstrap-modal div.changelog li.securityfixed {
+	color: red;
+}
+.compojoom-bootstrap-modal div.changelog li.fixed {
+	color: #265871;
+}
+.compojoom-bootstrap-modal div.changelog li.language {
+	color: purple;
+}
+.compojoom-bootstrap-modal div.changelog li.added {
+	color: green;
+}
+.compojoom-bootstrap-modal div.changelog li.changed {
+	color: #333;
+}
+.compojoom-bootstrap-modal div.changelog li.changedmisc {
+	color: #999;
+}
+.compojoom-bootstrap-modal div.changelog li.removed {
+	color: #be2d26;
+}
+.compojoom-bootstrap-modal div.changelog li.note {
+	color: #d37e05;
+}
