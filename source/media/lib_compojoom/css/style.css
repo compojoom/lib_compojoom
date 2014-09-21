@@ -2916,12 +2916,16 @@ body {
 .compojoom-bootstrap .carousel-text {
 	position: relative;
 	color: #000;
-	margin-top: 60px;
+	margin-top: 40px;
 	padding-bottom: 40px;
 }
 
 .carousel-text h3 {
-	text-shadow: 2px 2px 2px #888;
+	text-shadow: 0px 1px 1px #ccc;
+	display: inline;
+	background: rgba(255, 255, 255, .95);
+	padding: 5px 15px;
+	line-height: 45px;
 }
 
 .compojoom-bootstrap .carousel-indicators {
@@ -2939,7 +2943,6 @@ body {
 }
 
 .compojoom-bootstrap .carousel-indicators li {
-
 	background-color: #000 \9;
 	background-color: rgba(0, 0, 0, 0);
 	border: 1px solid #000;

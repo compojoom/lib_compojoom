@@ -33,27 +33,27 @@ class CompojoomUtilsAdvertising
 
 		$extensions[] = array("img" => "media/lib_compojoom/img/extensions/hotspots-bg.jpg",
 					"name" => "Hotspots", "desc" => "LIB_COMPOJOOM_ADV_HOTSPOTS_DESC",
-					"link" => "https://compojoom.com"
+					"link" => "https://compojoom.com/joomla-extensions/hotspots"
 		);
 
-		$extensions[] = array("img" => "media/com_matukio/images/placeholder-organizer.jpg",
+		$extensions[] = array("img" => "media/lib_compojoom/img/extensions/matukio-bg.jpg",
 		                      "name" => "Matukio", "desc" => "LIB_COMPOJOOM_ADV_MATUKIO_DESC",
-		                      "link" => "https://compojoom.com"
+		                      "link" => "https://compojoom.com/joomla-extensions/matukio-events-management-made-easy"
 		);
 
-		$extensions[] = array("img" => "media/com_matukio/images/placeholder-organizer.jpg",
+		$extensions[] = array("img" => "media/lib_compojoom/img/extensions/ccomment-bg.jpg",
 		                      "name" => "CComment", "desc" => "LIB_COMPOJOOM_ADV_CCOMMENT_DESC",
-		                      "link" => "https://compojoom.com"
+		                      "link" => "https://compojoom.com/joomla-extensions/ccomment"
 		);
 
-		$extensions[] = array("img" => "media/com_matukio/images/placeholder-organizer.jpg",
+		$extensions[] = array("img" => "media/lib_compojoom/img/extensions/cmigrator-bg.jpg",
 		                      "name" => "CMigrator", "desc" => "LIB_COMPOJOOM_ADV_CMIGRATOR_DESC",
-		                      "link" => "https://compojoom.com"
+		                      "link" => "https://compojoom.com/joomla-extensions/cmigrator"
 		);
 
-		$extensions[] = array("img" => "media/com_matukio/images/placeholder-organizer.jpg",
+		$extensions[] = array("img" => "media/lib_compojoom/img/extensions/tiles-bg.jpg",
 		                      "name" => "Tiles", "desc" => "LIB_COMPOJOOM_ADV_TILES_DESC",
-		                      "link" => "https://compojoom.com"
+		                      "link" => "https://compojoom.com/joomla-extensions/tiles"
 		);
 
 		$html[] = '<!-- Carousel -->';
@@ -84,10 +84,10 @@ class CompojoomUtilsAdvertising
 			$html[] = '       </div>';
 			$html[] = '       <div class="carousel-img">';
 			$html[] = '         <img src="' . JURI::root() . $e["img"] . '" class="img-absolute"
-									alt="' . JText::_($e["name"]) . '" style="margin: 0 auto"> ';
+									alt="' . JText::_($e["name"]) . '" /> ';
 			$html[] = '       </div>';
 			$html[] = '       <div class="carousel-caption">';
-			$html[] = '         <btn class="btn btn-primary">Get ' . JText::_($e["name"]) . ' now!</btn>';
+			$html[] = '         <a class="btn btn-primary" href="' . $e["link"] . '" target="_blank">Get ' . JText::_($e["name"]) . ' now!</a>';
 			$html[] = '       </div>';
 			$html[] = '    </div>';
 		}
