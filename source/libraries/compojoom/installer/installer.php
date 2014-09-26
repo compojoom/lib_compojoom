@@ -291,9 +291,12 @@ class CompojoomInstaller
 						$id = $db->loadResult();
 
 						// Uninstall the module
-						$installer = new JInstaller;
-						$result = $installer->uninstall('module', $id, 1);
-						$status[] = array('name' => $module, 'client' => $folder, 'result' => $result);
+						if ($id)
+						{
+							$installer = new JInstaller;
+							$result = $installer->uninstall('module', $id, 1);
+							$status[] = array('name' => $module, 'client' => $folder, 'result' => $result);
+						}
 					}
 				}
 			}
