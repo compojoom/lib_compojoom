@@ -48,11 +48,6 @@
 	bottom: -0.25em;
 }
 .compojoom-bootstrap img {
-	max-width: 100%;
-	height: auto;
-	vertical-align: middle;
-	border: 0;
-	-ms-interpolation-mode: bicubic;
 }
 .compojoom-bootstrap #map_canvas img {
 	max-width: none;
@@ -4159,6 +4154,7 @@ input[type="submit"].btn.btn-mini {
 
 .compojoom-bootstrap .small {
 	font-size: 11px;
+	margin: 0;
 }
 .compojoom-bootstrap iframe,
 svg {
