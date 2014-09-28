@@ -2996,3 +2996,17 @@ body {
 	background: linear-gradient(to left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
 }
+
+.compojoom-bootstrap .tooltip, .tip-wrap {
+	z-index: 999 !important;
+}
+
+.layoutcountries-tip { z-index: 1000; }
+
+.compojoom-bootstrap .ui-slider-handle.ui-state-active {
+	z-index: 999;
+}
+
+.compojoom-bootstrap .icon-calendar {
+	font-size: 15px;
+}

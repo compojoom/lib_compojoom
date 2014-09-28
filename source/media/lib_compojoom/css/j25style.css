@@ -527,3 +527,5 @@ a.badge:focus {
 	float: left;
 	margin-right: 10px !important;
 }
+
+.compojoom-bootstrap .button2-left .modal {display: block; position: static;overflow: auto;}
