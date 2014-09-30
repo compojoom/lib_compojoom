@@ -43,7 +43,7 @@ class CompojoomHtmlCtemplate
 
 		if (empty($active))
 		{
-			$active = $input->getCmd('view');
+			$active = $input->getCmd('view', "");
 		}
 
 		$user = JFactory::getUser();
