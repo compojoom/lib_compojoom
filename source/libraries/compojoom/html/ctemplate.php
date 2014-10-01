@@ -72,7 +72,7 @@ class CompojoomHtmlCtemplate
 								' . JToolbar::getInstance('toolbar')->render('toolbar') . '
 								</div>
 							</div>
-							<div class="c-logo-icon pull-left visible-lg">
+							<div class="c-logo-icon pull-left hidden-sm hidden-xs hidden-md">
 								<a href="https://compojoom.com" title="Compojoom"><img src="../media/lib_compojoom/img/logo-green.png" alt="Compojoom" /></a>
 							</div>
 						</div>
