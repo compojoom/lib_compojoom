@@ -55,7 +55,6 @@ div.toolbar-list span {
 	float: left !important;
 }
 
-
 #toolbar {
 	padding-top: 3px;
 }
@@ -63,7 +62,6 @@ div.toolbar-list span {
 .compojoom-bootstrap .header.sidebar .logo {
 	padding: 15px 0 0 15px;
 }
-
 
 .toolbar-list a {
 	padding: 5px 10px !important;
@@ -529,3 +527,4 @@ a.badge:focus {
 }
 
 .compojoom-bootstrap .button2-left .modal {display: block; position: static;overflow: auto;}
+.compojoom-bootstrap .toolbar-list .modal {position: static !important; min-width: 0 !important; display: block !important;margin-left: 0 !important; border-color: #e6e6e6 #e6e6e6 #bfbfbf !important; font-size: 14px !important;}
