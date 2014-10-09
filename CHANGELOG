@@ -1,5 +1,6 @@
 Changelog
 
+# adding border around non-active elements in .btn-group
 lib_compojoom 4.0.7
 # Small CSS Fixes in bootstrap (removed important from sm-2 and sm-4)
 # Bootstrap 3 should now work better with bootstrap 2 loaded
