@@ -174,7 +174,7 @@ Update Released		February 13, 2014
 .compojoom-bootstrap .form-group .checkbox{margin-left: 0; padding-left: 0;}
 
 /** Button **/
-.compojoom-bootstrap .btn{border-radius: 3px;}
+/*.compojoom-bootstrap .btn{border-radius: 3px;}*/
 
 
 /** List group **/
@@ -2687,10 +2687,6 @@ i.i-right {
 	float: right;
 }
 
-.box-info .table {
-	margin-top: 20px
-}
-
 .compojoom-bootstrap .table {
 	margin-bottom: 0;
 	width: 100%;
@@ -3009,4 +3005,18 @@ body {
 
 .compojoom-bootstrap .icon-calendar {
 	font-size: 15px;
+}
+
+.compojoom-bootstrap .btn-group > .btn:last-child:not(:first-child),
+.compojoom-bootstrap .btn-group > .dropdown-toggle:not(:first-child) {
+	border-radius: 0 2px 2px 0;
+}
+
+.compojoom-bootstrap .btn-group .btn {
+	border-color: #cccccc;
+	border-radius: 2px 0 0 2px;
+}
+
+.compojoom-bootstrap .btn-group > .btn.active {
+	border-color: transparent;
 }
