@@ -71,14 +71,6 @@ div.toolbar-list span {
 	margin-top: 10px;
 }
 
-select, textarea, input[type="text"], input[type="password"], input[type="datetime"],
-input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"],
-input[type="week"], input[type="number"], input[type="email"], input[type="url"],
-input[type="search"], input[type="tel"], input[type="color"], .uneditable-input{
-	min-height: 24px;
-	border-radius: 3px !important;
-}
-
 .compojoom-bootstrap .chzn-single {
 	min-height: 24px;
 }
