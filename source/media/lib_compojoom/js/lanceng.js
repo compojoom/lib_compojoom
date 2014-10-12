@@ -76,8 +76,6 @@
 				}
 		});
 
-		//FILE INPUT
-		$('input[type=file]').bootstrapFileInput();
 		//DATE PICKER
 		$('.datepicker-input').datepicker();
 
