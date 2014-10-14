@@ -35,7 +35,10 @@ class CompojoomShrink
 		// Lets read the times of the files we need to merge
 		foreach ($files as $file)
 		{
-			$times[] = filemtime(JPATH_ROOT . '/' . $file);
+			if (file_exists(JPATH_ROOT . '/' . $file))
+			{
+				$times[] = filemtime(JPATH_ROOT . '/' . $file);
+			}
 		}
 
 		// If the minFile doesn't exist or the minFile time is older than any of the times, let's do our job!
@@ -45,7 +48,10 @@ class CompojoomShrink
 
 			foreach ($files as $file)
 			{
-				$js[] = file_get_contents(JPATH_ROOT . '/' . $file);
+				if (file_exists(JPATH_ROOT . '/' . $file))
+				{
+					$js[] = file_get_contents(JPATH_ROOT . '/' . $file);
+				}
 			}
 
 			// Do the actual minifying
