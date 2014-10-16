@@ -13,7 +13,7 @@
 (function($) {
 $(function() {
 
-$.fn.bootstrapFileInput = function() {
+$.fn.bootstrapFileInput = function(options) {
 
   this.each(function(i,elem){
 
@@ -25,7 +25,7 @@ $.fn.bootstrapFileInput = function() {
     }
 
     // Set the word to be displayed on the button
-    var buttonWord = 'Browse';
+    var buttonWord = options.buttonWord || 'Browse';
 
     if (typeof $elem.attr('title') != 'undefined') {
       buttonWord = $elem.attr('title');
