@@ -18,6 +18,47 @@ defined('_JEXEC') or die('Restricted access');
 class CompojoomHtml
 {
 	/**
+	 * @var array
+	 */
+	private static $queue = array();
+
+	/**
+	 * Holds an internal queue with javascript files
+	 *
+	 * @param   string  $key      - the key for the storage
+	 * @param   mixed   $scripts  - file name or array with filenames
+	 *
+	 * @return void
+	 */
+	public static function addScriptsToQueue($key, $scripts)
+	{
+		if (is_array($scripts))
+		{
+			foreach ($scripts as $value)
+			{
+				self::$queue[$key][$value] = $value;
+			}
+		}
+
+		if (is_string($scripts))
+		{
+			self::$queue[$key][] = $scripts;
+		}
+	}
+
+	/**
+	 * Get the scripts from the queue based on the key
+	 *
+	 * @param   string  $key  - the key name
+	 *
+	 * @return mixed
+	 */
+	public static function getScriptQueue($key)
+	{
+		return self::$queue[$key];
+	}
+
+	/**
 	 * Ads the specified js files to the head of the page (merges &
 	 * minifies them if necessary)
 	 *
