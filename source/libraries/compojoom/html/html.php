@@ -65,10 +65,11 @@ class CompojoomHtml
 	 * @param   string|array  $files      - single file or array with file paths
 	 * @param   string        $cachePath  - the path to the cache folder
 	 * @param   bool          $minify     - should we minify it
+	 * @param   bool          $scriptTag  - if set to true outputs the javascript tag directly in the body of the site
 	 *
 	 * @return void
 	 */
-	public static function script($files, $cachePath, $minify = true)
+	public static function script($files, $cachePath, $minify = true, $scriptTag = false)
 	{
 		// If we have a string, then we are dealing with a single file
 		if (is_string($files))
@@ -80,14 +81,29 @@ class CompojoomHtml
 		if ($minify)
 		{
 			$fileName =	CompojoomShrink::shrink($files, $cachePath);
-			JHtml::script($fileName);
+
+			if ($scriptTag)
+			{
+				echo '<script type="text/javascript" src="' . $fileName . '"></script>' . "\n";
+			}
+			else
+			{
+				JHtml::script($fileName);
+			}
 		}
 		else
 		{
 			// Output each file from the array as is
 			foreach ($files as $file)
 			{
-				JHtml::script($file);
+				if ($scriptTag)
+				{
+					echo '<script type="text/javascript" src="' . $file . '"></script>' . "\n";
+				}
+				else
+				{
+					JHtml::script($file);
+				}
 			}
 		}
 	}
