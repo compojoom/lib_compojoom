@@ -171,9 +171,9 @@
 	margin-left: 20px;
 }
 .compojoom-bootstrap .container,
-.navbar-static-top .container,
+.compojoom-bootstrap .navbar-static-top .container,
 .compojoom-bootstrap .navbar-fixed-top .container,
-.navbar-fixed-bottom .container {
+.compojoom-bootstrap .navbar-fixed-bottom .container {
 	width: 940px;
 }
 .compojoom-bootstrap .span12 {
@@ -420,11 +420,11 @@
 	*margin-left: 8.4042553191489%;
 }
 .compojoom-bootstrap [class*="span"].hide,
-.row-fluid [class*="span"].hide {
+.compojoom-bootstrap .row-fluid [class*="span"].hide {
 	display: none;
 }
 .compojoom-bootstrap [class*="span"].pull-right,
-.row-fluid [class*="span"].pull-right {
+.compojoom-bootstrap .row-fluid [class*="span"].pull-right {
 	float: right;
 }
 .compojoom-bootstrap .container {
@@ -433,7 +433,7 @@
 	*zoom: 1;
 }
 .compojoom-bootstrap .container:before,
-.container:after {
+.compojoom-bootstrap .container:after {
 	display: table;
 	content: "";
 	line-height: 0;
@@ -447,7 +447,7 @@
 	*zoom: 1;
 }
 .compojoom-bootstrap .container-fluid:before,
-.container-fluid:after {
+.compojoom-bootstrap .container-fluid:after {
 	display: table;
 	content: "";
 	line-height: 0;
@@ -480,11 +480,11 @@
 	color: #999;
 }
 .compojoom-bootstrap h1,
-h2,
+.compojoom-bootstrap h2,
 .compojoom-bootstrap h3,
-h4,
+.compojoom-bootstrap h4,
 .compojoom-bootstrap h5,
-h6 {
+.compojoom-bootstrap h6 {
 	margin: 9px 0;
 	font-family: inherit;
 	font-weight: bold;
@@ -493,11 +493,11 @@ h6 {
 	text-rendering: optimizelegibility;
 }
 .compojoom-bootstrap h1 small,
-h2 small,
+.compojoom-bootstrap h2 small,
 .compojoom-bootstrap h3 small,
-h4 small,
+.compojoom-bootstrap h4 small,
 .compojoom-bootstrap h5 small,
-h6 small {
+.compojoom-bootstrap h6 small {
 	font-weight: normal;
 	line-height: 1;
 	color: #999;
@@ -544,21 +544,21 @@ h6 small {
 	border-bottom: 1px solid #eee;
 }
 .compojoom-bootstrap ul,
-ol {
+.compojoom-bootstrap ol {
 	padding: 0;
 	margin: 0 0 9px 25px;
 }
 .compojoom-bootstrap ul ul,
-ul ol,
+.compojoom-bootstrap ul ol,
 .compojoom-bootstrap ol ol,
-ol ul {
+.compojoom-bootstrap ol ul {
 	margin-bottom: 0;
 }
 .compojoom-bootstrap li {
 	line-height: 18px;
 }
 .compojoom-bootstrap ul.unstyled,
-ol.unstyled {
+.compojoom-bootstrap ol.unstyled {
 	margin-left: 0;
 	list-style: none;
 }
@@ -566,7 +566,7 @@ ol.unstyled {
 	margin-bottom: 18px;
 }
 .compojoom-bootstrap dt,
-dd {
+.compojoom-bootstrap dd {
 	line-height: 18px;
 }
 .compojoom-bootstrap dt {
@@ -628,7 +628,7 @@ dd {
 	border-left: 0;
 }
 .compojoom-bootstrap blockquote.pull-right p,
-blockquote.pull-right small {
+.compojoom-bootstrap blockquote.pull-right small {
 	text-align: right;
 }
 .compojoom-bootstrap blockquote.pull-right small:before {
@@ -638,9 +638,9 @@ blockquote.pull-right small {
 	content: '\00A0 \2014';
 }
 .compojoom-bootstrap q:before,
-q:after,
+.compojoom-bootstrap q:after,
 .compojoom-bootstrap blockquote:before,
-blockquote:after {
+.compojoom-bootstrap blockquote:after {
 	content: "";
 }
 .compojoom-bootstrap address {
@@ -650,7 +650,7 @@ blockquote:after {
 	line-height: 18px;
 }
 .compojoom-bootstrap code,
-pre {
+.compojoom-bootstrap pre {
 	padding: 0 3px 2px;
 	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 	font-size: 11px;
@@ -719,18 +719,18 @@ pre {
 	color: #999;
 }
 .compojoom-bootstrap label,
-input,
+.compojoom-bootstrap input,
 .compojoom-bootstrap button,
-select,
+.compojoom-bootstrap select,
 .compojoom-bootstrap textarea {
 	font-size: 13px;
 	font-weight: normal;
 	line-height: 18px;
 }
 .compojoom-bootstrap input,
-button,
+.compojoom-bootstrap button,
 .compojoom-bootstrap select,
-textarea {
+.compojoom-bootstrap textarea {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .compojoom-bootstrap label {
@@ -738,21 +738,21 @@ textarea {
 	margin-bottom: 5px;
 }
 .compojoom-bootstrap select,
-textarea,
+.compojoom-bootstrap textarea,
 .compojoom-bootstrap input[type="text"],
-input[type="password"],
+.compojoom-bootstrap input[type="password"],
 .compojoom-bootstrap input[type="datetime"],
-input[type="datetime-local"],
+.compojoom-bootstrap input[type="datetime-local"],
 .compojoom-bootstrap input[type="date"],
-input[type="month"],
+.compojoom-bootstrap input[type="month"],
 .compojoom-bootstrap input[type="time"],
-input[type="week"],
+.compojoom-bootstrap input[type="week"],
 .compojoom-bootstrap input[type="number"],
-input[type="email"],
+.compojoom-bootstrap input[type="email"],
 .compojoom-bootstrap input[type="url"],
-input[type="search"],
+.compojoom-bootstrap input[type="search"],
 .compojoom-bootstrap input[type="tel"],
-input[type="color"],
+.compojoom-bootstrap input[type="color"],
 .compojoom-bootstrap .uneditable-input {
 	display: inline-block;
 	height: 18px;
@@ -766,32 +766,33 @@ input[type="color"],
 	border-radius: 3px;
 }
 .compojoom-bootstrap input,
-textarea {
+.compojoom-bootstrap textarea {
 	width: 210px;
 }
 .compojoom-bootstrap textarea {
 	height: auto;
 }
 .compojoom-bootstrap textarea,
-input[type="text"],
+.compojoom-bootstrap input[type="text"],
 .compojoom-bootstrap input[type="password"],
-input[type="datetime"],
+.compojoom-bootstrap input[type="datetime"],
 .compojoom-bootstrap input[type="datetime-local"],
-input[type="date"],
+.compojoom-bootstrap input[type="date"],
 .compojoom-bootstrap input[type="month"],
-input[type="time"],
+.compojoom-bootstrap input[type="time"],
 .compojoom-bootstrap input[type="week"],
-input[type="number"],
+.compojoom-bootstrap input[type="number"],
 .compojoom-bootstrap input[type="email"],
-input[type="url"],
+.compojoom-bootstrap input[type="url"],
 .compojoom-bootstrap input[type="search"],
-input[type="tel"],
+.compojoom-bootstrap input[type="tel"],
 .compojoom-bootstrap input[type="color"],
-.uneditable-input {
+.compojoom-bootstrap .uneditable-input {
 	background-color: #fff;
 	border: 1px solid #ccc;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
 	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	box-sizing: content-box;
 	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
 	-webkit-transition: border linear .2s, box-shadow linear .2s;
 	-moz-transition: border linear .2s, box-shadow linear .2s;
@@ -799,21 +800,21 @@ input[type="tel"],
 	transition: border linear .2s, box-shadow linear .2s;
 }
 .compojoom-bootstrap textarea:focus,
-input[type="text"]:focus,
+.compojoom-bootstrap input[type="text"]:focus,
 .compojoom-bootstrap input[type="password"]:focus,
-input[type="datetime"]:focus,
+.compojoom-bootstrap input[type="datetime"]:focus,
 .compojoom-bootstrap input[type="datetime-local"]:focus,
-input[type="date"]:focus,
+.compojoom-bootstrap input[type="date"]:focus,
 .compojoom-bootstrap input[type="month"]:focus,
-input[type="time"]:focus,
+.compojoom-bootstrap input[type="time"]:focus,
 .compojoom-bootstrap input[type="week"]:focus,
-input[type="number"]:focus,
+.compojoom-bootstrap input[type="number"]:focus,
 .compojoom-bootstrap input[type="email"]:focus,
-input[type="url"]:focus,
+.compojoom-bootstrap input[type="url"]:focus,
 .compojoom-bootstrap input[type="search"]:focus,
-input[type="tel"]:focus,
+.compojoom-bootstrap input[type="tel"]:focus,
 .compojoom-bootstrap input[type="color"]:focus,
-.uneditable-input:focus {
+.compojoom-bootstrap .uneditable-input:focus {
 	border-color: rgba(82,168,236,0.8);
 	outline: 0;
 	outline: thin dotted \9;
@@ -822,7 +823,7 @@ input[type="tel"]:focus,
 	box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
 }
 .compojoom-bootstrap input[type="radio"],
-input[type="checkbox"] {
+.compojoom-bootstrap input[type="checkbox"] {
 	margin: 4px 0 0;
 	*margin-top: 0;
 	margin-top: 1px \9;
@@ -830,16 +831,16 @@ input[type="checkbox"] {
 	cursor: pointer;
 }
 .compojoom-bootstrap input[type="file"],
-input[type="image"],
+.compojoom-bootstrap input[type="image"],
 .compojoom-bootstrap input[type="submit"],
-input[type="reset"],
+.compojoom-bootstrap input[type="reset"],
 .compojoom-bootstrap input[type="button"],
-input[type="radio"],
+.compojoom-bootstrap input[type="radio"],
 .compojoom-bootstrap input[type="checkbox"] {
 	width: auto;
 }
 .compojoom-bootstrap select,
-input[type="file"] {
+.compojoom-bootstrap input[type="file"] {
 	height: 30px;
 	*margin-top: 4px;
 	line-height: 30px;
@@ -850,19 +851,19 @@ input[type="file"] {
 	background-color: #fff;
 }
 .compojoom-bootstrap select[multiple],
-select[size] {
+.compojoom-bootstrap select[size] {
 	height: auto;
 }
 .compojoom-bootstrap select:focus,
-input[type="file"]:focus,
+.compojoom-bootstrap input[type="file"]:focus,
 .compojoom-bootstrap input[type="radio"]:focus,
-input[type="checkbox"]:focus {
+.compojoom-bootstrap input[type="checkbox"]:focus {
 	outline: thin dotted #333;
 	outline: 5px auto -webkit-focus-ring-color;
 	outline-offset: -2px;
 }
 .compojoom-bootstrap .uneditable-input,
-.uneditable-textarea {
+.compojoom-bootstrap .uneditable-textarea {
 	color: #999;
 	background-color: #fcfcfc;
 	border-color: #ccc;
@@ -880,40 +881,40 @@ input[type="checkbox"]:focus {
 	height: auto;
 }
 .compojoom-bootstrap input:-moz-placeholder,
-textarea:-moz-placeholder {
+.compojoom-bootstrap textarea:-moz-placeholder {
 	color: #999;
 }
 .compojoom-bootstrap input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
+.compojoom-bootstrap textarea:-ms-input-placeholder {
 	color: #999;
 }
 .compojoom-bootstrap input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
+.compojoom-bootstrap textarea::-webkit-input-placeholder {
 	color: #999;
 }
 .compojoom-bootstrap .radio,
-.checkbox {
+.compojoom-bootstrap .checkbox {
 	min-height: 18px;
 	padding-left: 18px;
 }
 .compojoom-bootstrap .radio input[type="radio"],
-.checkbox input[type="checkbox"] {
+.compojoom-bootstrap .checkbox input[type="checkbox"] {
 	float: left;
 	margin-left: -18px;
 }
 .compojoom-bootstrap .controls > .radio:first-child,
-.controls > .checkbox:first-child {
+.compojoom-bootstrap .controls > .checkbox:first-child {
 	padding-top: 5px;
 }
 .compojoom-bootstrap .radio.inline,
-.checkbox.inline {
+.compojoom-bootstrap .checkbox.inline {
 	display: inline-block;
 	padding-top: 5px;
 	margin-bottom: 0;
 	vertical-align: middle;
 }
 .compojoom-bootstrap .radio.inline + .radio.inline,
-.checkbox.inline + .checkbox.inline {
+.compojoom-bootstrap .checkbox.inline + .checkbox.inline {
 	margin-left: 10px;
 }
 .compojoom-bootstrap .input-mini {
@@ -935,30 +936,30 @@ textarea::-webkit-input-placeholder {
 	width: 530px;
 }
 .compojoom-bootstrap input[class*="span"],
-select[class*="span"],
+.compojoom-bootstrap select[class*="span"],
 .compojoom-bootstrap textarea[class*="span"],
-.uneditable-input[class*="span"],
+.compojoom-bootstrap .uneditable-input[class*="span"],
 .compojoom-bootstrap .row-fluid input[class*="span"],
-.row-fluid select[class*="span"],
+.compojoom-bootstrap .row-fluid select[class*="span"],
 .compojoom-bootstrap .row-fluid textarea[class*="span"],
-.row-fluid .uneditable-input[class*="span"] {
+.compojoom-bootstrap .row-fluid .uneditable-input[class*="span"] {
 	float: none;
 	margin-left: 0;
 }
 .compojoom-bootstrap .input-append input[class*="span"],
-.input-append .uneditable-input[class*="span"],
+.compojoom-bootstrap .input-append .uneditable-input[class*="span"],
 .compojoom-bootstrap .input-prepend input[class*="span"],
-.input-prepend .uneditable-input[class*="span"],
+.compojoom-bootstrap .input-prepend .uneditable-input[class*="span"],
 .compojoom-bootstrap .row-fluid input[class*="span"],
-.row-fluid select[class*="span"],
+.compojoom-bootstrap .row-fluid select[class*="span"],
 .compojoom-bootstrap .row-fluid textarea[class*="span"],
-.row-fluid .uneditable-input[class*="span"],
+.compojoom-bootstrap .row-fluid .uneditable-input[class*="span"],
 .compojoom-bootstrap .row-fluid .input-prepend [class*="span"],
-.row-fluid .input-append [class*="span"] {
+.compojoom-bootstrap .row-fluid .input-append [class*="span"] {
 	display: inline-block;
 }
 .compojoom-bootstrap input,
-textarea,
+.compojoom-bootstrap textarea,
 .compojoom-bootstrap .uneditable-input {
 	margin-left: 0;
 }
@@ -1005,7 +1006,7 @@ textarea,
 	*zoom: 1;
 }
 .compojoom-bootstrap .controls-row:before,
-.controls-row:after {
+.compojoom-bootstrap .controls-row:after {
 	display: table;
 	content: "";
 	line-height: 0;
@@ -1017,29 +1018,29 @@ textarea,
 	float: left;
 }
 .compojoom-bootstrap input[disabled],
-select[disabled],
+.compojoom-bootstrap select[disabled],
 .compojoom-bootstrap textarea[disabled],
-input[readonly],
+.compojoom-bootstrap input[readonly],
 .compojoom-bootstrap select[readonly],
-textarea[readonly] {
+.compojoom-bootstrap textarea[readonly] {
 	cursor: not-allowed;
 	background-color: #eee;
 }
 .compojoom-bootstrap input[type="radio"][disabled],
-input[type="checkbox"][disabled],
+.compojoom-bootstrap input[type="checkbox"][disabled],
 .compojoom-bootstrap input[type="radio"][readonly],
-input[type="checkbox"][readonly] {
+.compojoom-bootstrap input[type="checkbox"][readonly] {
 	background-color: transparent;
 }
 .compojoom-bootstrap .control-group.warning > label,
-.control-group.warning .help-block,
+.compojoom-bootstrap .control-group.warning .help-block,
 .compojoom-bootstrap .control-group.warning .help-inline {
 	color: #c09853;
 }
 .compojoom-bootstrap .control-group.warning .checkbox,
-.control-group.warning .radio,
+.compojoom-bootstrap .control-group.warning .radio,
 .compojoom-bootstrap .control-group.warning input,
-.control-group.warning select,
+.compojoom-bootstrap .control-group.warning select,
 .compojoom-bootstrap .control-group.warning textarea {
 	color: #c09853;
 	border-color: #c09853;
@@ -1048,9 +1049,9 @@ input[type="checkbox"][readonly] {
 	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
 }
 .compojoom-bootstrap .control-group.warning .checkbox:focus,
-.control-group.warning .radio:focus,
+.compojoom-bootstrap .control-group.warning .radio:focus,
 .compojoom-bootstrap .control-group.warning input:focus,
-.control-group.warning select:focus,
+.compojoom-bootstrap .control-group.warning select:focus,
 .compojoom-bootstrap .control-group.warning textarea:focus {
 	border-color: #a47e3c;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #dbc59e;
@@ -1058,20 +1059,20 @@ input[type="checkbox"][readonly] {
 	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #dbc59e;
 }
 .compojoom-bootstrap .control-group.warning .input-prepend .add-on,
-.control-group.warning .input-append .add-on {
+.compojoom-bootstrap .control-group.warning .input-append .add-on {
 	color: #c09853;
 	background-color: #fcf8e3;
 	border-color: #c09853;
 }
 .compojoom-bootstrap .control-group.error > label,
-.control-group.error .help-block,
+.compojoom-bootstrap .control-group.error .help-block,
 .compojoom-bootstrap .control-group.error .help-inline {
 	color: #b94a48;
 }
 .compojoom-bootstrap .control-group.error .checkbox,
-.control-group.error .radio,
+.compojoom-bootstrap .control-group.error .radio,
 .compojoom-bootstrap .control-group.error input,
-.control-group.error select,
+.compojoom-bootstrap .control-group.error select,
 .compojoom-bootstrap .control-group.error textarea {
 	color: #b94a48;
 	border-color: #b94a48;
@@ -1080,9 +1081,9 @@ input[type="checkbox"][readonly] {
 	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
 }
 .compojoom-bootstrap .control-group.error .checkbox:focus,
-.control-group.error .radio:focus,
+.compojoom-bootstrap .control-group.error .radio:focus,
 .compojoom-bootstrap .control-group.error input:focus,
-.control-group.error select:focus,
+.compojoom-bootstrap .control-group.error select:focus,
 .compojoom-bootstrap .control-group.error textarea:focus {
 	border-color: #953b39;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #d59392;
@@ -1090,20 +1091,20 @@ input[type="checkbox"][readonly] {
 	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #d59392;
 }
 .compojoom-bootstrap .control-group.error .input-prepend .add-on,
-.control-group.error .input-append .add-on {
+.compojoom-bootstrap .control-group.error .input-append .add-on {
 	color: #b94a48;
 	background-color: #f2dede;
 	border-color: #b94a48;
 }
 .compojoom-bootstrap .control-group.success > label,
-.control-group.success .help-block,
+.compojoom-bootstrap .control-group.success .help-block,
 .compojoom-bootstrap .control-group.success .help-inline {
 	color: #468847;
 }
 .compojoom-bootstrap .control-group.success .checkbox,
-.control-group.success .radio,
+.compojoom-bootstrap .control-group.success .radio,
 .compojoom-bootstrap .control-group.success input,
-.control-group.success select,
+.compojoom-bootstrap .control-group.success select,
 .compojoom-bootstrap .control-group.success textarea {
 	color: #468847;
 	border-color: #468847;
@@ -1112,9 +1113,9 @@ input[type="checkbox"][readonly] {
 	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
 }
 .compojoom-bootstrap .control-group.success .checkbox:focus,
-.control-group.success .radio:focus,
+.compojoom-bootstrap .control-group.success .radio:focus,
 .compojoom-bootstrap .control-group.success input:focus,
-.control-group.success select:focus,
+.compojoom-bootstrap .control-group.success select:focus,
 .compojoom-bootstrap .control-group.success textarea:focus {
 	border-color: #356635;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #7aba7b;
@@ -1122,19 +1123,19 @@ input[type="checkbox"][readonly] {
 	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 6px #7aba7b;
 }
 .compojoom-bootstrap .control-group.success .input-prepend .add-on,
-.control-group.success .input-append .add-on {
+.compojoom-bootstrap .control-group.success .input-append .add-on {
 	color: #468847;
 	background-color: #dff0d8;
 	border-color: #468847;
 }
 .compojoom-bootstrap input:focus:required:invalid,
-textarea:focus:required:invalid,
+.compojoom-bootstrap textarea:focus:required:invalid,
 .compojoom-bootstrap select:focus:required:invalid {
 	color: #b94a48;
 	border-color: #ee5f5b;
 }
 .compojoom-bootstrap input:focus:required:invalid:focus,
-textarea:focus:required:invalid:focus,
+.compojoom-bootstrap textarea:focus:required:invalid:focus,
 .compojoom-bootstrap select:focus:required:invalid:focus {
 	border-color: #e9322d;
 	-webkit-box-shadow: 0 0 6px #f8b9b7;
@@ -1150,7 +1151,7 @@ textarea:focus:required:invalid:focus,
 	*zoom: 1;
 }
 .compojoom-bootstrap .form-actions:before,
-.form-actions:after {
+.compojoom-bootstrap .form-actions:after {
 	display: table;
 	content: "";
 	line-height: 0;
@@ -1159,7 +1160,7 @@ textarea:focus:required:invalid:focus,
 	clear: both;
 }
 .compojoom-bootstrap .help-block,
-.help-inline {
+.compojoom-bootstrap .help-inline {
 	color: #595959;
 }
 .compojoom-bootstrap .help-block {
@@ -1174,17 +1175,17 @@ textarea:focus:required:invalid:focus,
 	padding-left: 5px;
 }
 .compojoom-bootstrap .input-append,
-.input-prepend {
+.compojoom-bootstrap .input-prepend {
 	margin-bottom: 5px;
 	font-size: 0;
 	white-space: nowrap;
 }
 .compojoom-bootstrap .input-append input,
-.input-append select,
+.compojoom-bootstrap .input-append select,
 .compojoom-bootstrap .input-append .uneditable-input,
-.input-prepend input,
+.compojoom-bootstrap .input-prepend input,
 .compojoom-bootstrap .input-prepend select,
-.input-prepend .uneditable-input {
+.compojoom-bootstrap .input-prepend .uneditable-input {
 	position: relative;
 	margin-bottom: 0;
 	*margin-left: 0;
@@ -1195,15 +1196,15 @@ textarea:focus:required:invalid:focus,
 	border-radius: 0 3px 3px 0;
 }
 .compojoom-bootstrap .input-append input:focus,
-.input-append select:focus,
+.compojoom-bootstrap .input-append select:focus,
 .compojoom-bootstrap .input-append .uneditable-input:focus,
-.input-prepend input:focus,
+.compojoom-bootstrap .input-prepend input:focus,
 .compojoom-bootstrap .input-prepend select:focus,
-.input-prepend .uneditable-input:focus {
+.compojoom-bootstrap .input-prepend .uneditable-input:focus {
 	z-index: 2;
 }
 .compojoom-bootstrap .input-append .add-on,
-.input-prepend .add-on {
+.compojoom-bootstrap .input-prepend .add-on {
 	display: inline-block;
 	width: auto;
 	height: 18px;
@@ -1218,9 +1219,9 @@ textarea:focus:required:invalid:focus,
 	border: 1px solid #ccc;
 }
 .compojoom-bootstrap .input-append .add-on,
-.input-append .btn,
+.compojoom-bootstrap .input-append .btn,
 .compojoom-bootstrap .input-prepend .add-on,
-.input-prepend .btn {
+.compojoom-bootstrap .input-prepend .btn {
 	margin-left: -1px;
 	vertical-align: top;
 	-webkit-border-radius: 0;
@@ -1228,49 +1229,49 @@ textarea:focus:required:invalid:focus,
 	border-radius: 0;
 }
 .compojoom-bootstrap .input-append .active,
-.input-prepend .active {
+.compojoom-bootstrap .input-prepend .active {
 	background-color: #a9dba9;
 	border-color: #46a546;
 }
 .compojoom-bootstrap .input-prepend .add-on,
-.input-prepend .btn {
+.compojoom-bootstrap .input-prepend .btn {
 	margin-right: -1px;
 }
 .compojoom-bootstrap .input-prepend .add-on:first-child,
-.input-prepend .btn:first-child {
+.compojoom-bootstrap .input-prepend .btn:first-child {
 	-webkit-border-radius: 3px 0 0 3px;
 	-moz-border-radius: 3px 0 0 3px;
 	border-radius: 3px 0 0 3px;
 }
 .compojoom-bootstrap .input-append input,
-.input-append select,
+.compojoom-bootstrap .input-append select,
 .compojoom-bootstrap .input-append .uneditable-input {
 	-webkit-border-radius: 3px 0 0 3px;
 	-moz-border-radius: 3px 0 0 3px;
 	border-radius: 3px 0 0 3px;
 }
 .compojoom-bootstrap .input-append .add-on:last-child,
-.input-append .btn:last-child {
+.compojoom-bootstrap .input-append .btn:last-child {
 	-webkit-border-radius: 0 3px 3px 0;
 	-moz-border-radius: 0 3px 3px 0;
 	border-radius: 0 3px 3px 0;
 }
 .compojoom-bootstrap .input-prepend.input-append input,
-.input-prepend.input-append select,
+.compojoom-bootstrap .input-prepend.input-append select,
 .compojoom-bootstrap .input-prepend.input-append .uneditable-input {
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
 }
 .compojoom-bootstrap .input-prepend.input-append .add-on:first-child,
-.input-prepend.input-append .btn:first-child {
+.compojoom-bootstrap .input-prepend.input-append .btn:first-child {
 	margin-right: -1px;
 	-webkit-border-radius: 3px 0 0 3px;
 	-moz-border-radius: 3px 0 0 3px;
 	border-radius: 3px 0 0 3px;
 }
 .compojoom-bootstrap .input-prepend.input-append .add-on:last-child,
-.input-prepend.input-append .btn:last-child {
+.compojoom-bootstrap .input-prepend.input-append .btn:last-child {
 	margin-left: -1px;
 	-webkit-border-radius: 0 3px 3px 0;
 	-moz-border-radius: 0 3px 3px 0;
@@ -1287,7 +1288,7 @@ textarea:focus:required:invalid:focus,
 	border-radius: 15px;
 }
 .compojoom-bootstrap .form-search .input-append .search-query,
-.form-search .input-prepend .search-query {
+.compojoom-bootstrap .form-search .input-prepend .search-query {
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
@@ -1313,25 +1314,25 @@ textarea:focus:required:invalid:focus,
 	border-radius: 14px 0 0 14px;
 }
 .compojoom-bootstrap .form-search input,
-.form-search textarea,
+.compojoom-bootstrap .form-search textarea,
 .compojoom-bootstrap .form-search select,
-.form-search .help-inline,
+.compojoom-bootstrap .form-search .help-inline,
 .compojoom-bootstrap .form-search .uneditable-input,
-.form-search .input-prepend,
+.compojoom-bootstrap .form-search .input-prepend,
 .compojoom-bootstrap .form-search .input-append,
-.form-inline input,
+.compojoom-bootstrap .form-inline input,
 .compojoom-bootstrap .form-inline textarea,
-.form-inline select,
+.compojoom-bootstrap .form-inline select,
 .compojoom-bootstrap .form-inline .help-inline,
-.form-inline .uneditable-input,
+.compojoom-bootstrap .form-inline .uneditable-input,
 .compojoom-bootstrap .form-inline .input-prepend,
-.form-inline .input-append,
+.compojoom-bootstrap .form-inline .input-append,
 .compojoom-bootstrap .form-horizontal input,
-.form-horizontal textarea,
+.compojoom-bootstrap .form-horizontal textarea,
 .compojoom-bootstrap .form-horizontal select,
-.form-horizontal .help-inline,
+.compojoom-bootstrap .form-horizontal .help-inline,
 .compojoom-bootstrap .form-horizontal .uneditable-input,
-.form-horizontal .input-prepend,
+.compojoom-bootstrap .form-horizontal .input-prepend,
 .compojoom-bootstrap .form-horizontal .input-append {
 	display: inline-block;
 	*display: inline;
@@ -1340,51 +1341,51 @@ textarea:focus:required:invalid:focus,
 	vertical-align: middle;
 }
 .compojoom-bootstrap .form-search .hide,
-.form-inline .hide,
+.compojoom-bootstrap .form-inline .hide,
 .compojoom-bootstrap .form-horizontal .hide {
 	display: none;
 }
 .compojoom-bootstrap .form-search label,
-.form-inline label,
+.compojoom-bootstrap .form-inline label,
 .compojoom-bootstrap .form-search .btn-group,
-.form-inline .btn-group {
+.compojoom-bootstrap .form-inline .btn-group {
 	display: inline-block;
 }
 .compojoom-bootstrap .form-search .input-append,
-.form-inline .input-append,
+.compojoom-bootstrap .form-inline .input-append,
 .compojoom-bootstrap .form-search .input-prepend,
-.form-inline .input-prepend {
+.compojoom-bootstrap .form-inline .input-prepend {
 	margin-bottom: 0;
 }
 .compojoom-bootstrap .form-search .radio,
-.form-search .checkbox,
+.compojoom-bootstrap .form-search .checkbox,
 .compojoom-bootstrap .form-inline .radio,
-.form-inline .checkbox {
+.compojoom-bootstrap .form-inline .checkbox {
 	padding-left: 0;
 	margin-bottom: 0;
 	vertical-align: middle;
 }
 .compojoom-bootstrap .form-search .radio input[type="radio"],
-.form-search .checkbox input[type="checkbox"],
+.compojoom-bootstrap .form-search .checkbox input[type="checkbox"],
 .compojoom-bootstrap .form-inline .radio input[type="radio"],
-.form-inline .checkbox input[type="checkbox"] {
+.compojoom-bootstrap .form-inline .checkbox input[type="checkbox"] {
 	float: left;
 	margin-right: 3px;
 	margin-left: 0;
 }
-.compojoom-bootstrap .control-group {
+.compojoom-bootstrap .compojoom-bootstrap .control-group {
 	margin-bottom: 9px;
 }
-.compojoom-bootstrap legend + .control-group {
+.compojoom-bootstrap .compojoom-bootstrap legend + .control-group {
 	margin-top: 18px;
 	-webkit-margin-top-collapse: separate;
 }
-.compojoom-bootstrap .form-horizontal .control-group {
+.compojoom-bootstrap .compojoom-bootstrap .form-horizontal .control-group {
 	margin-bottom: 18px;
 	*zoom: 1;
 }
 .compojoom-bootstrap .form-horizontal .control-group:before,
-.form-horizontal .control-group:after {
+.compojoom-bootstrap .form-horizontal .control-group:after {
 	display: table;
 	content: "";
 	line-height: 0;
@@ -1425,7 +1426,7 @@ textarea:focus:required:invalid:focus,
 	margin-bottom: 18px;
 }
 .compojoom-bootstrap .table th,
-.table td {
+.compojoom-bootstrap .table td {
 	padding: 8px;
 	line-height: 18px;
 	text-align: left;
@@ -1439,18 +1440,18 @@ textarea:focus:required:invalid:focus,
 	vertical-align: bottom;
 }
 .compojoom-bootstrap .table caption + thead tr:first-child th,
-.table caption + thead tr:first-child td,
+.compojoom-bootstrap .table caption + thead tr:first-child td,
 .compojoom-bootstrap .table colgroup + thead tr:first-child th,
-.table colgroup + thead tr:first-child td,
+.compojoom-bootstrap .table colgroup + thead tr:first-child td,
 .compojoom-bootstrap .table thead:first-child tr:first-child th,
-.table thead:first-child tr:first-child td {
+.compojoom-bootstrap .table thead:first-child tr:first-child td {
 	border-top: 0;
 }
 .compojoom-bootstrap .table tbody + tbody {
 	border-top: 2px solid #ddd;
 }
 .compojoom-bootstrap .table-condensed th,
-.table-condensed td {
+.compojoom-bootstrap .table-condensed td {
 	padding: 4px 5px;
 }
 .compojoom-bootstrap .table-bordered {
@@ -1463,34 +1464,34 @@ textarea:focus:required:invalid:focus,
 	border-radius: 4px;
 }
 .compojoom-bootstrap .table-bordered th,
-.table-bordered td {
+.compojoom-bootstrap .table-bordered td {
 	border-left: 1px solid #ddd;
 }
 .compojoom-bootstrap .table-bordered caption + thead tr:first-child th,
-.table-bordered caption + tbody tr:first-child th,
+.compojoom-bootstrap .table-bordered caption + tbody tr:first-child th,
 .compojoom-bootstrap .table-bordered caption + tbody tr:first-child td,
-.table-bordered colgroup + thead tr:first-child th,
+.compojoom-bootstrap .table-bordered colgroup + thead tr:first-child th,
 .compojoom-bootstrap .table-bordered colgroup + tbody tr:first-child th,
-.table-bordered colgroup + tbody tr:first-child td,
+.compojoom-bootstrap .table-bordered colgroup + tbody tr:first-child td,
 .compojoom-bootstrap .table-bordered thead:first-child tr:first-child th,
-.table-bordered tbody:first-child tr:first-child th,
+.compojoom-bootstrap .table-bordered tbody:first-child tr:first-child th,
 .compojoom-bootstrap .table-bordered tbody:first-child tr:first-child td {
 	border-top: 0;
 }
 .compojoom-bootstrap .table-bordered thead:first-child tr:first-child th:first-child,
-.table-bordered tbody:first-child tr:first-child td:first-child {
+.compojoom-bootstrap .table-bordered tbody:first-child tr:first-child td:first-child {
 	-webkit-border-top-left-radius: 4px;
 	border-top-left-radius: 4px;
 	-moz-border-radius-topleft: 4px;
 }
 .compojoom-bootstrap .table-bordered thead:first-child tr:first-child th:last-child,
-.table-bordered tbody:first-child tr:first-child td:last-child {
+.compojoom-bootstrap .table-bordered tbody:first-child tr:first-child td:last-child {
 	-webkit-border-top-right-radius: 4px;
 	border-top-right-radius: 4px;
 	-moz-border-radius-topright: 4px;
 }
 .compojoom-bootstrap .table-bordered thead:last-child tr:last-child th:first-child,
-.table-bordered tbody:last-child tr:last-child td:first-child,
+.compojoom-bootstrap .table-bordered tbody:last-child tr:last-child td:first-child,
 .compojoom-bootstrap .table-bordered tfoot:last-child tr:last-child td:first-child {
 	-webkit-border-radius: 0 0 0 4px;
 	-moz-border-radius: 0 0 0 4px;
@@ -1500,38 +1501,38 @@ textarea:focus:required:invalid:focus,
 	-moz-border-radius-bottomleft: 4px;
 }
 .compojoom-bootstrap .table-bordered thead:last-child tr:last-child th:last-child,
-.table-bordered tbody:last-child tr:last-child td:last-child,
+.compojoom-bootstrap .table-bordered tbody:last-child tr:last-child td:last-child,
 .compojoom-bootstrap .table-bordered tfoot:last-child tr:last-child td:last-child {
 	-webkit-border-bottom-right-radius: 4px;
 	border-bottom-right-radius: 4px;
 	-moz-border-radius-bottomright: 4px;
 }
 .compojoom-bootstrap .table-bordered caption + thead tr:first-child th:first-child,
-.table-bordered caption + tbody tr:first-child td:first-child,
+.compojoom-bootstrap .table-bordered caption + tbody tr:first-child td:first-child,
 .compojoom-bootstrap .table-bordered colgroup + thead tr:first-child th:first-child,
-.table-bordered colgroup + tbody tr:first-child td:first-child {
+.compojoom-bootstrap .table-bordered colgroup + tbody tr:first-child td:first-child {
 	-webkit-border-top-left-radius: 4px;
 	border-top-left-radius: 4px;
 	-moz-border-radius-topleft: 4px;
 }
 .compojoom-bootstrap .table-bordered caption + thead tr:first-child th:last-child,
-.table-bordered caption + tbody tr:first-child td:last-child,
+.compojoom-bootstrap .table-bordered caption + tbody tr:first-child td:last-child,
 .compojoom-bootstrap .table-bordered colgroup + thead tr:first-child th:last-child,
-.table-bordered colgroup + tbody tr:first-child td:last-child {
+.compojoom-bootstrap .table-bordered colgroup + tbody tr:first-child td:last-child {
 	-webkit-border-top-right-radius: 4px;
 	border-top-right-radius: 4px;
 	-moz-border-right-topleft: 4px;
 }
 .compojoom-bootstrap .table-striped tbody tr:nth-child(odd) td,
-.table-striped tbody tr:nth-child(odd) th {
+.compojoom-bootstrap .table-striped tbody tr:nth-child(odd) th {
 	background-color: #f9f9f9;
 }
 .compojoom-bootstrap .table-hover tbody tr:hover td,
-.table-hover tbody tr:hover th {
+.compojoom-bootstrap .table-hover tbody tr:hover th {
 	background-color: #f5f5f5;
 }
 .compojoom-bootstrap table [class*=span],
-.row-fluid table [class*=span] {
+.compojoom-bootstrap .row-fluid table [class*=span] {
 	display: table-cell;
 	float: none;
 	margin-left: 0;
@@ -1666,14 +1667,14 @@ textarea:focus:required:invalid:focus,
 	background-color: #d9edf7;
 }
 .compojoom-bootstrap .dropup,
-.dropdown {
+.compojoom-bootstrap .dropdown {
 	position: relative;
 }
 .compojoom-bootstrap .dropdown-toggle {
 	*margin-bottom: -3px;
 }
 .compojoom-bootstrap .dropdown-toggle:active,
-.open .dropdown-toggle {
+.compojoom-bootstrap .open .dropdown-toggle {
 	outline: 0;
 }
 .compojoom-bootstrap .caret {
@@ -1739,7 +1740,7 @@ textarea:focus:required:invalid:focus,
 	white-space: nowrap;
 }
 .compojoom-bootstrap .dropdown-menu li > a:hover,
-.dropdown-menu li > a:focus,
+.compojoom-bootstrap .dropdown-menu li > a:focus,
 .compojoom-bootstrap .dropdown-submenu:hover > a {
 	text-decoration: none;
 	color: #fff;
@@ -1754,7 +1755,7 @@ textarea:focus:required:invalid:focus,
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0076b2', GradientType=0);
 }
 .compojoom-bootstrap .dropdown-menu .active > a,
-.dropdown-menu .active > a:hover {
+.compojoom-bootstrap .dropdown-menu .active > a:hover {
 	color: #fff;
 	text-decoration: none;
 	outline: 0;
@@ -1769,7 +1770,7 @@ textarea:focus:required:invalid:focus,
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0076b2', GradientType=0);
 }
 .compojoom-bootstrap .dropdown-menu .disabled > a,
-.dropdown-menu .disabled > a:hover {
+.compojoom-bootstrap .dropdown-menu .disabled > a:hover {
 	color: #999;
 }
 .compojoom-bootstrap .dropdown-menu .disabled > a:hover {
@@ -1788,13 +1789,13 @@ textarea:focus:required:invalid:focus,
 	left: auto;
 }
 .compojoom-bootstrap .dropup .caret,
-.navbar-fixed-bottom .dropdown .caret {
+.compojoom-bootstrap .navbar-fixed-bottom .dropdown .caret {
 	border-top: 0;
 	border-bottom: 4px solid #000;
 	content: "\2191";
 }
 .compojoom-bootstrap .dropup .dropdown-menu,
-.navbar-fixed-bottom .dropdown .dropdown-menu {
+.compojoom-bootstrap .navbar-fixed-bottom .dropdown .dropdown-menu {
 	top: auto;
 	bottom: 100%;
 	margin-bottom: 1px;
@@ -1952,18 +1953,21 @@ textarea:focus:required:invalid:focus,
 	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
 	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
 	box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+	float: none;
+	height: auto;
+	text-transform: none;
 }
 .compojoom-bootstrap .btn:hover,
-.btn:active,
+.compojoom-bootstrap .btn:active,
 .compojoom-bootstrap .btn.active,
-.btn.disabled,
+.compojoom-bootstrap .btn.disabled,
 .compojoom-bootstrap .btn[disabled] {
 	color: #333;
 	background-color: #e6e6e6;
 	*background-color: #d9d9d9;
 }
 .compojoom-bootstrap .btn:active,
-.btn.active {
+.compojoom-bootstrap .btn.active {
 	background-color: #cccccc \9;
 }
 .compojoom-bootstrap .btn:first-child {
@@ -1986,7 +1990,7 @@ textarea:focus:required:invalid:focus,
 	outline-offset: -2px;
 }
 .compojoom-bootstrap .btn.active,
-.btn:active {
+.compojoom-bootstrap .btn:active {
 	background-color: #e6e6e6;
 	background-color: #d9d9d9 \9;
 	background-image: none;
@@ -1996,7 +2000,7 @@ textarea:focus:required:invalid:focus,
 	box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
 }
 .compojoom-bootstrap .btn.disabled,
-.btn[disabled] {
+.compojoom-bootstrap .btn[disabled] {
 	cursor: default;
 	background-color: #e6e6e6;
 	background-image: none;
@@ -2043,11 +2047,11 @@ textarea:focus:required:invalid:focus,
 	margin-top: 5px;
 }
 .compojoom-bootstrap .btn-primary.active,
-.btn-warning.active,
+.compojoom-bootstrap .btn-warning.active,
 .compojoom-bootstrap .btn-danger.active,
-.btn-success.active,
+.compojoom-bootstrap .btn-success.active,
 .compojoom-bootstrap .btn-info.active,
-.btn-inverse.active {
+.compojoom-bootstrap .btn-inverse.active {
 	color: rgba(255,255,255,0.75);
 }
 .compojoom-bootstrap .btn {
@@ -2071,16 +2075,16 @@ textarea:focus:required:invalid:focus,
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .compojoom-bootstrap .btn-primary:hover,
-.btn-primary:active,
+.compojoom-bootstrap .btn-primary:active,
 .compojoom-bootstrap .btn-primary.active,
-.btn-primary.disabled,
+.compojoom-bootstrap .btn-primary.disabled,
 .compojoom-bootstrap .btn-primary[disabled] {
 	color: #fff;
 	background-color: #15497c;
 	*background-color: #113c66;
 }
 .compojoom-bootstrap .btn-primary:active,
-.btn-primary.active {
+.compojoom-bootstrap .btn-primary.active {
 	background-color: #0e2f50 \9;
 }
 .compojoom-bootstrap .btn-warning {
@@ -2100,16 +2104,16 @@ textarea:focus:required:invalid:focus,
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .compojoom-bootstrap .btn-warning:hover,
-.btn-warning:active,
+.compojoom-bootstrap .btn-warning:active,
 .compojoom-bootstrap .btn-warning.active,
-.btn-warning.disabled,
+.compojoom-bootstrap .btn-warning.disabled,
 .compojoom-bootstrap .btn-warning[disabled] {
 	color: #fff;
 	background-color: #f89406;
 	*background-color: #df8505;
 }
 .compojoom-bootstrap .btn-warning:active,
-.btn-warning.active {
+.compojoom-bootstrap .btn-warning.active {
 	background-color: #c67605 \9;
 }
 .compojoom-bootstrap .btn-danger {
@@ -2129,16 +2133,16 @@ textarea:focus:required:invalid:focus,
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .compojoom-bootstrap .btn-danger:hover,
-.btn-danger:active,
+.compojoom-bootstrap .btn-danger:active,
 .compojoom-bootstrap .btn-danger.active,
-.btn-danger.disabled,
+.compojoom-bootstrap .btn-danger.disabled,
 .compojoom-bootstrap .btn-danger[disabled] {
 	color: #fff;
 	background-color: #bd362f;
 	*background-color: #a9302a;
 }
 .compojoom-bootstrap .btn-danger:active,
-.btn-danger.active {
+.compojoom-bootstrap .btn-danger.active {
 	background-color: #942a25 \9;
 }
 .compojoom-bootstrap .btn-success {
@@ -2158,16 +2162,16 @@ textarea:focus:required:invalid:focus,
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .compojoom-bootstrap .btn-success:hover,
-.btn-success:active,
+.compojoom-bootstrap .btn-success:active,
 .compojoom-bootstrap .btn-success.active,
-.btn-success.disabled,
+.compojoom-bootstrap .btn-success.disabled,
 .compojoom-bootstrap .btn-success[disabled] {
 	color: #fff;
 	background-color: #51a351;
 	*background-color: #499249;
 }
 .compojoom-bootstrap .btn-success:active,
-.btn-success.active {
+.compojoom-bootstrap .btn-success.active {
 	background-color: #408140 \9;
 }
 .compojoom-bootstrap .btn-info {
@@ -2187,16 +2191,16 @@ textarea:focus:required:invalid:focus,
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .compojoom-bootstrap .btn-info:hover,
-.btn-info:active,
+.compojoom-bootstrap .btn-info:active,
 .compojoom-bootstrap .btn-info.active,
-.btn-info.disabled,
+.compojoom-bootstrap .btn-info.disabled,
 .compojoom-bootstrap .btn-info[disabled] {
 	color: #fff;
 	background-color: #2f96b4;
 	*background-color: #2a85a0;
 }
 .compojoom-bootstrap .btn-info:active,
-.btn-info.active {
+.compojoom-bootstrap .btn-info.active {
 	background-color: #24748c \9;
 }
 .compojoom-bootstrap .btn-inverse {
@@ -2216,45 +2220,45 @@ textarea:focus:required:invalid:focus,
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .compojoom-bootstrap .btn-inverse:hover,
-.btn-inverse:active,
+.compojoom-bootstrap .btn-inverse:active,
 .compojoom-bootstrap .btn-inverse.active,
-.btn-inverse.disabled,
+.compojoom-bootstrap .btn-inverse.disabled,
 .compojoom-bootstrap .btn-inverse[disabled] {
 	color: #fff;
 	background-color: #222;
 	*background-color: #151515;
 }
 .compojoom-bootstrap .btn-inverse:active,
-.btn-inverse.active {
+.compojoom-bootstrap .btn-inverse.active {
 	background-color: #090909 \9;
 }
 .compojoom-bootstrap button.btn,
-input[type="submit"].btn {
+.compojoom-bootstrap input[type="submit"].btn {
 	*padding-top: 3px;
 	*padding-bottom: 3px;
 }
 .compojoom-bootstrap button.btn::-moz-focus-inner,
-input[type="submit"].btn::-moz-focus-inner {
+.compojoom-bootstrap input[type="submit"].btn::-moz-focus-inner {
 	padding: 0;
 	border: 0;
 }
 .compojoom-bootstrap button.btn.btn-large,
-input[type="submit"].btn.btn-large {
+.compojoom-bootstrap input[type="submit"].btn.btn-large {
 	*padding-top: 7px;
 	*padding-bottom: 7px;
 }
 .compojoom-bootstrap button.btn.btn-small,
-input[type="submit"].btn.btn-small {
+.compojoom-bootstrap input[type="submit"].btn.btn-small {
 	*padding-top: 3px;
 	*padding-bottom: 3px;
 }
 .compojoom-bootstrap button.btn.btn-mini,
-input[type="submit"].btn.btn-mini {
+.compojoom-bootstrap input[type="submit"].btn.btn-mini {
 	*padding-top: 1px;
 	*padding-bottom: 1px;
 }
 .compojoom-bootstrap .btn-link,
-.btn-link:active {
+.compojoom-bootstrap .btn-link:active {
 	background-color: transparent;
 	background-image: none;
 	-webkit-box-shadow: none;
@@ -2297,7 +2301,7 @@ input[type="submit"].btn.btn-mini {
 	*zoom: 1;
 }
 .compojoom-bootstrap .btn-toolbar .btn + .btn,
-.btn-toolbar .btn-group + .btn,
+.compojoom-bootstrap .btn-toolbar .btn-group + .btn,
 .compojoom-bootstrap .btn-toolbar .btn + .btn-group {
 	margin-left: 5px;
 }
@@ -2311,7 +2315,7 @@ input[type="submit"].btn.btn-mini {
 	margin-left: -1px;
 }
 .compojoom-bootstrap .btn-group > .btn,
-.btn-group > .dropdown-menu {
+.compojoom-bootstrap .btn-group > .dropdown-menu {
 	font-size: 13px;
 }
 .compojoom-bootstrap .btn-group > .btn-mini {
@@ -2333,7 +2337,7 @@ input[type="submit"].btn.btn-mini {
 	border-bottom-left-radius: 4px;
 }
 .compojoom-bootstrap .btn-group > .btn:last-child,
-.btn-group > .dropdown-toggle {
+.compojoom-bootstrap .btn-group > .dropdown-toggle {
 	-webkit-border-top-right-radius: 4px;
 	-moz-border-radius-topright: 4px;
 	border-top-right-radius: 4px;
@@ -2351,7 +2355,7 @@ input[type="submit"].btn.btn-mini {
 	border-bottom-left-radius: 6px;
 }
 .compojoom-bootstrap .btn-group > .btn.large:last-child,
-.btn-group > .large.dropdown-toggle {
+.compojoom-bootstrap .btn-group > .large.dropdown-toggle {
 	-webkit-border-top-right-radius: 6px;
 	-moz-border-radius-topright: 6px;
 	border-top-right-radius: 6px;
@@ -2360,13 +2364,13 @@ input[type="submit"].btn.btn-mini {
 	border-bottom-right-radius: 6px;
 }
 .compojoom-bootstrap .btn-group > .btn:hover,
-.btn-group > .btn:focus,
+.compojoom-bootstrap .btn-group > .btn:focus,
 .compojoom-bootstrap .btn-group > .btn:active,
-.btn-group > .btn.active {
+.compojoom-bootstrap .btn-group > .btn.active {
 	z-index: 2;
 }
 .compojoom-bootstrap .btn-group .dropdown-toggle:active,
-.btn-group.open .dropdown-toggle {
+.compojoom-bootstrap .btn-group.open .dropdown-toggle {
 	outline: 0;
 }
 .compojoom-bootstrap .btn-group > .btn + .dropdown-toggle {
@@ -2426,7 +2430,7 @@ input[type="submit"].btn.btn-mini {
 	margin-left: 0;
 }
 .compojoom-bootstrap .btn-mini .caret,
-.btn-small .caret,
+.compojoom-bootstrap .btn-small .caret,
 .compojoom-bootstrap .btn-large .caret {
 	margin-top: 5px;
 }
@@ -2440,11 +2444,11 @@ input[type="submit"].btn.btn-mini {
 	border-top: 0;
 }
 .compojoom-bootstrap .btn-primary .caret,
-.btn-warning .caret,
+.compojoom-bootstrap .btn-warning .caret,
 .compojoom-bootstrap .btn-danger .caret,
-.btn-info .caret,
+.compojoom-bootstrap .btn-info .caret,
 .compojoom-bootstrap .btn-success .caret,
-.btn-inverse .caret {
+.compojoom-bootstrap .btn-inverse .caret {
 	border-top-color: #fff;
 	border-bottom-color: #fff;
 }
@@ -2511,7 +2515,7 @@ input[type="submit"].btn.btn-mini {
 	color: #468847;
 }
 .compojoom-bootstrap .alert-danger,
-.alert-error {
+.compojoom-bootstrap .alert-error {
 	background-color: #f2dede;
 	border-color: #eed3d7;
 	color: #b94a48;
@@ -2526,7 +2530,7 @@ input[type="submit"].btn.btn-mini {
 	padding-bottom: 14px;
 }
 .compojoom-bootstrap .alert-block > p,
-.alert-block > ul {
+.compojoom-bootstrap .alert-block > ul {
 	margin-bottom: 0;
 }
 .compojoom-bootstrap .alert-block p + p {
@@ -2566,7 +2570,7 @@ input[type="submit"].btn.btn-mini {
 	margin-bottom: 0;
 }
 .compojoom-bootstrap .nav-list > li > a,
-.nav-list .nav-header {
+.compojoom-bootstrap .nav-list .nav-header {
 	margin-left: -15px;
 	margin-right: -15px;
 	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
@@ -2575,7 +2579,7 @@ input[type="submit"].btn.btn-mini {
 	padding: 3px 15px;
 }
 .compojoom-bootstrap .nav-list > .active > a,
-.nav-list > .active > a:hover {
+.compojoom-bootstrap .nav-list > .active > a:hover {
 	color: #fff;
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
 	background-color: #08c;
@@ -2593,27 +2597,27 @@ input[type="submit"].btn.btn-mini {
 	border-bottom: 1px solid #fff;
 }
 .compojoom-bootstrap .nav-tabs,
-.nav-pills {
+.compojoom-bootstrap .nav-pills {
 	*zoom: 1;
 }
 .compojoom-bootstrap .nav-tabs:before,
-.nav-tabs:after,
+.compojoom-bootstrap .nav-tabs:after,
 .compojoom-bootstrap .nav-pills:before,
-.nav-pills:after {
+.compojoom-bootstrap .nav-pills:after {
 	display: table;
 	content: "";
 	line-height: 0;
 }
 .compojoom-bootstrap .nav-tabs:after,
-.nav-pills:after {
+.compojoom-bootstrap .nav-pills:after {
 	clear: both;
 }
 .compojoom-bootstrap .nav-tabs > li,
-.nav-pills > li {
+.compojoom-bootstrap .nav-pills > li {
 	float: left;
 }
 .compojoom-bootstrap .nav-tabs > li > a,
-.nav-pills > li > a {
+.compojoom-bootstrap .nav-pills > li > a {
 	padding-right: 12px;
 	padding-left: 12px;
 	margin-right: 2px;
@@ -2638,7 +2642,7 @@ input[type="submit"].btn.btn-mini {
 	border-color: #eee #eee #ddd;
 }
 .compojoom-bootstrap .nav-tabs > .active > a,
-.nav-tabs > .active > a:hover {
+.compojoom-bootstrap .nav-tabs > .active > a:hover {
 	color: #555;
 	background-color: #fff;
 	border: 1px solid #ddd;
@@ -2655,7 +2659,7 @@ input[type="submit"].btn.btn-mini {
 	border-radius: 5px;
 }
 .compojoom-bootstrap .nav-pills > .active > a,
-.nav-pills > .active > a:hover {
+.compojoom-bootstrap .nav-pills > .active > a:hover {
 	color: #fff;
 	background-color: #08c;
 }
@@ -2734,14 +2738,14 @@ input[type="submit"].btn.btn-mini {
 	cursor: pointer;
 }
 .compojoom-bootstrap .nav-tabs .open .dropdown-toggle,
-.nav-pills .open .dropdown-toggle,
+.compojoom-bootstrap .nav-pills .open .dropdown-toggle,
 .compojoom-bootstrap .nav > li.dropdown.open.active > a:hover {
 	color: #fff;
 	background-color: #999;
 	border-color: #999;
 }
 .compojoom-bootstrap .nav li.dropdown.open .caret,
-.nav li.dropdown.open.active .caret,
+.compojoom-bootstrap .nav li.dropdown.open.active .caret,
 .compojoom-bootstrap .nav li.dropdown.open a:hover .caret {
 	border-top-color: #fff;
 	border-bottom-color: #fff;
@@ -2755,7 +2759,7 @@ input[type="submit"].btn.btn-mini {
 	*zoom: 1;
 }
 .compojoom-bootstrap .tabbable:before,
-.tabbable:after {
+.compojoom-bootstrap .tabbable:after {
 	display: table;
 	content: "";
 	line-height: 0;
@@ -2767,16 +2771,16 @@ input[type="submit"].btn.btn-mini {
 	overflow: auto;
 }
 .compojoom-bootstrap .tabs-below > .nav-tabs,
-.tabs-right > .nav-tabs,
+.compojoom-bootstrap .tabs-right > .nav-tabs,
 .compojoom-bootstrap .tabs-left > .nav-tabs {
 	border-bottom: 0;
 }
 .compojoom-bootstrap .tab-content > .tab-pane,
-.pill-content > .pill-pane {
+.compojoom-bootstrap .pill-content > .pill-pane {
 	display: none;
 }
 .compojoom-bootstrap .tab-content > .active,
-.pill-content > .active {
+.compojoom-bootstrap .pill-content > .active {
 	display: block;
 }
 .compojoom-bootstrap .tabs-below > .nav-tabs {
@@ -2796,15 +2800,15 @@ input[type="submit"].btn.btn-mini {
 	border-top-color: #ddd;
 }
 .compojoom-bootstrap .tabs-below > .nav-tabs > .active > a,
-.tabs-below > .nav-tabs > .active > a:hover {
+.compojoom-bootstrap .tabs-below > .nav-tabs > .active > a:hover {
 	border-color: transparent #ddd #ddd #ddd;
 }
 .compojoom-bootstrap .tabs-left > .nav-tabs > li,
-.tabs-right > .nav-tabs > li {
+.compojoom-bootstrap .tabs-right > .nav-tabs > li {
 	float: none;
 }
 .compojoom-bootstrap .tabs-left > .nav-tabs > li > a,
-.tabs-right > .nav-tabs > li > a {
+.compojoom-bootstrap .tabs-right > .nav-tabs > li > a {
 	min-width: 74px;
 	margin-right: 0;
 	margin-bottom: 3px;
@@ -2824,7 +2828,7 @@ input[type="submit"].btn.btn-mini {
 	border-color: #eee #ddd #eee #eee;
 }
 .compojoom-bootstrap .tabs-left > .nav-tabs .active > a,
-.tabs-left > .nav-tabs .active > a:hover {
+.compojoom-bootstrap .tabs-left > .nav-tabs .active > a:hover {
 	border-color: #ddd transparent #ddd #ddd;
 	*border-right-color: #fff;
 }
@@ -2843,7 +2847,7 @@ input[type="submit"].btn.btn-mini {
 	border-color: #eee #eee #eee #ddd;
 }
 .compojoom-bootstrap .tabs-right > .nav-tabs .active > a,
-.tabs-right > .nav-tabs .active > a:hover {
+.compojoom-bootstrap .tabs-right > .nav-tabs .active > a:hover {
 	border-color: #ddd #ddd #ddd transparent;
 	*border-left-color: #fff;
 }
@@ -2918,7 +2922,7 @@ input[type="submit"].btn.btn-mini {
 	border-right: 1px solid #ffffff;
 }
 .compojoom-bootstrap .navbar .btn,
-.navbar .btn-group {
+.compojoom-bootstrap .navbar .btn-group {
 	margin-top: 6px;
 }
 .compojoom-bootstrap .navbar .btn-group .btn {
@@ -2929,7 +2933,7 @@ input[type="submit"].btn.btn-mini {
 	*zoom: 1;
 }
 .compojoom-bootstrap .navbar-form:before,
-.navbar-form:after {
+.compojoom-bootstrap .navbar-form:after {
 	display: table;
 	content: "";
 	line-height: 0;
@@ -2938,29 +2942,29 @@ input[type="submit"].btn.btn-mini {
 	clear: both;
 }
 .compojoom-bootstrap .navbar-form input,
-.navbar-form select,
+.compojoom-bootstrap .navbar-form select,
 .compojoom-bootstrap .navbar-form .radio,
-.navbar-form .checkbox {
+.compojoom-bootstrap .navbar-form .checkbox {
 	margin-top: 5px;
 }
 .compojoom-bootstrap .navbar-form input,
-.navbar-form select,
+.compojoom-bootstrap .navbar-form select,
 .compojoom-bootstrap .navbar-form .btn {
 	display: inline-block;
 	margin-bottom: 0;
 }
 .compojoom-bootstrap .navbar-form input[type="image"],
-.navbar-form input[type="checkbox"],
+.compojoom-bootstrap .navbar-form input[type="checkbox"],
 .compojoom-bootstrap .navbar-form input[type="radio"] {
 	margin-top: 3px;
 }
 .compojoom-bootstrap .navbar-form .input-append,
-.navbar-form .input-prepend {
+.compojoom-bootstrap .navbar-form .input-prepend {
 	margin-top: 6px;
 	white-space: nowrap;
 }
 .compojoom-bootstrap .navbar-form .input-append input,
-.navbar-form .input-prepend input {
+.compojoom-bootstrap .navbar-form .input-prepend input {
 	margin-top: 0;
 }
 .compojoom-bootstrap .navbar-search {
@@ -2991,7 +2995,7 @@ input[type="submit"].btn.btn-mini {
 	border-radius: 0;
 }
 .compojoom-bootstrap .navbar-fixed-top,
-.navbar-fixed-bottom {
+.compojoom-bootstrap .navbar-fixed-bottom {
 	position: fixed;
 	right: 0;
 	left: 0;
@@ -2999,12 +3003,12 @@ input[type="submit"].btn.btn-mini {
 	margin-bottom: 0;
 }
 .compojoom-bootstrap .navbar-fixed-top .navbar-inner,
-.navbar-fixed-bottom .navbar-inner,
+.compojoom-bootstrap .navbar-fixed-bottom .navbar-inner,
 .compojoom-bootstrap .navbar-static-top .navbar-inner {
 	border: 0;
 }
 .compojoom-bootstrap .navbar-fixed-top .navbar-inner,
-.navbar-fixed-bottom .navbar-inner {
+.compojoom-bootstrap .navbar-fixed-bottom .navbar-inner {
 	padding-left: 0;
 	padding-right: 0;
 	-webkit-border-radius: 0;
@@ -3012,7 +3016,7 @@ input[type="submit"].btn.btn-mini {
 	border-radius: 0;
 }
 .compojoom-bootstrap .navbar-static-top .container,
-.navbar-fixed-top .container,
+.compojoom-bootstrap .navbar-fixed-top .container,
 .compojoom-bootstrap .navbar-fixed-bottom .container {
 	width: 940px;
 }
@@ -3020,7 +3024,7 @@ input[type="submit"].btn.btn-mini {
 	top: 0;
 }
 .compojoom-bootstrap .navbar-fixed-top .navbar-inner,
-.navbar-static-top .navbar-inner {
+.compojoom-bootstrap .navbar-static-top .navbar-inner {
 	-webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 10px rgba(0,0,0,.1);
 	-moz-box-shadow: inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 10px rgba(0,0,0,.1);
 	box-shadow: inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 10px rgba(0,0,0,.1);
@@ -3057,13 +3061,13 @@ input[type="submit"].btn.btn-mini {
 	margin-top: 8px;
 }
 .compojoom-bootstrap .navbar .nav > li > a:focus,
-.navbar .nav > li > a:hover {
+.compojoom-bootstrap .navbar .nav > li > a:hover {
 	background-color: transparent;
 	color: #333;
 	text-decoration: none;
 }
 .compojoom-bootstrap .navbar .nav > .active > a,
-.navbar .nav > .active > a:hover,
+.compojoom-bootstrap .navbar .nav > .active > a:hover,
 .compojoom-bootstrap .navbar .nav > .active > a:focus {
 	color: #555;
 	text-decoration: none;
@@ -3097,16 +3101,16 @@ input[type="submit"].btn.btn-mini {
 	box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);
 }
 .compojoom-bootstrap .navbar .btn-navbar:hover,
-.navbar .btn-navbar:active,
+.compojoom-bootstrap .navbar .btn-navbar:active,
 .compojoom-bootstrap .navbar .btn-navbar.active,
-.navbar .btn-navbar.disabled,
+.compojoom-bootstrap .navbar .btn-navbar.disabled,
 .compojoom-bootstrap .navbar .btn-navbar[disabled] {
 	color: #fff;
 	background-color: #e6e6e6;
 	*background-color: #d9d9d9;
 }
 .compojoom-bootstrap .navbar .btn-navbar:active,
-.navbar .btn-navbar.active {
+.compojoom-bootstrap .navbar .btn-navbar.active {
 	background-color: #cccccc \9;
 }
 .compojoom-bootstrap .navbar .btn-navbar .icon-bar {
@@ -3159,7 +3163,7 @@ input[type="submit"].btn.btn-mini {
 	top: auto;
 }
 .compojoom-bootstrap .navbar .nav li.dropdown.open > .dropdown-toggle,
-.navbar .nav li.dropdown.active > .dropdown-toggle,
+.compojoom-bootstrap .navbar .nav li.dropdown.active > .dropdown-toggle,
 .compojoom-bootstrap .navbar .nav li.dropdown.open.active > .dropdown-toggle {
 	background-color: #e6e6e6;
 	color: #555;
@@ -3169,28 +3173,28 @@ input[type="submit"].btn.btn-mini {
 	border-bottom-color: #555;
 }
 .compojoom-bootstrap .navbar .nav li.dropdown.open > .dropdown-toggle .caret,
-.navbar .nav li.dropdown.active > .dropdown-toggle .caret,
+.compojoom-bootstrap .navbar .nav li.dropdown.active > .dropdown-toggle .caret,
 .compojoom-bootstrap .navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
 	border-top-color: #555;
 	border-bottom-color: #555;
 }
 .compojoom-bootstrap .navbar .pull-right > li > .dropdown-menu,
-.navbar .nav > li > .dropdown-menu.pull-right {
+.compojoom-bootstrap .navbar .nav > li > .dropdown-menu.pull-right {
 	left: auto;
 	right: 0;
 }
 .compojoom-bootstrap .navbar .pull-right > li > .dropdown-menu:before,
-.navbar .nav > li > .dropdown-menu.pull-right:before {
+.compojoom-bootstrap .navbar .nav > li > .dropdown-menu.pull-right:before {
 	left: auto;
 	right: 12px;
 }
 .compojoom-bootstrap .navbar .pull-right > li > .dropdown-menu:after,
-.navbar .nav > li > .dropdown-menu.pull-right:after {
+.compojoom-bootstrap .navbar .nav > li > .dropdown-menu.pull-right:after {
 	left: auto;
 	right: 13px;
 }
 .compojoom-bootstrap .navbar .pull-right > li > .dropdown-menu .dropdown-menu,
-.navbar .nav > li > .dropdown-menu.pull-right .dropdown-menu {
+.compojoom-bootstrap .navbar .nav > li > .dropdown-menu.pull-right .dropdown-menu {
 	left: auto;
 	right: 100%;
 	margin-left: 0;
@@ -3214,21 +3218,21 @@ input[type="submit"].btn.btn-mini {
 	border-color: #0b172a;
 }
 .compojoom-bootstrap .navbar-inverse .brand,
-.navbar-inverse .nav > li > a {
+.compojoom-bootstrap .navbar-inverse .nav > li > a {
 	color: #d9d9d9;
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
 }
 .compojoom-bootstrap .navbar-inverse .brand:hover,
-.navbar-inverse .nav > li > a:hover {
+.compojoom-bootstrap .navbar-inverse .nav > li > a:hover {
 	color: #fff;
 }
 .compojoom-bootstrap .navbar-inverse .nav > li > a:focus,
-.navbar-inverse .nav > li > a:hover {
+.compojoom-bootstrap .navbar-inverse .nav > li > a:hover {
 	background-color: transparent;
 	color: #fff;
 }
 .compojoom-bootstrap .navbar-inverse .nav .active > a,
-.navbar-inverse .nav .active > a:hover,
+.compojoom-bootstrap .navbar-inverse .nav .active > a:hover,
 .compojoom-bootstrap .navbar-inverse .nav .active > a:focus {
 	color: #fff;
 	background-color: #10223e;
@@ -3244,7 +3248,7 @@ input[type="submit"].btn.btn-mini {
 	border-right-color: #152d53;
 }
 .compojoom-bootstrap .navbar-inverse .nav li.dropdown.open > .dropdown-toggle,
-.navbar-inverse .nav li.dropdown.active > .dropdown-toggle,
+.compojoom-bootstrap .navbar-inverse .nav li.dropdown.active > .dropdown-toggle,
 .compojoom-bootstrap .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle {
 	background-color: #10223e;
 	color: #fff;
@@ -3254,7 +3258,7 @@ input[type="submit"].btn.btn-mini {
 	border-bottom-color: #d9d9d9;
 }
 .compojoom-bootstrap .navbar-inverse .nav li.dropdown.open > .dropdown-toggle .caret,
-.navbar-inverse .nav li.dropdown.active > .dropdown-toggle .caret,
+.compojoom-bootstrap .navbar-inverse .nav li.dropdown.active > .dropdown-toggle .caret,
 .compojoom-bootstrap .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle .caret {
 	border-top-color: #fff;
 	border-bottom-color: #fff;
@@ -3281,7 +3285,7 @@ input[type="submit"].btn.btn-mini {
 	color: #ccc;
 }
 .compojoom-bootstrap .navbar-inverse .navbar-search .search-query:focus,
-.navbar-inverse .navbar-search .search-query.focused {
+.compojoom-bootstrap .navbar-inverse .navbar-search .search-query.focused {
 	padding: 5px 15px;
 	color: #333;
 	text-shadow: 0 1px 0 #fff;
@@ -3309,16 +3313,16 @@ input[type="submit"].btn.btn-mini {
 	filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .compojoom-bootstrap .navbar-inverse .btn-navbar:hover,
-.navbar-inverse .btn-navbar:active,
+.compojoom-bootstrap .navbar-inverse .btn-navbar:active,
 .compojoom-bootstrap .navbar-inverse .btn-navbar.active,
-.navbar-inverse .btn-navbar.disabled,
+.compojoom-bootstrap .navbar-inverse .btn-navbar.disabled,
 .compojoom-bootstrap .navbar-inverse .btn-navbar[disabled] {
 	color: #fff;
 	background-color: #0b172a;
 	*background-color: #050c16;
 }
 .compojoom-bootstrap .navbar-inverse .btn-navbar:active,
-.navbar-inverse .btn-navbar.active {
+.compojoom-bootstrap .navbar-inverse .btn-navbar.active {
 	background-color: #000101 \9;
 }
 .compojoom-bootstrap .breadcrumb {
@@ -3795,28 +3799,28 @@ input[type="submit"].btn.btn-mini {
 	background-color: #356635;
 }
 .compojoom-bootstrap .label-info,
-.badge-info {
+.compojoom-bootstrap .badge-info {
 	background-color: #3a87ad;
 }
 .compojoom-bootstrap .label-info[href],
-.badge-info[href] {
+.compojoom-bootstrap .badge-info[href] {
 	background-color: #2d6987;
 }
 .compojoom-bootstrap .label-inverse,
-.badge-inverse {
+.compojoom-bootstrap .badge-inverse {
 	background-color: #333;
 }
 .compojoom-bootstrap .label-inverse[href],
-.badge-inverse[href] {
+.compojoom-bootstrap .badge-inverse[href] {
 	background-color: #1a1a1a;
 }
 .compojoom-bootstrap .btn .label,
-.btn .badge {
+.compojoom-bootstrap .btn .badge {
 	position: relative;
 	top: -1px;
 }
 .compojoom-bootstrap .btn-mini .label,
-.btn-mini .badge {
+.compojoom-bootstrap .btn-mini .badge {
 	top: 0;
 }
 
@@ -3891,7 +3895,7 @@ input[type="submit"].btn.btn-mini {
 	animation: progress-bar-stripes 2s linear infinite;
 }
 .compojoom-bootstrap .progress-danger .bar,
-.progress .bar-danger {
+.compojoom-bootstrap .progress .bar-danger {
 	background-color: #dd514c;
 	background-image: -moz-linear-gradient(top,#ee5f5b,#c43c35);
 	background-image: -webkit-gradient(linear,0 0,0 100%,from(#ee5f5b),to(#c43c35));
@@ -3902,7 +3906,7 @@ input[type="submit"].btn.btn-mini {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee5f5b', endColorstr='#ffc43c35', GradientType=0);
 }
 .compojoom-bootstrap .progress-danger.progress-striped .bar,
-.progress-striped .bar-danger {
+.compojoom-bootstrap .progress-striped .bar-danger {
 	background-color: #ee5f5b;
 	background-image: -webkit-gradient(linear,0 100%,100% 0,color-stop(.25,rgba(255,255,255,0.15)),color-stop(.25,transparent),color-stop(.5,transparent),color-stop(.5,rgba(255,255,255,0.15)),color-stop(.75,rgba(255,255,255,0.15)),color-stop(.75,transparent),to(transparent));
 	background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
@@ -3911,7 +3915,7 @@ input[type="submit"].btn.btn-mini {
 	background-image: linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
 }
 .compojoom-bootstrap .progress-success .bar,
-.progress .bar-success {
+.compojoom-bootstrap .progress .bar-success {
 	background-color: #5eb95e;
 	background-image: -moz-linear-gradient(top,#62c462,#57a957);
 	background-image: -webkit-gradient(linear,0 0,0 100%,from(#62c462),to(#57a957));
@@ -3922,7 +3926,7 @@ input[type="submit"].btn.btn-mini {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff57a957', GradientType=0);
 }
 .compojoom-bootstrap .progress-success.progress-striped .bar,
-.progress-striped .bar-success {
+.compojoom-bootstrap .progress-striped .bar-success {
 	background-color: #62c462;
 	background-image: -webkit-gradient(linear,0 100%,100% 0,color-stop(.25,rgba(255,255,255,0.15)),color-stop(.25,transparent),color-stop(.5,transparent),color-stop(.5,rgba(255,255,255,0.15)),color-stop(.75,rgba(255,255,255,0.15)),color-stop(.75,transparent),to(transparent));
 	background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
@@ -3931,7 +3935,7 @@ input[type="submit"].btn.btn-mini {
 	background-image: linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
 }
 .compojoom-bootstrap .progress-info .bar,
-.progress .bar-info {
+.compojoom-bootstrap .progress .bar-info {
 	background-color: #4bb1cf;
 	background-image: -moz-linear-gradient(top,#5bc0de,#339bb9);
 	background-image: -webkit-gradient(linear,0 0,0 100%,from(#5bc0de),to(#339bb9));
@@ -3942,7 +3946,7 @@ input[type="submit"].btn.btn-mini {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff339bb9', GradientType=0);
 }
 .compojoom-bootstrap .progress-info.progress-striped .bar,
-.progress-striped .bar-info {
+.compojoom-bootstrap .progress-striped .bar-info {
 	background-color: #5bc0de;
 	background-image: -webkit-gradient(linear,0 100%,100% 0,color-stop(.25,rgba(255,255,255,0.15)),color-stop(.25,transparent),color-stop(.5,transparent),color-stop(.5,rgba(255,255,255,0.15)),color-stop(.75,rgba(255,255,255,0.15)),color-stop(.75,transparent),to(transparent));
 	background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
@@ -3951,7 +3955,7 @@ input[type="submit"].btn.btn-mini {
 	background-image: linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
 }
 .compojoom-bootstrap .progress-warning .bar,
-.progress .bar-warning {
+.compojoom-bootstrap .progress .bar-warning {
 	background-color: #faa732;
 	background-image: -moz-linear-gradient(top,#fbb450,#f89406);
 	background-image: -webkit-gradient(linear,0 0,0 100%,from(#fbb450),to(#f89406));
@@ -3962,7 +3966,7 @@ input[type="submit"].btn.btn-mini {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffab44f', endColorstr='#fff89406', GradientType=0);
 }
 .compojoom-bootstrap .progress-warning.progress-striped .bar,
-.progress-striped .bar-warning {
+.compojoom-bootstrap .progress-striped .bar-warning {
 	background-color: #fbb450;
 	background-image: -webkit-gradient(linear,0 100%,100% 0,color-stop(.25,rgba(255,255,255,0.15)),color-stop(.25,transparent),color-stop(.5,transparent),color-stop(.5,rgba(255,255,255,0.15)),color-stop(.75,rgba(255,255,255,0.15)),color-stop(.75,transparent),to(transparent));
 	background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
@@ -4017,7 +4021,7 @@ input[type="submit"].btn.btn-mini {
 	line-height: 1;
 }
 .compojoom-bootstrap .carousel .active,
-.carousel .next,
+.compojoom-bootstrap .carousel .next,
 .compojoom-bootstrap .carousel .prev {
 	display: block;
 }
@@ -4025,7 +4029,7 @@ input[type="submit"].btn.btn-mini {
 	left: 0;
 }
 .compojoom-bootstrap .carousel .next,
-.carousel .prev {
+.compojoom-bootstrap .carousel .prev {
 	position: absolute;
 	top: 0;
 	width: 100%;
@@ -4037,7 +4041,7 @@ input[type="submit"].btn.btn-mini {
 	left: -100%;
 }
 .compojoom-bootstrap .carousel .next.left,
-.carousel .prev.right {
+.compojoom-bootstrap .carousel .prev.right {
 	left: 0;
 }
 .compojoom-bootstrap .carousel .active.left {
@@ -4086,7 +4090,7 @@ input[type="submit"].btn.btn-mini {
 	background: rgba(0,0,0,0.75);
 }
 .compojoom-bootstrap .carousel-caption h4,
-.carousel-caption p {
+.compojoom-bootstrap .carousel-caption p {
 	color: #fff;
 	line-height: 18px;
 }
@@ -4157,19 +4161,19 @@ input[type="submit"].btn.btn-mini {
 	margin: 0;
 }
 .compojoom-bootstrap iframe,
-svg {
+.compojoom-bootstrap svg {
 	max-width: 100%;
 }
 .compojoom-bootstrap .nowrap {
 	white-space: nowrap;
 }
 .compojoom-bootstrap .center,
-.table td.center,
+.compojoom-bootstrap .table td.center,
 .compojoom-bootstrap .table th.center {
 	text-align: center;
 }
 .compojoom-bootstrap a.disabled,
-a.disabled:hover {
+.compojoom-bootstrap a.disabled:hover {
 	color: #999999;
 	background-color: transparent;
 	cursor: default;
@@ -4191,14 +4195,14 @@ a.disabled:hover {
 	line-height: 20px;
 }
 .compojoom-bootstrap .blog-row-rule,
-.blog-item-rule {
+.compojoom-bootstrap .blog-item-rule {
 	border: 0;
 }
 .compojoom-bootstrap body.modal {
 	padding-top: 0;
 }
 .compojoom-bootstrap .row-even,
-.row-odd {
+.compojoom-bootstrap .row-odd {
 	padding: 5px;
 	width: 99%;
 	border-bottom: 1px solid #ddd;
@@ -4210,7 +4214,7 @@ a.disabled:hover {
 	background-color: #f9f9f9;
 }
 .compojoom-bootstrap .blog-row-rule,
-.blog-item-rule {
+.compojoom-bootstrap .blog-item-rule {
 	border: 0;
 }
 .compojoom-bootstrap .row-fluid .row-reveal {
@@ -4227,7 +4231,7 @@ a.disabled:hover {
 	font-size: 12px;
 }
 .compojoom-bootstrap .blog-row-rule,
-.blog-item-rule {
+.compojoom-bootstrap .blog-item-rule {
 	border: 0;
 }
 .compojoom-bootstrap .row-fluid .offset1 {
@@ -4279,7 +4283,7 @@ a.disabled:hover {
 	background-color: #777777;
 }
 .compojoom-bootstrap .nav-tabs.nav-dark > .active > a,
-.nav-tabs.nav-dark > .active > a:hover {
+.compojoom-bootstrap .nav-tabs.nav-dark > .active > a:hover {
 	color: #ffffff;
 	background-color: #555555;
 	border: 1px solid #222;
@@ -4355,7 +4359,7 @@ a.disabled:hover {
 	margin: 10px 0;
 }
 .compojoom-bootstrap .list-striped,
-.row-striped {
+.compojoom-bootstrap .row-striped {
 	list-style: none;
 	line-height: 18px;
 	text-align: left;
@@ -4364,22 +4368,22 @@ a.disabled:hover {
 	margin-left: 0;
 }
 .compojoom-bootstrap .list-striped li,
-.list-striped dd,
+.compojoom-bootstrap .list-striped dd,
 .compojoom-bootstrap .row-striped .row,
-.row-striped .row-fluid {
+.compojoom-bootstrap .row-striped .row-fluid {
 	border-bottom: 1px solid #ddd;
 	padding: 8px;
 }
 .compojoom-bootstrap .list-striped li:nth-child(odd),
-.list-striped dd:nth-child(odd),
+.compojoom-bootstrap .list-striped dd:nth-child(odd),
 .compojoom-bootstrap .row-striped .row:nth-child(odd),
-.row-striped .row-fluid:nth-child(odd) {
+.compojoom-bootstrap .row-striped .row-fluid:nth-child(odd) {
 	background-color: #f9f9f9;
 }
 .compojoom-bootstrap .list-striped li:hover,
-.list-striped dd:hover,
+.compojoom-bootstrap .list-striped dd:hover,
 .compojoom-bootstrap .row-striped .row:hover,
-.row-striped .row-fluid:hover {
+.compojoom-bootstrap .row-striped .row-fluid:hover {
 	background-color: #f5f5f5;
 }
 .compojoom-bootstrap .row-striped .row-fluid {
@@ -4398,11 +4402,11 @@ a.disabled:hover {
 	padding: 4px 5px;
 }
 .compojoom-bootstrap .row-condensed .row,
-.row-condensed .row-fluid {
+.compojoom-bootstrap .row-condensed .row-fluid {
 	padding: 4px 5px;
 }
 .compojoom-bootstrap .list-bordered,
-.row-bordered {
+.compojoom-bootstrap .row-bordered {
 	list-style: none;
 	line-height: 18px;
 	text-align: left;
@@ -4490,7 +4494,7 @@ a.disabled:hover {
 	border-color: #ccc;
 }
 .compojoom-bootstrap .input-prepend > .add-on,
-.input-append > .add-on {
+.compojoom-bootstrap .input-append > .add-on {
 	vertical-align: top;
 }
 .compojoom-bootstrap .element-invisible {
@@ -4554,23 +4558,23 @@ a.disabled:hover {
 	content: "\22";
 }
 .compojoom-bootstrap .icon-checkedout:before,
-.icon-lock:before,
+.compojoom-bootstrap .icon-lock:before,
 .compojoom-bootstrap .icon-locked:before {
 	content: "\23";
 }
 .compojoom-bootstrap .icon-comment:before,
-.icon-comments:before {
+.compojoom-bootstrap .icon-comments:before {
 	content: "\24";
 }
 .compojoom-bootstrap .icon-comments-2:before {
 	content: "\25";
 }
 .compojoom-bootstrap .icon-share-alt:before,
-.icon-out:before {
+.compojoom-bootstrap .icon-out:before {
 	content: "\26";
 }
 .compojoom-bootstrap .icon-share:before,
-.icon-redo:before {
+.compojoom-bootstrap .icon-redo:before {
 	content: "\27";
 }
 .compojoom-bootstrap .icon-undo:before {
@@ -4584,23 +4588,23 @@ a.disabled:hover {
 	content: "\2a";
 }
 .compojoom-bootstrap .icon-apply:before,
-.icon-edit:before,
+.compojoom-bootstrap .icon-edit:before,
 .compojoom-bootstrap .icon-pencil:before {
 	content: "\2b";
 }
 .compojoom-bootstrap .icon-edit:before,
-.icon-pencil:before {
+.compojoom-bootstrap .icon-pencil:before {
 	color: #2f96b4;
 }
 .compojoom-bootstrap .icon-pencil-2:before {
 	content: "\2c";
 }
 .compojoom-bootstrap .icon-folder-open:before,
-.icon-folder:before {
+.compojoom-bootstrap .icon-folder:before {
 	content: "\2d";
 }
 .compojoom-bootstrap .icon-folder-close:before,
-.icon-folder-2:before {
+.compojoom-bootstrap .icon-folder-2:before {
 	content: "\2e";
 }
 .compojoom-bootstrap .icon-picture:before {
@@ -4610,7 +4614,7 @@ a.disabled:hover {
 	content: "\30";
 }
 .compojoom-bootstrap .icon-list:before,
-.icon-list-view:before {
+.compojoom-bootstrap .icon-list-view:before {
 	content: "\31";
 }
 .compojoom-bootstrap .icon-power-cord:before {
@@ -4632,7 +4636,7 @@ a.disabled:hover {
 	content: "\37";
 }
 .compojoom-bootstrap .icon-options:before,
-.icon-cog:before {
+.compojoom-bootstrap .icon-cog:before {
 	content: "\38";
 }
 .compojoom-bootstrap .icon-equalizer:before {
@@ -4645,28 +4649,28 @@ a.disabled:hover {
 	content: "\3b";
 }
 .compojoom-bootstrap .icon-eye-open:before,
-.icon-eye:before {
+.compojoom-bootstrap .icon-eye:before {
 	content: "\3c";
 }
 .compojoom-bootstrap .icon-checkbox-unchecked:before {
 	content: "\3d";
 }
 .compojoom-bootstrap .icon-checkin:before,
-.icon-checkbox:before {
+.compojoom-bootstrap .icon-checkbox:before {
 	content: "\3e";
 }
 .compojoom-bootstrap .icon-checkbox-partial:before {
 	content: "\3f";
 }
 .compojoom-bootstrap .icon-asterisk:before,
-.icon-star-empty:before {
+.compojoom-bootstrap .icon-star-empty:before {
 	content: "\40";
 }
 .compojoom-bootstrap .icon-star-2:before {
 	content: "\41";
 }
 .compojoom-bootstrap .icon-featured:before,
-.icon-star:before {
+.compojoom-bootstrap .icon-star:before {
 	content: "\42";
 	color: #f89406;
 }
@@ -4677,7 +4681,7 @@ a.disabled:hover {
 	content: "\44";
 }
 .compojoom-bootstrap .icon-question-sign:before,
-.icon-help:before {
+.compojoom-bootstrap .icon-help:before {
 	content: "\45";
 }
 .compojoom-bootstrap .icon-support:before {
@@ -4687,38 +4691,38 @@ a.disabled:hover {
 	content: "\48";
 }
 .compojoom-bootstrap .icon-publish:before,
-.icon-save:before,
+.compojoom-bootstrap .icon-save:before,
 .compojoom-bootstrap .icon-ok:before,
-.icon-checkmark:before {
+.compojoom-bootstrap .icon-checkmark:before {
 	content: "\47";
 	color: #51a351;
 }
 .compojoom-bootstrap .icon-unpublish:before,
-.icon-cancel:before {
+.compojoom-bootstrap .icon-cancel:before {
 	content: "\4a";
 	color: #bd362f;
 }
 .compojoom-bootstrap .icon-eye-close:before,
-.icon-minus:before {
+.compojoom-bootstrap .icon-minus:before {
 	content: "\4b";
 }
 .compojoom-bootstrap .icon-purge:before,
-.icon-trash:before {
+.compojoom-bootstrap .icon-trash:before {
 	content: "\4c";
 }
 .compojoom-bootstrap .icon-envelope:before,
-.icon-mail:before {
+.compojoom-bootstrap .icon-mail:before {
 	content: "\4d";
 }
 .compojoom-bootstrap .icon-mail-2:before {
 	content: "\4e";
 }
 .compojoom-bootstrap .icon-unarchive:before,
-.icon-drawer:before {
+.compojoom-bootstrap .icon-drawer:before {
 	content: "\4f";
 }
 .compojoom-bootstrap .icon-archive:before,
-.icon-drawer-2:before {
+.compojoom-bootstrap .icon-drawer-2:before {
 	content: "\50";
 }
 .compojoom-bootstrap .icon-box-add:before {
@@ -4758,17 +4762,17 @@ a.disabled:hover {
 	content: "\5c";
 }
 .compojoom-bootstrap .icon-delete:before,
-.icon-remove:before,
+.compojoom-bootstrap .icon-remove:before,
 .compojoom-bootstrap .icon-cancel-2:before {
 	content: "\49";
 }
 .compojoom-bootstrap .icon-save-new:before,
-.icon-plus-2:before {
+.compojoom-bootstrap .icon-plus-2:before {
 	content: "\5d";
 	color: #51a351;
 }
 .compojoom-bootstrap .icon-ban-circle:before,
-.icon-minus-sign:before,
+.compojoom-bootstrap .icon-minus-sign:before,
 .compojoom-bootstrap .icon-minus-2:before {
 	content: "\5e";
 	color: #bd362f;
@@ -4813,7 +4817,7 @@ a.disabled:hover {
 	content: "\6b";
 }
 .compojoom-bootstrap .icon-unblock:before,
-.icon-refresh:before {
+.compojoom-bootstrap .icon-refresh:before {
 	content: "\6c";
 }
 .compojoom-bootstrap .icon-vcard:before {
@@ -4883,7 +4887,7 @@ a.disabled:hover {
 	content: "\e004";
 }
 .compojoom-bootstrap .icon-chevron-up:before,
-.icon-uparrow:before,
+.compojoom-bootstrap .icon-uparrow:before,
 .compojoom-bootstrap .icon-arrow-up:before {
 	content: "\e005";
 }
@@ -4892,12 +4896,12 @@ a.disabled:hover {
 	content: "\e006";
 }
 .compojoom-bootstrap .icon-chevron-down:before,
-.icon-downarrow:before,
+.compojoom-bootstrap .icon-downarrow:before,
 .compojoom-bootstrap .icon-arrow-down:before {
 	content: "\e007";
 }
 .compojoom-bootstrap .icon-chevron-left:before,
-.icon-arrow-left:before {
+.compojoom-bootstrap .icon-arrow-left:before {
 	content: "\e008";
 }
 .compojoom-bootstrap .icon-arrow-up-2:before {
@@ -4907,7 +4911,7 @@ a.disabled:hover {
 	content: "\e00a";
 }
 .compojoom-bootstrap .icon-download:before,
-.icon-arrow-down-2:before {
+.compojoom-bootstrap .icon-arrow-down-2:before {
 	content: "\e00b";
 }
 .compojoom-bootstrap .icon-arrow-left-2:before {
@@ -4932,7 +4936,7 @@ a.disabled:hover {
 	content: "\e012";
 }
 .compojoom-bootstrap .icon-print:before,
-.icon-printer:before {
+.compojoom-bootstrap .icon-printer:before {
 	content: "\e013";
 }
 .compojoom-bootstrap .icon-color-palette:before {
@@ -4948,7 +4952,7 @@ a.disabled:hover {
 	content: "\e017";
 }
 .compojoom-bootstrap .icon-save-copy:before,
-.icon-copy:before {
+.compojoom-bootstrap .icon-copy:before {
 	content: "\e018";
 	color: #51a351;
 }
@@ -5017,7 +5021,7 @@ a.disabled:hover {
 	text-align: center;
 }
 .compojoom-bootstrap .view-login .navbar-fixed-bottom,
-.view-login .navbar-fixed-bottom a {
+.compojoom-bootstrap .view-login .navbar-fixed-bottom a {
 	color: #FCFCFC;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 }
@@ -5032,13 +5036,13 @@ a.disabled:hover {
 	font-size: 11px;
 }
 .compojoom-bootstrap .row-even .small,
-.row-odd .small,
+.compojoom-bootstrap .row-odd .small,
 .compojoom-bootstrap .row-even .small a,
-.row-odd .small a {
+.compojoom-bootstrap .row-odd .small a {
 	color: #888;
 }
 .compojoom-bootstrap body .navbar,
-body .navbar-fixed-top {
+.compojoom-bootstrap body .navbar-fixed-top {
 	margin-bottom: 0;
 }
 .compojoom-bootstrap .navbar-inner {
@@ -5150,15 +5154,15 @@ body .navbar-fixed-top {
 	padding-bottom: 5px;
 }
 .compojoom-bootstrap .well .row-even p,
-.well .row-odd p {
+.compojoom-bootstrap .well .row-odd p {
 	margin-bottom: 0;
 }
 .compojoom-bootstrap h1,
-h2,
+.compojoom-bootstrap h2,
 .compojoom-bootstrap h3,
-h4,
+.compojoom-bootstrap h4,
 .compojoom-bootstrap h5,
-h6 {
+.compojoom-bootstrap h6 {
 	margin: 12px 0;
 }
 .compojoom-bootstrap h1 {
@@ -5192,7 +5196,7 @@ h6 {
 	color: #fff;
 }
 .compojoom-bootstrap .container-main,
-#system-debug {
+.compojoom-bootstrap #system-debug {
 	padding-bottom: 50px;
 }
 .compojoom-bootstrap #status {
@@ -5205,11 +5209,11 @@ h6 {
 	color: #999999;
 }
 .compojoom-bootstrap #status .btn-toolbar,
-#status p {
+.compojoom-bootstrap #status p {
 	margin: 0px;
 }
 .compojoom-bootstrap #status .btn-toolbar,
-#status .btn-group {
+.compojoom-bootstrap #status .btn-group {
 	font-size: 12px;
 }
 .compojoom-bootstrap #status a {
@@ -5256,21 +5260,20 @@ h6 {
 	min-height: 500px;
 }
 .compojoom-bootstrap .btn-primary.active,
-.btn-warning.active,
+.compojoom-bootstrap .btn-warning.active,
 .compojoom-bootstrap .btn-danger.active,
-.btn-success.active,
+.compojoom-bootstrap .btn-success.active,
 .compojoom-bootstrap .btn-info.active,
-.btn-inverse.active {
+.compojoom-bootstrap .btn-inverse.active {
 	color: rgba(255,255,255,0.95);
 }
 .compojoom-bootstrap .chzn-container,
-.chzn-drop {
+.compojoom-bootstrap .chzn-drop {
 	max-width: 100% !important;
 }
 .compojoom-bootstrap .CodeMirror-wrapping {
 	height: auto !important;
 }
-
 
 .compojoom-bootstrap .btn-subhead {
 	display: none;
@@ -5292,7 +5295,7 @@ h6 {
 	font-size: 30px;
 }
 .compojoom-bootstrap .upload-queue > li > span,
-.upload-queue > li > a {
+.compojoom-bootstrap .upload-queue > li > a {
 	margin: 0 2px;
 }
 .compojoom-bootstrap .upload-queue .file-remove {
@@ -5305,7 +5308,7 @@ h6 {
 	z-index: 1200;
 }
 .compojoom-bootstrap ul.treeselect,
-ul.treeselect li {
+.compojoom-bootstrap ul.treeselect li {
 	margin: 0;
 	padding: 0;
 }
@@ -5338,4 +5341,144 @@ ul.treeselect li {
 .compojoom-bootstrap ul.treeselect ul.dropdown-menu li {
 	padding: 0 5px;
 	border: none;
+}
+
+.compojoom-bootstrap .pagination {
+	margin: 18px 0;
+	border: none;
+}
+.compojoom-bootstrap .pagination ul {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-left: 0;
+	margin-bottom: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.compojoom-bootstrap .pagination ul > li {
+	display: inline;
+}
+.compojoom-bootstrap .pagination ul > li > a,
+.compojoom-bootstrap .pagination ul > li > span {
+	float: left;
+	padding: 4px 12px;
+	line-height: 18px;
+	text-decoration: none;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-left-width: 0;
+}
+.compojoom-bootstrap .pagination ul > li > a:hover,
+.compojoom-bootstrap .pagination ul > li > a:focus,
+.compojoom-bootstrap .pagination ul > .active > a,
+.compojoom-bootstrap .pagination ul > .active > span {
+	background-color: #f5f5f5;
+}
+.compojoom-bootstrap .pagination ul > .active > a,
+.compojoom-bootstrap .pagination ul > .active > span {
+	color: #999;
+	cursor: default;
+}
+.compojoom-bootstrap .pagination ul > .disabled > span,
+.compojoom-bootstrap .pagination ul > .disabled > a,
+.compojoom-bootstrap .pagination ul > .disabled > a:hover,
+.compojoom-bootstrap .pagination ul > .disabled > a:focus {
+	color: #999;
+	background-color: transparent;
+	cursor: default;
+}
+.compojoom-bootstrap .pagination ul > li:first-child > a,
+.compojoom-bootstrap .pagination ul > li:first-child > span {
+	border-left-width: 1px;
+	-webkit-border-top-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	border-top-left-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-bottom-left-radius: 4px;
+}
+.compojoom-bootstrap .pagination ul > li:last-child > a,
+.compojoom-bootstrap .pagination ul > li:last-child > span {
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-right-radius: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	border-bottom-right-radius: 4px;
+}
+.compojoom-bootstrap .pagination-centered {
+	text-align: center;
+}
+.compojoom-bootstrap .pagination-right {
+	text-align: right;
+}
+.compojoom-bootstrap .pagination-large ul > li > a,
+.compojoom-bootstrap .pagination-large ul > li > span {
+	padding: 11px 19px;
+	font-size: 16.25px;
+}
+.compojoom-bootstrap .pagination-large ul > li:first-child > a,
+.compojoom-bootstrap .pagination-large ul > li:first-child > span {
+	-webkit-border-top-left-radius: 6px;
+	-moz-border-radius-topleft: 6px;
+	border-top-left-radius: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	border-bottom-left-radius: 6px;
+}
+.compojoom-bootstrap .pagination-large ul > li:last-child > a,
+.compojoom-bootstrap .pagination-large ul > li:last-child > span {
+	-webkit-border-top-right-radius: 6px;
+	-moz-border-radius-topright: 6px;
+	border-top-right-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	-moz-border-radius-bottomright: 6px;
+	border-bottom-right-radius: 6px;
+}
+.compojoom-bootstrap .pagination-mini ul > li:first-child > a,
+.compojoom-bootstrap .pagination-mini ul > li:first-child > span,
+.compojoom-bootstrap .pagination-small ul > li:first-child > a,
+.compojoom-bootstrap .pagination-small ul > li:first-child > span {
+	-webkit-border-top-left-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	border-top-left-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-left-radius: 3px;
+}
+.compojoom-bootstrap .pagination-mini ul > li:last-child > a,
+.compojoom-bootstrap .pagination-mini ul > li:last-child > span,
+.compojoom-bootstrap .pagination-small ul > li:last-child > a,
+.compojoom-bootstrap .pagination-small ul > li:last-child > span {
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+	border-bottom-right-radius: 3px;
+}
+.compojoom-bootstrap .pagination-small ul > li > a,
+.compojoom-bootstrap .pagination-small ul > li > span {
+	padding: 2px 10px;
+	font-size: 12px;
+}
+.compojoom-bootstrap .pagination-mini ul > li > a,
+.compojoom-bootstrap .pagination-mini ul > li > span {
+	padding: 0 6px;
+	font-size: 9.75px;
+}
+
+.compojoom-bootstrap .text-left {
+	text-align: left;
+}
+.compojoom-bootstrap .text-right {
+	text-align: right;
+}
+.compojoom-bootstrap .text-center {
+	text-align: center;
 }
