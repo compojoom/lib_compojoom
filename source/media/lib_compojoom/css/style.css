@@ -3020,3 +3020,11 @@ body {
 .compojoom-bootstrap .btn-group > .btn.active {
 	border-color: transparent;
 }
+
+.compojoom-bootstrap .newsfeed {
+	list-style-type: none;
+	margin: 0;
+}
+.compojoom-bootstrap .feed-item-description p {
+	display: inline;
+}
