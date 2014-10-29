@@ -118,23 +118,9 @@ class CompojoomHtmlFeed
 										// Item description
 										$text = $filter->clean(html_entity_decode($currItem->get_description(), ENT_COMPAT, 'UTF-8'));
 										$text = str_replace('&apos;', "'", $text);
-
-										$texts = explode(' ', $text);
-										$count = count($texts);
-										if ($count > 50)
-										{
-											$text = '';
-
-											for ($i = 0; $i < 50; $i ++)
-											{
-												$text .= ' '.$texts[$i];
-											}
-
-											$text .= '...';
-										}
 										?>
 										<div>
-											<?php echo $text; ?>
+											<?php echo CompojoomHtmlString::truncateComplex($text, 200); ?>
 										</div>
 									<?php
 									}
@@ -191,7 +177,7 @@ class CompojoomHtmlFeed
 										// Strip the images.
 										$text = JFilterOutput::stripImages($text);
 
-										$text = JHtml::_('string.truncate', $text, 250);
+										$text = CompojoomHtmlString::truncateComplex( $text, 200);
 										echo str_replace('&apos;', "'", $text);
 										?>
 									</div>
