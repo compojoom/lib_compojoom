@@ -31,17 +31,30 @@ class CompojoomHtmlFeed
 		$rssitems			= 5;
 		$rssitemdesc		= 1;
 
-
 		// Aaach, Joomla 2.5 please die faster...
-		if (JVERSION < '3') {
-			$rssDoc = JFactory::getFeedParser($url, 900);
+		if (JVERSION < '3')
+		{
+			jimport('simplepie.simplepie');
 
-			if(!$rssDoc)
+			$cache = JFactory::getCache('feed_parser', 'callback');
+
+			$cache->setLifeTime(600);
+
+			$simplepie = new SimplePie(null, null, 0);
+
+			$simplepie->enable_cache(false);
+			$simplepie->set_feed_url($url);
+			$simplepie->force_feed(true);
+
+			$rssDoc = $cache->get(array($simplepie, 'init'), null, false, false);
+
+			if (!$rssDoc)
 			{
 				return JText::_('LIB_COMPOJOOM_FEED_COULDNT_BE_FETCHED');
 			}
 		}
-		else {
+		else
+		{
 			// Get RSS parsed object
 			try
 			{
@@ -57,7 +70,7 @@ class CompojoomHtmlFeed
 
 		$feed = $rssDoc;
 
-		if(JVERSION < 3)
+		if (JVERSION < 3)
 		{
 			if ($rssDoc != false)
 			{

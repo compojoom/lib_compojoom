@@ -1,5 +1,6 @@
 Changelog
 
+# go around the "error loading feed" problem on joomla 2.5
 # adding border around non-active elements in .btn-group
 lib_compojoom 4.0.7
 # Small CSS Fixes in bootstrap (removed important from sm-2 and sm-4)
