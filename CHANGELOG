@@ -1,5 +1,7 @@
 Changelog
 
++ added avatar support for CB, Jomsocial, Kunena and k2
++ added profile support for CB, Jomsocial, Kunena and k2
 # go around the "error loading feed" problem on joomla 2.5
 # adding border around non-active elements in .btn-group
 lib_compojoom 4.0.7
