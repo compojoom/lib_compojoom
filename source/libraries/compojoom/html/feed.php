@@ -37,18 +37,20 @@ class CompojoomHtmlFeed
 			jimport('simplepie.simplepie');
 
 			$cache = JFactory::getCache('feed_parser', 'callback');
-
 			$cache->setLifeTime(600);
 
 			$simplepie = new SimplePie(null, null, 0);
-
 			$simplepie->enable_cache(false);
 			$simplepie->set_feed_url($url);
 			$simplepie->force_feed(true);
 
-			$rssDoc = $cache->get(array($simplepie, 'init'), null, false, false);
+			$contents = $cache->get(array($simplepie, 'init'), null, false, false);
 
-			if (!$rssDoc)
+			if ($contents)
+			{
+				$rssDoc = $simplepie;
+			}
+			else
 			{
 				return JText::_('LIB_COMPOJOOM_FEED_COULDNT_BE_FETCHED');
 			}
