@@ -59,6 +59,7 @@ class JFormFieldAvatars extends JFormField
 	 */
 	protected function getOptions()
 	{
+		jimport('joomla.filesystem.folder');
 		$options = array('0' => JText::_('LIB_COMPOJOOM_NONE'));
 		$components = JFolder::files(JPATH_LIBRARIES . '/compojoom/avatars/avatars');
 		$isPro = (int) $this->element['isPro'];
