@@ -108,7 +108,11 @@
 		// System message container fix
 		$('#c-system-message-container').html($("#system-message-container").html());
 
-		// Debug
+        $("#system-message-container").on('DOMNodeInserted DOMNodeRemoved', function(){
+          $('#c-system-message-container').html($("#system-message-container").html());
+        });
+
+      // Debug
 		$('#c-system-message-container').html($('.c-debug-msg').html());
 
 		$('#c-system-message-container').append($("#system-debug").html());
