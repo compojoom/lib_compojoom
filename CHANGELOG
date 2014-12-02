@@ -1,5 +1,6 @@
 Changelog
 
++ added support for custom fields
 # on some installation the avatars and profiles were causing a fatal error due to missing JFolder class
 + added avatar support for CB, Jomsocial, Kunena and k2
 + added profile support for CB, Jomsocial, Kunena and k2

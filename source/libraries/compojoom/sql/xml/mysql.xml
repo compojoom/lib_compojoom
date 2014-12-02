@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema>
+    <!-- Metadata -->
+    <meta>
+        <!-- Supported driver types -->
+        <drivers>
+            <driver>mysql</driver>
+            <driver>mysqli</driver>
+        </drivers>
+    </meta>
+
+    <!-- SQL commands to run on installation and update -->
+    <sql>
+	    <action table="#__compojoom_customfields" canfail="0">
+		    <condition type="missing" value="" />
+		    <query><![CDATA[
+CREATE TABLE `#__compojoom_customfields` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL DEFAULT '',
+  `slug` varchar(255) NOT NULL DEFAULT '',
+  `component` varchar(255) NOT NULL DEFAULT '',
+  `show` ENUM( 'all', 'category' ) NOT NULL DEFAULT 'all',
+  `type` varchar(100) NOT NULL DEFAULT 'text',
+  `options` mediumtext,
+  `default` varchar(255) DEFAULT '',
+  `allow_empty` tinyint(3) NOT NULL DEFAULT '0',
+  `params` mediumtext,
+  `enabled` tinyint(3) NOT NULL DEFAULT '1',
+  `filter` tinyint(3) NOT NULL DEFAULT '0',
+  `ordering` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `created_by` bigint(20) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` bigint(20) NOT NULL DEFAULT '0',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) DEFAULT CHARSET=utf8;
+            ]]></query>
+	    </action>
+
+	    <action table="#__compojoom_customfields_cats" canfail="0">
+		    <condition type="missing" value="" />
+		    <query><![CDATA[
+CREATE TABLE `#__compojoom_customfields_cats` (
+  `compojoom_customfields_id` int(11) NOT NULL,
+  `catid` int(11) NOT NULL,
+PRIMARY KEY (`compojoom_customfields_id`,`catid`)
+) DEFAULT CHARSET=utf8;
+            ]]></query>
+	    </action>
+    </sql>
+</schema>

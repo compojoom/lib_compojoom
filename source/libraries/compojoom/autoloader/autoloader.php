@@ -25,11 +25,11 @@ class CompojoomAutoloader
 	public static $autoloader = null;
 
 	/**
-	 * The path to the CMandrill root directory
+	 * The path to the Compojoom lib root directory
 	 *
 	 * @var   string
 	 */
-	public static $cmandrillPath = null;
+	public static $compojoomPath = null;
 
 	/**
 	 * Initialise this autoloader
@@ -51,7 +51,7 @@ class CompojoomAutoloader
 	 */
 	public function __construct()
 	{
-		self::$cmandrillPath = realpath(__DIR__ . '/../');
+		self::$compojoomPath = realpath(__DIR__ . '/../');
 
 		spl_autoload_register(array($this,'autoload_compojoom_library'));
 	}
@@ -80,7 +80,7 @@ class CompojoomAutoloader
 		$class = explode('_', $class);
 
 		// First try finding in structured directory format (preferred)
-		$path = self::$cmandrillPath . '/' . implode('/', $class) . '.php';
+		$path = self::$compojoomPath . '/' . implode('/', $class) . '.php';
 
 		if (@file_exists($path))
 		{
@@ -92,7 +92,7 @@ class CompojoomAutoloader
 		{
 			reset($class);
 			$lastPart = end($class);
-			$path = self::$cmandrillPath . '/' . implode('/', $class) . '/' . $lastPart . '.php';
+			$path = self::$compojoomPath . '/' . implode('/', $class) . '/' . $lastPart . '.php';
 
 			if (@file_exists($path))
 			{
