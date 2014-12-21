@@ -13,7 +13,7 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.modeladmin');
 
 /**
- * Class HotspotsModelHotspots
+ * Class CompojoomModelCustomfield
  *
  * @since  3.0
  */

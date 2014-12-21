@@ -66,4 +66,38 @@ class CompojoomComponentHelper
 
 		return $itemId;
 	}
+
+	/**
+	 * Gets allowed actions
+	 *
+	 * @param   int     $messageId  - message id
+	 * @param   string  $unit       - the unit
+	 * @param   string  $assetName  - asset name
+	 *
+	 * @return JObject
+	 */
+	public static function getActions($messageId = 0, $unit = 'component', $assetName = '')
+	{
+		jimport('joomla.access.access');
+		$user = JFactory::getUser();
+		$result = new JObject;
+
+		if (empty($messageId))
+		{
+			$asset = $assetName;
+		}
+		else
+		{
+			$asset = $assetName . '.' . $unit . '.' . (int) $messageId;
+		}
+
+		$actions = JAccess::getActions($assetName, $unit);
+
+		foreach ($actions as $action)
+		{
+			$result->set($action->name, $user->authorise($action->name, $asset));
+		}
+
+		return $result;
+	}
 }

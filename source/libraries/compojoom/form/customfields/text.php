@@ -27,7 +27,7 @@ class CompojoomFormCustomfieldsText
 	public function xml($data)
 	{
 		$string = '<field type="text" name="' . $data->slug . '" default="' . $data->default . '" label="' .
-			$data->title . '" required="' . ($data->allow_empty ? 'false' : 'true') . '" />';
+			$data->title . '" required="' . ($data->allow_empty ? 'false' : 'true') . '" class="' . ($data->allow_empty ? '' : 'required') . '"/>';
 
 		return $string;
 	}
