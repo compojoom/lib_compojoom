@@ -43,16 +43,20 @@ class CompojoomInstallerCb
 			if ($cbInstaller->install($parent->getParent()->getPath('source') . '/components/com_comprofiler/plugin/user/' . $pluginName . '/'))
 			{
 				$path = $parent->getParent()->getPath('source') . '/components/com_comprofiler/plugin/user/' . $pluginName . '/administrator/language';
-				$languages = JFolder::folders($path);
 
-				foreach ($languages as $language)
+				if (JFolder::exists($path))
 				{
-					if (JFolder::exists(JPATH_ROOT . '/administrator/language/' . $language))
+					$languages = JFolder::folders($path);
+
+					foreach ($languages as $language)
 					{
-						JFile::copy(
-							$path . '/' . $language . '/' . $language . '.plg_' . $pluginName . '.ini',
-							JPATH_ROOT . '/administrator/language/' . $language . '/' . $language . '.plg_' . $pluginName . '.ini'
-						);
+						if (JFolder::exists(JPATH_ROOT . '/administrator/language/' . $language))
+						{
+							JFile::copy(
+								$path . '/' . $language . '/' . $language . '.plg_' . $pluginName . '.ini',
+								JPATH_ROOT . '/administrator/language/' . $language . '/' . $language . '.plg_' . $pluginName . '.ini'
+							);
+						}
 					}
 				}
 
