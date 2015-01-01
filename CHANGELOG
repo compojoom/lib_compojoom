@@ -1,5 +1,7 @@
 Changelog
 
++ added support for avatars from Easysocial
++ added support for profiles from Easysocial
 # cb installation was showing an error when no language file was present in the package
 + added support for custom fields
 # on some installation the avatars and profiles were causing a fatal error due to missing JFolder class
