@@ -1,5 +1,6 @@
 Changelog
 
++ added a checkbox custom field
 + added support for avatars from Easysocial
 + added support for profiles from Easysocial
 # cb installation was showing an error when no language file was present in the package

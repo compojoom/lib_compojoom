@@ -45,7 +45,7 @@ class CompojoomFormCustomfieldsList
 	 */
 	private function options($options)
 	{
-		$options = $this->getOptionsArray($options);
+		$options = CompojoomFormCustom::getOptionsArray($options);
 		$xml = array();
 
 		foreach ($options as $key => $value)
@@ -54,28 +54,6 @@ class CompojoomFormCustomfieldsList
 		}
 
 		return implode('', $xml);
-	}
-
-	/**
-	 * Creates an options array
-	 *
-	 * @param   string  $options  - string with options
-	 *
-	 * @return array
-	 */
-	private function getOptionsArray($options)
-	{
-		$options = explode("\n", $options);
-		$array = array();
-
-		foreach ($options as $value)
-		{
-			$option = explode('=', $value);
-
-			$array[trim($option[0])] = trim($option[1]);
-		}
-
-		return $array;
 	}
 
 	/**
@@ -88,7 +66,7 @@ class CompojoomFormCustomfieldsList
 	 */
 	public function render($data, $valueToTranslate)
 	{
-		$options = $this->getOptionsArray($data->options);
+		$options = CompojoomFormCustom::getOptionsArray($data->options);
 
 		if (is_array($valueToTranslate))
 		{

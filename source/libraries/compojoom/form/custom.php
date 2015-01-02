@@ -19,6 +19,8 @@ class CompojoomFormCustom
 {
 	private static $customFields;
 
+	private static $optionsStore;
+
 	/**
 	 * Returns a xml string to load in a JForm object
 	 *
@@ -63,5 +65,34 @@ class CompojoomFormCustom
 		}
 
 		return self::$customFields[$class]->render($field, $value);
+	}
+
+	/**
+	 * Creates an options array
+	 *
+	 * @param   string  $options  - string with options
+	 *
+	 * @return array
+	 */
+	public static function getOptionsArray($options)
+	{
+		$hash = md5(serialize($options));
+
+		if (!isset(self::$optionsStore[$hash]))
+		{
+			$options = explode("\n", $options);
+			$array = array();
+
+			foreach ($options as $value)
+			{
+				$option = explode('=', $value);
+
+				$array[trim($option[0])] = trim($option[1]);
+			}
+
+			self::$optionsStore[$hash] = $array;
+		}
+
+		return self::$optionsStore[$hash];
 	}
 }
