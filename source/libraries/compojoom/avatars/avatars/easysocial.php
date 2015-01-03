@@ -34,7 +34,7 @@ class CompojoomAvatarsEasysocial
 			$query = $db->getQuery(true);
 			$query->select('uid AS userid, medium AS thumb')
 				->from('#__social_avatars')
-				->where('uid = ' . implode(',', $userIds))
+				->where('uid IN ( ' . implode(',', $userIds) . ')')
 				->where('type = ' . $db->q('user'));
 			$db->setQuery($query);
 			$userList = $db->loadAssocList();
