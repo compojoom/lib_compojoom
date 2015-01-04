@@ -28,24 +28,17 @@ class CompojoomAvatarsEasysocial
 	{
 		$avatars = array();
 
+		include_once JPATH_ADMINISTRATOR . '/components/com_easysocial/includes/foundry.php';
+
 		if ($userIds)
 		{
-			$db = JFactory::getDBO();
-			$query = $db->getQuery(true);
-			$query->select('uid AS userid, medium AS thumb')
-				->from('#__social_avatars')
-				->where('uid IN ( ' . implode(',', $userIds) . ')')
-				->where('type = ' . $db->q('user'));
-			$db->setQuery($query);
-			$userList = $db->loadAssocList();
-			$avatars = array();
+			// Preload the users in ES
+			FD::user($userIds);
 
-			foreach ($userList as $item)
+			foreach ($userIds as $id)
 			{
-				if ($item['thumb'])
-				{
-					$avatars[$item['userid']] = JURI::base() . 'media/com_easysocial/avatars/users/' . $item['userid'] . '/' . $item['thumb'];
-				}
+				// Get the avatars
+				$avatars[$id] = FD::user($id)->getAvatar();
 			}
 		}
 
