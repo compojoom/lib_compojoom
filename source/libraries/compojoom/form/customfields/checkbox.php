@@ -26,11 +26,8 @@ class CompojoomFormCustomfieldsCheckbox
 	 */
 	public function xml($data)
 	{
-		$options = CompojoomFormCustom::getOptionsArray($data->options);
-		$checked = isset($options['checked']) ? 'checked="' . $options['checked'] . '"' : '';
-
 		$string = '<field type="checkbox" name="' . $data->slug . '" default="' . $data->default . '" label="' .
-			$data->title . '" required="' . ($data->allow_empty ? 'false' : 'true') . '" ' . $checked
+			$data->title . '" required="' . ($data->allow_empty ? 'false' : 'true') . '" '
 			. ' class="' . ($data->allow_empty ? '' : 'required') . '"/>';
 
 		return $string;
@@ -48,11 +45,21 @@ class CompojoomFormCustomfieldsCheckbox
 	{
 		$options = CompojoomFormCustom::getOptionsArray($data->options);
 
-		if (isset($options['translate']) && $options['translate'])
+		$value = $valueToTranslate;
+
+		// If we have a checked value, then let's output it
+		if (isset($options['value_checked']))
 		{
-			return JText::_('COM_COMMENT_CUSTOMFIELDS_CHECKBOX_VALUE_' . strtoupper($data->slug . '_' . $valueToTranslate));
+			$value = $options['value_checked'];
+
+			if (isset($options['translate']))
+			{
+				$value = JText::_($value);
+			}
+
+			return $value;
 		}
 
-		return $valueToTranslate;
+		return $value;
 	}
 }

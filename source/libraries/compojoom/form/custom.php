@@ -85,7 +85,7 @@ class CompojoomFormCustom
 
 			foreach ($options as $value)
 			{
-				$option = explode('=', $value);
+				$option = explode('=', $value, 2);
 
 				$array[trim($option[0])] = trim($option[1]);
 			}
