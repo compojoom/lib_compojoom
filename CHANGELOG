@@ -1,5 +1,6 @@
 Changelog
 
++ added CompojoomQueryHelper::in function to create column IN ('2', '3') string
 # changes to the way checkboxes work
 # get correct avatars using EasySocials queries
 # wrong query for easysocial avatars
