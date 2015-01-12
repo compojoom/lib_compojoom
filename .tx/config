@@ -9,7 +9,7 @@ source_file = source\language\en-GB\en-GB.lib_compojoom.ini
 source_lang = en_GB
 minimum_perc = 80
 
-[compojoom-library.lib_compojoom]
+[compojoom-library.lib_compojoom_sys]
 file_filter = source\language\<lang>\<lang>.lib_compojoom.sys.ini
 source_file = source\language\en-GB\en-GB.lib_compojoom.sys.ini
 source_lang = en_GB
