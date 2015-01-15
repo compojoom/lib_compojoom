@@ -24,13 +24,26 @@ class CompojoomFormCustom
 	/**
 	 * Returns a xml string to load in a JForm object
 	 *
-	 * @param   array  $fields  - the custom fields
+	 * @param   array   $fields     - the custom fields
+	 * @param   string  $component  - the component name (e.g. com_hotspots) that we generate the form for
 	 *
 	 * @return string
 	 */
-	public static function generateFormXML($fields)
+	public static function generateFormXML($fields, $component = null)
 	{
 		$xmlFields = array();
+
+		if ($component)
+		{
+			JLoader::discover(
+				'CompojoomFormCustomfields',
+				JPATH_ADMINISTRATOR . '/components/' . $component . '/models/fields/customfields'
+			);
+			JLoader::discover(
+				'CompojoomFormCustomfields',
+				JPATH_SITE . '/templates/' . CompojoomTemplateHelper::getFrontendTemplate() . '/html/' . $component . '/fields/customfields'
+			);
+		}
 
 		foreach ($fields as $field)
 		{
