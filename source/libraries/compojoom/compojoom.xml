@@ -9,7 +9,7 @@
 	<authorUrl>https://compojoom.com</authorUrl>
 	<copyright>(C) 2008-2014 Daniel Dimitrov and Yves Hoppe</copyright>
 	<license>GNU GPLv2 or later</license>
-	<version>4.0.31</version>
+	<version>4.0.33</version>
 
 	<languages folder="language">
 		##FRONTENDLANGUAGEFILES##
