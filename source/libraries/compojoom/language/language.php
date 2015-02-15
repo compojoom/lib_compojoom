@@ -22,7 +22,7 @@ class CompojoomLanguage
 	 *
 	 * @param   string   $extension  - extension name
 	 * @param   string   $path       - the path to the lang files
-	 * @param   boolean  $liblang   - should the library language also be loaded?
+	 * @param   boolean  $liblang    - should the library language also be loaded?
 	 *
 	 * @return void
 	 */
@@ -39,5 +39,11 @@ class CompojoomLanguage
 			$jlang->load('lib_compojoom', JPATH_ADMINISTRATOR);
 			$jlang->load('lib_compojoom', JPATH_SITE);
 		}
+
+		// Make it possible to override the loaded language with a plugin
+		JPluginHelper::importPlugin('system');
+		$dispatcher = (JVERSION < 3) ? JDispatcher::getInstance() : JEventDispatcher::getInstance();
+
+		$dispatcher->trigger('onAfterCompojoomLoadLanguage', array($extension, $path));
 	}
 }
