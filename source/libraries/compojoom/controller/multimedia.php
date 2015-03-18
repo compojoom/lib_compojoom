@@ -78,21 +78,7 @@ abstract class CompojoomControllerMultimedia extends JControllerLegacy
 					$file => false
 				);
 				echo json_encode($response);
-//				// If we are here, then we are dealing with errors
-//				$errors = JFactory::getApplication()->getMessageQueue();
-//				$error = array_pop($errors);
-//				$this->sendResponse(
-//					array(
-//						array(
-//							"error" => $error['message'],
-//							"name" => $file,
-//							"size" => ''
-//						)
-//					)
-//				);
 			}
-
-
 
 			JFactory::getApplication()->close();
 		}
@@ -115,7 +101,7 @@ abstract class CompojoomControllerMultimedia extends JControllerLegacy
 		$model = $this->getModel();
 		$input = JFactory::getApplication()->input;
 		$file = $input->files->get('files', '', 'array');
-		$file = $file[0];
+		$file = isset($file[0]) ? $file[0] : '';
 		$appl = JFactory::getApplication();
 		$uploadedFile = $model->uploadTmp($file);
 
@@ -135,8 +121,8 @@ abstract class CompojoomControllerMultimedia extends JControllerLegacy
 			array(
 				array(
 					"error" => $error['message'],
-					"name" => $file['name'],
-					"size" => $file['size']
+					"name" => isset($file['name']) ? $file['name'] : '',
+					"size" => isset($file['size']) ? $file['size'] : ''
 				)
 			)
 		);

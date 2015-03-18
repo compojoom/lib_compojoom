@@ -67,13 +67,31 @@ class CompojoomModelMultimedia extends JModelLegacy
 	{
 		$appl = JFactory::getApplication();
 
+		// Total length of post back data in bytes.
+		$contentLength = (int) $_SERVER['CONTENT_LENGTH'];
+		$mediaHelper = new JHelperMedia;
+
+		// Maximum allowed size of post back data in MB.
+		$postMaxSize = $mediaHelper->toBytes(ini_get('post_max_size'));
+
+		// Maximum allowed size of script execution in MB.
+		$memoryLimit = $mediaHelper->toBytes(ini_get('memory_limit'));
+
+		// Check for the total size of post back data.
+		if (($postMaxSize > 0 && $contentLength > $postMaxSize)
+			|| ($memoryLimit != -1 && $contentLength > $memoryLimit))
+		{
+			$appl->enqueueMessage(JText::_('LIB_COMPOJOOM_ERROR_WARNUPLOADTOOLARGE'));
+
+			return false;
+		}
+
+		// Do we have a file?
 		if (isset($file['name']))
 		{
 			JLoader::import('joomla.filesystem.file');
 			$user = JFactory::getUser();
 			$canUpload = $user->authorise('core.multimedia.create', $this->component);
-
-			$mediaHelper = new JHelperMedia;
 
 			// Some cameras just add whitespace, let's change this
 			$file['name'] = str_replace(' ', '_', $file['name']);
@@ -163,6 +181,7 @@ class CompojoomModelMultimedia extends JModelLegacy
 			// Return the file info
 			$fileData = array(
 				'name' => $mangledname,
+				'title' => JFile::stripExt($file['name']),
 				'thumbnailUrl' => $src,
 				'size' => $file['size'],
 				'type' => $file['type'],
@@ -186,10 +205,11 @@ class CompojoomModelMultimedia extends JModelLegacy
 	 *
 	 * @param   int    $itemId  - the item id
 	 * @param   array  $files   - the files to save
+	 * @param   array  $meta    - meta information about the image such as title & description
 	 *
-	 * @return boolean
+	 * @return void
 	 */
-	public function uploadPermanent($itemId, $files)
+	public function uploadPermanent($itemId, $files, $meta = array())
 	{
 		$dbFiles = $this->getFilesFromDb($itemId, 'mangled_filename');
 
@@ -203,7 +223,83 @@ class CompojoomModelMultimedia extends JModelLegacy
 		}
 
 		$moved = $this->permanentlyMoveFiles($itemId, $files);
+
+		// Do we have meta Information (normally title & description)?
+		if (count($meta))
+		{
+			// Try to match it to the moved images
+			foreach ($moved as $key => $value)
+			{
+				if ($meta[$key])
+				{
+					$moved[$key]['meta'] = $meta[$key];
+				}
+			}
+		}
+
+		// Save the new files
 		$this->saveInDb($itemId, $moved);
+
+		// Now let's update the already existing files
+		$this->updateExistingFiles($itemId, $dbFiles, $meta);
+	}
+
+	/**
+	 * Let's update the existing images just in case something has changed
+	 *
+	 * @param   int    $itemId  - the item id
+	 * @param   array  $files   - the files to save
+	 * @param   array  $meta    - meta information about the image such as title & description
+	 *
+	 * @return void
+	 */
+	private function updateExistingFiles($itemId, $files, $meta = array())
+	{
+		$params = JComponentHelper::getParams($this->component);
+		$table = JTable::getInstance('Multimedia', 'CompojoomTable');
+
+		foreach ($files as $file)
+		{
+			$filePath = $this->getFilePath($file->mangled_filename, $itemId);
+
+			// Now let's create some thumbs
+			if (file_exists($filePath))
+			{
+				$sizes = explode("\n", $params->get('thumb_sizes', '60x80'));
+
+				// Push one more size for the thumbs in the edit screen
+				if (!in_array('60x80', $sizes))
+				{
+					$sizes[] = '60x80';
+				}
+
+				$params = array();
+				$image = new CompojoomImage($filePath);
+				$thumbs = $image->createThumbs($sizes);
+
+				foreach ($thumbs as $tkey => $tvalue)
+				{
+					$params['thumbs'][$tkey] = array(
+						'name' => basename($tvalue->getPath())
+					);
+				}
+
+				$file->mime_type = $image->getImageFileProperties($filePath)->mime;
+
+				$params = new JRegistry($params);
+				$file->params = $params->toString();
+
+				if ($meta[$file->mangled_filename])
+				{
+					$file->title = $meta[$file->mangled_filename]['title'];
+					$file->description = $meta[$file->mangled_filename]['description'];
+				}
+			}
+
+			// Let's store the changes
+			$table->bind($file);
+			$table->store();
+		}
 	}
 
 	/**
@@ -220,7 +316,6 @@ class CompojoomModelMultimedia extends JModelLegacy
 		$status = array();
 		$params = JComponentHelper::getParams($this->component);
 		$destFolder = JPath::clean($this->getFilePath('', $itemId));
-
 
 		// If the folder doesn't exist, let's crete it first
 		if (!JFolder::exists($destFolder))
@@ -308,12 +403,23 @@ class CompojoomModelMultimedia extends JModelLegacy
 					}
 				}
 
+				$title = $key;
+				$description = '';
+
+				if ($value['meta'])
+				{
+					$title = $value['meta']['title'];
+					$description = $value['meta']['description'];
+				}
+
 				$params = new JRegistry($params);
 
 				$values[] = implode(
 					',',
 					array(
 						$db->q($itemId),
+						$db->q($title),
+						$db->q($description),
 						$db->q($this->typeAlias),
 						$db->q($key),
 						$db->q($value['properties']->mime),
@@ -330,7 +436,7 @@ class CompojoomModelMultimedia extends JModelLegacy
 		if (count($values))
 		{
 			$query->insert('#__compojoom_multimedia')
-				->columns('item_id, type_alias, mangled_filename, mime_type, origin, created_on, created_by, enabled, params')
+				->columns('item_id, title, description, type_alias, mangled_filename, mime_type, origin, created_on, created_by, enabled, params')
 				->values($values);
 
 			$db->setQuery($query);
@@ -506,7 +612,17 @@ class CompojoomModelMultimedia extends JModelLegacy
 				$fileSize = filesize($this->getFilePath($file->mangled_filename, $id));
 
 				$deleteUrl = $this->deleteUrl . '&file=' . $file->mangled_filename . '&id=' . $id;
-				$files[] = $this->fileArray($file->mangled_filename, $web, $fileSize, $file->mime_type, $url, $deleteUrl);
+				$files[] = $this->fileArray(
+					$file->mangled_filename,
+					$web,
+					$fileSize,
+					$file->mime_type,
+					$url,
+					$deleteUrl,
+					'delete',
+					$file->title,
+					$file->description
+				);
 			}
 		}
 		else
@@ -551,13 +667,17 @@ class CompojoomModelMultimedia extends JModelLegacy
 	 * @param   string  $url           - the url
 	 * @param   string  $deleteUrl     - the delete url for this item
 	 * @param   string  $deleteType    - the delete type
+	 * @param   string  $title         - the title for the image
+	 * @param   string  $description   - the description of the image
 	 *
 	 * @return array
 	 */
-	private function fileArray($fileName, $thumbnailUrl, $size, $type, $url, $deleteUrl, $deleteType = 'delete')
+	private function fileArray($fileName, $thumbnailUrl, $size, $type, $url, $deleteUrl, $deleteType = 'delete', $title = '', $description = '')
 	{
 		return array(
 			'name' => $fileName,
+			'title' => $title,
+			'description' => $description,
 			'thumbnailUrl' => $thumbnailUrl,
 			'size' => $size,
 			'type' => $type,

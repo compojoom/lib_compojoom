@@ -10,8 +10,31 @@
  * http://www.opensource.org/licenses/MIT
  */
 
-.compojoom-bootstrap .fileupload-progress.fade {
-	display:none;
+.compojoom-bootstrap .fileupload-progress {
+	position: relative;
+}
+.compojoom-bootstrap .progress-extended {
+	position: absolute;
+	top: 2px;
+	left: 5px;
+	font-size: smaller;
+	font-weight: bold;
+}
+.compojoom-bootstrap .compojoom-single-file-progress
+{
+	position: relative;
+	width: 100px;
+}
+.compojoom-bootstrap .fileupload-progress .progress {
+	margin-bottom: 5px;
+}
+.compojoom-bootstrap .file-meta input {
+	margin-bottom: 5px;
+}
+.compojoom-bootstrap .compojoom-single-file-progress .size {
+	position: absolute;
+	left: 5px;
+	top: 2px;
 }
 .compojoom-bootstrap .fileupload-progress.fade.in {
 	display:block;
@@ -30,6 +53,16 @@
   font-size: 200px;
   direction: ltr;
   cursor: pointer;
+}
+
+.compojoom-bootstrap #file-upload-real {
+	display: none; /* do not display the actual file upload button */
+}
+
+.compojoom-bootstrap #file-upload-fake {
+	/* style the fake upload button */
+	display: inline-block;
+	cursor: pointer;
 }
 
 /* Fixes for IE < 8 */
