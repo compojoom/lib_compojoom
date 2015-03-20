@@ -49,7 +49,7 @@ class CompojoomImage extends JImage
 
 		if (!empty($thumbSizes))
 		{
-			foreach ($thumbSizes as $thumbSize)
+			foreach ($thumbSizes as $key => $thumbSize)
 			{
 				$thumbSize = strtolower($thumbSize);
 
@@ -82,7 +82,7 @@ class CompojoomImage extends JImage
 				}
 
 				// Store the thumb in the results array
-				$generated[$thumbSize] = $thumb;
+				$generated[$key] = $thumb;
 			}
 		}
 

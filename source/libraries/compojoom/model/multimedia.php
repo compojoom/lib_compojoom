@@ -242,6 +242,7 @@ class CompojoomModelMultimedia extends JModelLegacy
 
 		// Now let's update the already existing files
 		$this->updateExistingFiles($itemId, $dbFiles, $meta);
+
 	}
 
 	/**
@@ -258,6 +259,8 @@ class CompojoomModelMultimedia extends JModelLegacy
 		$params = JComponentHelper::getParams($this->component);
 		$table = JTable::getInstance('Multimedia', 'CompojoomTable');
 
+		$sizes = (array) $params->get('thumbs');
+
 		foreach ($files as $file)
 		{
 			$filePath = $this->getFilePath($file->mangled_filename, $itemId);
@@ -265,14 +268,6 @@ class CompojoomModelMultimedia extends JModelLegacy
 			// Now let's create some thumbs
 			if (file_exists($filePath))
 			{
-				$sizes = explode("\n", $params->get('thumb_sizes', '60x80'));
-
-				// Push one more size for the thumbs in the edit screen
-				if (!in_array('60x80', $sizes))
-				{
-					$sizes[] = '60x80';
-				}
-
 				$params = array();
 				$image = new CompojoomImage($filePath);
 				$thumbs = $image->createThumbs($sizes);
@@ -294,6 +289,8 @@ class CompojoomModelMultimedia extends JModelLegacy
 					$file->title = $meta[$file->mangled_filename]['title'];
 					$file->description = $meta[$file->mangled_filename]['description'];
 				}
+
+				$image->destroy();
 			}
 
 			// Let's store the changes
@@ -334,17 +331,11 @@ class CompojoomModelMultimedia extends JModelLegacy
 			// Now let's create some thumbs
 			if ($status[$file]['status'])
 			{
-				$sizes = explode("\n", $params->get('thumb_sizes', '60x80'));
-
-				// Push one more size for the thumbs in the edit screen
-				if (!in_array('60x80', $sizes))
-				{
-					$sizes[] = '60x80';
-				}
-
+				$sizes = (array) $params->get('thumbs');
 				$image = new CompojoomImage($newLocation);
 				$status[$file]['thumbs'] = $image->createThumbs($sizes);
 				$status[$file]['properties'] = $image->getImageFileProperties($newLocation);
+				$image->destroy();
 			}
 		}
 
@@ -605,9 +596,8 @@ class CompojoomModelMultimedia extends JModelLegacy
 			foreach ($dbFiles as $file)
 			{
 				$params = new JRegistry($file->params);
-				$thumbs = $params->get('thumbs');
-				$size = '60x80';
-				$web = $this->getWebFilePath($thumbs->$size->name, $id, true);
+				$thumb = $params->get('thumbs.small');
+				$web = isset($thumb) ? $this->getWebFilePath($thumb->name, $id, true) : '';
 				$url = $this->getWebFilePath($file->mangled_filename, $id);
 				$fileSize = filesize($this->getFilePath($file->mangled_filename, $id));
 

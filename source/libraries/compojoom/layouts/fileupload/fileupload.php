@@ -200,7 +200,7 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
 			maxNumberOfFiles: <?php echo $displayData['maxNumberOfFiles']; ?>,
 			url: '<?php echo $displayData['url'] . '&' . JSession::getFormToken(); ?>=1',
 			finished: function (e, data) {
-				if ($(this).fileupload('option').getNumberOfFiles() >= 10) {
+				if ($(this).fileupload('option').getNumberOfFiles() >= <?php echo $displayData['maxNumberOfFiles']; ?>) {
 					$('.compojoom-max-number-files').removeClass('hide');
 				}
 				else {
