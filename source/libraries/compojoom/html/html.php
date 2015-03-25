@@ -84,7 +84,7 @@ class CompojoomHtml
 
 			if ($scriptTag)
 			{
-				echo '<script type="text/javascript" src="' . $fileName . '"></script>' . "\n";
+				echo '<script data-inline type="text/javascript" src="' . $fileName . '"></script>' . "\n";
 			}
 			else
 			{
@@ -98,7 +98,7 @@ class CompojoomHtml
 			{
 				if ($scriptTag)
 				{
-					echo '<script type="text/javascript" src="' . $file . '"></script>' . "\n";
+					echo '<script data-inline type="text/javascript" src="' . $file . '"></script>' . "\n";
 				}
 				else
 				{

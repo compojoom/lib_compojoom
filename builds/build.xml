@@ -27,6 +27,7 @@
 
 		<property name="dirs.root" value="${project.basedir}/../"/>
 		<property name="dirs.source" value="${dirs.root}source"/>
+		<property name="lib.source" value="${project.basedir}/../source"/>
 
 		<if>
 			<equals arg1="${library.version}" arg2="dev"/>

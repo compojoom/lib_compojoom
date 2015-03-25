@@ -28,10 +28,12 @@ class JFormFieldLoadcompojoom extends JFormField
 		// Load the compojoom framework
 		require_once JPATH_LIBRARIES . '/compojoom/include.php';
 
+		$extension = (string) $this->element['component'];
+
 		// Load language
-		CompojoomLanguage::load('com_hotspots', JPATH_SITE);
-		CompojoomLanguage::load('com_hotspots', JPATH_ADMINISTRATOR);
-		CompojoomLanguage::load('com_hotspots.sys', JPATH_ADMINISTRATOR);
+		CompojoomLanguage::load($extension, JPATH_SITE);
+		CompojoomLanguage::load($extension, JPATH_ADMINISTRATOR);
+		CompojoomLanguage::load($extension . '.sys', JPATH_ADMINISTRATOR);
 	}
 
 	/**

@@ -47,5 +47,27 @@ PRIMARY KEY (`compojoom_customfields_id`,`catid`)
 ) DEFAULT CHARSET=utf8;
             ]]></query>
 	    </action>
+
+        <action table="#__compojoom_multimedia" canfail="0">
+            <condition type="missing" value="" />
+            <query><![CDATA[
+CREATE TABLE `#__compojoom_multimedia` (
+  `compojoom_multimedia_id` int(11) NOT NULL AUTO_INCREMENT,
+  `item_id` int(11) NOT NULL,
+  `type_alias` varchar(255) DEFAULT '',
+  `title` varchar(1024) NOT NULL,
+  `description` text NOT NULL,
+  `mangled_filename` varchar(1024) NOT NULL,
+  `mime_type` varchar(255) NOT NULL DEFAULT 'application/octet-stream',
+  `origin` varchar(20) DEFAULT 'web',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` bigint(20) NOT NULL DEFAULT '0',
+  `enabled` tinyint(4) NOT NULL DEFAULT '1',
+  `params` text NOT NULL,
+  PRIMARY KEY (`compojoom_multimedia_id`),
+  KEY `item_id` (`item_id`)
+) DEFAULT CHARSET=utf8;
+            ]]></query>
+        </action>
     </sql>
 </schema>
