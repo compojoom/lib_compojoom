@@ -27,7 +27,7 @@ class CompojoomFormCustomfieldsUrl
 	public function xml($data)
 	{
 		$string = '<field type="url" name="' . $data->slug . '" default="' . $data->default . '" label="' .
-			$data->title . '" required="' . ($data->allow_empty ? 'false' : 'true') . '" />';
+			$data->title . '" required="' . ($data->allow_empty ? 'false' : 'true') . '" class="form-control"/>';
 
 		return $string;
 	}

@@ -28,7 +28,7 @@ class CompojoomFormCustomfieldsCheckbox
 	{
 		$string = '<field type="checkbox" name="' . $data->slug . '" default="' . $data->default . '" label="' .
 			$data->title . '" required="' . ($data->allow_empty ? 'false' : 'true') . '" '
-			. ' class="' . ($data->allow_empty ? '' : 'required') . '"/>';
+			. ' class="' . ($data->allow_empty ? '' : 'required') . ' form-control"/>';
 
 		return $string;
 	}

@@ -28,7 +28,7 @@ class CompojoomFormCustomfieldsList
 	{
 		$string = '<field name="' . htmlspecialchars($data->slug) . '" default="' . htmlspecialchars($data->default) . '" label="' .
 			$data->title . '" required="' . ($data->allow_empty ? 'false' : 'true') . '"
-			type="list"
+			type="list" class="form-control"
 			>';
 		$string .= $this->options($data->options);
 		$string .= '</field>';
