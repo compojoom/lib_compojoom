@@ -23,8 +23,11 @@ class CompojoomGalleria
 	 *
 	 * @param   int     $itemId     - the item id
 	 * @param   string  $typeAlias  - the type of entry we are trying to load
+	 * @param   string  $small      - the small size of the image
+	 * @param   string  $normal     - the normal size of the image
 	 *
-	 * @return mixed|string
+	 * @return mixed|string|bool - json string when we have data, false when there is no data for this item
+
 	 */
 	public static function getData($itemId, $typeAlias, $small = 'small', $normal='large')
 	{
@@ -68,6 +71,11 @@ class CompojoomGalleria
 			$data[] = $image;
 		}
 
-		return json_encode($data);
+		if (count($data))
+		{
+			return json_encode($data);
+		}
+
+		return false;
 	}
 }
