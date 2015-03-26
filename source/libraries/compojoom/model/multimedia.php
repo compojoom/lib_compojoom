@@ -10,6 +10,9 @@
 
 defined('_JEXEC') or die('Restricted access');
 
+jimport('joomla.filesystem.folder');
+jimport('joomla.filesystem.file');
+
 /**
  * Class CompojoomMultimedia
  *
@@ -93,6 +96,9 @@ class CompojoomModelMultimedia extends JModelLegacy
 			$user = JFactory::getUser();
 			$canUpload = $user->authorise('core.multimedia.create', $this->component);
 
+			$params = JComponentHelper::getParams($this->component);
+			$sizes = (array) $params->get('thumbs');
+
 			// Some cameras just add whitespace, let's change this
 			$file['name'] = str_replace(' ', '_', $file['name']);
 
@@ -168,7 +174,7 @@ class CompojoomModelMultimedia extends JModelLegacy
 			// Create a temporary thumb file
 			$image = new JImage($filepath);
 
-			$thumbs = $image->createThumbs('60x80');
+			$thumbs = $image->createThumbs($sizes['small']);
 
 			$imageData = base64_encode(file_get_contents($thumbs[0]->getPath()));
 
@@ -618,6 +624,8 @@ class CompojoomModelMultimedia extends JModelLegacy
 		else
 		{
 			$state = $app->getUserState($this->context);
+			$params = JComponentHelper::getParams($this->component);
+			$sizes = (array) $params->get('thumbs');
 
 			if (isset($state[$this->fieldName]))
 			{
@@ -628,14 +636,37 @@ class CompojoomModelMultimedia extends JModelLegacy
 					// Create a temporary thumb file
 					$image = new JImage($this->getFilePath($file, ''));
 					$mime = $image->getImageFileProperties($path)->mime;
-					$thumbs = $image->createThumbs('60x80');
+
+					$thumbs = $image->createThumbs($sizes['small']);
 					$imageData = base64_encode(file_get_contents($thumbs[0]->getPath()));
 
 					// Format the image SRC:  data:{mime};base64,{data};
 					$src = 'data: ' . $mime . ';base64,' . $imageData;
 
+					$deleteUrl = $this->deleteUrl . '&file=' . $file;
+
+					$info = '';
+
+					if (isset($state[$this->fieldName . '_data'][$file]))
+					{
+						$info = $state[$this->fieldName . '_data'][$file];
+					}
+
+					$title = '';
+					$description = '';
+
+					if (isset($info['title']))
+					{
+						$title = $info['title'];
+					}
+
+					if (isset($info['description']))
+					{
+						$description = $info['description'];
+					}
+
 					// Return the file info
-					$files[] = $this->fileArray($file, $src, filesize($path), $mime, '', '');
+					$files[] = $this->fileArray($file, $src, filesize($path), $mime, '', $deleteUrl, 'delete', $title, $description);
 
 					// Now remove the thumb
 					JFile::delete($thumbs[0]->getPath());

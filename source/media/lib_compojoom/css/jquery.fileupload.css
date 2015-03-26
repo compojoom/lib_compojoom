@@ -72,6 +72,14 @@
 .compojoom-bootstrap #fileupload .panel {
 	margin-bottom: 0;
 }
+
+.compojoom-bootstrap #fileupload .preview {
+	overflow: hidden;
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+}
+
 /* Fixes for IE < 8 */
 @media screen\9 {
   .compojoom-bootstrap .fileinput-button input {
