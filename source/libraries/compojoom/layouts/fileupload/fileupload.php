@@ -21,6 +21,7 @@ if (!$user->authorise('core.multimedia.create', $displayData['component']))
 $mediaHelper = new JHelperMedia;
 $canDelete = $user->authorise('core.multimedia.delete', $displayData['component']) || $user->authorise('core.multimedia.delete.own', $displayData['component']);
 
+JHTML::stylesheet('media/lib_compojoom/third/font-awesome/css/font-awesome.min.css');
 JHtml::stylesheet('media/lib_compojoom/css/jquery.fileupload.css');
 JHtml::stylesheet('media/lib_compojoom/css/jquery.fileupload-ui.css');
 
@@ -57,7 +58,7 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
 						<?php echo JText::sprintf('LIB_COMPOJOOM_ONLY_FILE_TYPES_ARE_ALLOWED', $displayData['fileTypes']); ?></small>
 
 					<!-- The global progress state -->
-					<div class="fileupload-progress fade">
+					<div class="fileupload-progress fade hide">
 						<!-- The global progress bar -->
 						<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
 							<div class="progress-bar progress-bar-success" style="width:0%;"></div>
@@ -126,10 +127,10 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
             <span class="preview">
                 {% if (file.url) { %}
 					<a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery>
-						<img src="{%=file.thumbnailUrl%}">
+						<img src='{%=file.thumbnailUrl%}'>
 					</a>
 				{% } else { %}
-					<img src="{%=file.thumbnailUrl%}">
+					<img src='{%=file.thumbnailUrl%}'>
 				{% } %}
             </span>
 		{% } %}
@@ -222,6 +223,8 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
 			else {
 				$('.compojoom-max-number-files').addClass('hide');
 			}
+		}).on('fileuploadadd', function(e, data){
+			$('.fileupload-progress.hide').removeClass('hide');
 		});
 
 		// Enable iframe cross-domain access via redirect option:

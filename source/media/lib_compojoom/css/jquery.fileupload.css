@@ -65,6 +65,13 @@
 	cursor: pointer;
 }
 
+.compojoom-bootstrap #fileupload .table {
+	margin-bottom: 0;
+}
+
+.compojoom-bootstrap #fileupload .panel {
+	margin-bottom: 0;
+}
 /* Fixes for IE < 8 */
 @media screen\9 {
   .compojoom-bootstrap .fileinput-button input {
