@@ -21,15 +21,15 @@ class CompojoomGalleria
 	 * This function will return a json object with image information
 	 * for a galleria.io
 	 *
-	 * @param   int     $itemId     - the item id
-	 * @param   string  $typeAlias  - the type of entry we are trying to load
-	 * @param   string  $small      - the small size of the image
-	 * @param   string  $normal     - the normal size of the image
+	 * @param   int|array  $itemId     - the item id
+	 * @param   string     $typeAlias  - the type of entry we are trying to load
+	 * @param   bool       $json       - determines if we should return the result as json array
+	 * @param   string     $small      - the small size of the image
+	 * @param   string     $normal     - the normal size of the image
 	 *
 	 * @return mixed|string|bool - json string when we have data, false when there is no data for this item
-
 	 */
-	public static function getData($itemId, $typeAlias, $small = 'small', $normal='large')
+	public static function getData($itemId, $typeAlias, $json = true,  $small = 'small', $normal='large')
 	{
 		$multimedia = JModelLegacy::getInstance('Multimedia', 'CompojoomModel', array('type_alias' => $typeAlias));
 		$data = array();
@@ -43,7 +43,7 @@ class CompojoomGalleria
 			$params = new JRegistry($row->params);
 
 			$image = array(
-				'big' => $multimedia->getWebFilePath($row->mangled_filename, $itemId),
+				'big' => $multimedia->getWebFilePath($row->mangled_filename, $row->item_id),
 				'title' => $row->title,
 				'description' => $row->description
 			);
@@ -54,7 +54,7 @@ class CompojoomGalleria
 
 				if ($thumbSmall)
 				{
-					$image['thumb'] = $multimedia->getWebFilePath($thumbSmall->name, $itemId, true);
+					$image['thumb'] = $multimedia->getWebFilePath($thumbSmall->name, $row->item_id, true);
 				}
 			}
 
@@ -64,16 +64,26 @@ class CompojoomGalleria
 
 				if ($thumbNormal)
 				{
-					$image['image'] = $multimedia->getWebFilePath($thumbNormal->name, $itemId, true);
+					$image['image'] = $multimedia->getWebFilePath($thumbNormal->name, $row->item_id, true);
 				}
 			}
 
-			$data[] = $image;
+			$data[$row->item_id][] = $image;
 		}
 
+		// Now, what should we return?
 		if (count($data))
 		{
-			return json_encode($data);
+			// If ItemId is an array, return the whole array
+			if (is_array($itemId))
+			{
+				return $json ? json_encode($data) : $data;
+			}
+			else
+			{
+				// Return just the itemId array
+				return $json ? json_encode($data[$itemId]) : $data[$itemId];
+			}
 		}
 
 		return false;

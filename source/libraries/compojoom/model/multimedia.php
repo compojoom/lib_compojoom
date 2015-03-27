@@ -351,18 +351,19 @@ class CompojoomModelMultimedia extends JModelLegacy
 	/**
 	 * Get the already stored files in the database
 	 *
-	 * @param   int     $id   - the item id
+	 * @param   array   $ids  - array with item ids to fetch
 	 * @param   string  $key  - the sort key
 	 *
 	 * @return mixed
 	 */
-	public function getFilesFromDb($id, $key = '')
+	public function getFilesFromDb($ids, $key = '')
 	{
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true);
+		$ids = (array) $ids;
 
 		$query->select('*')->from('#__compojoom_multimedia')
-			->where('item_id = ' . $db->q($id))
+			->where(CompojoomQueryHelper::in('item_id', $ids, $db))
 			->where('type_alias = ' . $db->q($this->typeAlias));
 
 		$db->setQuery($query);
