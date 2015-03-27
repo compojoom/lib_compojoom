@@ -28,7 +28,7 @@ JHtml::stylesheet('media/lib_compojoom/css/jquery.fileupload-ui.css');
 CompojoomHtmlBehavior::jquery();
 
 JHtml::script('media/lib_compojoom/js/jquery.ui.custom.js');
-JHtml::script('http://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js');
+JHtml::script('media/lib_compojoom/js/tmpl.min.js');
 JHtml::script('media/lib_compojoom/js/load-image.all.min.js');
 JHtml::script('media/lib_compojoom/js/jquery.iframe-transport.js');
 JHtml::script('media/lib_compojoom/js/jquery.fileupload.js');

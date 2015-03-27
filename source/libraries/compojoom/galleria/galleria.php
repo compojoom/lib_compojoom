@@ -33,6 +33,13 @@ class CompojoomGalleria
 	{
 		$multimedia = JModelLegacy::getInstance('Multimedia', 'CompojoomModel', array('type_alias' => $typeAlias));
 		$data = array();
+		$itemId = (array) $itemId;
+
+		if (!count($itemId))
+		{
+			return false;
+		}
+
 		$rawData = $multimedia->getFilesFromDb($itemId);
 
 		foreach ($rawData as $row)
