@@ -59,7 +59,7 @@ CREATE TABLE `#__compojoom_multimedia` (
   `description` text NOT NULL,
   `mangled_filename` varchar(1024) NOT NULL,
   `mime_type` varchar(255) NOT NULL DEFAULT 'application/octet-stream',
-  `origin` varchar(20) DEFAULT 'web',
+  `origin` varchar(40) DEFAULT 'web',
   `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `created_by` bigint(20) NOT NULL DEFAULT '0',
   `enabled` tinyint(4) NOT NULL DEFAULT '1',

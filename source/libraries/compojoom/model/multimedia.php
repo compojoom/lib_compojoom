@@ -309,12 +309,13 @@ class CompojoomModelMultimedia extends JModelLegacy
 	 * Permanently moves a file from the temp location to the final location.
 	 * Creates all necessary thumbs and ads the information to the database
 	 *
-	 * @param   int    $itemId  - the item id
-	 * @param   array  $files   - array with filename to save
+	 * @param   int     $itemId   - the item id
+	 * @param   array   $files    - array with filename to save
+	 * @param   string  $tmpPath  - temporary path to file. If none given, we'll use the default file path
 	 *
 	 * @return array
 	 */
-	private function permanentlyMoveFiles($itemId, $files)
+	public function permanentlyMoveFiles($itemId, $files, $tmpPath = '')
 	{
 		$status = array();
 		$params = JComponentHelper::getParams($this->component);
@@ -329,7 +330,15 @@ class CompojoomModelMultimedia extends JModelLegacy
 		// Now let's move the files
 		foreach ($files as $file)
 		{
-			$tmpLocation = JPath::clean($this->getFilePath($file, ''));
+			if ($tmpPath)
+			{
+				$tmpLocation = JPath::clean(rtrim($tmpPath, '\\/') . '/' . $file);
+			}
+			else
+			{
+				$tmpLocation = JPath::clean($this->getFilePath($file, ''));
+			}
+
 			$newLocation = JPath::clean($destFolder . $file);
 
 			$status[$file]['status'] = JFile::move($tmpLocation, $newLocation);
@@ -453,6 +462,7 @@ class CompojoomModelMultimedia extends JModelLegacy
 	 */
 	public function delete($file, $id)
 	{
+
 		if ($id)
 		{
 			$db = JFactory::getDbo();
@@ -460,13 +470,13 @@ class CompojoomModelMultimedia extends JModelLegacy
 			$user = JFactory::getUser();
 			$createdByRestriction = false;
 
-			// Can the user edit his own items?
+			// Can the user delete his own items?
 			if ($user->authorise('core.multimedia.delete.own', $this->component))
 			{
 				$createdByRestriction = true;
 			}
 
-			// Does the user have global delete privileges
+			// Does the user have global delete privileges. If he does, he can delete images everywhere
 			if ($user->authorise('core.multimedia.delete', $this->component))
 			{
 				$createdByRestriction = false;
@@ -482,7 +492,7 @@ class CompojoomModelMultimedia extends JModelLegacy
 
 			if ($image)
 			{
-				// The image should be created by the same user who tries to delete it
+				// The image should be deleted by the same user who tries to delete it
 				if ($createdByRestriction)
 				{
 					if ($image->created_by != $user->id)
@@ -494,7 +504,7 @@ class CompojoomModelMultimedia extends JModelLegacy
 				}
 
 				$params = new JRegistry($image->params);
-				$thumbs = $params->get('thumbs');
+				$thumbs = $params->get('thumbs', array());
 
 				// Delete the thumbs first
 				foreach ($thumbs as $thumb)
@@ -505,7 +515,12 @@ class CompojoomModelMultimedia extends JModelLegacy
 				// Now let's delete the db entry and the file
 				$query->clear();
 				$query->delete('#__compojoom_multimedia')->where('mangled_filename = ' . $db->q($file))
-					->where('created_by = ' . $db->q(JFactory::getUser()->id));
+					->where('item_id = ' . $db->q($id));
+
+				if ($createdByRestriction)
+				{
+					$query->where('created_by = ' . $db->q(JFactory::getUser()->id));
+				}
 
 				$db->setQuery($query);
 
@@ -606,7 +621,7 @@ class CompojoomModelMultimedia extends JModelLegacy
 				$thumb = $params->get('thumbs.small');
 				$web = isset($thumb) ? $this->getWebFilePath($thumb->name, $id, true) : '';
 				$url = $this->getWebFilePath($file->mangled_filename, $id);
-				$fileSize = filesize($this->getFilePath($file->mangled_filename, $id));
+				$fileSize = @filesize($this->getFilePath($file->mangled_filename, $id));
 
 				$deleteUrl = $this->deleteUrl . '&file=' . $file->mangled_filename . '&id=' . $id;
 				$files[] = $this->fileArray(
@@ -707,5 +722,124 @@ class CompojoomModelMultimedia extends JModelLegacy
 			'url' => $url,
 			'deleteUrl' => $deleteUrl
 		);
+	}
+
+	/**
+	 * Checks if we have any items that need to be migrated & if we have files
+	 * that are set to non-existing by a previous migration
+	 *
+	 * @return mixed
+	 */
+	public function healthCheck()
+	{
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+
+		$query->select('COUNT(compojoom_multimedia_id) AS count')->from('#__compojoom_multimedia')
+			->where($db->qn('origin') . ' = ' . $db->q($this->component . '.migrate'));
+
+		$db->setQuery($query);
+		$health['update'] = (int) $db->loadObject()->count;
+
+		$query->clear();
+		$query->select('item_id, mangled_filename')->from('#__compojoom_multimedia')
+			->where($db->qn('origin') . ' = ' . $db->q($this->component . '.migrate.nonexisting'));
+
+		$db->setQuery($query);
+		$health['nonexisting'] = $db->loadObjectList();
+
+		return $health;
+	}
+
+	/**
+	 * Performs a migration of a file from an old location, to the new one
+	 *
+	 * @param   string  $origin  - the origin column value
+	 * @param   string  $path    - the path to the old files
+	 *
+	 * @return array
+	 */
+	public function migrate($origin, $path)
+	{
+		$table = JTable::getInstance('Multimedia', 'CompojoomTable');
+
+		$result = $table->load(array('origin' => $origin));
+
+		$response = array(
+			'status' => true,
+			'msg' => '',
+			'shouldContinue' => false
+		);
+
+		// If we don't have any row, then there is no point in continuing
+		if ($result)
+		{
+			if (file_exists($path . '\\' . $table->mangled_filename))
+			{
+				$moved = $this->permanentlyMoveFiles($table->item_id, array($table->mangled_filename), $path);
+
+				$fileData = $moved[$table->mangled_filename];
+
+				if ($fileData['status'])
+				{
+					$params = array();
+
+					if ($fileData['thumbs'])
+					{
+						foreach ($fileData['thumbs'] as $tkey => $tvalue)
+						{
+							$params['thumbs'][$tkey] = array(
+								'name' => basename($tvalue->getPath())
+							);
+						}
+					}
+
+					$table->params = (new JRegistry($params))->toString();
+					$table->origin = 'web';
+
+					$table->title = JFile::stripExt($table->mangled_filename);
+					$table->mime_type = $fileData['properties']->mime;
+
+
+					if ($table->store())
+					{
+						$itemsLeft = $this->healthCheck();
+						$response = array(
+							'success' => 'true',
+							'message' => JText::sprintf(
+								'LIB_COMPOJOOM_FILE_DATA_UPDATED',
+								'index.php?option=com_hotspots&task=hotspot.edit&id=' . $table->item_id,
+								$table->item_id,
+								$itemsLeft['update']
+							),
+							'shouldContinue' => $itemsLeft ? true : false
+						);
+					}
+				}
+			}
+			else
+			{
+				// Let's change the origin for this file
+				$table->origin = 'com_hotspots.migrate.nonexisting';
+
+				if ($table->store())
+				{
+					$itemsLeft = $this->healthCheck();
+					$response = array('success' => 'true',
+						'message' => JText::sprintf(
+							'LIB_COMPOJOOM_FILE_MULTIMEDIA_NEEDS_TO_BE_DELETED',
+							$table->mangled_filename,
+							'index.php?option=com_hotspots&task=hotspot.edit&id=' . $table->item_id,
+							$table->item_id,
+							$itemsLeft['update']
+						),
+						'shouldContinue' => $itemsLeft ? true : false
+					);
+
+				}
+			}
+		}
+
+		return $response;
 	}
 }
