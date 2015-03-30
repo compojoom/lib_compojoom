@@ -18,7 +18,7 @@ if (!$user->authorise('core.multimedia.create', $displayData['component']))
 	return;
 }
 
-$mediaHelper = new JHelperMedia;
+$mediaHelper = new CompojoomHelperMedia;
 $canDelete = $user->authorise('core.multimedia.delete', $displayData['component']) || $user->authorise('core.multimedia.delete.own', $displayData['component']);
 
 JHTML::stylesheet('media/lib_compojoom/third/font-awesome/css/font-awesome.min.css');

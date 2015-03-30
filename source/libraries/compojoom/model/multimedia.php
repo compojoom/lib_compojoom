@@ -72,7 +72,7 @@ class CompojoomModelMultimedia extends JModelLegacy
 
 		// Total length of post back data in bytes.
 		$contentLength = (int) $_SERVER['CONTENT_LENGTH'];
-		$mediaHelper = new JHelperMedia;
+		$mediaHelper = new CompojoomHelperMedia;
 
 		// Maximum allowed size of post back data in MB.
 		$postMaxSize = $mediaHelper->toBytes(ini_get('post_max_size'));
@@ -172,7 +172,7 @@ class CompojoomModelMultimedia extends JModelLegacy
 			}
 
 			// Create a temporary thumb file
-			$image = new JImage($filepath);
+			$image = new CompojoomImage($filepath);
 
 			$thumbs = $image->createThumbs($sizes['small']);
 
@@ -650,7 +650,7 @@ class CompojoomModelMultimedia extends JModelLegacy
 					$path = $this->getFilePath($file, '');
 
 					// Create a temporary thumb file
-					$image = new JImage($this->getFilePath($file, ''));
+					$image = new CompojoomImage($this->getFilePath($file, ''));
 					$mime = $image->getImageFileProperties($path)->mime;
 
 					$thumbs = $image->createThumbs($sizes['small']);

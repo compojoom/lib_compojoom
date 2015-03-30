@@ -31,8 +31,7 @@ class JFormFieldCMultimedia extends JFormField
 	protected function getInput()
 	{
 		$params = JComponentHelper::getParams((string) $this->element['component']);
-		$basePath = JPATH_SITE . '/libraries/compojoom/layouts';
-		$layout = new JLayoutFile('fileupload.fileupload', $basePath);
+		$layout = new CompojoomLayoutFile('fileupload.fileupload');
 		$maxNumberOfFiles = $params->get('max_number_of_files', 10);
 		$html = $layout->render(
 			array(

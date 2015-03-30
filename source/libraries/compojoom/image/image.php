@@ -10,6 +10,11 @@
 
 defined('_JEXEC') or die('Restricted access');
 
+if (JVERSION < 3)
+{
+	JLoader::register('JImage', JPATH_LIBRARIES . '/compojoom/image/joomla/image.php');
+}
+
 /**
  * Class CompojoomImage
  *

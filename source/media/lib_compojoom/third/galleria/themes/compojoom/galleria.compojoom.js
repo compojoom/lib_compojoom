@@ -14,7 +14,6 @@
 Galleria.addTheme({
     name: 'compojoom',
     author: 'Daniel Dimitrov daniel@compojoom.com',
-    css: 'galleria.compojoom.css',
     defaults: {
         transition: 'pulse',
         imageCrop: 'landscape',

@@ -18,7 +18,7 @@ jimport('joomla.filesystem.folder');
  *
  * @since  3.0
  */
-abstract class CompojoomControllerMultimedia extends JControllerLegacy
+abstract class CompojoomControllerMultimedia extends CompojoomController
 {
 	/**
 	 * Act with an appropriate action

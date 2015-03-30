@@ -33,9 +33,8 @@ class CompojoomGalleria
 	{
 		$multimedia = JModelLegacy::getInstance('Multimedia', 'CompojoomModel', array('type_alias' => $typeAlias));
 		$data = array();
-		$itemId = (array) $itemId;
 
-		if (!count($itemId))
+		if (is_array($itemId) && !count($itemId))
 		{
 			return false;
 		}

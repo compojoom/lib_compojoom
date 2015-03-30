@@ -10,13 +10,14 @@
 
 defined('_JEXEC') or die('Restricted access');
 
-JHTML::_('stylesheet', 'media/lib_compojoom/third/font-awesome/css/font-awesome.min.css');
+JHTML::stylesheet('media/lib_compojoom/third/font-awesome/css/font-awesome.min.css');
+JHtml::stylesheet('media/lib_compojoom/third/galleria/themes/compojoom/galleria.compojoom.css');
 JHtml::script('media/lib_compojoom/third/galleria/galleria.js');
 JHtml::script('media/lib_compojoom/third/galleria/themes/compojoom/galleria.compojoom.js');
 
 ?>
 <style type="text/css">
-	.galleria{ max-width: 700px; height: 400px; background: #000 }
+	.galleria{ max-width: 1020px; height: 400px; background: #000 }
 </style>
 
 <div class="galleria"></div>
