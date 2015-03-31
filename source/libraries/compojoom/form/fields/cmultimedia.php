@@ -31,6 +31,7 @@ class JFormFieldCMultimedia extends JFormField
 	protected function getInput()
 	{
 		$params = JComponentHelper::getParams((string) $this->element['component']);
+		$imageSize = explode('x', $params->get('thumbs.original', '2400x1800'));
 		$layout = new CompojoomLayoutFile('fileupload.fileupload');
 		$maxNumberOfFiles = $params->get('max_number_of_files', 10);
 		$html = $layout->render(
@@ -41,7 +42,8 @@ class JFormFieldCMultimedia extends JFormField
 				'maxNumberOfFiles' => $maxNumberOfFiles,
 				'fileTypes' => $params->get('image_extensions'),
 				'maxSize' => $params->get('upload_maxsize'),
-				'component' => (string)$this->element['component']
+				'component' => (string)$this->element['component'],
+				'imageSize' => array('x' => $imageSize[0], 'y' => $imageSize[1])
 			)
 		);
 

@@ -18,6 +18,7 @@ if (!$user->authorise('core.multimedia.create', $displayData['component']))
 	return;
 }
 
+$imageSize = $displayData['imageSize'];
 $mediaHelper = new CompojoomHelperMedia;
 $canDelete = $user->authorise('core.multimedia.delete', $displayData['component']) || $user->authorise('core.multimedia.delete.own', $displayData['component']);
 
@@ -200,6 +201,10 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
 			maxFileSize: <?php echo $mediaHelper->toBytes($displayData['maxSize'] . 'M'); ?>,
 			maxNumberOfFiles: <?php echo $displayData['maxNumberOfFiles']; ?>,
 			url: '<?php echo $displayData['url'] . '&' . JSession::getFormToken(); ?>=1',
+			disableImageResize: /Android(?!.*Chrome)|Opera/
+				.test(window.navigator && navigator.userAgent),
+			imageMaxWidth: <?php echo $imageSize['x']; ?>,
+			imageMaxHeight: <?php echo $imageSize['y']; ?>,
 			finished: function (e, data) {
 				if ($(this).fileupload('option').getNumberOfFiles() >= <?php echo $displayData['maxNumberOfFiles']; ?>) {
 					$('.compojoom-max-number-files').removeClass('hide');
