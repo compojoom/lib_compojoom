@@ -463,7 +463,6 @@ class CompojoomModelMultimedia extends JModelLegacy
 	 */
 	public function delete($file, $id)
 	{
-
 		if ($id)
 		{
 			$db = JFactory::getDbo();
@@ -798,12 +797,12 @@ class CompojoomModelMultimedia extends JModelLegacy
 						}
 					}
 
-					$table->params = (new JRegistry($params))->toString();
+					$registry = new JRegistry($params);
+					$table->params = $registry->toString();
 					$table->origin = 'web';
 
 					$table->title = JFile::stripExt($table->mangled_filename);
 					$table->mime_type = $fileData['properties']->mime;
-
 
 					if ($table->store())
 					{
