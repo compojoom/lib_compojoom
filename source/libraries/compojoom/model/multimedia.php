@@ -10,6 +10,7 @@
 
 defined('_JEXEC') or die('Restricted access');
 
+jimport('joomla.filesystem.path');
 jimport('joomla.filesystem.folder');
 jimport('joomla.filesystem.file');
 
@@ -771,10 +772,13 @@ class CompojoomModelMultimedia extends JModelLegacy
 			'shouldContinue' => false
 		);
 
+		$path = JPath::clean($path);
+		$filePath = JPath::clean($path . '/' . $table->mangled_filename);
+
 		// If we don't have any row, then there is no point in continuing
 		if ($result)
 		{
-			if (file_exists($path . '\\' . $table->mangled_filename))
+			if (file_exists($filePath))
 			{
 				$moved = $this->permanentlyMoveFiles($table->item_id, array($table->mangled_filename), $path);
 
