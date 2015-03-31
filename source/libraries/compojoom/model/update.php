@@ -425,4 +425,55 @@ class CompojoomModelUpdate extends JModelLegacy
 
 		return $result;
 	}
+
+	/**
+	 * Updates the component configuration.
+	 * It first fetches the config.xml file & reads all entries there.
+	 * Then we load the current component parameters from the db
+	 * and merge them with the .xml file. This way we ensure that
+	 * the db has all the current values for each setting even if the
+	 * user doesn't edit his config.
+	 *
+	 * @return void
+	 */
+	public function updateConfiguration()
+	{
+		$settings = JPATH_COMPONENT_ADMINISTRATOR . '/config.xml';
+		$json = array();
+		$form = new JForm('config');
+		$form->loadFile($settings, true, '/config');
+		$params = JComponentHelper::getParams($this->component)->toArray();
+
+		$fieldsets = $form->getFieldsets();
+
+		foreach ($fieldsets as $fieldsetkey => $fieldset)
+		{
+			$fields = $form->getFieldset($fieldsetkey);
+
+			foreach ($fields as $fieldkey => $field)
+			{
+				// If we have a group for this field, use it!
+				if ($field->group)
+				{
+					$json[$field->group][$field->fieldname] = $field->value;
+				}
+				else
+				{
+					$json[$field->fieldname] = $field->value;
+				}
+			}
+		}
+
+		$merged = array_merge($json, $params);
+
+		// Now let's update the Database
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true)
+			->update($db->qn('#__extensions'))
+			->set($db->qn('params') . '=' . $db->q(json_encode($merged)))
+			->where($db->qn('element') . '=' . $db->q($this->component))
+			->where($db->qn('type') . '=' . $db->q('component'));
+		$db->setQuery($query);
+		$db->execute();
+	}
 }
