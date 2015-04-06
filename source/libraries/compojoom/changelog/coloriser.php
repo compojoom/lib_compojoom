@@ -41,7 +41,30 @@ class CompojoomChangelogColoriser
 			return $html;
 		}
 
-		array_shift($lines);
+		$remove = false;
+		foreach($lines as $key => $line)
+		{
+			$line = trim($line);
+
+			$php = substr($line, 0, 5);
+			$closing = substr($line, 0, 2);
+
+			if($php == '<?php')
+			{
+				$remove = true;
+			}
+
+			if($closing == '?>')
+			{
+				unset($lines[$key]);
+				$remove = false;
+			}
+
+			if($remove)
+			{
+				unset($lines[$key]);
+			}
+		}
 
 		foreach ($lines as $line)
 		{
