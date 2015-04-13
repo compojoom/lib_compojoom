@@ -1,5 +1,6 @@
 Changelog
 
++ added a JED review request
 + Make it possible to override the loaded language with a plugin
 + added CompojoomQueryHelper::in function to create column IN ('2', '3') string
 # changes to the way checkboxes work

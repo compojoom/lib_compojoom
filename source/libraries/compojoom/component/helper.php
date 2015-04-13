@@ -100,4 +100,25 @@ class CompojoomComponentHelper
 
 		return $result;
 	}
+
+	/**
+	 * Update the configuration of a component
+	 *
+	 * @param    string  $component  - the component
+	 * @param    object  $config     - the config object
+	 *
+	 * @return void
+	 */
+	public static function updateConfiguration($component, $config)
+	{
+		// Now let's update the Database
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true)
+			->update($db->qn('#__extensions'))
+			->set($db->qn('params') . '=' . $db->q($config))
+			->where($db->qn('element') . '=' . $db->q($component))
+			->where($db->qn('type') . '=' . $db->q('component'));
+		$db->setQuery($query);
+		$db->execute();
+	}
 }

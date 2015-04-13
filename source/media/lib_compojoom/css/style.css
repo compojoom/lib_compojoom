@@ -750,6 +750,11 @@ footer{
 }
 .compojoom-bootstrap .box-info .additional-btn a:hover.additional-icon{text-decoration: none;}
 
+.compojoom-bootstrap .box-info.alert {
+	background: #FCF8E3;
+	color: #8A6D3B;
+}
+
 .compojoom-bootstrap .box-info.success{
 	background: #65BD77;
 	color: #fff;
