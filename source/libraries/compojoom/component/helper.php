@@ -104,8 +104,8 @@ class CompojoomComponentHelper
 	/**
 	 * Update the configuration of a component
 	 *
-	 * @param    string  $component  - the component
-	 * @param    object  $config     - the config object
+	 * @param   string  $component  - the component
+	 * @param   object  $config     - the config object
 	 *
 	 * @return void
 	 */
@@ -119,6 +119,55 @@ class CompojoomComponentHelper
 			->where($db->qn('element') . '=' . $db->q($component))
 			->where($db->qn('type') . '=' . $db->q('component'));
 		$db->setQuery($query);
+		$db->execute();
+	}
+
+	/**
+	 * Get the custom_data field from the #__extensions table and return it as JRegistry
+	 *
+	 * @param   string  $component  - the component name
+	 *
+	 * @return JRegistry
+	 */
+	public static function getComponentCustomData($component)
+	{
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+		$customData = new JRegistry;
+
+		$query->select('custom_data')->from('#__extensions')
+			->where($db->qn('element') . '=' . $db->q($component))
+			->where($db->qn('type') . '=' . $db->q('component'));
+		$db->setQuery($query);
+		$data = $db->loadObject();
+
+		if ($data)
+		{
+			$customData->loadString($data->custom_data);
+		}
+
+		return $customData;
+	}
+
+	/**
+	 * Update the custom_data field in the #__extensions table with our object
+	 *
+	 * @param   string     $component  - the component name
+	 * @param   JReqistry  $data       - the custom data to store
+	 *
+	 * @return void
+	 */
+	public static function updateComponentCustomData($component, $data)
+	{
+		// Now let's update the custom data
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true)
+			->update($db->qn('#__extensions'))
+			->set($db->qn('custom_data') . '=' . $db->q($data))
+			->where($db->qn('element') . '=' . $db->q($component))
+			->where($db->qn('type') . '=' . $db->q('component'));
+		$db->setQuery($query);
+
 		$db->execute();
 	}
 }
