@@ -73,7 +73,7 @@ class CompojoomModelStats extends JModelLegacy
 		$data = CompojoomComponentHelper::getComponentCustomData($this->extension);
 		$data->set('update_report_sent', JFactory::getDate()->toSql());
 
-//		CompojoomComponentHelper::updateComponentCustomData($this->extension, $data);
+		CompojoomComponentHelper::updateComponentCustomData($this->extension, $data);
 	}
 
 	/**
