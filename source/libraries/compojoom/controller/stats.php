@@ -49,7 +49,7 @@ class CompojoomControllerStats extends CompojoomController
 			JFactory::getApplication()->close();
 		}
 
-		$request = $transport->post('http://stats.compojoom.com', ($data));
+		$request = $transport->post('https://stats.compojoom.com', ($data));
 
 		if ($request->code == 200)
 		{

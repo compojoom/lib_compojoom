@@ -53,10 +53,13 @@ class CompojoomModelStats extends JModelLegacy
 		$data = array();
 		$db = JFactory::getDbo();
 		$data['php'] = phpversion();
-		$data['mysql'] = $db->getVersion();
+		$data['mysql'] = $db->getVersion() . ' ' . $db->name;
+		$data['domain'] = Juri::root();
 		$data['joomla'] = JVERSION;
 		$data['os'] = php_uname();
-		$data['server'] = apache_get_version() ? apache_get_version() : 'other';
+		$data['server'] = $_SERVER['SERVER_SOFTWARE'] . ' ' . (function_exists('php_sapi_name') ? php_sapi_name() : '');
+		$data['language'] = implode(',', array_keys(JLanguage::getKnownLanguages(JPATH_BASE)));
+		$data['timezone'] = JFactory::getConfig()->get('offset');
 		$data['extension'] = $this->extension;
 		$data['config'] = $this->getConfig();
 
