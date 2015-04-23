@@ -170,4 +170,31 @@ class CompojoomComponentHelper
 
 		$db->execute();
 	}
+
+	/**
+	 * Get the manifest for an extension
+	 *
+	 * @param   string  $component  - the component name
+	 *
+	 * @return JRegistry
+	 */
+	public static function getManifest($component)
+	{
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+		$customData = new JRegistry;
+
+		$query->select('manifest_cache')->from('#__extensions')
+			->where($db->qn('element') . '=' . $db->q($component))
+			->where($db->qn('type') . '=' . $db->q('component'));
+		$db->setQuery($query);
+		$data = $db->loadObject();
+
+		if ($data)
+		{
+			$customData->loadString($data->manifest_cache);
+		}
+
+		return $customData;
+	}
 }

@@ -61,6 +61,7 @@ class CompojoomModelStats extends JModelLegacy
 		$data['language'] = implode(',', array_keys(JLanguage::getKnownLanguages(JPATH_BASE)));
 		$data['timezone'] = JFactory::getConfig()->get('offset');
 		$data['extension'] = $this->extension;
+		$data['version'] = CompojoomComponentHelper::getManifest($this->extension)->get('version');
 		$data['config'] = $this->getConfig();
 
 		return $data;
