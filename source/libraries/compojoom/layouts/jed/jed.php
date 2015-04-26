@@ -36,7 +36,7 @@ defined('_JEXEC') or die('Restricted access');
 			<span class="fa fa-pencil"></span>
 			<?php echo JText::_('LIB_COMPOJOOM_JED_LEAVE_A_REVIEW_NOW'); ?>
 		</a>
-		<a href="index.php?option=com_hotspots&task=jed.update&jed=2" class="btn btn-small btn-default">
+		<a href="index.php?option=<?php echo $displayData['component']; ?>&task=jed.update&jed=2" class="btn btn-small btn-default">
 			<span class="fa fa-clock-o"></span>
 			<?php echo JText::_('LIB_COMPOJOOM_JED_REMIND_NEXT_WEEK'); ?>
 		</a>
