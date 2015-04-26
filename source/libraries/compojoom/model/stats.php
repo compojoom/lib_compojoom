@@ -17,7 +17,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  4.0
  */
-class CompojoomModelStats extends JModelLegacy
+abstract class CompojoomModelStats extends JModelLegacy
 {
 	protected $extension = '';
 
@@ -64,8 +64,22 @@ class CompojoomModelStats extends JModelLegacy
 		$data['version'] = CompojoomComponentHelper::getManifest($this->extension)->get('version');
 		$data['config'] = $this->getConfig();
 
+		$customData = $this->getCustomExtensionData();
+
+		if ($customData)
+		{
+			$data = array_merge($data, $customData);
+		}
+
 		return $data;
 	}
+
+	/**
+	 * This function should return any specific extension data that we want to send
+	 *
+	 * @return mixed
+	 */
+	abstract public function getCustomExtensionData();
 
 	/**
 	 * We've gathered the data and all we need to do is to update the time for the last report
