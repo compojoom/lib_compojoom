@@ -165,4 +165,22 @@ abstract class CompojoomModelCustomfield extends JModelAdmin
 
 		return true;
 	}
+
+	/**
+	 * Prepare and sanitise the table data prior to saving.
+	 *
+	 * @param   JTable  $table  A JTable object.
+	 *
+	 * @return  void
+	 *
+	 * @since   1.6
+	 */
+	protected function prepareTable($table)
+	{
+		// Reorder the articles within the category so the new article is first
+		if (empty($table->id))
+		{
+			$table->reorder('enabled >= 1');
+		}
+	}
 }

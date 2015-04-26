@@ -177,7 +177,7 @@ abstract class CompojoomModelCustomfields extends JModelList
 			else
 			{
 				$search = $db->Quote('%' . $db->escape($search, true) . '%');
-				$query->where('(a.title LIKE ' . $search . ')');
+				$query->where('(cf.title LIKE ' . $search . ')');
 			}
 		}
 
