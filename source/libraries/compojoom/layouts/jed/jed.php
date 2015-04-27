@@ -20,7 +20,7 @@ defined('_JEXEC') or die('Restricted access');
 	</h2>
 
 	<div class="additional-btn">
-		<a href="index.php?option=com_hotspots&task=jed.update&jed=1" class="fa fa-close">
+		<a href="index.php?option=<?php echo $displayData['component']; ?>&task=jed.update&jed=1" class="fa fa-close">
 			<?php echo JText::sprintf('LIB_COMPOJOOM_JED_HIDE_THIS_AND_DONT_REMIND', $displayData['title']); ?>
 		</a>
 	</div>
