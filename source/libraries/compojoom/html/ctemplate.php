@@ -235,6 +235,13 @@ class CompojoomHtmlCtemplate
 			$html[] = '<div class="page-heading animated fadeInDownBig">
 							<h1>' . JText::_($title) .' <small>' . JText::_($slogan) . '</small></h1>
 						</div>';
+			$app = JFactory::getApplication();
+			if(!$app->isSite())
+			{
+				$app->JComponentTitle = $html;
+				JFactory::getDocument()->setTitle(JFactory::getConfig()->get('sitename') . ' - ' . JText::_('JADMINISTRATION') . ' - ' . JText::_($title));
+
+			}
 		}
 
 		return implode('', $html);
