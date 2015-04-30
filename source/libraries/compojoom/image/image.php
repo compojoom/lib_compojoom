@@ -110,6 +110,8 @@ class CompojoomImage extends JImage
 	 */
 	public function createThumbs($thumbSizes, $creationMethod = self::SCALE_INSIDE, $thumbsFolder = null)
 	{
+		jimport('joomla.filesystem.folder');
+
 		// Make sure the resource handle is valid.
 		if (!$this->isLoaded())
 		{
@@ -123,7 +125,7 @@ class CompojoomImage extends JImage
 		}
 
 		// Check destination
-		if (!is_dir($thumbsFolder) && (!is_dir(dirname($thumbsFolder)) || !@mkdir($thumbsFolder)))
+		if (!is_dir($thumbsFolder) && (!is_dir(dirname($thumbsFolder)) || !JFolder::create($thumbsFolder)))
 		{
 			throw new InvalidArgumentException('Folder does not exist and cannot be created: ' . $thumbsFolder);
 		}
