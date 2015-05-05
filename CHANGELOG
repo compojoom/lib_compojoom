@@ -1,5 +1,6 @@
 Changelog
 
+# try to keep the orientation of the generated thumb
 # on some servers the thumbs couldn't be created
 + added a JED review request
 + Make it possible to override the loaded language with a plugin

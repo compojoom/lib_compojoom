@@ -86,6 +86,27 @@ class CompojoomImage extends JImage
 						break;
 				}
 
+				// Let's try to keep up the orientation of the image
+				// Setting memory_limit that high, because with bigger images rotating fails often
+				ini_set('memory_limit', '256M');
+				$exif = @exif_read_data($this->getPath());
+
+				if (!empty($exif['Orientation']))
+				{
+					switch ($exif['Orientation'])
+					{
+						case 8:
+							$thumb->rotate(90, 0, false);
+							break;
+						case 3:
+							$thumb->rotate(180, 0, false);
+							break;
+						case 6:
+							$thumb->rotate(-90, 0, false);
+							break;
+					}
+				}
+
 				// Store the thumb in the results array
 				$generated[$key] = $thumb;
 			}
