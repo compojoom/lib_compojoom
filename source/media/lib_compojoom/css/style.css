@@ -2697,11 +2697,24 @@ i.i-right {
 	width: 100%;
 }
 
-select, textarea, input[type="text"], input[type="password"], input[type="datetime"],
-input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"],
-input[type="week"], input[type="number"], input[type="email"], input[type="url"],
-input[type="search"], input[type="tel"], input[type="color"], .uneditable-input  {
-	min-height: 29px;
+.compojoom-bootstrap select,
+.compojoom-bootstrap textarea,
+.compojoom-bootstrap input[type="text"],
+.compojoom-bootstrap input[type="password"],
+.compojoom-bootstrap input[type="datetime"],
+.compojoom-bootstrap input[type="datetime-local"],
+.compojoom-bootstrap input[type="date"],
+.compojoom-bootstrap input[type="month"],
+.compojoom-bootstrap input[type="time"],
+.compojoom-bootstrap input[type="week"],
+.compojoom-bootstrap input[type="number"],
+.compojoom-bootstrap input[type="email"],
+.compojoom-bootstrap input[type="url"],
+.compojoom-bootstrap input[type="search"],
+.compojoom-bootstrap input[type="tel"],
+.compojoom-bootstrap input[type="color"],
+.compojoom-bootstrap .uneditable-input  {
+	min-height: 34px;
 }
 
 #copyright_box {
@@ -3032,4 +3045,8 @@ body {
 }
 .compojoom-bootstrap .feed-item-description p {
 	display: inline;
+}
+
+.compojoom-bootstrap .btn {
+	border: 1px solid #CCC;
 }
