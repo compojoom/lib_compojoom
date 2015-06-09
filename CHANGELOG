@@ -1,5 +1,7 @@
 Changelog
 
+# implement some OpenGraph attributes for facebook share
+# fixes warning when installing cb plugins
 # try to keep the orientation of the generated thumb
 # on some servers the thumbs couldn't be created
 + added a JED review request

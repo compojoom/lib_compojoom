@@ -52,10 +52,20 @@ class CompojoomInstallerCb
 					{
 						if (JFolder::exists(JPATH_ROOT . '/administrator/language/' . $language))
 						{
-							JFile::copy(
-								$path . '/' . $language . '/' . $language . '.plg_' . $pluginName . '.ini',
-								JPATH_ROOT . '/administrator/language/' . $language . '/' . $language . '.plg_' . $pluginName . '.ini'
-							);
+							if (file_exists($path . '/' . $language . '/' . $language . '.plg_' . $pluginName . '.ini'))
+							{
+								JFile::copy(
+									$path . '/' . $language . '/' . $language . '.plg_' . $pluginName . '.ini',
+									JPATH_ROOT . '/administrator/language/' . $language . '/' . $language . '.plg_' . $pluginName . '.ini'
+								);
+							}
+							elseif (file_exists($path . '/' . $language . '/' . $language . '.plg_' . str_replace('plug_', '', $pluginName) . '.ini'))
+							{
+								JFile::copy(
+									$path . '/' . $language . '/' . $language . '.plg_' . str_replace('plug_', '', $pluginName) . '.ini',
+									JPATH_ROOT . '/administrator/language/' . $language . '/' . $language . '.plg_' . str_replace('plug_', '', $pluginName) . '.ini'
+								);
+							}
 						}
 					}
 				}
