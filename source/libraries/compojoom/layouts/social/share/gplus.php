@@ -10,6 +10,11 @@
 
 defined('_JEXEC') or die('Restricted access');
 
+// Add OpenGraph information on the page
+if (isset($displayData['meta']))
+{
+	CompojoomOgp::add($displayData['meta']);
+}
 ?>
 <!-- Google plus one -->
 <div class="g-plusone" data-size="medium"></div>
