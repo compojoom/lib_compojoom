@@ -3050,3 +3050,11 @@ body {
 .compojoom-bootstrap .btn {
 	border: 1px solid #CCC;
 }
+
+.compojoom-bootstrap fieldset.radio label {
+    display: block;
+}
+
+.compojoom-bootstrap fieldset.checkboxes ul {
+    margin: 0;
+}
