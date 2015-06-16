@@ -49,6 +49,12 @@ Galleria.addTheme({
 		    OPEN = false,
 		    FULLSCREEN = false;
 
+        this.bind('image', function(e) {
+            $(e.imageTarget).unbind('dblclick').on('dblclick', function() {
+                gallery.toggleFullscreen();
+            });
+        });
+
 	    fs_link.click(function() {
 		    if (FULLSCREEN) {
 			    gallery.exitFullscreen();
