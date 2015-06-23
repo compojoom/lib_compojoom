@@ -20,7 +20,7 @@
             'jquery',
             'tmpl',
             './jquery.fileupload-image',
-            './jquery.fileupload-audio.js',
+            './jquery.fileupload-audio',
             './jquery.fileupload-video',
             './jquery.fileupload-validate'
         ], factory);
@@ -378,11 +378,9 @@
                             }
                         );
                     };
-
                 if (data.url) {
                     data.dataType = data.dataType || that.options.dataType;
-
-                    $.ajax(data).done(removeNode).fail(function (jqXHR, textStatus, errorThrown ) {
+                    $.ajax(data).done(removeNode).fail(function () {
                         that._trigger('destroyfailed', e, data);
                     });
                 } else {
@@ -598,7 +596,6 @@
                     fileUploadButtonBar.find('.toggle')
                         .prop('checked', false);
                 }
-
             });
             this._on(fileUploadButtonBar.find('.toggle'), {
                 change: function (e) {
@@ -624,7 +621,6 @@
 
         _initEventHandlers: function () {
             this._super();
-
             this._on(this.options.filesContainer, {
                 'click .start': this._startHandler,
                 'click .cancel': this._cancelHandler,

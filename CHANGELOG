@@ -1,5 +1,7 @@
 Changelog
 
+~ updating blueimp fileupload and adding support for Chrome resizing
++ added double click event to galleria
 # implement some OpenGraph attributes for facebook share
 # fixes warning when installing cb plugins
 # try to keep the orientation of the generated thumb

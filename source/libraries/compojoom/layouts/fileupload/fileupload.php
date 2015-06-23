@@ -30,6 +30,7 @@ CompojoomHtmlBehavior::jquery();
 
 JHtml::script('media/lib_compojoom/js/jquery.ui.custom.js');
 JHtml::script('media/lib_compojoom/js/tmpl.min.js');
+JHtml::script('media/lib_compojoom/js/canvas-to-blob.min.js');
 JHtml::script('media/lib_compojoom/js/load-image.all.min.js');
 JHtml::script('media/lib_compojoom/js/jquery.iframe-transport.js');
 JHtml::script('media/lib_compojoom/js/jquery.fileupload.js');
@@ -201,8 +202,7 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
 			maxFileSize: <?php echo $mediaHelper->toBytes($displayData['maxSize'] . 'M'); ?>,
 			maxNumberOfFiles: <?php echo $displayData['maxNumberOfFiles']; ?>,
 			url: '<?php echo $displayData['url'] . '&' . JSession::getFormToken(); ?>=1',
-			disableImageResize: /Android(?!.*Chrome)|Opera/
-				.test(window.navigator && navigator.userAgent),
+			disableImageResize: false,
 			imageMaxWidth: <?php echo $imageSize['x']; ?>,
 			imageMaxHeight: <?php echo $imageSize['y']; ?>,
 			finished: function (e, data) {
