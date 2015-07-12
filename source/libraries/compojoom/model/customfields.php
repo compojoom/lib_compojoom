@@ -183,7 +183,7 @@ abstract class CompojoomModelCustomfields extends JModelList
 
 		if ($this->getState('filter.component'))
 		{
-			$query->where($db->qn('cf.component') . '=' . $db->q($this->getState('filter.component')));
+			$query->where($db->qn('cf.component') . ' LIKE ' . $db->q($this->getState('filter.component')));
 		}
 
 		// Add the list ordering clause.

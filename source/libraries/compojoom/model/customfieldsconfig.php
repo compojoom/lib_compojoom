@@ -24,10 +24,11 @@ class CompojoomModelCustomfieldsconfig extends JModelList
 	 *
 	 * @param   string  $component  - the component that we want to get the custom fields for (e.x. com_hotspots.xxx where xxx is the item type)
 	 * @param   int     $catid      - the category id
+	 * @param   string  $operator   - Operator for component (defaults to =)
 	 *
 	 * @return  JDatabaseQuery   A JDatabaseQuery object to retrieve the data set.
 	 */
-	public function getFields($component, $catid = null)
+	public function getFields($component, $catid = null, $operator = "=")
 	{
 		$db = $this->getDbo();
 		$query = $db->getQuery(true);
@@ -35,8 +36,17 @@ class CompojoomModelCustomfieldsconfig extends JModelList
 
 		$query->select('*')->from('#__compojoom_customfields as f')
 			->where($db->qn('f.show') . '=' . $db->q('all'))
-			->where($db->qn('f.enabled') . ' = ' . $db->q(1))
-			->where($db->qn('f.component') . ' = ' . $db->q($component));
+			->where($db->qn('f.enabled') . ' = ' . $db->q(1));
+
+		if ($operator == "LIKE")
+		{
+			$query->where($db->qn('f.component') . ' LIKE ' . $db->q($component));
+		}
+		else
+		{
+			$query->where($db->qn('f.component') . ' = ' . $db->q($component));
+		}
+
 		$all = $db->setQuery($query)->loadObjectList();
 
 		if ($catid)
@@ -45,8 +55,17 @@ class CompojoomModelCustomfieldsconfig extends JModelList
 			$query->select('f.*')->from('#__compojoom_customfields AS f')->where($db->qn('f.show') . '=' . $db->q('category'))
 				->innerJoin('#__compojoom_customfields_cats AS c ON f.id = c.compojoom_customfields_id')
 				->where($db->qn('c.catid') . ' = ' . $db->q($catid))
-				->where($db->qn('f.enabled') . ' = ' . $db->q(1))
-				->where($db->qn('f.component') . ' = ' . $db->q($component));
+				->where($db->qn('f.enabled') . ' = ' . $db->q(1));
+
+			if ($operator == "LIKE")
+			{
+				$query->where($db->qn('f.component') . ' LIKE ' . $db->q($component));
+			}
+			else
+			{
+				$query->where($db->qn('f.component') . ' = ' . $db->q($component));
+			}
+
 			$cats = $db->setQuery($query)->loadObjectList();
 		}
 
@@ -65,6 +84,12 @@ class CompojoomModelCustomfieldsconfig extends JModelList
 				return $a->ordering - $b->ordering;
 			}
 		);
+
+		foreach ($allFields as $i => $field)
+		{
+			// JSON decode params column
+			$allFields[$i]->params = json_decode($field->params);
+		}
 
 		return $allFields;
 	}
