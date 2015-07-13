@@ -24,17 +24,19 @@ class CompojoomHtmlBehavior
 	 * @param   bool  $ctemplate   - Load boostrap backend template
 	 * @param   bool  $thirdparty  - Load third party js for template
 	 * @param   bool  $debug       - Debug mode? e.g. load non minimized versions?
+	 * @param   bool  $minifyJs    - Minify js
+	 * @param   bool  $minifyCss   - Minify css
 	 *
 	 * @return void
 	 */
-	public static function bootstrap31($js = true, $ctemplate = true, $thirdparty = true, $debug = false)
+	public static function bootstrap31($js = true, $ctemplate = true, $thirdparty = true, $debug = false, $minifyJs = false, $minifyCss = false)
 	{
 		// Always load the strapper css
-		JHTML::_('stylesheet', 'media/lib_compojoom/css/bootstrap-3.1.1.css');
+		CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/css/bootstrap-3.1.1.css');
 
 		if (JVERSION < '3')
 		{
-			JHTML::_('stylesheet', 'media/lib_compojoom/css/bootstrap-j25-fixes.css');
+			CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/css/bootstrap-j25-fixes.css');
 		}
 
 		if ($js)
@@ -50,11 +52,11 @@ class CompojoomHtmlBehavior
 				}
 				else
 				{
-					JHTML::_('script', 'media/lib_compojoom/js/bootstrap-3.1.1.min.js');
+					CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/js/bootstrap-3.1.1.min.js');
 				}
 
 				// Load radio buttons JS
-				JHTML::_('script', 'media/lib_compojoom/js/jquery.radiobtns.js');
+				CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/js/jquery.radiobtns.js');
 			}
 			else
 			{
@@ -64,7 +66,7 @@ class CompojoomHtmlBehavior
 			}
 
 			// Load compojoom js
-			JHTML::_('script', 'media/lib_compojoom/js/jquery.cjoom.js');
+			CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/js/jquery.cjoom.js');
 
 			// Load third party scripts and css? (Required for Template)
 			if ($thirdparty)
@@ -72,23 +74,24 @@ class CompojoomHtmlBehavior
 				// Load 3rd Party css
 
 				// Font Awesome
-				JHTML::_('stylesheet', 'media/lib_compojoom/third/font-awesome/css/font-awesome.min.css');
+				CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/third/font-awesome/css/font-awesome.min.css');
+
 
 				// Dialogs with effects / CSS transitions and animations
-				JHTML::_('stylesheet', 'media/lib_compojoom/third/nifty-modal/css/component.css');
+				CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/third/nifty-modal/css/component.css');
+
 
 				// Popups (more..) but nice ones -> responsive, http://dimsemenov.com/plugins/magnific-popup/
-				JHTML::_('stylesheet', 'media/lib_compojoom/third/magnific-popup/magnific-popup.css');
+				CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/third/magnific-popup/magnific-popup.css');
 
 				// Datepicker for Bootstrap by Stefan Petre, http://www.eyecon.ro/bootstrap-datepicker/
-				JHTML::_('stylesheet', 'media/lib_compojoom/third/datepicker/css/datepicker.css');
+				CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/third/datepicker/css/datepicker.css');
 
 				// Load 3rd Party scripts for Laceng
-				JHTML::_('script', 'media/lib_compojoom/third/slimscroll/jquery.slimscroll.min.js');
-
-				JHTML::_('script', 'media/lib_compojoom/third/magnific-popup/jquery.magnific-popup.min.js');
-				JHTML::_('script', 'media/lib_compojoom/third/input/bootstrap.file-input.js');
-				JHTML::_('script', 'media/lib_compojoom/third/datepicker/js/bootstrap-datepicker.js');
+				CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/third/slimscroll/jquery.slimscroll.min.js');
+				CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/third/magnific-popup/jquery.magnific-popup.min.js');
+				CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/third/input/bootstrap.file-input.js');
+				CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/third/datepicker/js/bootstrap-datepicker.js');
 
 				JHTML::_('script', 'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js');
 				JHTML::_('script', 'https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js');
@@ -97,20 +100,28 @@ class CompojoomHtmlBehavior
 			// Load backend template
 			if ($ctemplate)
 			{
-				JHTML::_('stylesheet', 'media/lib_compojoom/css/style.css');
-				JHTML::_('stylesheet', 'media/lib_compojoom/css/animate.css');
-				JHTML::_('stylesheet', 'media/lib_compojoom/css/style-responsive.css');
+				CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/css/style.css');
+				CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/css/animate.css');
+				CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/css/style-responsive.css');
 
 				if (JVERSION < 3)
 				{
-					JHTML::_('stylesheet', 'media/lib_compojoom/css/j25style.css');
-					JHTML::_('script', 'media/lib_compojoom/js/jquery.radiobtns.js');
-					JHTML::_('script', 'media/lib_compojoom/js/jquery.cjoom25.js');
+					CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/css/j25style.css');
+					CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/js/jquery.radiobtns.js');
+					CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/js/jquery.cjoom25.js');
 				}
 
-				JHTML::_('script', 'media/lib_compojoom/js/lanceng.js');
+				CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/js/lanceng.js');
 			}
 		}
+
+		// Load css & js
+		CompojoomHtml::external(
+			CompojoomHtml::getScriptQueue('libcompojoom'),
+			CompojoomHtml::getCSSQueue('libcompojoom'),
+			'media/lib_compojoom/cache', $minifyJs,
+			$minifyCss
+		);
 	}
 
 	/**
