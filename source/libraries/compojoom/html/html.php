@@ -85,7 +85,7 @@ class CompojoomHtml
 	 */
 	public static function getScriptQueue($key)
 	{
-		return self::$queue[$key];
+		return isset(self::$queue[$key]) ? self::$queue[$key] : array();
 	}
 
 	/**
@@ -97,7 +97,7 @@ class CompojoomHtml
 	 */
 	public static function getCSSQueue($key)
 	{
-		return self::$cssqueue[$key];
+		return isset(self::$cssqueue[$key]) ? self::$cssqueue[$key] : array();
 	}
 
 	/**
@@ -117,6 +117,12 @@ class CompojoomHtml
 		if (is_string($files))
 		{
 			$files = array($files);
+		}
+
+		// Check if there are any files
+		if (!count($files))
+		{
+			return;
 		}
 
 		// Let's merge and minify if we need to
@@ -165,6 +171,12 @@ class CompojoomHtml
 		if (is_string($files))
 		{
 			$files = array($files);
+		}
+
+		// Check if there are any files
+		if (!count($files))
+		{
+			return;
 		}
 
 		// Let's merge and minify if we need to
