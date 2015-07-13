@@ -43,6 +43,8 @@
  * @license		http://opensource.org/licenses/mit-license.php MIT License
  * @version		3.0.1
  */
+defined('_JEXEC') or die ('Restricted access');
+
 abstract class aCssToken
 {
 	/**
@@ -878,7 +880,7 @@ class CssStringParserPlugin extends aCssParserPlugin
 		// End of string
 		elseif ($char === $this->delimiterChar && $state === "T_STRING")
 		{
-			// If the Previous char is a escape char count the amount of the previous escape chars. If the amount of 
+			// If the Previous char is a escape char count the amount of the previous escape chars. If the amount of
 			// escape chars is uneven do not end the string
 			if ($previousChar == "\\")
 			{
@@ -1601,7 +1603,7 @@ class CssParser
 		// Reset
 		$this->source = "";
 		$this->tokens = array();
-		// Create a global and plugin lookup table for trigger chars; set array of plugins as local variable and create 
+		// Create a global and plugin lookup table for trigger chars; set array of plugins as local variable and create
 		// several helper variables for plugin handling
 		$globalTriggerChars		= "";
 		$plugins				= $this->plugins;
@@ -1655,7 +1657,7 @@ class CssParser
 			// Extended processing only if the current char is a global trigger char
 			if (strpos($globalTriggerChars, $c) !== false)
 			{
-				// Exclusive state is set; process with the exclusive plugin 
+				// Exclusive state is set; process with the exclusive plugin
 				if ($exclusive)
 				{
 					$tPluginIndex = $pluginIndex[$exclusive];
@@ -2240,8 +2242,8 @@ class CssMin
 			}
 		}
 		krsort(self::$classIndex);
-		// Only use autoloading if spl_autoload_register() is available and no __autoload() is defined (because 
-		// __autoload() breaks if spl_autoload_register() is used. 
+		// Only use autoloading if spl_autoload_register() is available and no __autoload() is defined (because
+		// __autoload() breaks if spl_autoload_register() is used.
 		if (function_exists("spl_autoload_register") && !is_callable("__autoload"))
 		{
 			spl_autoload_register(array(__CLASS__, "autoload"));
@@ -2444,7 +2446,7 @@ class CssImportImportsMinifierFilter extends aCssMinifierFilter
 							}
 						}
 						/*
-						 * If the media types of the @media at-rule equals the media types defined in the @import 
+						 * If the media types of the @media at-rule equals the media types defined in the @import
 						 * at-rule remove the CssAtMediaStartToken and CssAtMediaEndToken token
 						 */
 						for($ii = 0, $ll = count($import); $ii < $ll; $ii++)
