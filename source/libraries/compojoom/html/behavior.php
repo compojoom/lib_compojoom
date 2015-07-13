@@ -127,15 +127,17 @@ class CompojoomHtmlBehavior
 	/**
 	 * Load our jquery version on 2.5 and the default jquery on j3
 	 *
-	 * @return void
+	 * @param   string  $namespace  The namespace vor CompojoomHTML script add
+	 *
+	 * @return  void
 	 */
-	public static function jquery()
+	public static function jquery($namespace = "libcompojoom")
 	{
 		// Load jQuery first
 		if (JVERSION < 3)
 		{
-			JHTML::_('script', 'media/lib_compojoom/js/jquery.js');
-			JHTML::_('script', 'media/lib_compojoom/js/jquery.noconflict.js');
+			CompojoomHtml::addScriptsToQueue($namespace, 'media/lib_compojoom/js/jquery.js');
+			CompojoomHtml::addScriptsToQueue($namespace, 'media/lib_compojoom/js/jquery.noconflict.js');
 		}
 		else
 		{
@@ -146,12 +148,14 @@ class CompojoomHtmlBehavior
 	/**
 	 * Loads qTip2
 	 *
+	 * @param   string  $namespace  The namespace vor CompojoomHTML script add
+	 *
 	 * @return  void
 	 */
-	public static function qTip2()
+	public static function qTip2($namespace)
 	{
 		// Load CSS
-		JHTML::_('stylesheet', 'media/lib_compojoom/css/jquery.qtip-2.2.1.min.css');
+		CompojoomHtml::addCSSToQueue($namespace, 'media/lib_compojoom/css/jquery.qtip-2.2.1.min.css');
 
 		// Load JS
 		JHTML::_('script', 'media/lib_compojoom/js/jquery.qtip.min.js');
