@@ -26,4 +26,10 @@ defined('_JEXEC') or die('Restricted access');
 		(document, "script", "twitter-wjs");
 	</script>
 </div>
+
+<style type="text/css">
+	.twitter-btn {
+		margin-right: 20px;
+	}
+</style>
 <!-- Twitter end -->
