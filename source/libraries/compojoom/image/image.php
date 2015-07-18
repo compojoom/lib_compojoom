@@ -177,7 +177,7 @@ class CompojoomImage extends JImage
 				// Save thumb file to disk
 				$thumbFileName = $thumbsFolder . '/' . $thumbFileName;
 
-				if ($thumb->toFile($thumbFileName, $imgProperties->type))
+				if ($thumb->toFile($thumbFileName, $imgProperties->type, array('quality' => 60)))
 				{
 					// Return JImage object with thumb path to ease further manipulation
 					$thumb->path = $thumbFileName;
