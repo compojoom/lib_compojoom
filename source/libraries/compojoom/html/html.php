@@ -194,6 +194,7 @@ class CompojoomHtml
 			$url = $cachePath . '/' . $md5 . '.min.css';
 			$minFile = JPATH_ROOT . '/' . $url;
 
+
 			// If the minFile doesn't exist or the minFile time is older than any of the times, let's do our job!
 			if (!file_exists($minFile) || max($times) > filemtime($minFile))
 			{
@@ -204,7 +205,7 @@ class CompojoomHtml
 				foreach ($files as $file)
 				{
 					$css[] = "/* File: " . $file . " */";
-					$css[] = CSSMin::minify(file_get_contents(JPATH_BASE . "/" . $file));
+					$css[] = CSSMin::minify(file_get_contents(JPATH_ROOT . "/" . $file));
 				}
 
 				$mincss = implode("\n", $css);

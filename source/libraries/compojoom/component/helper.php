@@ -28,7 +28,7 @@ class CompojoomComponentHelper
 	 */
 	public static function isInstalled($component)
 	{
-		$folderPath = JPATH_SITE . '/components/' . $component;
+		$folderPath = JPATH_ADMINISTRATOR . '/components/' . $component;
 
 		return JFolder::exists($folderPath);
 	}
