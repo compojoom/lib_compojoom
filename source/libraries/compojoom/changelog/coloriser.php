@@ -32,6 +32,8 @@ class CompojoomChangelogColoriser
 	 */
 	public static function colorise($file, $onlyLast = false)
 	{
+
+
 		$html = '';
 
 		$lines = @file($file);
@@ -41,30 +43,7 @@ class CompojoomChangelogColoriser
 			return $html;
 		}
 
-		$remove = false;
-		foreach($lines as $key => $line)
-		{
-			$line = trim($line);
-
-			$php = substr($line, 0, 5);
-			$closing = substr($line, 0, 2);
-
-			if($php == '<?php')
-			{
-				$remove = true;
-			}
-
-			if($closing == '?>')
-			{
-				unset($lines[$key]);
-				$remove = false;
-			}
-
-			if($remove)
-			{
-				unset($lines[$key]);
-			}
-		}
+		$lines = preg_replace('/<?.*?>/', "", $lines);
 
 		foreach ($lines as $line)
 		{
