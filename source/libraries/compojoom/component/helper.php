@@ -10,6 +10,7 @@
 
 defined('_JEXEC') or die('Restricted access');
 
+
 /**
  * Class CompojoomComponentHelper
  *
@@ -28,6 +29,8 @@ class CompojoomComponentHelper
 	 */
 	public static function isInstalled($component)
 	{
+		jimport('joomla.filesystem.folder');
+
 		$folderPath = JPATH_ADMINISTRATOR . '/components/' . $component;
 
 		return JFolder::exists($folderPath);

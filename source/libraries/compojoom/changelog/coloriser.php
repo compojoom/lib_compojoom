@@ -32,8 +32,6 @@ class CompojoomChangelogColoriser
 	 */
 	public static function colorise($file, $onlyLast = false)
 	{
-
-
 		$html = '';
 
 		$lines = @file($file);
