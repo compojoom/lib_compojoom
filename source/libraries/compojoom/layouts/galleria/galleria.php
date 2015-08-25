@@ -14,12 +14,7 @@ JHTML::stylesheet('media/lib_compojoom/third/font-awesome/css/font-awesome.min.c
 JHtml::stylesheet('media/lib_compojoom/third/galleria/themes/compojoom/galleria.compojoom.css');
 JHtml::script('media/lib_compojoom/third/galleria/galleria.js');
 JHtml::script('media/lib_compojoom/third/galleria/themes/compojoom/galleria.compojoom.js');
-
 ?>
-<style type="text/css">
-	.galleria{ max-width: 1020px; height: 400px; background: #000 }
-</style>
-
 <div class="galleria"></div>
 
 <script type="text/javascript">
