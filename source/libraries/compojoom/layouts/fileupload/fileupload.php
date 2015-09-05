@@ -106,13 +106,13 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
             {% if (!i && !o.options.autoUpload) { %}
                 <button class="btn btn-default btn-xs start" disabled>
                     <i class="fa fa-upload"></i>
-                    <span>Start</span>
+                    <span><?php echo JText::_('LIB_COMPOJOOM_START'); ?></span>
                 </button>
             {% } %}
             {% if (!i) { %}
                 <button class="btn btn-default btn-xs btn-xs cancel pull-left">
                     <i class="fa fa-stop"></i>
-                    <span>Cancel</span>
+                    <span><?php echo JText::_('LIB_COMPOJOOM_CANCEL'); ?></span>
                 </button>
             {% } %}
         </td>
@@ -157,7 +157,7 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
 	        </div>
 		 {% } %}
         {% if (file.error) { %}
-            <div><span class="label label-danger">Error</span> {%=file.error%}</div>
+            <div><span class="label label-danger"><?php echo JText::_('LIB_COMPOJOOM_ERROR'); ?></span> {%=file.error%}</div>
         {% } %}
         </td>
         <td style="text-align: center">
@@ -165,7 +165,7 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
                 <?php if ($canDelete) : ?>
 	                <button class="btn btn-danger btn-xs delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
 	                    <i class="fa fa-trash-o"></i>
-	                    <span>Delete</span>
+	                    <span><?php echo JText::_('LIB_COMPOJOOM_DELETE'); ?></span>
 	                </button>
 	                <div>
 		                <small class="size muted">{%=o.formatFileSize(file.size)%}</small>
@@ -174,7 +174,7 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
             {% } else { %}
                  <button class="btn btn-default btn-xs btn-xs cancel">
                     <i class="fa fa-stop"></i>
-                    <span>Cancel</span>
+                    <span><?php echo JText::_('LIB_COMPOJOOM_CANCEL'); ?></span>
                 </button>
             {% }%}
             {% if (!file.error) { %}
