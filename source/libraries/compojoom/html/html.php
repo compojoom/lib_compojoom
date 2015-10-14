@@ -132,7 +132,7 @@ class CompojoomHtml
 
 			if ($scriptTag)
 			{
-				echo '<script data-inline type="text/javascript" src="' . $fileName . '"></script>' . "\n";
+				echo '<script data-inline type="text/javascript" src="' . $fileName . '" defer="defer"></script>' . "\n";
 			}
 			else
 			{
@@ -146,7 +146,7 @@ class CompojoomHtml
 			{
 				if ($scriptTag)
 				{
-					echo '<script data-inline type="text/javascript" src="' . $file . '"></script>' . "\n";
+					echo '<script data-inline type="text/javascript" src="' . $file . '" defer="defer"></script>' . "\n";
 				}
 				else
 				{
