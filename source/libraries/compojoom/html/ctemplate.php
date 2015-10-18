@@ -47,7 +47,7 @@ class CompojoomHtmlCtemplate
 		}
 
 		$user = JFactory::getUser();
-		$gravatar = CompojoomHtmlCtemplate::get_gravatar($user->email);
+		$gravatar = self::get_gravatar($user->email);
 
 		$html[] = '<div class="compojoom-bootstrap" style="clear: both">';
 
@@ -65,7 +65,7 @@ class CompojoomHtmlCtemplate
 		$html[] = '<div class="c-container">
 						<div class="logo-brand header sidebar rows">
 							<div class="c-extension-title logo pull-left">
-								<h1><a href="' . JRoute::_("index.php?option=" . JFactory::getApplication()->input->get('option')) . '">' . JText::_($extension) .'</a></h1>
+								<h1><a href="' . JRoute::_("index.php?option=" . JFactory::getApplication()->input->get('option')) . '">' . JText::_($extension) . '</a></h1>
 							</div>
 							<div class="c-toolbar-holder">
 								<div class="c-toolbar pull-left">
@@ -236,11 +236,11 @@ class CompojoomHtmlCtemplate
 							<h1>' . JText::_($title) .' <small>' . JText::_($slogan) . '</small></h1>
 						</div>';
 			$app = JFactory::getApplication();
+
 			if(!$app->isSite())
 			{
-				$app->JComponentTitle = $html;
+				$app->JComponentTitle = $title;
 				JFactory::getDocument()->setTitle(JFactory::getConfig()->get('sitename') . ' - ' . JText::_('JADMINISTRATION') . ' - ' . JText::_($title));
-
 			}
 		}
 
