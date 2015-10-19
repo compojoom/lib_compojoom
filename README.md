@@ -71,7 +71,7 @@ $profile is the profile system name. Generally the value from profile_link in yo
 $id is the user id that we are generating the link for
 
 ## COPYRIGHT AND DISCLAIMER
-Compojoom library -  Copyright (c) 2008-2013 Compojoom.com
+Compojoom library -  Copyright (c) 2008-2015 Compojoom.com
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the
 Free Software Foundation, either version 3 of the License, or (at your option) any later version.

@@ -1,0 +1,22 @@
+{
+  "name": "compojoom/lib_compojoom",
+  "description": "Compojoom Libraries and Helpers for Joomla!",
+  "license": "GPL",
+  "authors": [
+    {
+      "name": "Daniel Dimitrov",
+      "email": "daniel@compojoom.com"
+    },
+    {
+      "name": "Yves Hoppe",
+      "email": "yves@compojoom.com"
+    }
+  ],
+  "require"    : {
+    "php": ">=5.3.10"
+  },
+  "require-dev": {
+    "php": ">=5.4.0",
+    "yvesh/jbuild": "dev-master"
+  }
+}

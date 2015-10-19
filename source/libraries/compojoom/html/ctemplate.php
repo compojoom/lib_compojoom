@@ -158,7 +158,7 @@ class CompojoomHtmlCtemplate
 
 				$html[] = '<ul' . $style . '>';
 
-				foreach($m['children'] as $kc => $c)
+				foreach ($m['children'] as $kc => $c)
 				{
 					$act = "";
 
@@ -233,7 +233,7 @@ class CompojoomHtmlCtemplate
 		if (!empty($title))
 		{
 			$html[] = '<div class="page-heading animated fadeInDownBig">
-							<h1>' . JText::_($title) .' <small>' . JText::_($slogan) . '</small></h1>
+							<h1 id="ctitle">' . JText::_($title) .' <small>' . JText::_($slogan) . '</small></h1>
 						</div>';
 			$app = JFactory::getApplication();
 
