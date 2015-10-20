@@ -1,5 +1,6 @@
 Changelog
 
++ supported drivers pdo
 # missing translations in the fileupload
 # check if exif_read_data exists
 ~ updating blueimp fileupload and adding support for Chrome resizing
