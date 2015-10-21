@@ -17,6 +17,8 @@
   },
   "require-dev": {
     "php": ">=5.4.0",
-    "yvesh/jbuild": "dev-master"
+    "yvesh/jbuild": "dev-master",
+    "codegyre/robo": "0.5.*",
+    "joomla-projects/robo": "dev-master"
   }
 }
