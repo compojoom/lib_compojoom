@@ -457,7 +457,7 @@ class CompojoomModelMultimedia extends JModelLegacy
 	 * Deletes a file from the disk and from the database
 	 *
 	 * @param   string  $file  - the filename
-	 * @param   int     $id    - the userid
+	 * @param   int     $id    - the itemid
 	 *
 	 * @return bool
 	 */
