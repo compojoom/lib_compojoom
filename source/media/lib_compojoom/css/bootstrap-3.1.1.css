@@ -1717,10 +1717,14 @@
 }
 .compojoom-bootstrap .radio label,
 .compojoom-bootstrap .checkbox label {
-  display: inline;
   font-weight: normal;
   cursor: pointer;
 }
+
+.compojoom-bootstrap .checkbox label {
+  display: inline;
+}
+
 .compojoom-bootstrap .radio input[type="radio"],
 .compojoom-bootstrap .radio-inline input[type="radio"],
 .compojoom-bootstrap .checkbox input[type="checkbox"],
@@ -1741,6 +1745,11 @@
   vertical-align: middle;
   cursor: pointer;
 }
+
+.compojoom-bootstrap .radio-inline label {
+  display: inline-block;
+}
+
 .compojoom-bootstrap .radio-inline + .radio-inline,
 .compojoom-bootstrap .checkbox-inline + .checkbox-inline {
   margin-top: 0;
