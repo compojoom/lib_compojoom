@@ -54,7 +54,7 @@ class CompojoomModelCustomfieldsconfig extends JModelList
 			$query->clear();
 			$query->select('f.*')->from('#__compojoom_customfields AS f')->where($db->qn('f.show') . '=' . $db->q('category'))
 				->innerJoin('#__compojoom_customfields_cats AS c ON f.id = c.compojoom_customfields_id')
-				->where($db->qn('c.catid') . ' = ' . $db->q($catid))
+				->where(CompojoomQueryHelper::in('c.catid', is_array($catid) ? $catid : array($catid), $db))
 				->where($db->qn('f.enabled') . ' = ' . $db->q(1));
 
 			if ($operator == "LIKE")
