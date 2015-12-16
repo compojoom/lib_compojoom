@@ -55,6 +55,10 @@ class RoboFile extends \Robo\Tasks
 	 */
 	public function build($params = ['dev' => false])
 	{
+		// Library cache
+		$this->_deleteDir(__DIR__ . '/source/media/lib_compojoom/cache');
+		$this->_mkdir(__DIR__ . '/source/media/lib_compojoom/cache');
+
 		$this->taskBuild($params)->run();
 	}
 }
