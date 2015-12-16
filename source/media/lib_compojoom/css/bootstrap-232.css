@@ -966,40 +966,64 @@
 .compojoom-bootstrap .controls-row [class*="span"] + [class*="span"] {
 	margin-left: 20px;
 }
-.compojoom-bootstrap input.span12, textarea.span12, .uneditable-input.span12 {
+.compojoom-bootstrap input.span12,
+.compojoom-bootstrap textarea.span12,
+.compojoom-bootstrap .uneditable-input.span12 {
 	width: 926px;
 }
-.compojoom-bootstrap input.span11, textarea.span11, .uneditable-input.span11 {
+.compojoom-bootstrap input.span11,
+.compojoom-bootstrap textarea.span11,
+.compojoom-bootstrap .uneditable-input.span11 {
 	width: 846px;
 }
-.compojoom-bootstrap input.span10, textarea.span10, .uneditable-input.span10 {
+.compojoom-bootstrap input.span10,
+.compojoom-bootstrap textarea.span10,
+.compojoom-bootstrap .uneditable-input.span10 {
 	width: 766px;
 }
-.compojoom-bootstrap input.span9, textarea.span9, .uneditable-input.span9 {
+.compojoom-bootstrap input.span9,
+.compojoom-bootstrap textarea.span9,
+.compojoom-bootstrap .uneditable-input.span9 {
 	width: 686px;
 }
-.compojoom-bootstrap input.span8, textarea.span8, .uneditable-input.span8 {
+.compojoom-bootstrap input.span8,
+.compojoom-bootstrap textarea.span8,
+.compojoom-bootstrap .uneditable-input.span8 {
 	width: 606px;
 }
-.compojoom-bootstrap input.span7, textarea.span7, .uneditable-input.span7 {
+.compojoom-bootstrap input.span7,
+.compojoom-bootstrap textarea.span7,
+.compojoom-bootstrap .uneditable-input.span7 {
 	width: 526px;
 }
-.compojoom-bootstrap input.span6, textarea.span6, .uneditable-input.span6 {
+.compojoom-bootstrap input.span6,
+.compojoom-bootstrap textarea.span6,
+.compojoom-bootstrap .uneditable-input.span6 {
 	width: 446px;
 }
-.compojoom-bootstrap input.span5, textarea.span5, .uneditable-input.span5 {
+.compojoom-bootstrap input.span5,
+.compojoom-bootstrap textarea.span5,
+.compojoom-bootstrap .uneditable-input.span5 {
 	width: 366px;
 }
-.compojoom-bootstrap input.span4, textarea.span4, .uneditable-input.span4 {
+.compojoom-bootstrap input.span4,
+.compojoom-bootstrap textarea.span4,
+.compojoom-bootstrap .uneditable-input.span4 {
 	width: 286px;
 }
-.compojoom-bootstrap input.span3, textarea.span3, .uneditable-input.span3 {
+.compojoom-bootstrap input.span3,
+.compojoom-bootstrap textarea.span3,
+.compojoom-bootstrap .uneditable-input.span3 {
 	width: 206px;
 }
-.compojoom-bootstrap input.span2, textarea.span2, .uneditable-input.span2 {
+.compojoom-bootstrap input.span2,
+.compojoom-bootstrap textarea.span2,
+.compojoom-bootstrap .uneditable-input.span2 {
 	width: 126px;
 }
-.compojoom-bootstrap input.span1, textarea.span1, .uneditable-input.span1 {
+.compojoom-bootstrap input.span1,
+.compojoom-bootstrap textarea.span1,
+.compojoom-bootstrap .uneditable-input.span1 {
 	width: 46px;
 }
 .compojoom-bootstrap .controls-row {
@@ -4157,6 +4181,35 @@
 	display: inherit !important;
 }
 
+@media (min-width: 768px) and (max-width: 979px) {
+	.compojoom-bootstrap .hidden-desktop {
+		display: inherit !important;
+	}
+	.compojoom-bootstrap .visible-desktop {
+		display: none !important;
+	}
+	.compojoom-bootstrap .visible-tablet {
+		display: inherit !important;
+	}
+	.compojoom-bootstrap .hidden-tablet {
+		display: none !important;
+	}
+}
+@media (max-width: 767px) {
+	.compojoom-bootstrap .hidden-desktop {
+		display: inherit !important;
+	}
+	.compojoom-bootstrap .visible-desktop {
+		display: none !important;
+	}
+	.compojoom-bootstrap .visible-phone {
+		display: inherit !important;
+	}
+	.compojoom-bootstrap .hidden-phone {
+		display: none !important;
+	}
+}
+
 .compojoom-bootstrap .small {
 	font-size: 11px;
 	margin: 0;
@@ -5482,4 +5535,89 @@
 }
 .compojoom-bootstrap .text-center {
 	text-align: center;
+}
+
+
+@media (max-width: 767px) {
+	.compojoom-bootstrap body {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.compojoom-bootstrap .navbar-fixed-top,
+	.compojoom-bootstrap .navbar-fixed-bottom,
+	.compojoom-bootstrap .navbar-static-top {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+	.compojoom-bootstrap .container-fluid {
+		padding: 0;
+	}
+	.compojoom-bootstrap .dl-horizontal dt {
+		float: none;
+		clear: none;
+		.compojoom-bootstrap width: auto;
+		text-align: left;
+	}
+	.compojoom-bootstrap .dl-horizontal dd {
+	.compojoom-bootstrap 	.compojoom-bootstrap margin-left: 0;
+	}
+	.compojoom-bootstrap .container {
+		width: auto;
+	}
+	.compojoom-bootstrap .row-fluid {
+		width: 100%;
+	}
+	.compojoom-bootstrap .row,
+	.compojoom-bootstrap .thumbnails {
+		margin-left: 0;
+	}
+	.compojoom-bootstrap .thumbnails > li {
+		float: none;
+		margin-left: 0;
+	}
+	.compojoom-bootstrap [class*="span"],
+	.compojoom-bootstrap .uneditable-input[class*="span"],
+	.compojoom-bootstrap .row-fluid [class*="span"] {
+		float: none;
+		display: block;
+		width: 100%;
+		margin-left: 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.compojoom-bootstrap .span12,
+	.compojoom-bootstrap .row-fluid .span12 {
+		width: 100%;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.compojoom-bootstrap .row-fluid [class*="offset"]:first-child {
+		margin-left: 0;
+	}
+	.compojoom-bootstrap .input-large,
+	.compojoom-bootstrap .input-xlarge,
+	.compojoom-bootstrap .input-xxlarge,
+	.compojoom-bootstrap input[class*="span"],
+	.compojoom-bootstrap select[class*="span"],
+	.compojoom-bootstrap textarea[class*="span"],
+	.compojoom-bootstrap .uneditable-input {
+		display: block;
+		width: 100%;
+		min-height: 28px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.compojoom-bootstrap .input-prepend input,
+	.compojoom-bootstrap .input-append input,
+	.compojoom-bootstrap .input-prepend input[class*="span"],
+	.compojoom-bootstrap .input-append input[class*="span"] {
+		display: inline-block;
+		width: auto;
+	}
+	.controls-row [class*="span"] + [class*="span"] {
+		margin-left: 0;
+	}
 }
