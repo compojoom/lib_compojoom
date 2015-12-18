@@ -438,7 +438,7 @@ class CompojoomModelUpdate extends JModelLegacy
 	 */
 	public function updateConfiguration()
 	{
-		$settings = JPATH_COMPONENT_ADMINISTRATOR . '/config.xml';
+		$settings = JPATH_ADMINISTRATOR . '/components/' . $this->component . '/config.xml';
 		$json = array();
 		$form = new JForm('config');
 		$form->loadFile($settings, true, '/config');
