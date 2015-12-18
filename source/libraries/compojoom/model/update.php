@@ -434,7 +434,7 @@ class CompojoomModelUpdate extends JModelLegacy
 	 * the db has all the current values for each setting even if the
 	 * user doesn't edit his config.
 	 *
-	 * @return void
+	 * @return array - the parameters
 	 */
 	public function updateConfiguration()
 	{
@@ -466,13 +466,28 @@ class CompojoomModelUpdate extends JModelLegacy
 
 		$merged = array_merge($json, $params);
 
+		$this->updateParams($merged);
+
+		return $merged;
+	}
+
+	/**
+	 * Save the component params to the database
+	 *
+	 * @param   array  $params  - the parameters to save in the DB
+	 *
+	 * @return void
+	 */
+	public function updateParams($params)
+	{
 		// Now let's update the Database
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true)
-			->update($db->qn('#__extensions'))
-			->set($db->qn('params') . '=' . $db->q(json_encode($merged)))
-			->where($db->qn('element') . '=' . $db->q($this->component))
-			->where($db->qn('type') . '=' . $db->q('component'));
+				->update($db->qn('#__extensions'))
+				->set($db->qn('params') . '=' . $db->q(json_encode($params)))
+				->where($db->qn('element') . '=' . $db->q($this->component))
+				->where($db->qn('type') . '=' . $db->q('component'));
+
 		$db->setQuery($query);
 		$db->execute();
 	}
