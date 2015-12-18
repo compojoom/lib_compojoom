@@ -103,6 +103,9 @@ class CompojoomModelMultimedia extends JModelLegacy
 			// Some cameras just add whitespace, let's change this
 			$file['name'] = str_replace(' ', '_', $file['name']);
 
+			// Some users are uploading files with umlauts, change them to normal characters, otherwise we get an error on upload
+			$file['name'] = preg_replace("/&([a-z])[a-z]+;/i", "$1", htmlentities($file['name']));
+
 			// The user doesn't seem to have upload privilegies
 			if (!$canUpload)
 			{
