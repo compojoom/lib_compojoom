@@ -23,12 +23,15 @@ class CompojoomQueryHelper
 	 * @param   string  $column  - the column name
 	 * @param   array   $array   - the array to implode and escape
 	 * @param   object  $db      - the db object
+	 * @param   bool    $not     - Use NOT IN instead of IN
 	 *
 	 * @return string
 	 */
-	public static function in($column, $array, $db)
+	public static function in($column, $array, $db, $not = false)
 	{
-		return $db->qn($column) . ' IN (' .
+		$n = ($not) ? " NOT " : "";
+
+		return $db->qn($column) . $n . ' IN (' .
 					implode(',', array_map(
 							function($v) use ($db){
 								return $db->q($v);
