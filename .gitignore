@@ -27,7 +27,6 @@ Desktop.ini
 *~
 
 # composer
-composer.lock
 composer.phar
 vendor/*
 
@@ -50,3 +49,7 @@ selenium.log
 # JBuild related files
 dist/
 jbuild.ini
+jorobo.ini
+
+# Library related files
+source/media/lib_compojoom/cache/*
