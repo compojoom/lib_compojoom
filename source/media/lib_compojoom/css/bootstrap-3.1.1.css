@@ -331,84 +331,10 @@
 .compojoom-bootstrap .h6 .small{
   font-weight: normal;
   line-height: 1;
-  color: #999;
 }
-.compojoom-bootstrap h1,
-.compojoom-bootstrap .h1,
-.compojoom-bootstrap h2,
-.compojoom-bootstrap .h2,
-.compojoom-bootstrap h3,
-.compojoom-bootstrap .h3{
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-.compojoom-bootstrap h1 small,
-.compojoom-bootstrap .h1 small,
-.compojoom-bootstrap h2 small,
-.compojoom-bootstrap .h2 small,
-.compojoom-bootstrap h3 small,
-.compojoom-bootstrap .h3 small,
-.compojoom-bootstrap h1 .small,
-.compojoom-bootstrap .h1 .small,
-.compojoom-bootstrap h2 .small,
-.compojoom-bootstrap .h2 .small,
-.compojoom-bootstrap h3 .small,
-.compojoom-bootstrap .h3 .small{
-  font-size: 65%;
-}
-.compojoom-bootstrap h4,
-.compojoom-bootstrap .h4,
-.compojoom-bootstrap h5,
-.compojoom-bootstrap .h5,
-.compojoom-bootstrap h6,
-.compojoom-bootstrap .h6 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.compojoom-bootstrap h4 small,
-.compojoom-bootstrap .h4 small,
-.compojoom-bootstrap h5 small,
-.compojoom-bootstrap .h5 small,
-.compojoom-bootstrap h6 small,
-.compojoom-bootstrap .h6 small,
-.compojoom-bootstrap h4 .small,
-.compojoom-bootstrap .h4 .small,
-.compojoom-bootstrap h5 .small,
-.compojoom-bootstrap .h5 .small,
-.compojoom-bootstrap h6 .small,
-.compojoom-bootstrap .h6 .small{
-  font-size: 75%;
-}
-.compojoom-bootstrap h1,
-.compojoom-bootstrap .h1{
-  font-size: 36px;
-}
-.compojoom-bootstrap h2,
-.compojoom-bootstrap .h2 {
-  font-size: 30px;
-}
-.compojoom-bootstrap h3,
-.compojoom-bootstrap .h3 {
-  font-size: 24px;
-}
-.compojoom-bootstrap h4,
-.compojoom-bootstrap .h4 {
-  font-size: 18px;
-}
-.compojoom-bootstrap h5,
-.compojoom-bootstrap .h5 {
-  font-size: 14px;
-}
-.compojoom-bootstrap h6,
-.compojoom-bootstrap .h6 {
-  font-size: 12px;
-}
-.compojoom-bootstrap p {
-  margin: 0 0 10px;
-}
+
 .compojoom-bootstrap .lead {
   margin-bottom: 20px;
-  font-size: 16px;
   font-weight: 200;
   line-height: 1.4;
 }

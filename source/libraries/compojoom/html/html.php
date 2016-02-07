@@ -41,14 +41,32 @@ class CompojoomHtml
 		{
 			foreach ($scripts as $value)
 			{
-				self::$queue[$key][$value] = $value;
+				self::addScriptToQueue($key, $value);
 			}
 		}
 
 		if (is_string($scripts))
 		{
-			self::$queue[$key][] = $scripts;
+			self::addScriptToQueue($key, $scripts);
 		}
+	}
+
+	/**
+	 * Add a single script to que (if it's not already added)
+	 *
+	 * @param   string  $key     - the key for the storage
+	 * @param   mixed   $script  - file name
+	 *
+	 * @return  void
+	 */
+	private static function addScriptToQueue($key, $script)
+	{
+		if (isset(self::$queue[$key]) && in_array($script, self::$queue[$key]))
+		{
+			return;
+		}
+
+		self::$queue[$key][] = $script;
 	}
 
 
@@ -66,14 +84,33 @@ class CompojoomHtml
 		{
 			foreach ($css as $value)
 			{
-				self::$cssqueue[$key][$value] = $value;
+				self::addSingleCSSToQueue($key, $value);
 			}
 		}
 
 		if (is_string($css))
 		{
-			self::$cssqueue[$key][] = $css;
+			self::addSingleCSSToQueue($key, $css);
 		}
+	}
+
+
+	/**
+	 * Add a single script to que (if it's not already added)
+	 *
+	 * @param   string  $key     - the key for the storage
+	 * @param   mixed   $script  - file name
+	 *
+	 * @return  void
+	 */
+	private static function addSingleCSSToQueue($key, $script)
+	{
+		if (isset(self::$cssqueue[$key]) && in_array($script, self::$cssqueue[$key]))
+		{
+			return;
+		}
+
+		self::$cssqueue[$key][] = $script;
 	}
 
 	/**
@@ -128,7 +165,7 @@ class CompojoomHtml
 		// Let's merge and minify if we need to
 		if ($minify)
 		{
-			$fileName =	CompojoomShrink::shrink($files, $cachePath);
+			$fileName = CompojoomShrink::shrink($files, $cachePath);
 
 			if ($scriptTag)
 			{
