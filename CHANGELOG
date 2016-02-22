@@ -1,4 +1,17 @@
-Changelog
+Changelog lib_compojoom
+
+4.1.0
+
++ Less files for bootstrap and compojoom styles
++ Robo tasks for less and minify
++ Added yasmine (JavaScript bdd testing support)
++ New recatpcha funciton
+# Updated to bootstrap to latest release: 3.3.6
+# Refactored behavior php
+# Minor fixes and improvements
+# Updated composer.json with new less compiler and minify
+
+4.0.50
 
 + added recaptcha function
 + added explanation field
@@ -33,6 +46,10 @@ lib_compojoom 4.0.7
 # Small fixes in the backend (style.css)
 + Added qTip 2
 
-lib_compojoom 4.0.0
+4.0.0
+
+see git history
+
+1.0.0
 
 + initial release

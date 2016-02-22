@@ -1,1 +1,59 @@
 /* Compojoom css and bootstrap overwrites */
+.compojoom-bootstrap .top-5 {
+  margin-top: 5px;
+}
+.compojoom-bootstrap .top-7 {
+  margin-top: 7px;
+}
+.compojoom-bootstrap .top-10 {
+  margin-top: 10px;
+}
+.compojoom-bootstrap .top-15 {
+  margin-top: 15px;
+}
+.compojoom-bootstrap .top-17 {
+  margin-top: 17px;
+}
+.compojoom-bootstrap .top-30 {
+  margin-top: 30px;
+}
+.compojoom-bootstrap .margin-bottom-5 {
+  margin-bottom: 5px;
+}
+.compojoom-bootstrap .margin-bottom-7 {
+  margin-bottom: 7px;
+}
+.compojoom-bootstrap .margin-bottom-10 {
+  margin-bottom: 10px;
+}
+.compojoom-bootstrap .margin-bottom-15 {
+  margin-bottom: 15px;
+}
+.compojoom-bootstrap .margin-bottom-17 {
+  margin-bottom: 17px;
+}
+.compojoom-bootstrap .margin-bottom-30 {
+  margin-bottom: 30px;
+}
+.compojoom-bootstrap .checkbox label {
+  display: inline;
+}
+.compojoom-bootstrap .form-group .controls {
+  margin-left: 0;
+}
+.compojoom-bootstrap .minicolors-theme-bootstrap .minicolors-input {
+  width: 110px;
+}
+.compojoom-bootstrap .field-media-input {
+  margin: 0;
+}
+.compojoom-bootstrap .input-append .add-on {
+  height: 34px;
+  line-height: 28px;
+}
+.compojoom-bootstrap .nav-tabs.nav-justified > li > a {
+  border-radius: 0;
+}
+.compojoom-bootstrap .table > tbody > tr > td {
+  vertical-align: middle;
+}

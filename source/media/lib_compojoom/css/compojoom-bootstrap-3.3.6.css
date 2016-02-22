@@ -7,7 +7,7 @@
  */
   /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
   /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
-  /*# sourceMappingURL=bootstrap.css.map */
+  /*# sourceMappingURL=compojoom-bootstrap-3.3.6.css.map */
 }
 .compojoom-bootstrap html {
   font-family: sans-serif;
@@ -1077,17 +1077,6 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.compojoom-bootstrap html {
-  font-size: 10px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-.compojoom-bootstrap body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.42857143;
-  color: #333;
-  background-color: #fff;
-}
 .compojoom-bootstrap input,
 .compojoom-bootstrap button,
 .compojoom-bootstrap select,
@@ -1095,20 +1084,6 @@
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-}
-.compojoom-bootstrap a {
-  color: #337ab7;
-  text-decoration: none;
-}
-.compojoom-bootstrap a:hover,
-.compojoom-bootstrap a:focus {
-  color: #23527c;
-  text-decoration: underline;
-}
-.compojoom-bootstrap a:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
 }
 .compojoom-bootstrap figure {
   margin: 0;
@@ -6084,7 +6059,6 @@
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: normal;

@@ -2,7 +2,7 @@ Compojoom - Utilities library for Joomla
 =======================================================
 [![Build Status](http://test01.compojoom.com/api/badges/compojoom/lib_compojoom/status.svg)](http://test01.compojoom.com/compojoom/lib_compojoom)
 
-The goal of this library is to ease the development process by abstracting commonly used
+The goal of this library is to ease the Joomla extension development process by abstracting commonly used
 functions in one place.
 
 ## USAGE##
@@ -23,7 +23,7 @@ the following tools:
 
 - The PHP CLI binary in your path
 
-- Command line Subversion and Git binaries(*)
+- Git binaries(*)
 
 - Installed composer
 
