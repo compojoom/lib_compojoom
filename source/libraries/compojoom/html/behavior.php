@@ -85,7 +85,7 @@ class CompojoomHtmlBehavior
 	/**
 	 * Load bootstrap and overrides
 	 *
-	 * @param   bool    $bootstrap  - Load the bootstrap library (not only overrides)
+	 * @param   bool  $bootstrap  - Load the bootstrap library (not only overrides)
 	 *
 	 * @return  void
 	 */
