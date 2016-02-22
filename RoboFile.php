@@ -59,6 +59,39 @@ class RoboFile extends \Robo\Tasks
 		$this->_deleteDir(__DIR__ . '/source/media/lib_compojoom/cache');
 		$this->_mkdir(__DIR__ . '/source/media/lib_compojoom/cache');
 
+		$this->compileLess();
+		$this->minifyCss();
+
 		$this->taskBuild($params)->run();
+	}
+
+	/**
+	 * Compile less to css
+	 */
+	public function compileLess()
+	{
+		$this->taskLess([
+			'source/media/lib_compojoom/less/compojoom-bootstrap.less' => 'source/media/lib_compojoom/css/compojoom-bootstrap-3.3.6.css',
+			'source/media/lib_compojoom/less/compojoom.less' => 'source/media/lib_compojoom/css/compojoom.css'
+		])
+			->importDir('source/media/lib_compojoom/less')
+			->compiler('lessphp')
+			->run();
+	}
+
+	/**
+	 * Minify css files
+	 */
+	public function minifyCss()
+	{
+		// Bootstrap
+		$this->taskMinify( 'source/media/lib_compojoom/css/compojoom-bootstrap-3.3.6.css' )
+			->to('source/media/lib_compojoom/css/compojoom-bootstrap-3.3.6.min.css')
+			->run();
+
+		// Compojoom fixes
+		$this->taskMinify( 'source/media/lib_compojoom/css/compojoom.css' )
+			->to('source/media/lib_compojoom/css/compojoom.min.css')
+			->run();
 	}
 }

@@ -17,81 +17,48 @@ defined('_JEXEC') or die('Restricted access');
  */
 class CompojoomHtmlBehavior
 {
+
 	/**
-	 * Loads our bootstrap 3.1.1 JS and css
+	 * Loads the backend template JS and css
 	 *
 	 * @param   bool  $js          - Load JS
 	 * @param   bool  $ctemplate   - Load boostrap backend template
 	 * @param   bool  $thirdparty  - Load third party js for template
-	 * @param   bool  $debug       - Debug mode? e.g. load non minimized versions?
 	 * @param   bool  $minifyJs    - Minify js
 	 * @param   bool  $minifyCss   - Minify css
 	 *
 	 * @return void
 	 */
-	public static function bootstrap31($js = true, $ctemplate = true, $thirdparty = true, $debug = false, $minifyJs = false, $minifyCss = false)
+	public static function lanceng($js = true, $ctemplate = true, $thirdparty = true, $minifyJs = false, $minifyCss = false, $key = 'libcompojoom')
 	{
-		// Always load the strapper css
-		CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/css/bootstrap-3.1.1.css');
-
-		if (JVERSION < '3')
-		{
-			CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/css/bootstrap-j25-fixes.css');
-		}
+		self::bootstrap($key);
 
 		if ($js)
 		{
-			if (JVERSION < '3')
-			{
-				self::jquery();
-
-				// Load bootstrap
-				if ($debug)
-				{
-					JHTML::_('script', 'media/lib_compojoom/js/bootstrap-3.1.1.js');
-				}
-				else
-				{
-					CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/js/bootstrap-3.1.1.min.js');
-				}
-
-				// Load radio buttons JS
-				CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/js/jquery.radiobtns.js');
-			}
-			else
-			{
-				// Load native
-				JHtml::_('jquery.framework',  true);
-				JHtml::_('bootstrap.framework', true);
-			}
-
 			// Load compojoom js
-			CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/js/jquery.cjoom.js');
+			CompojoomHtml::addScriptsToQueue($key, 'media/lib_compojoom/js/jquery.cjoom.js');
 
 			// Load third party scripts and css? (Required for Template)
 			if ($thirdparty)
 			{
-				// Load 3rd Party css
-
 				// Font Awesome
-				CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/third/font-awesome/css/font-awesome.min.css');
-
+				CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/third/font-awesome/css/font-awesome.min.css');
 
 				// Dialogs with effects / CSS transitions and animations
-				CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/third/nifty-modal/css/component.css');
+				CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/third/nifty-modal/css/component.css');
 
 
 				// Popups (more..) but nice ones -> responsive, http://dimsemenov.com/plugins/magnific-popup/
-				CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/third/magnific-popup/magnific-popup.css');
+				CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/third/magnific-popup/magnific-popup.css');
 
 				// Datepicker for Bootstrap by Stefan Petre, http://www.eyecon.ro/bootstrap-datepicker/
-				CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/third/datepicker/css/datepicker.css');
+				CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/third/datepicker/css/datepicker.css');
 
 				// Load 3rd Party scripts for Laceng
-				CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/third/slimscroll/jquery.slimscroll.min.js');
-				CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/third/magnific-popup/jquery.magnific-popup.min.js');
-				CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/third/input/bootstrap.file-input.js');
-				CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/third/datepicker/js/bootstrap-datepicker.js');
+				CompojoomHtml::addScriptsToQueue($key, 'media/lib_compojoom/third/slimscroll/jquery.slimscroll.min.js');
+				CompojoomHtml::addScriptsToQueue($key, 'media/lib_compojoom/third/magnific-popup/jquery.magnific-popup.min.js');
+				CompojoomHtml::addScriptsToQueue($key, 'media/lib_compojoom/third/input/bootstrap.file-input.js');
+				CompojoomHtml::addScriptsToQueue($key, 'media/lib_compojoom/third/datepicker/js/bootstrap-datepicker.js');
 
 				JHTML::_('script', 'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js');
 				JHTML::_('script', 'https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js');
@@ -100,49 +67,43 @@ class CompojoomHtmlBehavior
 			// Load backend template
 			if ($ctemplate)
 			{
-				CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/css/style.css');
-				CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/css/animate.css');
-				CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/css/style-responsive.css');
-
-				if (JVERSION < 3)
-				{
-					CompojoomHtml::addCSSToQueue('libcompojoom', 'media/lib_compojoom/css/j25style.css');
-					CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/js/jquery.radiobtns.js');
-					CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/js/jquery.cjoom25.js');
-				}
-
-				CompojoomHtml::addScriptsToQueue('libcompojoom', 'media/lib_compojoom/js/lanceng.js');
+				CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/css/animate.css');
+				CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/css/compojoom-backend-style.css');
+				CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/css/compojoom-backend-style-responsive.css');
+				CompojoomHtml::addScriptsToQueue($key, 'media/lib_compojoom/js/lanceng.js');
 			}
 		}
-
-		// Load css & js
-		CompojoomHtml::external(
-			CompojoomHtml::getScriptQueue('libcompojoom'),
-			CompojoomHtml::getCSSQueue('libcompojoom'),
-			'media/lib_compojoom/cache', $minifyJs,
-			$minifyCss
-		);
 	}
 
 	/**
-	 * Load our jquery version on 2.5 and the default jquery on j3
+	 * Load bootstrap and overrides
 	 *
-	 * @param   string  $namespace  The namespace vor CompojoomHTML script add
+	 * @param   string  $key        - The namespace / key for the minifying (default libcompojoom)
+	 * @param   bool    $overrides  - Load the bootstrap library (not only overrides)
 	 *
 	 * @return  void
 	 */
-	public static function jquery($namespace = "libcompojoom")
+	public static function bootstrap($key = 'libcompojoom', $bootstrap = true)
 	{
-		// Load jQuery first
-		if (JVERSION < 3)
+		if ($bootstrap)
 		{
-			CompojoomHtml::addScriptsToQueue($namespace, 'media/lib_compojoom/js/jquery.js');
-			CompojoomHtml::addScriptsToQueue($namespace, 'media/lib_compojoom/js/jquery.noconflict.js');
+			CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/css/compojoom-bootstrap-3.3.6.min.css');
 		}
-		else
-		{
-			JHtml::_('jquery.framework');
-		}
+
+		CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/css/compojoom.min.css');
+
+		// Load native (for js)
+		JHtml::_('bootstrap.framework', true);
+	}
+
+	/**
+	 * Load qjuery
+	 *
+	 * @return  void
+	 */
+	public static function jquery()
+	{
+		JHtml::_('jquery.framework');
 	}
 
 	/**

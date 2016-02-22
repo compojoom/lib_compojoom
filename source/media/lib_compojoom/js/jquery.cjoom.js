@@ -5,7 +5,7 @@
  */
 (function ($) {
 	$(document).ready(function () {
-		$('*[rel=tooltip]').tooltip()
+		$('*[rel=tooltip]').tooltip();
 		$('.hasTooltip').tooltip({"html": true,"container": "body"});
 	})
 })(jQuery);
