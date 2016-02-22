@@ -29,7 +29,7 @@ class CompojoomHtmlBehavior
 	 *
 	 * @return void
 	 */
-	public static function lanceng($js = true, $ctemplate = true, $thirdparty = true, $minifyJs = false, $minifyCss = false, $key = 'libcompojoom')
+	public static function lanceng($js = true, $ctemplate = true, $thirdparty = true, $key = 'lanceng')
 	{
 		self::bootstrap($key);
 
@@ -73,13 +73,24 @@ class CompojoomHtmlBehavior
 				CompojoomHtml::addScriptsToQueue($key, 'media/lib_compojoom/js/lanceng.js');
 			}
 		}
+
+		if ($key == "lanceng")
+		{
+			// Minify css & js (All items should be in que right now)
+			CompojoomHtml::external(
+				CompojoomHtml::getScriptQueue('lanceng'),
+				CompojoomHtml::getCSSQueue('lanceng'),
+				'media/lib_compojoom/cache', true,
+				true
+			);
+		}
 	}
 
 	/**
 	 * Load bootstrap and overrides
 	 *
 	 * @param   string  $key        - The namespace / key for the minifying (default libcompojoom)
-	 * @param   bool    $overrides  - Load the bootstrap library (not only overrides)
+	 * @param   bool    $bootstrap  - Load the bootstrap library (not only overrides)
 	 *
 	 * @return  void
 	 */
@@ -88,12 +99,13 @@ class CompojoomHtmlBehavior
 		if ($bootstrap)
 		{
 			CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/css/compojoom-bootstrap-3.3.6.min.css');
+
+			// Load native (for js)
+			JHtml::_('bootstrap.framework', true);
+			self::jquery();
 		}
 
 		CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/css/compojoom.min.css');
-
-		// Load native (for js)
-		JHtml::_('bootstrap.framework', true);
 	}
 
 	/**
