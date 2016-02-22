@@ -27,7 +27,7 @@ class CompojoomControllerCustomfield extends JControllerForm
 	 *
 	 * @return boolean
 	 */
-	protected function postSaveHook($model, $validData = array())
+	protected function postSaveHook(JModelLegacy $model, $validData = array())
 	{
 		return $model->onAfterSave($model, $validData);
 	}

@@ -23,7 +23,7 @@ require_once JPATH_BASE . '/vendor/autoload.php';
  */
 class RoboFile extends \Robo\Tasks
 {
-	use \JBuild\Tasks\loadTasks;
+	use \Joomla\Jorobo\Tasks\loadTasks;
 
 	/**
 	 * Initialize Robo

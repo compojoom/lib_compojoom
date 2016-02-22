@@ -1,5 +1,6 @@
 Compojoom - Utilities library for Joomla
 =======================================================
+[![Build Status](http://test01.compojoom.com/api/badges/compojoom/lib_compojoom/status.svg)](http://test01.compojoom.com/compojoom/lib_compojoom)
 
 The goal of this library is to ease the development process by abstracting commonly used
 functions in one place.
@@ -12,24 +13,29 @@ Add the following line to your code:
 require_once JPATH_LIBRARIES . '/compojoom/include.php';
 ```
 
-## Building the package from github
+### Requirements for building the package from github
 In order to build the installation packages of this library you need to have
 the following tools:
 
 - A command line environment. Bash under Linux / Mac OS X . On Windows
   you will need to run most tools using an elevated privileges (administrator)
   command prompt.
+
 - The PHP CLI binary in your path
 
 - Command line Subversion and Git binaries(*)
 
-- PEAR and Phing installed, with the Net_FTP and VersionControl_SVN PEAR
-  packages installed
+- Installed composer
 
-You will also need the following path structure on your system
+### Build instructions
 
-- lib_compojoom - This repository
-- buildtools - Compojoom build tools (https://github.com/compojoom/buildtools)
+`composer install`
+
+`cp jorobo.dist.ini jorobo.ini`
+
+`robo build`
+
+This is going to create an installable package in the /dist folder, which you can deploy with your extension.
 
 ## Using the Avatar & Profile support
 In your component config you can create the following fields:
@@ -71,7 +77,7 @@ $profile is the profile system name. Generally the value from profile_link in yo
 $id is the user id that we are generating the link for
 
 ## COPYRIGHT AND DISCLAIMER
-Compojoom library -  Copyright (c) 2008-2015 Compojoom.com
+Compojoom library -  Copyright (c) 2008 - 2016 Compojoom.com
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the
 Free Software Foundation, either version 3 of the License, or (at your option) any later version.

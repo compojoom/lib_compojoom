@@ -1,8 +1,33 @@
-image: yveshoppe/systemtests
-script:
-  - chmod a+x .drone/build.sh
-  - ./.drone/build.sh
+clone:
+  depth: 1
+  path: repo
+build:
+  image: yveshoppe/joomla-systemtests
+  commands:
+    - chmod a+x .drone/build.sh
+    - ./.drone/build.sh
 notify:
   email:
+    from: test01@compojoom.com
+    host: smtp.mandrillapp.com
+    port: 587
+    username: yves@compojoom.com
+    password: $$API_KEY
     recipients:
       - yves@compojoom.com
+      - daniel@compojoom.com
+    when:
+      success: true
+      failure: true
+      change: true
+  irc:
+    prefix: build
+    nick: compodronebot
+    channel: compojoom
+    server:
+      host: chat.freenode.net
+      port: 6667
+    when:
+      success: true
+      failure: true
+      change: true
