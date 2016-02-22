@@ -34,7 +34,6 @@ class CompojoomHtmlCtemplate
 		// Load bootstrap
 		CompojoomHtmlBehavior::lanceng(true, true, true);
 
-
 		$input = JFactory::getApplication()->input;
 
 		if (empty($extension))

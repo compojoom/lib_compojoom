@@ -31,7 +31,7 @@ class CompojoomHtmlBehavior
 	 */
 	public static function lanceng($js = true, $ctemplate = true, $thirdparty = true, $key = 'lanceng')
 	{
-		self::bootstrap($key);
+		self::bootstrap(true);
 
 		if ($js)
 		{
@@ -43,10 +43,6 @@ class CompojoomHtmlBehavior
 			{
 				// Font Awesome
 				CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/third/font-awesome/css/font-awesome.min.css');
-
-				// Dialogs with effects / CSS transitions and animations
-				CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/third/nifty-modal/css/component.css');
-
 
 				// Popups (more..) but nice ones -> responsive, http://dimsemenov.com/plugins/magnific-popup/
 				CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/third/magnific-popup/magnific-popup.css');
@@ -81,7 +77,7 @@ class CompojoomHtmlBehavior
 				CompojoomHtml::getScriptQueue('lanceng'),
 				CompojoomHtml::getCSSQueue('lanceng'),
 				'media/lib_compojoom/cache', true,
-				true
+				false
 			);
 		}
 	}
@@ -89,23 +85,23 @@ class CompojoomHtmlBehavior
 	/**
 	 * Load bootstrap and overrides
 	 *
-	 * @param   string  $key        - The namespace / key for the minifying (default libcompojoom)
 	 * @param   bool    $bootstrap  - Load the bootstrap library (not only overrides)
 	 *
 	 * @return  void
 	 */
-	public static function bootstrap($key = 'libcompojoom', $bootstrap = true)
+	public static function bootstrap($bootstrap = true)
 	{
 		if ($bootstrap)
 		{
-			CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/css/compojoom-bootstrap-3.3.6.min.css');
+			// Don't use queue here, as wee already have that file minimized
+			JHtml::stylesheet('media/lib_compojoom/css/compojoom-bootstrap-3.3.6.min.css');
 
 			// Load native (for js)
 			JHtml::_('bootstrap.framework', true);
 			self::jquery();
 		}
 
-		CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/css/compojoom.min.css');
+		JHtml::stylesheet('media/lib_compojoom/css/compojoom.min.css');
 	}
 
 	/**

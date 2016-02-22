@@ -224,7 +224,10 @@ class CompojoomHtml
 
 			foreach ($files as $file)
 			{
-				$times[] = filemtime(JPATH_ROOT . '/' . $file);
+				if (file_exists(JPATH_ROOT . '/' . $file))
+				{
+					$times[] = filemtime(JPATH_ROOT . '/' . $file);
+				}
 			}
 
 			$md5 = md5(json_encode($files));
