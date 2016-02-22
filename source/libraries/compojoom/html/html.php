@@ -280,4 +280,16 @@ class CompojoomHtml
 		self::script($jsfiles, $cachePath, $minifyJs, $scriptTag);
 		self::css($cssfiles, $cachePath, $minifyCss);
 	}
+
+	/**
+	 * Loads the recaptcha v2 url with language in the head
+	 *
+	 * @param   array  $params  array with additional parameters to hang on the url
+	 *
+	 * @return void
+	 */
+	public static function recaptcha(array $params = array())
+	{
+		JHtml::script('https://www.google.com/recaptcha/api.js?hl=' . JFactory::getLanguage()->getTag() . implode('&', $params));
+	}
 }
