@@ -64,7 +64,12 @@ class JFormFieldCustomfields extends JFormFieldList
 
 			foreach ($files as $file)
 			{
-				$customfields[] = basename($file, '.php');
+				$file = basename($file, '.php');
+
+				if (!in_array($file, $customfields))
+				{
+					$customfields[] = $file;
+				}
 			}
 		}
 

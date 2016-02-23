@@ -63,14 +63,27 @@ class CompojoomFormCustom
 	/**
 	 * Returns the translated label for a value
 	 *
-	 * @param   object  $field  - the field config object
-	 * @param   string  $value  - string
+	 * @param   object  $field      - the field config object
+	 * @param   string  $value      - string
+	 * @param   string  $component  - if we want to load overriden customfields provide the component where we should check
 	 *
 	 * @return mixed
 	 */
-	public static function render($field, $value)
+	public static function render($field, $value, $component = null)
 	{
 		$class = 'CompojoomFormCustomfields' . ucfirst($field->type);
+
+		if ($component)
+		{
+			JLoader::discover(
+				'CompojoomFormCustomfields',
+				JPATH_ADMINISTRATOR . '/components/' . $component . '/models/fields/customfields'
+			);
+			JLoader::discover(
+				'CompojoomFormCustomfields',
+				JPATH_SITE . '/templates/' . CompojoomTemplateHelper::getFrontendTemplate() . '/html/' . $component . '/fields/customfields'
+			);
+		}
 
 		if (!isset(self::$customFields[$class]))
 		{
