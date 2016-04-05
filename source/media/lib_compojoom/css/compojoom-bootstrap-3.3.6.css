@@ -5932,21 +5932,6 @@
   background: transparent;
   border: 0;
 }
-.compojoom-bootstrap .modal-open {
-  overflow: hidden;
-}
-.compojoom-bootstrap .modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1050;
-  display: none;
-  overflow: hidden;
-  -webkit-overflow-scrolling: touch;
-  outline: 0;
-}
 .compojoom-bootstrap .modal.fade .modal-dialog {
   -webkit-transition: -webkit-transform 0.3s ease-out;
   -o-transition: -o-transform 0.3s ease-out;
@@ -6586,12 +6571,6 @@
 }
 .compojoom-bootstrap .pull-left {
   float: left !important;
-}
-.compojoom-bootstrap .hide {
-  display: none !important;
-}
-.compojoom-bootstrap .show {
-  display: block !important;
 }
 .compojoom-bootstrap .invisible {
   visibility: hidden;

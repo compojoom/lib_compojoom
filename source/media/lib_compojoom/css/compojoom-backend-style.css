@@ -2812,11 +2812,11 @@ body {
 	word-wrap: break-word;
 }
 
-.compojoom-bootstrap .controls .modal {
-	position: relative;
-	display: inline-block;
-	overflow-y: auto;
-}
+/*.compojoom-bootstrap .controls .modal {*/
+	/*position: relative;*/
+	/*display: inline-block;*/
+	/*overflow-y: auto;*/
+/*}*/
 
 .compojoom-bootstrap .controls .btn {
 	padding: 3px 12px;
@@ -2960,11 +2960,6 @@ body {
 	background-color: #000 \9;
 	background-color: rgba(0, 0, 0, 0);
 	border: 1px solid #000;
-}
-
-
-.compojoom-bootstrap .carousel-indicators li {
-	float: center;
 }
 
 .compojoom-bootstrap .carousel-control {
