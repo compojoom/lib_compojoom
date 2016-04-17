@@ -3542,32 +3542,7 @@
 .compojoom-bootstrap .fade.in {
   opacity: 1;
 }
-.compojoom-bootstrap .collapse {
-  display: none;
-}
-.compojoom-bootstrap .collapse.in {
-  display: block;
-}
-.compojoom-bootstrap tr.collapse.in {
-  display: table-row;
-}
-.compojoom-bootstrap tbody.collapse.in {
-  display: table-row-group;
-}
-.compojoom-bootstrap .collapsing {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  -webkit-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
-  transition-timing-function: ease;
-  -webkit-transition-duration: .35s;
-  -o-transition-duration: .35s;
-  transition-duration: .35s;
-  -webkit-transition-property: height, visibility;
-  -o-transition-property: height, visibility;
-  transition-property: height, visibility;
-}
+
 .compojoom-bootstrap .caret {
   display: inline-block;
   width: 0;
