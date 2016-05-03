@@ -58,6 +58,7 @@ class RoboFile extends \Robo\Tasks
 		// Library cache
 		$this->_deleteDir(__DIR__ . '/source/media/lib_compojoom/cache');
 		$this->_mkdir(__DIR__ . '/source/media/lib_compojoom/cache');
+		$this->_touch(__DIR__ . '/source/media/lib_compojoom/cache/index.html');
 
 		$this->compileLess();
 		$this->minifyCss();
