@@ -1,6 +1,6 @@
 (function ($) {
-	$(document).ready(function(){
 
+	$(document).ready(function(){
 		$(window).load(function() { $("#loading").fadeOut("slow"); })
 
 		//SLIM SCROLL
@@ -119,6 +119,17 @@
 
 		// Ugly hack to adjust height in all caeses..
 		$('.left').css('min-height', $(document).height() - 35);
+
+		$('.left ').click(function(){
+			toggleSideMenu();
+		}).children().click(function(e) {
+			return false;
+		});
+
+		$('#sidebar-menu a').click(function(){
+			window.location.href = $(this).attr('href');
+			return true;
+		})
 	});
 })(jQuery);
 
@@ -141,6 +152,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * ========================================================== */
+
+function toggleSideMenu() {
+	jQuery('.left').toggleClass('side-menu-collapse');
+	jQuery('.right').toggleClass('content-page-menu-collapse');
+}
 
 +function ($) { "use strict";
 
@@ -479,5 +495,8 @@
     if ($this.data('inputmask')) return
     $this.inputmask($this.data())
   })
+
+
+
 
 }(window.jQuery);

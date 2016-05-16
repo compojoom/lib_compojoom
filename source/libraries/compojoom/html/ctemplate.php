@@ -21,6 +21,8 @@ class CompojoomHtmlCtemplate
 	/**
 	 * Function to render a social media info
 	 *
+	 * Todo: Cleanup and refactor..
+	 * 	 *
 	 * @param   array   $menu       - The menu
 	 * @param   string  $active     - The active entry
 	 * @param   string  $title      - The title
@@ -135,7 +137,14 @@ class CompojoomHtmlCtemplate
 			// Icon
 			if (!empty($m['icon']))
 			{
-				$html[] = '<i class="fa ' . $m['icon'] . '"></i> ';
+				$child = '';
+
+				if (count($m['children']))
+				{
+					$child = ' i-has-children ';
+				}
+
+				$html[] = '<i class="fa ' . $m['icon'] . $child . ' hasTooltip" data-toggle="tooltip" data-placement="right" title="' . JText::_($m['title']) . '"></i> ';
 			}
 
 			if (count($m['children']))
@@ -143,7 +152,7 @@ class CompojoomHtmlCtemplate
 				$html[] = '<i class="fa fa-angle-double-down i-right"></i> ';
 			}
 
-			$html[] = JText::_($m['title']);
+			$html[] = '<span class="side-menu-item-text">' . JText::_($m['title']) . '</span>';
 
 			$html[] = '</a>';
 
@@ -191,10 +200,10 @@ class CompojoomHtmlCtemplate
 					// Icon right
 					if (!empty($c['icon']))
 					{
-						$html[] = '<i class="fa ' . $c['icon'] . '"></i> ';
+						$html[] = '<i class="fa ' . $c['icon'] . '" data-toggle="tooltip" data-placement="right" title="' . JText::_($c['title']) . '"></i> ';
 					}
 
-					$html[] = JText::_($c['title']);
+					$html[] = '<span class="side-menu-item-text">' . JText::_($c['title']) . '</span>';
 
 					$html[] = '</a>';
 

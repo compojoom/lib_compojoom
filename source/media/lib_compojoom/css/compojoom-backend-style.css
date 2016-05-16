@@ -2721,10 +2721,6 @@ i.i-right {
 	margin-bottom: 20px;
 }
 
-.tab-pane {
-	padding: 20px;
-}
-
 .compojoom-bootstrap .table-responsive {
 	width: 100%;
 	margin-bottom: 15px;
@@ -3052,4 +3048,37 @@ body {
 
 .compojoom-bootstrap fieldset.checkboxes ul {
     margin: 0;
+}
+
+/** Collapse side mneu */
+.compojoom-bootstrap .side-menu-collapse {
+	width: 60px;
+}
+.compojoom-bootstrap .side-menu-collapse i {
+	font-size: 20px;
+}
+
+.compojoom-bootstrap .side-menu-collapse .i-has-children {
+	font-size: 15px;
+}
+
+.compojoom-bootstrap .side-menu-collapse .fa-angle-double-down {
+	font-size: 7px;
+}
+
+.compojoom-bootstrap .side-menu-collapse .side-menu-item-text,
+.compojoom-bootstrap .side-menu-collapse .c-media-introtext {
+	display: none;
+}
+
+.compojoom-bootstrap .content-page-menu-collapse {
+	left: 60px;
+}
+
+.compojoom-bootstrap .side-menu-collapse .sidebar-inner .media {
+	padding: 0 10px 10px 30px;
+}
+
+.compojoom-bootstrap .side-menu-collapse #search {
+	display: none;
 }
