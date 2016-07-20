@@ -26,6 +26,18 @@ if (JVERSION < 3)
 class CompojoomLayoutFile extends JLayoutFile
 {
 	/**
+	 * Clear the include paths
+	 *
+	 * @return  self
+	 *
+	 * @since   3.5
+	 */
+	public function clearIncludePaths()
+	{
+		$this->refreshIncludePaths();
+	}
+
+	/**
 	 * Refresh the list of include paths
 	 *
 	 * @return  void

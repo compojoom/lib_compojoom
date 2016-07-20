@@ -1,5 +1,7 @@
 Changelog lib_compojoom
 
+# fix for a bug in Joomla 3.6 https://github.com/joomla/joomla-cms/commit/4cf1dbdbcecab85b4331861aaa633d359bca9617
+
 4.1.0
 
 + Less files for bootstrap and compojoom styles
