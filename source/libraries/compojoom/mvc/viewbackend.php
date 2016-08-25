@@ -13,7 +13,7 @@ defined('_JEXEC') or die('Restricted access');
 /**
  * Class CompojoomMvcViewBackend - load the lanceng template in the backend
  *
- * @since  5.0
+ * @since  5.0.0
  */
 class CompojoomMvcViewbackend extends CompojoomMvcView
 {
@@ -21,6 +21,7 @@ class CompojoomMvcViewbackend extends CompojoomMvcView
 	 * The title
 	 *
 	 * @var    string
+	 * @since  5.0.0
 	 */
 	protected $cTitle;
 
@@ -28,13 +29,15 @@ class CompojoomMvcViewbackend extends CompojoomMvcView
 	 * Slogan
 	 *
 	 * @var    string
+	 * @since  5.0.0
 	 */
 	protected $cSlogan;
 
 	/**
 	 * Menu entry
 	 *
-	 * @var    string
+	 * @var     string
+	 * @since   5.0.0
 	 */
 	protected $cMenuEntry;
 
@@ -42,6 +45,7 @@ class CompojoomMvcViewbackend extends CompojoomMvcView
 	 * The menu items
 	 *
 	 * @var     array
+	 * @since   5.0.0
 	 */
 	protected $cMenu = array();
 
@@ -49,6 +53,7 @@ class CompojoomMvcViewbackend extends CompojoomMvcView
 	 * Extension
 	 *
 	 * @var     string
+	 * @since   5.0.0
 	 */
 	protected $extension;
 
@@ -56,6 +61,7 @@ class CompojoomMvcViewbackend extends CompojoomMvcView
 	 * Extension
 	 *
 	 * @var     string
+	 * @since   5.0.0
 	 */
 	protected $copyright;
 
@@ -63,13 +69,16 @@ class CompojoomMvcViewbackend extends CompojoomMvcView
 	 * Minify CSS / JS
 	 *
 	 * @var     boolean
+	 * @since   5.0.0
 	 */
 	protected $minify = true;
 
 	/**
 	 * Constructor
+	 *
+	 * @param   array  $config  The configuration array
 	 * 
-	 * @return void
+	 * @since   5.0.0
 	 */
 	public function __construct($config = array())
 	{
@@ -84,7 +93,9 @@ class CompojoomMvcViewbackend extends CompojoomMvcView
 	 * @param   String  $slogan     - The slogan
 	 * @param   String  $menuEntry  - The menu entry
 	 *
-	 * @return void
+	 * @return  void
+	 *
+	 * @since   5.0.0
 	 */
 	public function setConfiguration($title, $slogan, $menuEntry, $menu, $extension = '')
 	{
@@ -102,13 +113,15 @@ class CompojoomMvcViewbackend extends CompojoomMvcView
 	}
 
 	/**
-	 * Set if  minify css and js
+	 * Set if minify css and js
 	 *
-	 * @param   bool  $state  Minify
+	 * @param   bool  $minify  Minify the css
 	 *
-	 * @return void
+	 * @return  void
+	 *
+	 * @since   5.0.0
 	 */
-	public function setMinify(bool $minify)
+	public function setMinify($minify)
 	{
 		$this->minify = $minify;
 	}
@@ -118,10 +131,10 @@ class CompojoomMvcViewbackend extends CompojoomMvcView
 	 *
 	 * @param   string  $tpl  The name of the template file to parse; automatically searches through the template paths.
 	 *
-	 * @return  mixed   A string if successful, otherwise a Error object.
+	 * @return  void    Outputs directly
 	 *
 	 * @see     JViewLegacy::loadTemplate()
-	 * @since   12.2
+	 * @since   5.0.0
 	 */
 	public function display($tpl = null)
 	{

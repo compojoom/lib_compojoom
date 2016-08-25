@@ -257,22 +257,27 @@ class CompojoomHtmlCtemplate
 	}
 
 	/**
-	 * Gets the footer code
+	 * Gets the footer code (TODO move to JLayout)
 	 *
-	 * @param  $footer  - The footer html (e.g. Matukio by compojoom)
+	 * @param   string  $footer  - The footer html (e.g. Matukio by compojoom)
 	 *
-	 * @return string
+	 * @return  string
+	 * @since   5.0.0
 	 */
 	public static function getFooter($footer)
 	{
-		$html[] = '<footer>';
-		$html[] = $footer;
-		$html[] = '		</footer>
+		if (!empty($footer))
+		{
+			$html[] = '<footer>';
+			$html[] = $footer;
+			$html[] = '</footer>';
+		}
+
+		$html[] = '		</div>
 					</div>
 				</div>
-			</div>
-			<div class="clear clr"></div>
-			<div class="md-overlay"></div>
+				<div class="clear clr"></div>
+				<div class="md-overlay"></div>
 			</div>';
 
 		return implode('', $html);
