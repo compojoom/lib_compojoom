@@ -21,6 +21,8 @@ class CompojoomMvcView extends JViewLegacy
 	 * The JDocument
 	 * 
 	 * @var     JDocument
+	 *
+	 * @since   5.0.0
 	 */
 	public $document = null;
 

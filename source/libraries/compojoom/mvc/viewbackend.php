@@ -110,6 +110,11 @@ class CompojoomMvcViewbackend extends CompojoomMvcView
 			$this->extension = JFactory::getApplication()->input->get('option');
 		}
 
+		// Set a default copyright
+		if (empty($this->copyright) && JFactory::getApplication()->isAdmin())
+		{
+			$this->copyright = JText::_($this->extension) . ' is powered by <a href="compojoom.com">compojoom.com</a>';
+		}
 	}
 
 	/**
@@ -138,30 +143,49 @@ class CompojoomMvcViewbackend extends CompojoomMvcView
 	 */
 	public function display($tpl = null)
 	{
-		JHtml::_('formbehavior.chosen', 'select');
+		$tmpl = JFactory::getApplication()->input->getCmd('tmpl');
 
-		echo CompojoomHtmlCtemplate::getHead(
-			$this->cMenu,
-			$this->cMenuEntry,
-			$this->cTitle,
-			$this->cSlogan
-		);
-
-		$result = $this->loadTemplate($tpl);
-
-		if ($result instanceof Exception)
+		// @todo improve and move
+		if ($tmpl == 'component')
 		{
-			return $result;
+			$result = $this->loadTemplate($tpl);
+
+			if ($result instanceof Exception)
+			{
+				return $result;
+			}
+
+			echo $result;
+
+			echo $this->copyright;
 		}
+		else
+		{
+			JHtml::_('formbehavior.chosen', 'select');
 
-		echo '<div id="cextension_holder">';
+			echo CompojoomHtmlCtemplate::getHead(
+				$this->cMenu,
+				$this->cMenuEntry,
+				$this->cTitle,
+				$this->cSlogan
+			);
 
-		// Content from the template
-		echo $result;
+			$result = $this->loadTemplate($tpl);
 
-		// Copyright
-		echo CompojoomHtmlCTemplate::getFooter($this->copyright);
-		echo '</div>';
+			if ($result instanceof Exception)
+			{
+				return $result;
+			}
+
+			echo '<div id="cextension_holder">';
+
+			// Content from the template
+			echo $result;
+
+			// Copyright
+			echo CompojoomHtmlCtemplate::getFooter($this->copyright);
+			echo '</div>';
+		}
 
 		// Minify css & js
 		CompojoomHtml::external(
