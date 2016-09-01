@@ -1,4 +1,7 @@
 /* Compojoom css and bootstrap overwrites */
+.compojoom-bootstrap {
+  /** Horizontal form overrides */
+}
 .compojoom-bootstrap .top-5 {
   margin-top: 5px;
 }
@@ -56,4 +59,13 @@
 }
 .compojoom-bootstrap .table > tbody > tr > td {
   vertical-align: middle;
+}
+.compojoom-bootstrap .form-horizontal .form-control {
+  width: calc(100% - 160px);
+}
+.compojoom-bootstrap .form-horizontal .control-label {
+  text-align: left;
+}
+.compojoom-bootstrap .form-horizontal .form-group {
+  padding: 8px;
 }
