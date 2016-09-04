@@ -105,6 +105,20 @@ class CompojoomHtmlBehavior
 	}
 
 	/**
+	 * Load jQuery ui (minified)
+	 *
+	 * @since 6.0.10
+	 */
+	public static function jqueryui()
+	{
+		JHtml::_('script', 'media/lib_compojoom/js/jquery-ui.min.js');
+
+		JHtml::stylesheet('media/lib_compojoom/css/jquery-ui.min.css');
+		JHtml::stylesheet('media/lib_compojoom/css/jquery-ui.structure.min.css');
+		JHtml::stylesheet('media/lib_compojoom/css/jquery-ui.theme.min.css');
+	}
+
+	/**
 	 * Load qjuery
 	 *
 	 * @return  void
