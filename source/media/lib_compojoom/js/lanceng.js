@@ -117,10 +117,18 @@
 
 		$('#c-system-message-container').append($("#system-debug").html());
 
-		// Ugly hack to adjust height in all caeses..
-		$('.left').css('min-height', $(document).height() - 35);
+		// Ugly hack to adjust height in all cases..
+        var jdoc = $(document);
 
-		$('.left ').click(function(){
+        // Get the height
+        var refreshDocHeight = function(){
+            $('.left').css('min-height', jdoc.height() - 30);
+        };
+
+        window.setInterval(refreshDocHeight, 500);
+
+
+        $('.left ').click(function(){
 			toggleSideMenu();
 		}).children().click(function(e) {
 			return false;
