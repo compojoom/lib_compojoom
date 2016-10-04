@@ -12,7 +12,7 @@
 	<version>5.1.1</version>
 
 	<languages folder="language">
-		##FRONTENDLANGUAGEFILES##
+		##FRONTEND_LANGUAGE_FILES##
 	</languages>
 
 	<files folder="libraries/compojoom">
@@ -20,6 +20,6 @@
 	</files>
 
 	<media destination="lib_compojoom" folder="media/lib_compojoom">
-		##MEDIAPACKAGEFILES##
+		##MEDIA_FILES##
 	</media>
 </extension>
