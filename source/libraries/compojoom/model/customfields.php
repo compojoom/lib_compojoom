@@ -249,4 +249,34 @@ abstract class CompojoomModelCustomfields extends JModelList
 
 		return $allFields;
 	}
+
+	/**
+	 * Publish / Unpublish an custom field
+	 *
+	 * @return  mixed
+	 *
+	 * @since   5.1.2
+	 */
+	public function publish()
+	{
+		$input = JFactory::getApplication()->input;
+		$db    = JFactory::getDbo();
+
+		$task = $input->getCmd('task');
+		$cid  = $input->get('cid', array(), 'Array');
+
+		$query = $db->getQuery(true);
+
+		$enabled = ($task == 'unpublish') ? 0 : 1;
+
+		$query
+			->update('#__compojoom_customfields')
+			->set('enabled = ' . $db->quote($enabled))
+			->where(CompojoomQueryHelper::in('id', $cid, $db));
+
+
+		$db->setQuery($query);
+
+		return $db->execute();
+	}
 }

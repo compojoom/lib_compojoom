@@ -34,7 +34,8 @@ class CompojoomModelCustomfieldsconfig extends JModelList
 		$query = $db->getQuery(true);
 		$cats = array();
 
-		$query->select('*')->from('#__compojoom_customfields as f')
+		$query->select('f.*, c.catid as catid')->from('#__compojoom_customfields as f')
+			->leftJoin('#__compojoom_customfields_cats AS c ON f.id = c.compojoom_customfields_id')
 			->where($db->qn('f.show') . '=' . $db->q('all'))
 			->where($db->qn('f.enabled') . ' = ' . $db->q(1));
 
