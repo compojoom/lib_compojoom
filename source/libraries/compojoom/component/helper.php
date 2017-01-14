@@ -110,7 +110,9 @@ class CompojoomComponentHelper
 	 * @param   string  $component  - the component
 	 * @param   object  $config     - the config object
 	 *
-	 * @return void
+	 * @return  boolean
+	 *
+	 * @since   5.0.0
 	 */
 	public static function updateConfiguration($component, $config)
 	{
@@ -122,7 +124,8 @@ class CompojoomComponentHelper
 			->where($db->qn('element') . '=' . $db->q($component))
 			->where($db->qn('type') . '=' . $db->q('component'));
 		$db->setQuery($query);
-		$db->execute();
+
+		return $db->execute();
 	}
 
 	/**

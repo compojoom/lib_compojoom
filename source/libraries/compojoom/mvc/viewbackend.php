@@ -111,9 +111,9 @@ class CompojoomMvcViewbackend extends CompojoomMvcView
 		}
 
 		// Set a default copyright
-		if (empty($this->copyright) && JFactory::getApplication()->isAdmin())
+		if (empty($this->copyright) && JFactory::getApplication()->isClient('administrator'))
 		{
-			$this->copyright = JText::_($this->extension) . ' is powered by <a href="compojoom.com">compojoom.com</a>';
+			$this->copyright = JText::_($this->extension) . ' by <a href="compojoom.com">compojoom.com</a>';
 		}
 	}
 

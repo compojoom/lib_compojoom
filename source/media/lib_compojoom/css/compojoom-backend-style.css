@@ -571,8 +571,8 @@ BASIC SELECTOR
 }
 
 /* === RIGHT COLUMN (CONTENT HEADER / NAV) === */
-.compojoom-bootstrap .header.rows { height: 45px;}
-.compojoom-bootstrap .header.rows-content-header { height: 45px;}
+.compojoom-bootstrap .header.rows { min-height: 45px;}
+.compojoom-bootstrap .header.rows-content-header { min-height: 45px;}
 .compojoom-bootstrap .header.content{background: #FFFFFF; border-bottom: 1px solid #E5E9EC}
 
 /* === RIGHT COLUMN (CONTENT BODY) === */
@@ -2679,7 +2679,7 @@ a:focus .icon-vimeo {
 	position: absolute;
 	top: 0;
 	left: 225px;
-	width: 100%;
+	width: calc(100% - 225px);
 	padding: 0 20px;
 }
 
@@ -3081,4 +3081,17 @@ body {
 
 .compojoom-bootstrap .side-menu-collapse #search {
 	display: none;
+}
+
+.compojoom-bootstrap  .c-toolbar .btn-wrapper {
+	display: inline-block;
+}
+
+.compojoom-bootstrap .c-toolbar-holder {
+	min-height: 45px;
+	padding: 8px 10px;
+}
+
+.compojoom-bootstrap .header {
+	overflow: visible;
 }
