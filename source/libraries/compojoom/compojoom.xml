@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="library" version="2.5" method="upgrade">
-	<name>Library - compojoom</name>
-	<libraryname>compojoom</libraryname>
-	<description>LIB_COMPOJOOM_DESC</description>
-	<creationDate>##DATE##</creationDate>
-	<author>compojoom.com</author>
-	<authorEmail>contact-us@compojoom.com</authorEmail>
-	<authorUrl>https://compojoom.com</authorUrl>
-	<copyright>(C) 2008 - 2016 Daniel Dimitrov and Yves Hoppe</copyright>
-	<license>GNU GPLv2 or later</license>
-	<version>5.1.3</version>
+    <name>Library - compojoom</name>
+    <libraryname>compojoom</libraryname>
+    <description>LIB_COMPOJOOM_DESC</description>
+    <creationDate>##DATE##</creationDate>
+    <author>compojoom.com</author>
+    <authorEmail>contact-us@compojoom.com</authorEmail>
+    <authorUrl>https://compojoom.com</authorUrl>
+    <copyright>(C) 2008 - 2016 Daniel Dimitrov and Yves Hoppe</copyright>
+    <license>GNU GPLv2 or later</license>
+    <version>5.1.4</version>
 
-	<languages folder="language">
-		<language tag="en-GB">en-GB/en-GB.lib_compojoom.ini</language>
-<language tag="en-GB">en-GB/en-GB.lib_compojoom.sys.ini</language>
-	</languages>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.lib_compojoom.ini</language>
+        <language tag="en-GB">en-GB/en-GB.lib_compojoom.sys.ini</language>
+    </languages>
 
-	<files folder="libraries/compojoom">
-		<folder>model</folder>
-<folder>mvc</folder>
-<folder>table</folder>
-<folder>geolocation</folder>
-<folder>layout</folder>
-<folder>image</folder>
-<folder>helper</folder>
-<folder>profiles</folder>
-<folder>query</folder>
-<folder>minifier</folder>
-<folder>component</folder>
-<folder>html</folder>
-<folder>testing</folder>
-<folder>database</folder>
-<folder>ogp</folder>
-<folder>language</folder>
-<file>include.php</file>
-<folder>utils</folder>
-<folder>layouts</folder>
-<folder>installer</folder>
-<folder>template</folder>
-<folder>changelog</folder>
-<folder>galleria</folder>
-<folder>sql</folder>
-<folder>form</folder>
-<file>compojoom.xml</file>
-<folder>controller</folder>
-<folder>autoloader</folder>
-<folder>cssmin</folder>
-<folder>avatars</folder>
-<folder>shrink</folder>
-	</files>
+    <files folder="libraries/compojoom">
+        <folder>model</folder>
+        <folder>mvc</folder>
+        <folder>table</folder>
+        <folder>geolocation</folder>
+        <folder>layout</folder>
+        <folder>image</folder>
+        <folder>helper</folder>
+        <folder>profiles</folder>
+        <folder>query</folder>
+        <folder>minifier</folder>
+        <folder>component</folder>
+        <folder>html</folder>
+        <folder>testing</folder>
+        <folder>database</folder>
+        <folder>ogp</folder>
+        <folder>language</folder>
+        <file>include.php</file>
+        <folder>utils</folder>
+        <folder>layouts</folder>
+        <folder>installer</folder>
+        <folder>template</folder>
+        <folder>changelog</folder>
+        <folder>galleria</folder>
+        <folder>sql</folder>
+        <folder>form</folder>
+        <file>compojoom.xml</file>
+        <folder>controller</folder>
+        <folder>autoloader</folder>
+        <folder>cssmin</folder>
+        <folder>avatars</folder>
+        <folder>shrink</folder>
+    </files>
 
-	<media destination="lib_compojoom" folder="media/lib_compojoom">
-		<folder>less</folder>
-<folder>css</folder>
-<folder>img</folder>
-<folder>js</folder>
-<folder>fonts</folder>
-<folder>third</folder>
-	</media>
+    <media destination="lib_compojoom" folder="media/lib_compojoom">
+        <folder>less</folder>
+        <folder>css</folder>
+        <folder>img</folder>
+        <folder>js</folder>
+        <folder>fonts</folder>
+        <folder>third</folder>
+    </media>
 </extension>
