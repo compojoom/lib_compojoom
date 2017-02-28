@@ -324,3 +324,7 @@
 	.compojoom-bootstrap .gallery-wrap .column,.gallery-wrap .column-3,.gallery-wrap .column-4{width: 50%;}
 	.compojoom-bootstrap .gallery-wrap .column .inner .img-wrap,.gallery-wrap .column-3 .inner .img-wrap,.gallery-wrap .column-4 .inner .img-wrap{height: 70px;}
 }
+
+.compojoom-bootstrap  .c-toolbar .btn-wrapper {
+	display: inline-block;
+}

@@ -44,7 +44,7 @@ class CompojoomShrink
 		// If the minFile doesn't exist or the minFile time is older than any of the times, let's do our job!
 		if (!file_exists($minFile) || max($times) > filemtime($minFile))
 		{
-			$js = '';
+			$js = array();
 
 			foreach ($files as $file)
 			{

@@ -63,6 +63,9 @@ class CompojoomHtmlCtemplate
 						</div>
 					</div>';
 
+		$toolbar = JToolbar::getInstance('toolbar');
+		$toolbarItems = $toolbar->getItems();
+
 		// Container
 		$html[] = '<div class="c-container">
 						<div class="logo-brand header sidebar rows">
@@ -70,9 +73,14 @@ class CompojoomHtmlCtemplate
 								<h1><a href="' . JRoute::_("index.php?option=" . JFactory::getApplication()->input->get('option')) . '">' . JText::_($extension) . '</a></h1>
 							</div>
 							<div class="c-toolbar-holder">
-								<div class="c-toolbar pull-left">
-								' . JToolbar::getInstance('toolbar')->render('toolbar') . '
-								</div>
+								<div class="c-toolbar pull-left">';
+
+		foreach ($toolbarItems as $item)
+		{
+			$html[] = $toolbar->renderButton($item);
+		}
+
+		$html[] = '</div>
 							</div>
 							<div class="c-logo-icon pull-left hidden-sm hidden-xs hidden-md">
 								<a href="https://compojoom.com" title="Compojoom"><img src="../media/lib_compojoom/img/logo-green.png" alt="Compojoom" /></a>
@@ -268,7 +276,7 @@ class CompojoomHtmlCtemplate
 	{
 		if (!empty($footer))
 		{
-			$html[] = '<footer>';
+			$html[] = '<footer class="text-center">';
 			$html[] = $footer;
 			$html[] = '</footer>';
 		}
