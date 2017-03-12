@@ -7,9 +7,9 @@
     <author>compojoom.com</author>
     <authorEmail>contact-us@compojoom.com</authorEmail>
     <authorUrl>https://compojoom.com</authorUrl>
-    <copyright>(C) 2008 - 2016 Daniel Dimitrov and Yves Hoppe</copyright>
+    <copyright>(C) 2008 - 2017 Daniel Dimitrov and Yves Hoppe</copyright>
     <license>GNU GPLv2 or later</license>
-    <version>5.1.4</version>
+    <version>5.1.7</version>
 
     <languages folder="language">
         <language tag="en-GB">en-GB/en-GB.lib_compojoom.ini</language>

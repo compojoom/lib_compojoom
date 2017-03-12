@@ -27,11 +27,11 @@ class CompojoomQueryHelper
 	 *
 	 * @return string
 	 */
-	public static function in($column, $array, $db, $not = false)
+	public static function in($column, $array, $db, $not = false, $castInt = false)
 	{
 		$n = ($not) ? " NOT " : "";
 
-		return $db->qn($column) . $n . ' IN (' . self::implode($array, $db) . ')';
+		return $db->qn($column) . $n . ' IN (' . self::implode($array, $db, 'q', $castInt) . ')';
 	}
 
 	/**
@@ -43,11 +43,16 @@ class CompojoomQueryHelper
 	 *
 	 * @return string
 	 */
-	public static function implode($values, $db, $type = 'q')
+	public static function implode($values, $db, $type = 'q', $castInt = false)
 	{
 		return implode(',', array_map(
-				function ($v) use ($db, $type)
+				function ($v) use ($db, $type, $castInt)
 				{
+					if ($castInt)
+					{
+						$v = (int) $v;
+					}
+
 					return $db->$type($v);
 				}, $values
 			)

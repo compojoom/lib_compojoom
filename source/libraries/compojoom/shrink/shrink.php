@@ -41,6 +41,11 @@ class CompojoomShrink
 			}
 		}
 
+		if (!count($times))
+		{
+			return $url;
+		}
+
 		// If the minFile doesn't exist or the minFile time is older than any of the times, let's do our job!
 		if (!file_exists($minFile) || max($times) > filemtime($minFile))
 		{

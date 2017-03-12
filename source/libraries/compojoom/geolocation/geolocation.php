@@ -19,23 +19,25 @@ class CompojoomGeolocation
 	/**
 	 * Get the location
 	 *
-	 * @return  array ('lat', 'lng', 'text')
+	 * @return  object ('lat', 'lng', 'text')
 	 *
 	 * @since   5.1.0
 	 */
 	public static function getLocation()
 	{
-		$cookieLocation = self::getCookieLocation();
+		$cookieLocation = json_decode(self::getCookieLocation());
+
 
 		// Use saved location
-		if ($cookieLocation)
+		if ($cookieLocation && $cookieLocation->lat != 0)
 		{
-			return json_decode($cookieLocation);
+			return json_decode($cookieLocation, false);
 		}
 
-		$geoLocation = self::getGeolocation();
+		$geoLocation = (object) self::getGeolocation();
 
-		if ($geoLocation)
+
+		if ($geoLocation && $geoLocation->lat != 0)
 		{
 			self::setCookieLocation($geoLocation);
 
@@ -43,7 +45,7 @@ class CompojoomGeolocation
 		}
 
 		// Warning returning default
-		return array('lat' => '', 'lng' => '', 'text' => 'london');
+		return (object) array('lat' => '51.507351', 'lng' => '-0.127758', 'text' => 'London');
 	}
 
 	/**
