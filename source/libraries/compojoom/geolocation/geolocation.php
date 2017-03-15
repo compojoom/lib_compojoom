@@ -27,11 +27,10 @@ class CompojoomGeolocation
 	{
 		$cookieLocation = json_decode(self::getCookieLocation());
 
-
 		// Use saved location
 		if ($cookieLocation && $cookieLocation->lat != 0)
 		{
-			return json_decode($cookieLocation, false);
+			return $cookieLocation;
 		}
 
 		$geoLocation = (object) self::getGeolocation();
@@ -59,7 +58,7 @@ class CompojoomGeolocation
 	{
 		$jcookie = JFactory::getApplication()->input->cookie;
 
-		return $jcookie->get('clocation', null, 'raw');
+		return base64_decode($jcookie->get('clocation', null, 'raw'));
 	}
 
 	/**
@@ -79,7 +78,7 @@ class CompojoomGeolocation
 
 		$jCookie = JFactory::getApplication()->input->cookie;
 
-		$jCookie->set('clocation', json_encode($location), $duration);
+		$jCookie->set('clocation', base64_encode(json_encode($location)), $duration);
 	}
 
 	/**
