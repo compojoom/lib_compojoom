@@ -167,9 +167,10 @@ class CompojoomHtml
 		{
 			$fileName = CompojoomShrink::shrink($files, $cachePath);
 
+
 			if ($scriptTag)
 			{
-				echo '<script data-inline type="text/javascript" src="' . $fileName . '"></script>' . "\n";
+				echo '<script data-inline type="text/javascript" src="' . JHtml::script($fileName, array('pathOnly' => true)). '"></script>' . "\n";
 			}
 			else
 			{
@@ -183,7 +184,7 @@ class CompojoomHtml
 			{
 				if ($scriptTag)
 				{
-					echo '<script data-inline type="text/javascript" src="' . $file . '"></script>' . "\n";
+					echo '<script data-inline type="text/javascript" src="' .  JHtml::script($file, array('pathOnly' => true)) . '"></script>' . "\n";
 				}
 				else
 				{
