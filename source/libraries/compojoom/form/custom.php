@@ -113,7 +113,10 @@ class CompojoomFormCustom
 			{
 				$option = explode('=', $value, 2);
 
-				$array[trim($option[0])] = trim($option[1]);
+				if (count($option) > 1)
+				{
+					$array[trim($option[0])] = trim($option[1]);
+				}
 			}
 
 			self::$optionsStore[$hash] = $array;
