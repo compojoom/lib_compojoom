@@ -19,7 +19,7 @@ if (isset($displayData['meta']))
 <!-- Google plus one -->
 <div class="g-plusone" data-size="medium"></div>
 
-<script type="text/javascript">
+<script>
 	(function () {
 		var po = document.createElement('script');
 		po.type = 'text/javascript';

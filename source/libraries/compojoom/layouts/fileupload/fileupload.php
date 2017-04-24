@@ -185,7 +185,7 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
 {% } %}
 </script>
 
-<script type="text/javascript">
+<script>
 	document.getElementById("file-upload-fake").addEventListener("click", function () {
 		document.getElementById("file-upload-real").click();  // trigger the click of actual file upload button
 	});
