@@ -162,6 +162,14 @@ class CompojoomHtml
 			return;
 		}
 
+		$changedSignature = true;
+		$options = array('pathOnly' => true);
+
+		if (version_compare(JVERSION, '3.7.0', '<'))
+		{
+			$changedSignature = false;
+		}
+
 		// Let's merge and minify if we need to
 		if ($minify)
 		{
@@ -170,7 +178,16 @@ class CompojoomHtml
 
 			if ($scriptTag)
 			{
-				echo '<script data-inline type="text/javascript" src="' . JHtml::script($fileName, array('pathOnly' => true)). '"></script>' . "\n";
+				if ($changedSignature)
+				{
+					$path = JHtml::script($fileName, $options);
+				}
+				else
+				{
+					$path = JHtml::script($fileName, false, true);
+				}
+
+				echo '<script data-inline type="text/javascript" src="' . $path . '"></script>' . "\n";
 			}
 			else
 			{
@@ -184,7 +201,16 @@ class CompojoomHtml
 			{
 				if ($scriptTag)
 				{
-					echo '<script data-inline type="text/javascript" src="' .  JHtml::script($file, array('pathOnly' => true)) . '"></script>' . "\n";
+					if ($changedSignature)
+					{
+						$path = JHtml::script($file, $options);
+					}
+					else
+					{
+						$path = JHtml::script($file, false, false, true);
+					}
+
+					echo '<script data-inline type="text/javascript" src="' . $path . '"></script>' . "\n";
 				}
 				else
 				{
