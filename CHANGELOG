@@ -1,5 +1,6 @@
 Changelog lib_compojoom
 
++ added advancedlist custom field (allows users to have multiple select lists and use other native joomla jform list features)
 # fix for a bug in Joomla 3.6 https://github.com/joomla/joomla-cms/commit/4cf1dbdbcecab85b4331861aaa633d359bca9617
 
 4.1.0

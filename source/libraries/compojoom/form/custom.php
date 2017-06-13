@@ -21,6 +21,8 @@ class CompojoomFormCustom
 
 	private static $optionsStore;
 
+	private static $optionsJsonStore;
+
 	/**
 	 * Returns a xml string to load in a JForm object
 	 *
@@ -123,5 +125,32 @@ class CompojoomFormCustom
 		}
 
 		return self::$optionsStore[$hash];
+	}
+
+	/**
+	 * Get the whole json object that some fields need
+	 *
+	 * @param   string  $options  - string with options
+	 *
+	 * @return object
+	 */
+	public static function getOptionsJson($options)
+	{
+		$hash = md5(serialize($options));
+
+		if (!isset(self::$optionsJsonStore[$hash]))
+		{
+			$json = json_decode($options);
+
+			// If the json string is malformed the field won't have a correct configuration and we need to let the user know this
+			if (!($json && $options != $json))
+			{
+				throw new Exception('Your customfield configuration is not correct. The json string that you\'ve entered in the field options is malformed.', 500);
+			}
+
+			self::$optionsJsonStore[$hash] = $json;
+		}
+
+		return self::$optionsJsonStore[$hash];
 	}
 }
