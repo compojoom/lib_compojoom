@@ -1,6 +1,8 @@
 /* Compojoom css and bootstrap overwrites */
 .compojoom-bootstrap {
   /** Horizontal form overrides */
+  /* Radios */
+  /* Checkboxes */
 }
 .compojoom-bootstrap .top-5 {
   margin-top: 5px;
@@ -69,4 +71,111 @@
 }
 .compojoom-bootstrap .form-horizontal .form-group {
   padding: 8px;
+}
+.compojoom-bootstrap .co-card {
+  position: relative;
+  padding: 20px;
+  margin-bottom: 10px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+.compojoom-bootstrap .co-card-body {
+  padding: 20px;
+}
+.compojoom-bootstrap .co-card-badge {
+  background: #0095d3;
+  color: #fff;
+  padding: 1px 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+}
+.compojoom-bootstrap .co-card .table td {
+  border: 0;
+  padding: 0;
+}
+.compojoom-bootstrap .co-card .form-group {
+  margin-bottom: 15px;
+}
+.compojoom-bootstrap .input {
+  height: auto;
+}
+.compojoom-bootstrap .button-wrap {
+  position: relative;
+}
+.compojoom-bootstrap .button-label {
+  display: inline-block;
+  padding: 0.7em 2em;
+  margin: 0.5em 0;
+  cursor: pointer;
+  color: #292929;
+  background: #eeeeee;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), inset 0 -3px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.compojoom-bootstrap .button-label:hover {
+  background: #EFEFEF;
+  color: #101010;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), inset 0 -3px 0 rgba(0, 0, 0, 0.22);
+}
+.compojoom-bootstrap .button-label:active {
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0px -1px 0 rgba(0, 0, 0, 0.15);
+}
+.compojoom-bootstrap .radio-label:checked + .button-label {
+  background: #2ECC71;
+  color: #efefef;
+}
+.compojoom-bootstrap .radio-label:checked + .button-label:hover {
+  background: #29b765;
+  color: #e2e2e2;
+}
+.compojoom-bootstrap .toggle-checkbox {
+  width: 50px;
+  height: 28px;
+  border-radius: 40px;
+  -webkit-appearance: none;
+  position: relative;
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.4);
+  background: -webkit-linear-gradient(#e6e6e6, #f5f5f5);
+}
+.compojoom-bootstrap .toggle-checkbox:checked {
+  background: -webkit-linear-gradient(#bfe09c, #c8eca0);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+.compojoom-bootstrap .toggle-checkbox:before {
+  content: "||";
+  letter-spacing: 1px;
+  color: rgba(0, 0, 0, 0.15);
+  font-size: 6px;
+  font-weight: 100;
+  text-shadow: 1px 1px 1px #ffffff;
+  width: 7px;
+  height: 8px;
+  padding: 12px;
+  top: 2px;
+  left: 3px;
+  position: absolute;
+  border-radius: 40px;
+  background: -webkit-linear-gradient(#ebebeb, #f1f1f1);
+  box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.2), -1px 1px 2px rgba(0, 0, 0, 0.3), inset 1px 1px 1px #ffffff;
+  -webkit-transition: all 1s;
+}
+.compojoom-bootstrap .toggle-checkbox:checked:before {
+  left: 26px;
+  background: #f1f1f1;
+}
+.compojoom-bootstrap .toggle-checkbox:checked:after {
+  background: -webkit-linear-gradient(#d8eec4, #5fa718);
+  box-shadow: inset -1px -1px 4px #417f0b, inset 1px 1px 2px #5b9f1a;
 }
