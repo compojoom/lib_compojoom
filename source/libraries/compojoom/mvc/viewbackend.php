@@ -113,7 +113,7 @@ class CompojoomMvcViewbackend extends CompojoomMvcView
 		// Set a default copyright
 		if (empty($this->copyright))
 		{
-			$this->copyright = JText::_($this->extension) . ' by <a href="compojoom.com">compojoom.com</a>';
+			$this->copyright = JText::_($this->extension) . ' by <a href="https://compojoom.com">compojoom.com</a>';
 		}
 	}
 
