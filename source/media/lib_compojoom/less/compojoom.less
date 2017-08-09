@@ -1,18 +1,42 @@
 /* Compojoom css and bootstrap overwrites */
 .compojoom-bootstrap {
-  .top-5 { margin-top:5px; }
-  .top-7 { margin-top:7px; }
-  .top-10 { margin-top:10px; }
-  .top-15 { margin-top:15px; }
-  .top-17 { margin-top:17px; }
-  .top-30 { margin-top:30px; }
+  .top-5 {
+    margin-top: 5px;
+  }
+  .top-7 {
+    margin-top: 7px;
+  }
+  .top-10 {
+    margin-top: 10px;
+  }
+  .top-15 {
+    margin-top: 15px;
+  }
+  .top-17 {
+    margin-top: 17px;
+  }
+  .top-30 {
+    margin-top: 30px;
+  }
 
-  .margin-bottom-5 { margin-bottom:5px; }
-  .margin-bottom-7 { margin-bottom:7px; }
-  .margin-bottom-10 { margin-bottom:10px; }
-  .margin-bottom-15 { margin-bottom:15px; }
-  .margin-bottom-17 { margin-bottom:17px; }
-  .margin-bottom-30 { margin-bottom:30px; }
+  .margin-bottom-5 {
+    margin-bottom: 5px;
+  }
+  .margin-bottom-7 {
+    margin-bottom: 7px;
+  }
+  .margin-bottom-10 {
+    margin-bottom: 10px;
+  }
+  .margin-bottom-15 {
+    margin-bottom: 15px;
+  }
+  .margin-bottom-17 {
+    margin-bottom: 17px;
+  }
+  .margin-bottom-30 {
+    margin-bottom: 30px;
+  }
 
   .checkbox label {
     display: inline;
@@ -48,11 +72,137 @@
     min-width: 120px;
   }
 
-   .form-horizontal .control-label {
-     text-align: left;
-   }
+  .form-horizontal .control-label {
+    text-align: left;
+  }
 
   .form-horizontal .form-group {
     padding: 8px;
   }
+
+  .co-card {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 10px;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
   }
+
+  .co-card-body {
+    padding: 20px;
+  }
+
+  .co-card-badge {
+    background: #0095d3;
+    color: #fff;
+    padding: 1px 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .co-card .table td {
+    border: 0;
+    padding: 0;
+  }
+
+  .co-card .form-group {
+    margin-bottom: 15px;
+  }
+
+  .input {
+    height: auto;
+  }
+
+  /* Radios */
+  .button-wrap {
+    position: relative;
+  }
+
+  .button-label {
+    display: inline-block;
+    padding: 0.7em 2em;
+    margin: 0.5em 0;
+    cursor: pointer;
+    color: #292929;
+    background: #eeeeee;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), inset 0 -3px 0 rgba(0, 0, 0, 0.15);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .button-label:hover {
+    background: #EFEFEF;
+    color: #101010;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), inset 0 -3px 0 rgba(0, 0, 0, 0.22);
+  }
+
+  .button-label:active {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2), inset 0px -1px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  .radio-label:checked + .button-label {
+    background: #2ECC71;
+    color: #efefef;
+  }
+
+  .radio-label:checked + .button-label:hover {
+    background: #29b765;
+    color: #e2e2e2;
+  }
+
+  /* Checkboxes */
+  .toggle-checkbox {
+    width: 50px;
+    height: 28px;
+    border-radius: 40px;
+    -webkit-appearance: none;
+    position: relative;
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.4);
+    background: -webkit-linear-gradient(#e6e6e6, #f5f5f5);
+  }
+  .toggle-checkbox:checked {
+    background: -webkit-linear-gradient(#bfe09c, #c8eca0);
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  .toggle-checkbox:before {
+    content: "||";
+    letter-spacing: 1px;
+    color: rgba(0, 0, 0, .15);
+    font-size: 6px;
+    font-weight: 100;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+    width: 7px;
+    height: 8px;
+    padding: 12px;
+    top: 2px;
+    left: 3px;
+    position: absolute;
+    border-radius: 40px;
+    background: -webkit-linear-gradient(#ebebeb, #f1f1f1);
+    box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.2),
+    -1px 1px 2px rgba(0, 0, 0, 0.3),
+    inset 1px 1px 1px #ffffff;
+    -webkit-transition: all 1s;
+  }
+  .toggle-checkbox:checked:before {
+    left: 26px;
+    background: #f1f1f1;
+  }
+
+  .toggle-checkbox:checked:after {
+    background: -webkit-linear-gradient(#d8eec4, #5fa718);
+    box-shadow: inset -1px -1px 4px #417f0b,
+    inset 1px 1px 2px #5b9f1a;
+  }
+}

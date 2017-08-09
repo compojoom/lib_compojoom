@@ -39,6 +39,8 @@ class CompojoomLanguage
 		{
 			$jlang->load('lib_compojoom', JPATH_ADMINISTRATOR);
 			$jlang->load('lib_compojoom', JPATH_SITE);
+			$jlang->load('lib_cforms', JPATH_ADMINISTRATOR);
+			$jlang->load('lib_cforms', JPATH_SITE);
 		}
 
 		// Make it possible to override the loaded language with a plugin

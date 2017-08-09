@@ -63,7 +63,7 @@ class CompojoomHtmlBehavior
 			// Load backend template
 			if ($ctemplate)
 			{
-				CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/css/animate.css');
+				// CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/css/animate.css');
 				CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/css/compojoom-backend-style.css');
 				CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/css/compojoom-backend-style-responsive.css');
 				CompojoomHtml::addScriptsToQueue($key, 'media/lib_compojoom/js/lanceng.js');
