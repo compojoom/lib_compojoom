@@ -136,9 +136,9 @@ abstract class CompojoomModelStats extends JModelLegacy
 			}
 
 			// We have a date?
-			$now = JFactory::getDate();
+			$now            = JFactory::getDate();
 			$reportSentDate = JFactory::getDate($reportSent);
-			$diff = $now->diff($reportSentDate);
+			$diff           = $now->diff($reportSentDate);
 
 			if ($diff->days > 7)
 			{

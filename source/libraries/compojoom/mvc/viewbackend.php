@@ -99,11 +99,11 @@ class CompojoomMvcViewbackend extends CompojoomMvcView
 	 */
 	public function setConfiguration($title, $slogan, $menuEntry, $menu, $extension = '')
 	{
-		$this->cTitle = $title;
-		$this->cSlogan = $slogan;
+		$this->cTitle     = $title;
+		$this->cSlogan    = $slogan;
 		$this->cMenuEntry = $menuEntry;
-		$this->cMenu = $menu;
-		$this->extension = $extension;
+		$this->cMenu      = $menu;
+		$this->extension  = $extension;
 
 		if (empty($this->extension))
 		{
@@ -161,8 +161,6 @@ class CompojoomMvcViewbackend extends CompojoomMvcView
 		}
 		else
 		{
-			JHtml::_('formbehavior.chosen', 'select');
-
 			echo CompojoomHtmlCtemplate::getHead(
 				$this->cMenu,
 				$this->cMenuEntry,

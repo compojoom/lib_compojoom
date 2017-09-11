@@ -1,9 +1,4 @@
 /* Compojoom css and bootstrap overwrites */
-.compojoom-bootstrap {
-  /** Horizontal form overrides */
-  /* Radios */
-  /* Checkboxes */
-}
 .compojoom-bootstrap .top-5 {
   margin-top: 5px;
 }
@@ -74,18 +69,17 @@
 }
 .compojoom-bootstrap .co-card {
   position: relative;
-  padding: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   background: #fff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 .compojoom-bootstrap .co-card-body {
-  padding: 20px;
+  padding: 30px 20px 20px 20px;
 }
 .compojoom-bootstrap .co-card-badge {
-  background: #0095d3;
+  background: #313940;
   color: #fff;
-  padding: 1px 10px;
+  padding: 4px 15px;
   position: absolute;
   top: 0;
   right: 0;
@@ -96,10 +90,106 @@
 }
 .compojoom-bootstrap .co-card .table td {
   border: 0;
+  padding: 10px 0;
+}
+.compojoom-bootstrap .co-card .co-group {
+  position: relative;
+  padding: 8px 3px;
+  margin-bottom: 8px;
+}
+.compojoom-bootstrap .co-card h3 {
+  margin-top: 0;
+}
+.compojoom-bootstrap .page-heading h1 {
+  padding: 15px 0;
+}
+.compojoom-bootstrap .body.content.rows {
+  padding: 0 !important;
+}
+.compojoom-bootstrap .co-tabs ul.tabs-header {
+  background: #fff;
+  list-style: none;
+  margin: 0;
   padding: 0;
 }
-.compojoom-bootstrap .co-card .form-group {
+.compojoom-bootstrap .co-tabs ul.tabs-header li {
+  display: inline-block;
+  padding: 10px 5px;
+  margin: 0 5px;
+  font-size: 115%;
+  color: #828282;
+}
+.compojoom-bootstrap .co-tabs ul.tabs-header li.active,
+.compojoom-bootstrap .co-tabs ul.tabs-header li:hover {
+  background: #E5E9EC;
+  color: #000;
+}
+.compojoom-bootstrap .co-tabs ul.tabs-header li.active a,
+.compojoom-bootstrap .co-tabs ul.tabs-header li:hover a {
+  background: #E5E9EC;
+  color: #000;
+}
+.compojoom-bootstrap .co-tabs ul.tabs-header li:first-child {
+  margin: 0 10px 0 0;
+}
+.compojoom-bootstrap .co-tabs ul.tabs-header li:last-child {
+  margin: 0 0 0 10px;
+}
+.compojoom-bootstrap .co-tabs ul.tabs-header li a {
+  text-decoration: none;
+  color: #828282;
+  padding: 0 20px;
+}
+.compojoom-bootstrap .co-tabs .tabs {
+  margin: 0 0 30px 0;
+  min-height: 100px;
+  background: #E5E9EC;
+}
+.compojoom-bootstrap .co-tabs .tab-content {
+  padding: 20px;
+}
+.compojoom-bootstrap .co-showon-header a {
+  padding: 8px 20px;
+  display: inline-block;
+  background: none;
+}
+.compojoom-bootstrap .co-showon-header .active,
+.compojoom-bootstrap .co-showon-header a:hover {
+  background: #fff;
+  box-shadow: none;
+  color: #1d1d1d;
+  text-decoration: none;
+}
+.compojoom-bootstrap .co-card .co-btn {
+  border-radius: 0;
+  box-shadow: none;
+  border: 0;
+  margin-right: 6px;
+}
+.compojoom-bootstrap .co-card .co-btn:focus {
+  outline: none;
+}
+.compojoom-bootstrap .co-card .co-btn.active,
+.compojoom-bootstrap .co-card .co-btn:hover,
+.compojoom-bootstrap .co-card .co-btn:focus,
+.compojoom-bootstrap .co-card .co-btn:active {
+  background: #0095d3;
+  box-shadow: none;
+  color: #fff;
+}
+.compojoom-bootstrap .btn-group > .co-btn:first-child,
+.compojoom-bootstrap .btn-group > .co-btn:last-child,
+.compojoom-bootstrap .compojoom-bootstrap .btn-group > .co-btn:last-child:not(:first-child) {
+  border-radius: 0;
+}
+.compojoom-bootstrap .co-row {
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  padding: 10px;
   margin-bottom: 15px;
+}
+.compojoom-bootstrap .co-row .inline-label {
+  min-width: 100px;
 }
 .compojoom-bootstrap .input {
   height: auto;
@@ -117,10 +207,13 @@
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), inset 0 -3px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+}
+.compojoom-bootstrap .btn-transparent,
+.compojoom-bootstrap .btn-group .btn-transparent {
+  background: none;
+  border-color: transparent !important;
+  border: 0;
+  box-shadow: none;
 }
 .compojoom-bootstrap .button-label:hover {
   background: #EFEFEF;
@@ -150,8 +243,12 @@
   background: -webkit-linear-gradient(#e6e6e6, #f5f5f5);
 }
 .compojoom-bootstrap .toggle-checkbox:checked {
-  background: -webkit-linear-gradient(#bfe09c, #c8eca0);
+  background: -webkit-linear-gradient(#b1e2ff, #00b4ff);
   box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+.compojoom-bootstrap .toggle-checkbox:focus {
+  outline: none !important;
+  border: none;
 }
 .compojoom-bootstrap .toggle-checkbox:before {
   content: "||";
@@ -178,4 +275,29 @@
 .compojoom-bootstrap .toggle-checkbox:checked:after {
   background: -webkit-linear-gradient(#d8eec4, #5fa718);
   box-shadow: inset -1px -1px 4px #417f0b, inset 1px 1px 2px #5b9f1a;
+}
+.compojoom-bootstrap .co-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+}
+.compojoom-bootstrap .co-loading-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: #fff;
+  margin-left: -150px;
+  margin-top: -150px;
+}
+.compojoom-bootstrap .co-print {
+  padding: 20px;
+}
+.compojoom-bootstrap .co-date {
+  height: 34px;
 }
