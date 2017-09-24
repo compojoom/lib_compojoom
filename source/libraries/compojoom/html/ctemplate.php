@@ -242,6 +242,7 @@ class CompojoomHtmlCtemplate
 
 		// BEGIN CONTENT HEADER
 		$html[] = '<div class="body content rows scroll-y">';
+		$html[] = '<div class="content-inner">';
 
 		$html[] = '<div id="c-debug-container"> </div>';
 
@@ -282,6 +283,7 @@ class CompojoomHtmlCtemplate
 		}
 
 		$html[] = '		</div>
+					</div>
 					</div>
 				</div>
 				<div class="clear clr"></div>

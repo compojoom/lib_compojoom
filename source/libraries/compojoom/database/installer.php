@@ -113,7 +113,7 @@ class CompojoomDatabaseInstaller
 	/**
 	 * Creates or updates the database schema
 	 *
-	 * @return  void
+	 * @return  bool
 	 *
 	 * @throws  Exception  When a database query fails and it doesn't have the canfail flag
 	 */
@@ -124,13 +124,13 @@ class CompojoomDatabaseInstaller
 
 		if (empty($xml))
 		{
-			return;
+			return false;
 		}
 
 		// Make sure there are SQL commands in this file
 		if (!$xml->sql)
 		{
-			return;
+			return false;
 		}
 
 		// Walk the sql > action tags to find all tables
@@ -264,6 +264,8 @@ class CompojoomDatabaseInstaller
 				}
 			}
 		}
+
+		return true;
 	}
 
 	/**

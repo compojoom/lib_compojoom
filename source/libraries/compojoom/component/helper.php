@@ -108,7 +108,7 @@ class CompojoomComponentHelper
 	 * Update the configuration of a component
 	 *
 	 * @param   string  $component  - the component
-	 * @param   object  $config     - the config object
+	 * @param   string  $config     - the config object
 	 *
 	 * @return  boolean
 	 *
