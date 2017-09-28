@@ -216,10 +216,11 @@ class CompojoomModelMultimedia extends JModelLegacy
 	 * @param   int    $itemId  - the item id
 	 * @param   array  $files   - the files to save
 	 * @param   array  $meta    - meta information about the image such as title & description
+	 * @param   string  $tmpPath  - temporary path to file. If none given, we'll use the default file path
 	 *
 	 * @return void
 	 */
-	public function uploadPermanent($itemId, $files, $meta = array())
+	public function uploadPermanent($itemId, $files, $meta = array(), $tmpPath = '')
 	{
 		$dbFiles = $this->getFilesFromDb($itemId, 'mangled_filename');
 
@@ -232,7 +233,7 @@ class CompojoomModelMultimedia extends JModelLegacy
 			}
 		}
 
-		$moved = $this->permanentlyMoveFiles($itemId, $files);
+		$moved = $this->permanentlyMoveFiles($itemId, $files, $tmpPath);
 
 		// Do we have meta Information (normally title & description)?
 		if (count($meta))
@@ -264,7 +265,7 @@ class CompojoomModelMultimedia extends JModelLegacy
 	 *
 	 * @return void
 	 */
-	private function updateExistingFiles($itemId, $files, $meta = array())
+	public function updateExistingFiles($itemId, $files, $meta = array())
 	{
 		$params = JComponentHelper::getParams($this->component);
 		$table = JTable::getInstance('Multimedia', 'CompojoomTable');
@@ -392,7 +393,7 @@ class CompojoomModelMultimedia extends JModelLegacy
 	 *
 	 * @return void
 	 */
-	private function saveInDb($itemId, $files)
+	public function saveInDb($itemId, $files)
 	{
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true);
