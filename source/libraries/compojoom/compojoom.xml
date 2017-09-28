@@ -3,13 +3,13 @@
     <name>Library - compojoom</name>
     <libraryname>compojoom</libraryname>
     <description>LIB_COMPOJOOM_DESC</description>
-    <creationDate>2017-09-11</creationDate>
+    <creationDate>2017-09-27</creationDate>
     <author>compojoom.com</author>
     <authorEmail>contact-us@compojoom.com</authorEmail>
     <authorUrl>https://compojoom.com</authorUrl>
     <copyright>(C) 2008 - 2017 Daniel Dimitrov and Yves Hoppe</copyright>
     <license>GNU GPLv2 or later</license>
-    <version>5.2.1</version>
+    <version>5.2.2</version>
 
     <languages folder="language">
         <language tag="en-GB">en-GB/en-GB.lib_compojoom.ini</language>

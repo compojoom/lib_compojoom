@@ -45,8 +45,8 @@ class CompojoomLanguage
 
 		// Make it possible to override the loaded language with a plugin
 		JPluginHelper::importPlugin('system');
-		$dispatcher = (JVERSION < 3) ? JDispatcher::getInstance() : JEventDispatcher::getInstance();
 
+		$dispatcher = JEventDispatcher::getInstance();
 		$dispatcher->trigger('onAfterCompojoomLoadLanguage', array($extension, $path));
 	}
 
