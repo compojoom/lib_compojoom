@@ -53,11 +53,13 @@ class CompojoomFormCustomfieldsUrl
 		// wild guess, but if the host has a .com in it, then it's not a relative url
 
 		$displayUri = $uri->toString();
+		$href =  $uri->toString();
 
 		// If we are dealing with mailto, then output just path
 		if ($uri->getScheme() === 'mailto')
 		{
 			$displayUri = $uri->toString(array('path'));
+			$href = 'mailto:' . $uri->toString(array('path'));
 		}
 		// if we have a host, then output just the host
 		else if ($uri->getHost())
@@ -65,6 +67,6 @@ class CompojoomFormCustomfieldsUrl
 			$displayUri = $uri->toString(array('host'));
 		}
 
-		return '<a href="' . $uri->toString() . '" target="_blank" rel="nofollow">' . $displayUri . '</a>';
+		return '<a href="' . $href . '" target="_blank" rel="nofollow">' . $displayUri . '</a>';
 	}
 }
