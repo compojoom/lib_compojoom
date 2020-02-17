@@ -2338,7 +2338,8 @@
 .compojoom-bootstrap .table > thead > tr > td,
 .compojoom-bootstrap .table > tbody > tr > td,
 .compojoom-bootstrap .table > tfoot > tr > td {
-  padding: 13px 8px;
+  padding: 8px;
+  line-height: 1.42857143;
   vertical-align: top;
   border-top: 1px solid #ddd;
 }
@@ -6453,9 +6454,6 @@
 }
 .compojoom-bootstrap .carousel-caption .btn {
   text-shadow: none;
-}
-.compojoom-bootstrap .table-no-border>tbody>tr>td {
-  border-top: 0;
 }
 @media screen and (min-width: 768px) {
   .compojoom-bootstrap .carousel-control .glyphicon-chevron-left,
