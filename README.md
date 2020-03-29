@@ -5,7 +5,7 @@ Compojoom - Utilities library for Joomla
 The goal of this library is to ease the Joomla extension development process by abstracting commonly used
 functions in one place.
 
-## USAGE##
+## USAGE
 
 Add the following line to your code:
 
