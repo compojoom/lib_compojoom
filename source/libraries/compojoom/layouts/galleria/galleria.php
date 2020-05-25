@@ -19,6 +19,7 @@ JHtml::script('media/lib_compojoom/third/galleria/themes/compojoom/galleria.comp
 
 <script type="text/javascript">
 	Galleria.run('.galleria', {
-		dataSource: <?php echo $displayData['data']; ?>
+		dataSource: <?php echo $displayData['data']; ?>,
+      imageCrop: true
 	});
 </script>
