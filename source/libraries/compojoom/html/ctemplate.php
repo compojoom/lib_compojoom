@@ -88,6 +88,9 @@ class CompojoomHtmlCtemplate
 						</div>
 					';
 
+		$isJoomla3 = version_compare(JVERSION, '4', 'lt');
+
+		if ($isJoomla3) {
 		// Begin sidebar
 		$html[] = '<div class="left side-menu">
 						<div class="body rows scroll-y">
@@ -111,7 +114,7 @@ class CompojoomHtmlCtemplate
 						</form>
 					</div>';
 
-		// Sidebar menu
+//		 Sidebar menu
 		$html[] = '<div id="sidebar-menu" style="clear: both;">
 						<ul>';
 
@@ -236,9 +239,10 @@ class CompojoomHtmlCtemplate
             </div><!-- End div .body .rows .scroll-y -->
 		</div>
 		';
+		}
 
 		// BEGIN CONTENT
-		$html[] = '<div class="right content-page">';
+		$html[] = '<div class="' . ($isJoomla3 ? "right" : "") .' content-page">';
 
 		// BEGIN CONTENT HEADER
 		$html[] = '<div class="body content rows scroll-y">';
