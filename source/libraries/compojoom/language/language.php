@@ -7,9 +7,11 @@
  * @copyright  Copyright (C) 2008 - 2013 compojoom.com . All rights reserved.
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
-
 defined('_JEXEC') or die('Restricted access');
 
+use \Joomla\CMS\Factory;
+use \Joomla\CMS\Plugin\PluginHelper;
+use \Joomla\CMS\Language\Text;
 
 /**
  * Class CompojoomLanguage
@@ -26,10 +28,11 @@ class CompojoomLanguage
 	 * @param   boolean  $liblang    - should the library language also be loaded?
 	 *
 	 * @return void
+	 * @throws Exception
 	 */
 	public static function load($extension, $path, $liblang = true)
 	{
-		$jlang = JFactory::getLanguage();
+		$jlang = Factory::getLanguage();
 		$jlang->load($extension, $path, 'en-GB', true);
 		$jlang->load($extension, $path, $jlang->getDefault(), true);
 		$jlang->load($extension, $path, null, true);
@@ -44,10 +47,9 @@ class CompojoomLanguage
 		}
 
 		// Make it possible to override the loaded language with a plugin
-		JPluginHelper::importPlugin('system');
+		PluginHelper::importPlugin('system');
 
-		$dispatcher = JEventDispatcher::getInstance();
-		$dispatcher->trigger('onAfterCompojoomLoadLanguage', array($extension, $path));
+		Factory::getApplication()->triggerEvent('onAfterCompojoomLoadLanguage', array($extension, $path));
 	}
 
 	/**
@@ -57,6 +59,7 @@ class CompojoomLanguage
 	 * @param   string  $path       The path to the file (JPATH_COMPONENT)
 	 *
 	 * @return  void
+	 * @throws Exception
 	 */
 	public static function loadJavaScriptLanguage($extension, $path)
 	{
@@ -66,7 +69,7 @@ class CompojoomLanguage
 
 		$strings = $clang->getStrings();
 
-		$lang = JFactory::getLanguage();
+		$lang = Factory::getLanguage();
 
 		$clang->load($extension, $path, null, false, false);
 		$clang->load($extension, $path, 'en-GB', false, false);
@@ -81,7 +84,7 @@ class CompojoomLanguage
 		// Add them to the header
 		foreach (array_keys($jsLang) as $key)
 		{
-			JText::script($key);
+			Text::script($key);
 		}
 	}
 }
