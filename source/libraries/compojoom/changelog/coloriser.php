@@ -57,7 +57,7 @@ class CompojoomChangelogColoriser
 			switch ($type)
 			{
 				case '=':
-					continue;
+					continue 2;
 					break;
 
 				case '*':
@@ -148,7 +148,7 @@ class CompojoomChangelogColoriser
 			switch ($type)
 			{
 				case '=':
-					continue;
+					continue 2;
 					break;
 
 				case '*':
