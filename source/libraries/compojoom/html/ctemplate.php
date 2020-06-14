@@ -35,6 +35,7 @@ class CompojoomHtmlCtemplate
 	{
 		// Load bootstrap
 		CompojoomHtmlBehavior::lanceng(true, true, true);
+		$isJoomla3 = version_compare(JVERSION, '4', 'lt');
 
 		$input = JFactory::getApplication()->input;
 
@@ -75,9 +76,11 @@ class CompojoomHtmlCtemplate
 							<div class="c-toolbar-holder">
 								<div class="c-toolbar pull-left">';
 
-		foreach ($toolbarItems as $item)
-		{
-			$html[] = $toolbar->renderButton($item);
+		if ($isJoomla3) {
+			foreach ($toolbarItems as $item)
+			{
+				$html[] = $toolbar->renderButton($item);
+			}
 		}
 
 		$html[] = '</div>
@@ -87,8 +90,6 @@ class CompojoomHtmlCtemplate
 							</div>
 						</div>
 					';
-
-		$isJoomla3 = version_compare(JVERSION, '4', 'lt');
 
 		if ($isJoomla3) {
 		// Begin sidebar
