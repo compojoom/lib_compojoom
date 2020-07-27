@@ -1,0 +1,12 @@
+.compojoom-bootstrap {
+    position: static;
+}
+.compojoom-bootstrap .body.rows {
+    top: auto!important;
+}
+.compojoom-bootstrap .body.content.rows {
+    background-color: transparent;
+}
+.compojoom-bootstrap .body.content.rows .content-inner {
+    background-color: transparent;
+}

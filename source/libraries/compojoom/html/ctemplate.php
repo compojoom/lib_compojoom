@@ -68,29 +68,31 @@ class CompojoomHtmlCtemplate
 		$toolbarItems = $toolbar->getItems();
 
 		// Container
-		$html[] = '<div class="c-container">
-						<div class="logo-brand header sidebar rows">
+		$html[] = '<div class="c-container">';
+
+		if ($isJoomla3)
+		{
+			$html[] = '<div class="logo-brand header sidebar rows">
 							<div class="c-extension-title logo pull-left">
-								<h1><a href="' . JRoute::_("index.php?option=" . JFactory::getApplication()->input->get('option')) . '">' . JText::_($extension) . '</a></h1>
+								<h1><a href="\' . JRoute::_("index.php?option=" . JFactory::getApplication()->input->get(\'option\')) . \'">\' . JText::_($extension) . \'</a></h1>
 							</div>
 							<div class="c-toolbar-holder">
 								<div class="c-toolbar pull-left">';
 
-		if ($isJoomla3) {
 			foreach ($toolbarItems as $item)
 			{
 				$html[] = $toolbar->renderButton($item);
 			}
-		}
 
-		$html[] = '</div>
+
+			$html[] = '</div>
 							</div>
 							<div class="c-logo-icon pull-left hidden-sm hidden-xs hidden-md">
 								<a href="https://compojoom.com" title="Compojoom"><img src="../media/lib_compojoom/img/logo-green.png" alt="Compojoom" /></a>
 							</div>
 						</div>
 					';
-
+		}
 		if ($isJoomla3) {
 		// Begin sidebar
 		$html[] = '<div class="left side-menu">

@@ -67,6 +67,10 @@ class CompojoomHtmlBehavior
 				CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/css/compojoom-backend-style.css');
 				CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/css/compojoom-backend-style-responsive.css');
 				CompojoomHtml::addScriptsToQueue($key, 'media/lib_compojoom/js/lanceng.js');
+
+				if(!version_compare(JVERSION, '4', 'lt')) {
+					CompojoomHtml::addCSSToQueue($key, 'media/lib_compojoom/css/compojoom-backend-style-j4.css');
+				}
 			}
 		}
 
