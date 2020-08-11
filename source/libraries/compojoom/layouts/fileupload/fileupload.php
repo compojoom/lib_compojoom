@@ -18,9 +18,9 @@ if (!$user->authorise('core.multimedia.create', $displayData['component']))
 	return;
 }
 
-$imageSize = $displayData['imageSize'];
+$imageSize   = $displayData['imageSize'];
 $mediaHelper = new CompojoomHelperMedia;
-$canDelete = $user->authorise('core.multimedia.delete', $displayData['component']) || $user->authorise('core.multimedia.delete.own', $displayData['component']);
+$canDelete   = $user->authorise('core.multimedia.delete', $displayData['component']) || $user->authorise('core.multimedia.delete.own', $displayData['component']);
 
 JHTML::stylesheet('media/lib_compojoom/third/font-awesome/css/font-awesome.min.css');
 JHtml::stylesheet('media/lib_compojoom/css/jquery.fileupload.css');
@@ -47,38 +47,37 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
 	<!-- Redirect browsers with JavaScript disabled to the origin page -->
 	<noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
 	<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-	<div class="row fileupload-buttonbar">
+	<div class="fileupload-buttonbar">
 		<input type="file" name="files[]" id="file-upload-real" multiple>
-		<div class="col-lg-12">
-			<div class="panel panel-default compojoom-notes">
-				<div class="panel-body">
-					<!-- The global file processing state -->
-					<span class="fileupload-process"><span class="fa fa-spinner fa-pulse"></span></span>
-					<?php echo JText::sprintf('LIB_COMPOJOOM_ATTACH_IMAGES_BY_DRAG_DROP_OR', '<span id="file-upload-fake" type="button" class="btn-link">', '</span>'); ?>
-					<br/>
-					<small class="muted"><?php echo JText::sprintf('LIB_COMPOJOOM_THE_MAXIMUM_FILE_SIZE', $displayData['maxSize'] . 'MB'); ?>
-						<?php echo JText::sprintf('LIB_COMPOJOOM_ONLY_FILE_TYPES_ARE_ALLOWED', $displayData['fileTypes']); ?></small>
 
-					<!-- The global progress state -->
-					<div class="fileupload-progress fade hide">
-						<!-- The global progress bar -->
-						<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-							<div class="progress-bar progress-bar-success" style="width:0%;"></div>
-						</div>
-						<!-- The extended global progress state -->
-						<div class="progress-extended">&nbsp;</div>
+		<div class="panel panel-default compojoom-notes">
+			<div class="panel-body">
+				<!-- The global file processing state -->
+				<span class="fileupload-process"><span class="fa fa-spinner fa-pulse"></span></span>
+				<?php echo JText::sprintf('LIB_COMPOJOOM_ATTACH_IMAGES_BY_DRAG_DROP_OR', '<span id="file-upload-fake" type="button" class="btn-link">', '</span>'); ?>
+				<br/>
+				<small class="muted"><?php echo JText::sprintf('LIB_COMPOJOOM_THE_MAXIMUM_FILE_SIZE', $displayData['maxSize'] . 'MB'); ?>
+					<?php echo JText::sprintf('LIB_COMPOJOOM_ONLY_FILE_TYPES_ARE_ALLOWED', $displayData['fileTypes']); ?></small>
+
+				<!-- The global progress state -->
+				<div class="fileupload-progress fade hide d-none">
+					<!-- The global progress bar -->
+					<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+						<div class="progress-bar progress-bar-success" style="width:0%;"></div>
 					</div>
-					<div class="">
-						<div class="alert alert-error hide compojoom-max-number-files">
-							<?php echo JText::sprintf('LIB_COMPOJOOM_MAX_NUMBER_OF_FILES_REACHED', $displayData['maxNumberOfFiles']); ?>
-						</div>
-						<table role="presentation" class="table table-striped">
-							<thead></thead>
-							<tbody class="files"></tbody>
-						</table>
-						<div class="alert alert-error hide compojoom-max-number-files">
-							<?php echo JText::sprintf('LIB_COMPOJOOM_MAX_NUMBER_OF_FILES_REACHED', $displayData['maxNumberOfFiles']); ?>
-						</div>
+					<!-- The extended global progress state -->
+					<div class="progress-extended">&nbsp;</div>
+				</div>
+				<div class="">
+					<div class="alert alert-warning hide d-none compojoom-max-number-files">
+						<?php echo JText::sprintf('LIB_COMPOJOOM_MAX_NUMBER_OF_FILES_REACHED', $displayData['maxNumberOfFiles']); ?>
+					</div>
+					<table role="presentation" class="table table-striped">
+						<thead></thead>
+						<tbody class="files"></tbody>
+					</table>
+					<div class="alert alert-warning hide d-none compojoom-max-number-files">
+						<?php echo JText::sprintf('LIB_COMPOJOOM_MAX_NUMBER_OF_FILES_REACHED', $displayData['maxNumberOfFiles']); ?>
 					</div>
 				</div>
 			</div>
@@ -118,6 +117,7 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
         </td>
     </tr>
 {% } %}
+
 </script>
 
 <!-- The template to display files available for download -->
@@ -183,9 +183,10 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
         </td>
     </tr>
 {% } %}
+
 </script>
 
-<script>
+<script type="application/javascript">
 	document.getElementById("file-upload-fake").addEventListener("click", function () {
 		document.getElementById("file-upload-real").click();  // trigger the click of actual file upload button
 	});
@@ -207,29 +208,29 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
 			imageMaxHeight: <?php echo $imageSize['y']; ?>,
 			finished: function (e, data) {
 				if ($(this).fileupload('option').getNumberOfFiles() >= <?php echo $displayData['maxNumberOfFiles']; ?>) {
-					$('.compojoom-max-number-files').removeClass('hide');
+					$('.compojoom-max-number-files').removeClass('hide d-none');
 				}
 				else {
-					$('.compojoom-max-number-files').addClass('hide');
+					$('.compojoom-max-number-files').addClass('hide d-none');
 				}
 			},
 			destroyed: function (e, data) {
 				if ($(this).fileupload('option').getNumberOfFiles() >= <?php echo $displayData['maxNumberOfFiles']; ?>) {
-					$('.compojoom-max-number-files').removeClass('hide');
+					$('.compojoom-max-number-files').removeClass('hide d-none');
 				}
 				else {
-					$('.compojoom-max-number-files').addClass('hide');
+					$('.compojoom-max-number-files').addClass('hide d-none');
 				}
 			}
 		}).on('destroyed', function (e, data) {
 			if ($(this).fileupload('option').getNumberOfFiles() >= <?php echo $displayData['maxNumberOfFiles']; ?>) {
-				$('.compojoom-max-number-files').removeClass('hide');
+				$('.compojoom-max-number-files').removeClass('hide d-none');
 			}
 			else {
-				$('.compojoom-max-number-files').addClass('hide');
+				$('.compojoom-max-number-files').addClass('hide d-none');
 			}
 		}).on('fileuploadadd', function(e, data){
-			$('.fileupload-progress.hide').removeClass('hide');
+			$('.fileupload-progress.hide').removeClass('hide d-none');
 		});
 
 		// Enable iframe cross-domain access via redirect option:

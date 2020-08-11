@@ -80,6 +80,14 @@
 	display: inline-block;
 }
 
+.compojoom-bootstrap #fileupload .fade.in {
+	opacity: 1;
+}
+
+.compojoom-bootstrap #fileupload .compojoom-max-number-files {
+	margin-top: 10px;
+}
+
 /* Fixes for IE < 8 */
 @media screen\9 {
   .compojoom-bootstrap .fileinput-button input {
