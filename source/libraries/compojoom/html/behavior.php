@@ -55,9 +55,6 @@ class CompojoomHtmlBehavior
 				CompojoomHtml::addScriptsToQueue($key, 'media/lib_compojoom/third/magnific-popup/jquery.magnific-popup.min.js');
 				CompojoomHtml::addScriptsToQueue($key, 'media/lib_compojoom/third/input/bootstrap.file-input.js');
 				CompojoomHtml::addScriptsToQueue($key, 'media/lib_compojoom/third/datepicker/js/bootstrap-datepicker.js');
-
-				JHTML::_('script', 'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js');
-				JHTML::_('script', 'https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js');
 			}
 
 			// Load backend template
