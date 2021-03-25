@@ -23,6 +23,6 @@
     "twbs/bootstrap": "v3.3.6",
     "oyejorge/less.php": "~1.5",
     "patchwork/jsqueeze": "~1.0",
-    "natxet/CssMin": "~3.0"
+    "natxet/cssmin": "~3.0"
   }
 }
