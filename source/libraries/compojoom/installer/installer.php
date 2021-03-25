@@ -638,7 +638,7 @@ class CompojoomInstaller
 	{
 		$jversion = new JVersion;
 		$appl = JFactory::getApplication();
-		$manifest = $this->parent->get("manifest")->attributes();
+		$manifest = $this->parent->getManifest()->attributes();
 
 		// Check the minimum PHP version
 		if (!empty($this->minimumPHPVersion))
