@@ -94,7 +94,10 @@ class CompojoomComponentHelper
 			$asset = $assetName . '.' . $unit . '.' . (int) $messageId;
 		}
 
-		$actions = JAccess::getActions($assetName, $unit);
+		$actions = JAccess::getActionsFromFile(
+			JPATH_ADMINISTRATOR . '/components/'. $assetName . '/access.xml',
+			"/access/section[@name='" . $unit . "']/"
+		);
 
 		foreach ($actions as $action)
 		{

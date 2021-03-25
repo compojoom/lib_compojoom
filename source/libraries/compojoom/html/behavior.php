@@ -128,7 +128,7 @@ class CompojoomHtmlBehavior
 	 */
 	public static function jquery()
 	{
-		JHtml::_('jquery.framework');
+		JHtml::_('jquery.framework', false);
 	}
 
 	/**
