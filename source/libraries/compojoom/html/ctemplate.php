@@ -18,44 +18,42 @@ defined('_JEXEC') or die('Restricted access');
  */
 class CompojoomHtmlCtemplate
 {
-	/**
-	 * Function to render a social media info
-	 *
-	 * Todo: Cleanup and refactor..
-	 * 	 *
-	 * @param   array   $menu       - The menu
-	 * @param   string  $active     - The active entry
-	 * @param   string  $title      - The title
-	 * @param   string  $slogan     - The slogan
-	 * @param   string  $extension  - The extension (opt - if not set taken from input->get('option'))
-	 *
-	 * @return string
-	 */
-	public static function getHead($menu, $active = 'dashboard', $title = '', $slogan = '', $extension = '')
-	{
-		// Load bootstrap
-		CompojoomHtmlBehavior::lanceng(true, true, true);
-		$isJoomla3 = version_compare(JVERSION, '4', 'lt');
+    /**
+     * Function to render a social media info
+     *
+     * Todo: Cleanup and refactor..
+     *     *
+     * @param array $menu - The menu
+     * @param string $active - The active entry
+     * @param string $title - The title
+     * @param string $slogan - The slogan
+     * @param string $extension - The extension (opt - if not set taken from input->get('option'))
+     *
+     * @return string
+     */
+    public static function getHead($menu, $active = 'dashboard', $title = '', $slogan = '', $extension = '')
+    {
+        // Load bootstrap
+        CompojoomHtmlBehavior::lanceng(true, true, true);
+        $isJoomla3 = version_compare(JVERSION, '4', 'lt');
 
-		$input = JFactory::getApplication()->input;
+        $input = JFactory::getApplication()->input;
 
-		if (empty($extension))
-		{
-			$extension = $input->get('option');
-		}
+        if (empty($extension)) {
+            $extension = $input->get('option');
+        }
 
-		if (empty($active))
-		{
-			$active = $input->getCmd('view', "");
-		}
+        if (empty($active)) {
+            $active = $input->getCmd('view', "");
+        }
 
-		$user = JFactory::getUser();
-		$gravatar = self::get_gravatar($user->email);
+        $user = JFactory::getUser();
+        $gravatar = self::get_gravatar($user->email);
 
-		$html[] = '<div class="compojoom-bootstrap" style="clear: both">';
+        $html[] = '<div class="compojoom-bootstrap" style="clear: both">';
 
-		// Loading animation
-		$html[] = '<div id="loading" style="display: none;">
+        // Loading animation
+        $html[] = '<div id="loading" style="display: none;">
 						<div class="loading-inner">
 							<div class="spinner">
 								<div class="cube1"></div>
@@ -64,38 +62,36 @@ class CompojoomHtmlCtemplate
 						</div>
 					</div>';
 
-		$toolbar = JToolbar::getInstance('toolbar');
-		$toolbarItems = $toolbar->getItems();
+        $toolbar = JToolbar::getInstance('toolbar');
+        $toolbarItems = $toolbar->getItems();
 
-		// Container
-		$html[] = '<div class="c-container">';
+        // Container
+        $html[] = '<div class="c-container">';
 
-		if ($isJoomla3)
-		{
-			$html[] = '<div class="logo-brand header sidebar rows">
+        if ($isJoomla3) {
+            $html[] = '<div class="logo-brand header sidebar rows">
 							<div class="c-extension-title logo pull-left">
-								<h1><a href="\' . JRoute::_("index.php?option=" . JFactory::getApplication()->input->get(\'option\')) . \'">\' . JText::_($extension) . \'</a></h1>
+								<h1><a href="\' . JRoute::_("index.php?option=" . JFactory::getApplication()->input->get(\'option\')) . \'">' . JText::_($extension) . '</a></h1>
 							</div>
 							<div class="c-toolbar-holder">
 								<div class="c-toolbar pull-left">';
 
-			foreach ($toolbarItems as $item)
-			{
-				$html[] = $toolbar->renderButton($item);
-			}
+            foreach ($toolbarItems as $item) {
+                $html[] = $toolbar->renderButton($item);
+            }
 
 
-			$html[] = '</div>
+            $html[] = '</div>
 							</div>
 							<div class="c-logo-icon pull-left hidden-sm hidden-xs hidden-md">
 								<a href="https://compojoom.com" title="Compojoom"><img src="../media/lib_compojoom/img/logo-green.png" alt="Compojoom" /></a>
 							</div>
 						</div>
 					';
-		}
-		if ($isJoomla3) {
-		// Begin sidebar
-		$html[] = '<div class="left side-menu">
+        }
+        if ($isJoomla3) {
+            // Begin sidebar
+            $html[] = '<div class="left side-menu">
 						<div class="body rows scroll-y">
 							<div class="sidebar-inner" style="min-height: 100%">
 								<div class="media c-media-sidebar">
@@ -109,8 +105,8 @@ class CompojoomHtmlCtemplate
 					</div>
 				';
 
-		// Search
-		$html[] = '<div id="search">
+            // Search
+            $html[] = '<div id="search">
 						<form role="form">
 							<input type="text" id="csearch" class="form-control search" placeholder="' . JText::_('LIB_COMPOJOOM_SEARCH_HERE') . '" />
 							<i class="fa fa-search"></i>
@@ -118,178 +114,160 @@ class CompojoomHtmlCtemplate
 					</div>';
 
 //		 Sidebar menu
-		$html[] = '<div id="sidebar-menu" style="clear: both;">
+            $html[] = '<div id="sidebar-menu" style="clear: both;">
 						<ul>';
 
-		foreach ($menu as $k => $m)
-		{
-			$act = "";
+            foreach ($menu as $k => $m) {
+                $act = "";
 
-			if ($k == $active || array_key_exists($active, $m['children']))
-			{
-				$act = ' class="active"';
-			}
+                if ($k == $active || array_key_exists($active, $m['children'])) {
+                    $act = ' class="active"';
+                }
 
-			$keyw = "";
+                $keyw = "";
 
-			if (!empty($m['keywords']))
-			{
-				$keyw = ' keywords="' . $m['keywords'] . '"';
-			}
+                if (!empty($m['keywords'])) {
+                    $keyw = ' keywords="' . $m['keywords'] . '"';
+                }
 
-			$html[] = '<li' . $act . $keyw . '>';
+                $html[] = '<li' . $act . $keyw . '>';
 
-			// If we have an empty link we generate it on the key! like jtoolbarhelper does
-			if (empty($m['link']))
-			{
-				$m['link'] = 'index.php?option=' . $extension . '&view=' . $k;
-			}
+                // If we have an empty link we generate it on the key! like jtoolbarhelper does
+                if (empty($m['link'])) {
+                    $m['link'] = 'index.php?option=' . $extension . '&view=' . $k;
+                }
 
-			// Link
-			$html[] = '<a href="' . JRoute::_($m['link']) . $m['anchor'] . '" title="' . JText::_($m['title']) . '">';
+                // Link
+                $html[] = '<a href="' . JRoute::_($m['link']) . $m['anchor'] . '" title="' . JText::_($m['title']) . '">';
 
-			// Icon
-			if (!empty($m['icon']))
-			{
-				$child = '';
+                // Icon
+                if (!empty($m['icon'])) {
+                    $child = '';
 
-				if (count($m['children']))
-				{
-					$child = ' i-has-children ';
-				}
+                    if (count($m['children'])) {
+                        $child = ' i-has-children ';
+                    }
 
-				$html[] = '<i class="fa ' . $m['icon'] . $child . ' hasTooltip" data-toggle="tooltip" data-placement="right" title="' . JText::_($m['title']) . '"></i> ';
-			}
+                    $html[] = '<i class="fa ' . $m['icon'] . $child . ' hasTooltip" data-toggle="tooltip" data-placement="right" title="' . JText::_($m['title']) . '"></i> ';
+                }
 
-			if (count($m['children']))
-			{
-				$html[] = '<i class="fa fa-angle-double-down i-right"></i> ';
-			}
+                if (count($m['children'])) {
+                    $html[] = '<i class="fa fa-angle-double-down i-right"></i> ';
+                }
 
-			$html[] = '<span class="side-menu-item-text">' . JText::_($m['title']) . '</span>';
+                $html[] = '<span class="side-menu-item-text">' . JText::_($m['title']) . '</span>';
 
-			$html[] = '</a>';
+                $html[] = '</a>';
 
-			if (count($m['children']))
-			{
-				$style = "";
+                if (count($m['children'])) {
+                    $style = "";
 
-				if ($k == $active || array_key_exists($active, $m['children']))
-				{
-					$style = ' style="display: block;"';
-				}
+                    if ($k == $active || array_key_exists($active, $m['children'])) {
+                        $style = ' style="display: block;"';
+                    }
 
-				$html[] = '<ul' . $style . '>';
+                    $html[] = '<ul' . $style . '>';
 
-				foreach ($m['children'] as $kc => $c)
-				{
-					$act = "";
+                    foreach ($m['children'] as $kc => $c) {
+                        $act = "";
 
-					if ($kc == $active)
-					{
-						$act = ' class="active"';
-					}
+                        if ($kc == $active) {
+                            $act = ' class="active"';
+                        }
 
-					$keywc = "";
+                        $keywc = "";
 
-					if (!empty($c['keywords']))
-					{
-						$keywc = ' keywords="' . $c['keywords'] . '"';
-					}
+                        if (!empty($c['keywords'])) {
+                            $keywc = ' keywords="' . $c['keywords'] . '"';
+                        }
 
-					$html[] = '<li key="' . $kc . '"' . $act . $keywc . '>';
+                        $html[] = '<li key="' . $kc . '"' . $act . $keywc . '>';
 
-					// If we have an empty link we generate it on the key! like jtoolbarhelper does
-					if (empty($c['link']))
-					{
-						$c['link'] = 'index.php?option=' . $extension . '&view=' . $kc;
-					}
+                        // If we have an empty link we generate it on the key! like jtoolbarhelper does
+                        if (empty($c['link'])) {
+                            $c['link'] = 'index.php?option=' . $extension . '&view=' . $kc;
+                        }
 
-					// Link
-					$html[] = '<a href="' . JRoute::_($c['link']) . $c['anchor'] . '" title="' . JText::_($c['title']) . '">';
+                        // Link
+                        $html[] = '<a href="' . JRoute::_($c['link']) . $c['anchor'] . '" title="' . JText::_($c['title']) . '">';
 
-					// Icon
-					// $html[] = '<i class="fa fa-angle-right"></i> ';
+                        // Icon
+                        // $html[] = '<i class="fa fa-angle-right"></i> ';
 
-					// Icon right
-					if (!empty($c['icon']))
-					{
-						$html[] = '<i class="fa ' . $c['icon'] . '" data-toggle="tooltip" data-placement="right" title="' . JText::_($c['title']) . '"></i> ';
-					}
+                        // Icon right
+                        if (!empty($c['icon'])) {
+                            $html[] = '<i class="fa ' . $c['icon'] . '" data-toggle="tooltip" data-placement="right" title="' . JText::_($c['title']) . '"></i> ';
+                        }
 
-					$html[] = '<span class="side-menu-item-text">' . JText::_($c['title']) . '</span>';
+                        $html[] = '<span class="side-menu-item-text">' . JText::_($c['title']) . '</span>';
 
-					$html[] = '</a>';
+                        $html[] = '</a>';
 
-					$html[] = '</li>';
-				}
+                        $html[] = '</li>';
+                    }
 
-				$html[] = '</ul>';
-			}
+                    $html[] = '</ul>';
+                }
 
-			if (!empty($m['label']))
-			{
-				$html[] = '<span class="label label-success new-circle animated double shake c-sp-inline">' . $m['label'] . '</span>';
-			}
+                if (!empty($m['label'])) {
+                    $html[] = '<span class="label label-success new-circle animated double shake c-sp-inline">' . $m['label'] . '</span>';
+                }
 
-			$html[] = '</li>';
-		}
+                $html[] = '</li>';
+            }
 
-			$html[] = '</ul>
+            $html[] = '</ul>
 						<div class="clear clr"></div>
 					</div><!-- End div #sidebar-menu -->
 				</div><!-- End div .sidebar-inner .slimscroller -->
             </div><!-- End div .body .rows .scroll-y -->
 		</div>
 		';
-		}
+        }
 
-		// BEGIN CONTENT
-		$html[] = '<div class="' . ($isJoomla3 ? "right" : "") .' content-page">';
+        // BEGIN CONTENT
+        $html[] = '<div class="' . ($isJoomla3 ? "right" : "") . ' content-page">';
 
-		// BEGIN CONTENT HEADER
-		$html[] = '<div class="body content rows scroll-y">';
-		$html[] = '<div class="content-inner">';
+        // BEGIN CONTENT HEADER
+        $html[] = '<div class="body content rows scroll-y">';
+        $html[] = '<div class="content-inner">';
 
-		$html[] = '<div id="c-debug-container"> </div>';
+        $html[] = '<div id="c-debug-container"> </div>';
 
-		$html[] = '<div id="c-system-message-container"> </div>';
+        $html[] = '<div id="c-system-message-container"> </div>';
 
-		if (!empty($title))
-		{
-			$html[] = '<div class="page-heading animated fadeInDownBig">
-							<h1 id="ctitle">' . JText::_($title) .' <small>' . JText::_($slogan) . '</small></h1>
+        if (!empty($title)) {
+            $html[] = '<div class="page-heading animated fadeInDownBig">
+							<h1 id="ctitle">' . JText::_($title) . ' <small>' . JText::_($slogan) . '</small></h1>
 						</div>';
-			$app = JFactory::getApplication();
+            $app = JFactory::getApplication();
 
-			if(!$app->isClient("site"))
-			{
-				$app->JComponentTitle = $title;
-				JFactory::getDocument()->setTitle(JFactory::getConfig()->get('sitename') . ' - ' . JText::_('JADMINISTRATION') . ' - ' . JText::_($title));
-			}
-		}
+            if (!$app->isClient("site")) {
+                $app->JComponentTitle = $title;
+                JFactory::getDocument()->setTitle(JFactory::getConfig()->get('sitename') . ' - ' . JText::_('JADMINISTRATION') . ' - ' . JText::_($title));
+            }
+        }
 
-		return implode('', $html);
-	}
+        return implode('', $html);
+    }
 
-	/**
-	 * Gets the footer code (TODO move to JLayout)
-	 *
-	 * @param   string  $footer  - The footer html (e.g. Matukio by compojoom)
-	 *
-	 * @return  string
-	 * @since   5.0.0
-	 */
-	public static function getFooter($footer)
-	{
-		if (!empty($footer))
-		{
-			$html[] = '<footer class="text-center">';
-			$html[] = $footer;
-			$html[] = '</footer>';
-		}
+    /**
+     * Gets the footer code (TODO move to JLayout)
+     *
+     * @param string $footer - The footer html (e.g. Matukio by compojoom)
+     *
+     * @return  string
+     * @since   5.0.0
+     */
+    public static function getFooter($footer)
+    {
+        if (!empty($footer)) {
+            $html[] = '<footer class="text-center">';
+            $html[] = $footer;
+            $html[] = '</footer>';
+        }
 
-		$html[] = '		</div>
+        $html[] = '		</div>
 					</div>
 					</div>
 				</div>
@@ -297,41 +275,39 @@ class CompojoomHtmlCtemplate
 				<div class="md-overlay"></div>
 			</div>';
 
-		return implode('', $html);
-	}
+        return implode('', $html);
+    }
 
 
-	/**
-	 * Get either a Gravatar URL or complete image tag for a specified email address.
-	 *
-	 * @param   string       $email  The email address
-	 * @param   int|string   $s      Size in pixels, defaults to 80px [ 1 - 2048 ]
-	 * @param   string       $d      Default imageset to use [ 404 | mm | identicon | monsterid | wavatar ]
-	 * @param   string       $r      Maximum rating (inclusive) [ g | pg | r | x ]
-	 * @param   bool|\boole  $img    True to return a complete IMG tag False for just the URL
-	 * @param   array        $atts   Optional, additional key/value attributes to include in the IMG tag
-	 *
-	 * @return String containing either just a URL or a complete image tag
-	 *
-	 * @source http://gravatar.com/site/implement/images/php/
-	 */
-	public static function get_gravatar( $email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array() )
-	{
-		$url = 'https://secure.gravatar.com/avatar/' . md5(strtolower(trim($email)));
-		$url .= "?s=$s&d=$d&r=$r";
+    /**
+     * Get either a Gravatar URL or complete image tag for a specified email address.
+     *
+     * @param string $email The email address
+     * @param int|string $s Size in pixels, defaults to 80px [ 1 - 2048 ]
+     * @param string $d Default imageset to use [ 404 | mm | identicon | monsterid | wavatar ]
+     * @param string $r Maximum rating (inclusive) [ g | pg | r | x ]
+     * @param bool|\boole $img True to return a complete IMG tag False for just the URL
+     * @param array $atts Optional, additional key/value attributes to include in the IMG tag
+     *
+     * @return String containing either just a URL or a complete image tag
+     *
+     * @source http://gravatar.com/site/implement/images/php/
+     */
+    public static function get_gravatar($email, $s = 80, $d = 'mm', $r = 'g', $img = false, $atts = array())
+    {
+        $url = 'https://secure.gravatar.com/avatar/' . md5(strtolower(trim($email)));
+        $url .= "?s=$s&d=$d&r=$r";
 
-		if ($img)
-		{
-			$url = '<img src="' . $url . '"';
+        if ($img) {
+            $url = '<img src="' . $url . '"';
 
-			foreach ( $atts as $key => $val )
-			{
-				$url .= ' ' . $key . '="' . $val . '"';
-			}
+            foreach ($atts as $key => $val) {
+                $url .= ' ' . $key . '="' . $val . '"';
+            }
 
-			$url .= ' />';
-		}
+            $url .= ' />';
+        }
 
-		return $url;
-	}
+        return $url;
+    }
 }
