@@ -120,9 +120,6 @@ JHtml::script('media/lib_compojoom/js/fields/fileupload.js');
         </td>
     </tr>
 {% } %}
-
-
-
 </script>
 
 <!-- The template to display files available for download -->
@@ -154,9 +151,7 @@ JHtml::script('media/lib_compojoom/js/fields/fileupload.js');
 			        </div>
 			        <div class="col-lg-8">
 			            <input type="text" placeholder="<?php echo JText::_('LIB_COMPOJOOM_DESCRIPTION'); ?>" class="form-control"
-					                name="<?php echo $displayData['formControl']; ?>
-        [<?php echo $displayData['fieldName']; ?>_data][{%=file.name%}][description]"
-
+					                name="<?php echo $displayData['formControl']; ?>[<?php echo $displayData['fieldName']; ?>_data][{%=file.name%}][description]"
 					                value="{%=file.description%}" />
 			        </div>
 			    </div>
@@ -184,15 +179,11 @@ JHtml::script('media/lib_compojoom/js/fields/fileupload.js');
                 </button>
             {% }%}
             {% if (!file.error) { %}
-            <input type="hidden" name="<?php echo $displayData['formControl']; ?>
-        [<?php echo $displayData['fieldName']; ?>][]" value="{%=file.name%}" />
+            <input type="hidden" name="<?php echo $displayData['formControl']; ?>[<?php echo $displayData['fieldName']; ?>][]" value="{%=file.name%}" />
             {% } %}
         </td>
     </tr>
 {% } %}
-
-
-
 </script>
 
 <?php
