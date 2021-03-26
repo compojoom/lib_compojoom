@@ -11,20 +11,21 @@
 defined('_JEXEC') or die('Restricted access');
 
 $user = JFactory::getUser();
+$document = JFactory::getDocument();
 
 // If the user doesn't have create permissions, then don't show anything
-if (!$user->authorise('core.multimedia.create', $displayData['component']))
-{
-	return;
+if (!$user->authorise('core.multimedia.create', $displayData['component'])) {
+    return;
 }
 
-$imageSize   = $displayData['imageSize'];
+$imageSize = $displayData['imageSize'];
 $mediaHelper = new CompojoomHelperMedia;
-$canDelete   = $user->authorise('core.multimedia.delete', $displayData['component']) || $user->authorise('core.multimedia.delete.own', $displayData['component']);
+$canDelete = $user->authorise('core.multimedia.delete', $displayData['component']) || $user->authorise('core.multimedia.delete.own', $displayData['component']);
 
 JHTML::stylesheet('media/lib_compojoom/third/font-awesome/css/font-awesome.min.css');
 JHtml::stylesheet('media/lib_compojoom/css/jquery.fileupload.css');
 JHtml::stylesheet('media/lib_compojoom/css/jquery.fileupload-ui.css');
+JHtml::stylesheet('media/lib_compojoom/css/fields/fileupload.css');
 
 CompojoomHtmlBehavior::jquery();
 
@@ -41,48 +42,50 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-video.js');
 
 JHtml::script('media/lib_compojoom/js/jquery.fileupload-validate.js');
 JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
+JHtml::script('media/lib_compojoom/js/fields/fileupload.js');
 ?>
 
 <div id="fileupload">
-	<!-- Redirect browsers with JavaScript disabled to the origin page -->
-	<noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
-	<!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-	<div class="fileupload-buttonbar">
-		<input type="file" name="files[]" id="file-upload-real" multiple>
+    <!-- Redirect browsers with JavaScript disabled to the origin page -->
+    <noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
+    <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+    <div class="fileupload-buttonbar">
+        <input type="file" name="files[]" id="file-upload-real" multiple>
 
-		<div class="panel panel-default compojoom-notes">
-			<div class="panel-body">
-				<!-- The global file processing state -->
-				<span class="fileupload-process"><span class="fa fa-spinner fa-pulse"></span></span>
-				<?php echo JText::sprintf('LIB_COMPOJOOM_ATTACH_IMAGES_BY_DRAG_DROP_OR', '<span id="file-upload-fake" type="button" class="btn-link">', '</span>'); ?>
-				<br/>
-				<small class="muted"><?php echo JText::sprintf('LIB_COMPOJOOM_THE_MAXIMUM_FILE_SIZE', $displayData['maxSize'] . 'MB'); ?>
-					<?php echo JText::sprintf('LIB_COMPOJOOM_ONLY_FILE_TYPES_ARE_ALLOWED', $displayData['fileTypes']); ?></small>
+        <div class="panel panel-default compojoom-notes">
+            <div class="panel-body">
+                <!-- The global file processing state -->
+                <span class="fileupload-process"><span class="fa fa-spinner fa-pulse"></span></span>
+                <?php echo JText::sprintf('LIB_COMPOJOOM_ATTACH_IMAGES_BY_DRAG_DROP_OR', '<span id="file-upload-fake" type="button" class="btn-link">', '</span>'); ?>
+                <br/>
+                <small class="muted"><?php echo JText::sprintf('LIB_COMPOJOOM_THE_MAXIMUM_FILE_SIZE', $displayData['maxSize'] . 'MB'); ?>
+                    <?php echo JText::sprintf('LIB_COMPOJOOM_ONLY_FILE_TYPES_ARE_ALLOWED', $displayData['fileTypes']); ?></small>
 
-				<!-- The global progress state -->
-				<div class="fileupload-progress fade hide d-none">
-					<!-- The global progress bar -->
-					<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-						<div class="progress-bar progress-bar-success" style="width:0%;"></div>
-					</div>
-					<!-- The extended global progress state -->
-					<div class="progress-extended">&nbsp;</div>
-				</div>
-				<div class="">
-					<div class="alert alert-warning hide d-none compojoom-max-number-files">
-						<?php echo JText::sprintf('LIB_COMPOJOOM_MAX_NUMBER_OF_FILES_REACHED', $displayData['maxNumberOfFiles']); ?>
-					</div>
-					<table role="presentation" class="table table-striped">
-						<thead></thead>
-						<tbody class="files"></tbody>
-					</table>
-					<div class="alert alert-warning hide d-none compojoom-max-number-files">
-						<?php echo JText::sprintf('LIB_COMPOJOOM_MAX_NUMBER_OF_FILES_REACHED', $displayData['maxNumberOfFiles']); ?>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                <!-- The global progress state -->
+                <div class="fileupload-progress fade hide d-none">
+                    <!-- The global progress bar -->
+                    <div class="progress progress-striped active" role="progressbar" aria-valuemin="0"
+                         aria-valuemax="100">
+                        <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+                    </div>
+                    <!-- The extended global progress state -->
+                    <div class="progress-extended">&nbsp;</div>
+                </div>
+                <div class="">
+                    <div class="alert alert-warning hide d-none compojoom-max-number-files">
+                        <?php echo JText::sprintf('LIB_COMPOJOOM_MAX_NUMBER_OF_FILES_REACHED', $displayData['maxNumberOfFiles']); ?>
+                    </div>
+                    <table role="presentation" class="table table-striped">
+                        <thead></thead>
+                        <tbody class="files"></tbody>
+                    </table>
+                    <div class="alert alert-warning hide d-none compojoom-max-number-files">
+                        <?php echo JText::sprintf('LIB_COMPOJOOM_MAX_NUMBER_OF_FILES_REACHED', $displayData['maxNumberOfFiles']); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- The template to display files available for upload -->
@@ -118,6 +121,8 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
     </tr>
 {% } %}
 
+
+
 </script>
 
 <!-- The template to display files available for download -->
@@ -149,7 +154,8 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
 			        </div>
 			        <div class="col-lg-8">
 			            <input type="text" placeholder="<?php echo JText::_('LIB_COMPOJOOM_DESCRIPTION'); ?>" class="form-control"
-					                name="<?php echo $displayData['formControl']; ?>[<?php echo $displayData['fieldName']; ?>_data][{%=file.name%}][description]"
+					                name="<?php echo $displayData['formControl']; ?>
+        [<?php echo $displayData['fieldName']; ?>_data][{%=file.name%}][description]"
 
 					                value="{%=file.description%}" />
 			        </div>
@@ -178,85 +184,31 @@ JHtml::script('media/lib_compojoom/js/jquery.fileupload-ui.js');
                 </button>
             {% }%}
             {% if (!file.error) { %}
-            <input type="hidden" name="<?php echo $displayData['formControl']; ?>[<?php echo $displayData['fieldName']; ?>][]" value="{%=file.name%}" />
+            <input type="hidden" name="<?php echo $displayData['formControl']; ?>
+        [<?php echo $displayData['fieldName']; ?>][]" value="{%=file.name%}" />
             {% } %}
         </td>
     </tr>
 {% } %}
 
+
+
 </script>
 
-<script type="application/javascript">
-	document.getElementById("file-upload-fake").addEventListener("click", function () {
-		document.getElementById("file-upload-real").click();  // trigger the click of actual file upload button
-	});
+<?php
+$options = json_encode(array(
+    "maxSize" => $mediaHelper->toBytes($displayData['maxSize'] . 'M'),
+    "maxNumberOfFiles" => $displayData['maxNumberOfFiles'],
+    "url" => $displayData['url'] . '&' . JSession::getFormToken() . '=1',
+    "urlWithExistingFiles" =>  $displayData['url'] . '&' . JSession::getFormToken() . '=1&id='. JFactory::getApplication()->input->get('id'),
+    "imageMaxWidth" => $imageSize['x'],
+    "imageMaxHeight" => $imageSize['y'],
+));
 
-	jQuery(document).ready(function () {
-		var $ = jQuery;
+$initScript = <<<ABC
+    var options = $options;
+    initFileUpload(options)
+ABC;
 
-		// Initialize the jQuery File Upload widget:
-		$('#fileupload').fileupload({
-			// Uncomment the following to send cross-domain cookies:
-			//xhrFields: {withCredentials: true},
-			formData: {},
-			autoUpload: true,
-			maxFileSize: <?php echo $mediaHelper->toBytes($displayData['maxSize'] . 'M'); ?>,
-			maxNumberOfFiles: <?php echo $displayData['maxNumberOfFiles']; ?>,
-			url: '<?php echo $displayData['url'] . '&' . JSession::getFormToken(); ?>=1',
-			disableImageResize: false,
-			imageMaxWidth: <?php echo $imageSize['x']; ?>,
-			imageMaxHeight: <?php echo $imageSize['y']; ?>,
-			finished: function (e, data) {
-				if ($(this).fileupload('option').getNumberOfFiles() >= <?php echo $displayData['maxNumberOfFiles']; ?>) {
-					$('.compojoom-max-number-files').removeClass('hide d-none');
-				}
-				else {
-					$('.compojoom-max-number-files').addClass('hide d-none');
-				}
-			},
-			destroyed: function (e, data) {
-				if ($(this).fileupload('option').getNumberOfFiles() >= <?php echo $displayData['maxNumberOfFiles']; ?>) {
-					$('.compojoom-max-number-files').removeClass('hide d-none');
-				}
-				else {
-					$('.compojoom-max-number-files').addClass('hide d-none');
-				}
-			}
-		}).on('destroyed', function (e, data) {
-			if ($(this).fileupload('option').getNumberOfFiles() >= <?php echo $displayData['maxNumberOfFiles']; ?>) {
-				$('.compojoom-max-number-files').removeClass('hide d-none');
-			}
-			else {
-				$('.compojoom-max-number-files').addClass('hide d-none');
-			}
-		}).on('fileuploadadd', function(e, data){
-			$('.fileupload-progress.hide').removeClass('hide d-none');
-		});
+$document->addScriptDeclaration($initScript);
 
-		// Enable iframe cross-domain access via redirect option:
-		$('#fileupload').fileupload(
-			'option',
-			'redirect',
-			window.location.href.replace(
-				/\/[^\/]*$/,
-				'/cors/result.html?%s'
-			)
-		);
-
-		// Load existing files:
-		$('#fileupload').addClass('fileupload-processing');
-		$.ajax({
-			// Uncomment the following to send cross-domain cookies:
-			//xhrFields: {withCredentials: true},
-			url: '<?php echo $displayData['url'] . '&' . JSession::getFormToken(); ?>=1&id=<?php echo JFactory::getApplication()->input->get('id'); ?>',
-			dataType: 'json',
-			context: $('#fileupload')[0]
-		}).always(function () {
-			$(this).removeClass('fileupload-processing');
-		}).done(function (result) {
-			$(this).fileupload('option', 'done')
-				.call(this, $.Event('done'), {result: result});
-		});
-
-	});
-</script>
