@@ -1,7 +1,7 @@
 (function ($) {
 
 	$(document).ready(function(){
-		$(window).load(function() { $("#loading").fadeOut("slow"); })
+		$(window).on("load", function() { $("#loading").fadeOut("slow"); })
 
 		//SLIM SCROLL
 		$('.slimscroller').slimscroll({
@@ -177,14 +177,14 @@ function toggleSideMenu() {
 
   var Inputmask = function (element, options) {
     if (isAndroid) return // No support because caret positioning doesn't work on Android
-    
+
     this.$element = $(element)
     this.options = $.extend({}, Inputmask.DEFAULS, options)
     this.mask = String(this.options.mask)
-    
+
     this.init()
     this.listen()
-        
+
     this.checkVal() //Perform initial check for existing values
   }
 
@@ -203,7 +203,7 @@ function toggleSideMenu() {
     var defs = this.options.definitions
     var len = this.mask.length
 
-    this.tests = [] 
+    this.tests = []
     this.partialPosition = this.mask.length
     this.firstNonMaskPos = null
 
@@ -232,7 +232,7 @@ function toggleSideMenu() {
       }).join('')
     }, this))
   }
-    
+
   Inputmask.prototype.listen = function() {
     if (this.$element.attr("readonly")) return
 
@@ -276,19 +276,19 @@ function toggleSideMenu() {
         end = begin + range.text.length
       }
       return {
-        begin: begin, 
+        begin: begin,
         end: end
       }
     }
   }
-  
+
   Inputmask.prototype.seekNext = function(pos) {
     var len = this.mask.length
     while (++pos <= len && !this.tests[pos]);
 
     return pos
   }
-  
+
   Inputmask.prototype.seekPrev = function(pos) {
     while (--pos >= 0 && !this.tests[pos]);
 
@@ -338,7 +338,7 @@ function toggleSideMenu() {
 
   Inputmask.prototype.focusEvent = function() {
     this.focusText = this.$element.val()
-    var len = this.mask.length 
+    var len = this.mask.length
     var pos = this.checkVal()
     this.writeBuffer()
 
@@ -468,17 +468,17 @@ function toggleSideMenu() {
     return (this.partialPosition ? i : this.firstNonMaskPos)
   }
 
-  
+
   // INPUTMASK PLUGIN DEFINITION
   // ===========================
 
   var old = $.fn.inputmask
-  
+
   $.fn.inputmask = function (options) {
     return this.each(function () {
       var $this = $(this)
       var data = $this.data('inputmask')
-      
+
       if (!data) $this.data('inputmask', (data = new Inputmask(this, options)))
     })
   }
