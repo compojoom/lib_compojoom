@@ -373,7 +373,7 @@ class CompojoomInstaller
 		{
 			$parts = explode('_', $plugin);
 			$pluginType = $parts[1];
-			$pluginName = $parts[2];
+            $pluginName = implode('_', array_slice($parts, 2));
 			$query->clear();
 			$query->select('extension_id')->from($db->qn('#__extensions'))
 				->where($db->qn('type') . '=' . $db->q('plugin'))
