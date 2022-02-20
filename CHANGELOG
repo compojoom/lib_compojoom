@@ -1,5 +1,11 @@
 Changelog lib_compojoom
 
+5.3.3
+- fix crash on joomla4 with CB avatars
+
+5.3.2
+- update fileupload
+
 5.3.1
 # updated fileupload dependency
 
