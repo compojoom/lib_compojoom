@@ -47,7 +47,7 @@ class CompojoomAvatarsComprofiler
 			{
 				if ($item['avatar'])
 				{
-					if (JString::strpos($item['avatar'], "gallery/") === false)
+					if (Joomla\String\StringHelper::strpos($item['avatar'], "gallery/") === false)
 					{
 						$path = JURI::base() . 'images/comprofiler/tn' . $item['avatar'];
 					}
