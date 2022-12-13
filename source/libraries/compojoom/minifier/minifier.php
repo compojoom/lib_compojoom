@@ -106,7 +106,7 @@ class CompojoomMinifier
 	/**
 	 * This character is only active when certain look ahead actions take place.
 	 *
-	 *  @var string
+	 * @var string
 	 */
 	protected $c;
 
@@ -137,24 +137,26 @@ class CompojoomMinifier
 	 *
 	 * @var array
 	 */
-	protected $locks = [];
+	protected $locks = array();
 
 	/**
 	 * Takes a string containing javascript and removes unneeded characters in
 	 * order to shrink the code without altering it's functionality.
 	 *
-	 * @param  string      $js      The raw javascript to be minified
-	 * @param  array       $options Various runtime options in an associative array
-	 * @throws \Exception
+	 * @param   string  $js       The raw javascript to be minified
+	 * @param   array   $options  Various runtime options in an associative array
+	 *
 	 * @return bool|string
+	 * @throws \Exception
 	 */
 	public static function minify($js, $options = array())
 	{
-		try {
+		try
+		{
 			ob_start();
 
 			$jshrink = new CompojoomMinifier();
-			$js = $jshrink->lock($js);
+			$js      = $jshrink->lock($js);
 			$jshrink->minifyDirectToOutput($js, $options);
 
 			// Sometimes there's a leading new line, so we trim that out here.
@@ -163,8 +165,11 @@ class CompojoomMinifier
 			unset($jshrink);
 
 			return $js;
-		} catch (\Exception $e) {
-			if (isset($jshrink)) {
+		}
+		catch (\Exception $e)
+		{
+			if (isset($jshrink))
+			{
 				// Since the breakdownScript function probably wasn't finished
 				// we clean it out before discarding it.
 				$jshrink->clean();
@@ -181,8 +186,8 @@ class CompojoomMinifier
 	 * Processes a javascript string and outputs only the required characters,
 	 * stripping out all unneeded characters.
 	 *
-	 * @param string $js      The raw javascript to be minified
-	 * @param array  $options Various runtime options in an associative array
+	 * @param   string  $js       The raw javascript to be minified
+	 * @param   array   $options  Various runtime options in an associative array
 	 */
 	protected function minifyDirectToOutput($js, $options)
 	{
@@ -194,8 +199,8 @@ class CompojoomMinifier
 	/**
 	 *  Initializes internal variables, normalizes new lines,
 	 *
-	 * @param string $js      The raw javascript to be minified
-	 * @param array  $options Various runtime options in an associative array
+	 * @param   string  $js       The raw javascript to be minified
+	 * @param   array   $options  Various runtime options in an associative array
 	 */
 	protected function initialize($js, $options)
 	{
@@ -234,12 +239,15 @@ class CompojoomMinifier
 	 */
 	protected function loop()
 	{
-		while ($this->a !== false && !is_null($this->a) && $this->a !== '') {
-			switch ($this->a) {
+		while ($this->a !== false && !is_null($this->a) && $this->a !== '')
+		{
+			switch ($this->a)
+			{
 				// new lines
 				case "\n":
 					// if the next line is something that can't stand alone preserve the newline
-					if ($this->b !== false && isset($this->noNewLineCharacters[$this->b])) {
+					if ($this->b !== false && isset($this->noNewLineCharacters[$this->b]))
+					{
 						echo $this->a;
 						$this->saveString();
 						break;
@@ -247,7 +255,8 @@ class CompojoomMinifier
 
 					// if B is a space we skip the rest of the switch block and go down to the
 					// string/regex check below, resetting $this->b with getReal
-					if ($this->b === ' ') {
+					if ($this->b === ' ')
+					{
 						break;
 					}
 
@@ -255,7 +264,8 @@ class CompojoomMinifier
 
 				// no break
 				case ' ':
-					if (static::isAlphaNumeric($this->b)) {
+					if (static::isAlphaNumeric($this->b))
+					{
 						echo $this->a;
 					}
 
@@ -263,14 +273,19 @@ class CompojoomMinifier
 					break;
 
 				default:
-					switch ($this->b) {
+					switch ($this->b)
+					{
 						case "\n":
-							if (strpos('}])+-"\'', $this->a) !== false) {
+							if (strpos('}])+-"\'', $this->a) !== false)
+							{
 								echo $this->a;
 								$this->saveString();
 								break;
-							} else {
-								if (static::isAlphaNumeric($this->a)) {
+							}
+							else
+							{
+								if (static::isAlphaNumeric($this->a))
+								{
 									echo $this->a;
 									$this->saveString();
 								}
@@ -278,14 +293,16 @@ class CompojoomMinifier
 							break;
 
 						case ' ':
-							if (!static::isAlphaNumeric($this->a)) {
+							if (!static::isAlphaNumeric($this->a))
+							{
 								break;
 							}
 
 						// no break
 						default:
 							// check for some regex that breaks stuff
-							if ($this->a === '/' && ($this->b === '\'' || $this->b === '"')) {
+							if ($this->a === '/' && ($this->b === '\'' || $this->b === '"'))
+							{
 								$this->saveRegex();
 								continue 3;
 							}
@@ -299,7 +316,8 @@ class CompojoomMinifier
 			// do reg check of doom
 			$this->b = $this->getReal();
 
-			if (($this->b == '/' && strpos('(,=:[!&|?', $this->a) !== false)) {
+			if (($this->b == '/' && strpos('(,=:[!&|?', $this->a) !== false))
+			{
 				$this->saveRegex();
 			}
 		}
@@ -313,9 +331,9 @@ class CompojoomMinifier
 	protected function clean()
 	{
 		unset($this->input);
-		$this->len = 0;
+		$this->len   = 0;
 		$this->index = 0;
-		$this->a = $this->b = '';
+		$this->a     = $this->b = '';
 		unset($this->c);
 		unset($this->options);
 	}
@@ -328,15 +346,19 @@ class CompojoomMinifier
 	protected function getChar()
 	{
 		// Check to see if we had anything in the look ahead buffer and use that.
-		if (isset($this->c)) {
+		if (isset($this->c))
+		{
 			$char = $this->c;
 			unset($this->c);
-		} else {
+		}
+		else
+		{
 			// Otherwise we start pulling from the input.
 			$char = $this->index < $this->len ? $this->input[$this->index] : false;
 
 			// If the next character doesn't exist return false.
-			if (isset($char) && $char === false) {
+			if (isset($char) && $char === false)
+			{
 				return false;
 			}
 
@@ -346,7 +368,8 @@ class CompojoomMinifier
 
 		// Normalize all whitespace except for the newline character into a
 		// standard space.
-		if ($char !== "\n" && $char < "\x20") {
+		if ($char !== "\n" && $char < "\x20")
+		{
 			return ' ';
 		}
 
@@ -366,20 +389,24 @@ class CompojoomMinifier
 	protected function getReal()
 	{
 		$startIndex = $this->index;
-		$char = $this->getChar();
+		$char       = $this->getChar();
 
 		// Check to see if we're potentially in a comment
-		if ($char !== '/') {
+		if ($char !== '/')
+		{
 			return $char;
 		}
 
 		$this->c = $this->getChar();
 
-		if ($this->c === '/') {
+		if ($this->c === '/')
+		{
 			$this->processOneLineComments($startIndex);
 
 			return $this->getReal();
-		} elseif ($this->c === '*') {
+		}
+		elseif ($this->c === '*')
+		{
 			$this->processMultiLineComments($startIndex);
 
 			return $this->getReal();
@@ -392,7 +419,8 @@ class CompojoomMinifier
 	 * Removed one line comments, with the exception of some very specific types of
 	 * conditional comments.
 	 *
-	 * @param  int  $startIndex The index point where "getReal" function started
+	 * @param   int  $startIndex  The index point where "getReal" function started
+	 *
 	 * @return void
 	 */
 	protected function processOneLineComments($startIndex)
@@ -404,9 +432,10 @@ class CompojoomMinifier
 
 		unset($this->c);
 
-		if ($thirdCommentString == '@') {
+		if ($thirdCommentString == '@')
+		{
 			$endPoint = $this->index - $startIndex;
-			$this->c = "\n" . substr($this->input, $startIndex, $endPoint);
+			$this->c  = "\n" . substr($this->input, $startIndex, $endPoint);
 		}
 	}
 
@@ -414,7 +443,8 @@ class CompojoomMinifier
 	 * Skips multiline comments where appropriate, and includes them where needed.
 	 * Conditional comments and "license" style blocks are preserved.
 	 *
-	 * @param  int               $startIndex The index point where "getReal" function started
+	 * @param   int  $startIndex  The index point where "getReal" function started
+	 *
 	 * @return void
 	 * @throws \RuntimeException Unclosed comments will throw an error
 	 */
@@ -424,23 +454,27 @@ class CompojoomMinifier
 		$thirdCommentString = $this->getChar();
 
 		// kill everything up to the next */ if it's there
-		if ($this->getNext('*/')) {
+		if ($this->getNext('*/'))
+		{
 			$this->getChar(); // get *
 			$this->getChar(); // get /
 			$char = $this->getChar(); // get next real character
 
 			// Now we reinsert conditional comments and YUI-style licensing comments
 			if (($this->options['flaggedComments'] && $thirdCommentString === '!')
-				|| ($thirdCommentString === '@')) {
+				|| ($thirdCommentString === '@'))
+			{
 
 				// If conditional comments or flagged comments are not the first thing in the script
 				// we need to echo a and fill it with a space before moving on.
-				if ($startIndex > 0) {
+				if ($startIndex > 0)
+				{
 					echo $this->a;
 					$this->a = " ";
 
 					// If the comment started on a new line we let it stay on the new line
-					if ($this->input[($startIndex - 1)] === "\n") {
+					if ($this->input[($startIndex - 1)] === "\n")
+					{
 						echo "\n";
 					}
 				}
@@ -452,11 +486,14 @@ class CompojoomMinifier
 
 				return;
 			}
-		} else {
+		}
+		else
+		{
 			$char = false;
 		}
 
-		if ($char === false) {
+		if ($char === false)
+		{
 			throw new \RuntimeException('Unclosed multiline comment at position: ' . ($this->index - 2));
 		}
 
@@ -469,7 +506,8 @@ class CompojoomMinifier
 	 * is found the first character of the string is returned and the index is set
 	 * to it's position.
 	 *
-	 * @param  string       $string
+	 * @param   string  $string
+	 *
 	 * @return string|false Returns the first character of the string or false.
 	 */
 	protected function getNext($string)
@@ -478,7 +516,8 @@ class CompojoomMinifier
 		$pos = strpos($this->input, $string, $this->index);
 
 		// If it's not there return false.
-		if ($pos === false) {
+		if ($pos === false)
+		{
 			return false;
 		}
 
@@ -504,7 +543,8 @@ class CompojoomMinifier
 		$this->a = $this->b;
 
 		// If this isn't a string we don't need to do anything.
-		if (!isset($this->stringDelimiters[$this->a])) {
+		if (!isset($this->stringDelimiters[$this->a]))
+		{
 			return;
 		}
 
@@ -516,8 +556,10 @@ class CompojoomMinifier
 
 		// Loop until the string is done
 		// Grab the very next character and load it into a
-		while (($this->a = $this->getChar()) !== false) {
-			switch ($this->a) {
+		while (($this->a = $this->getChar()) !== false)
+		{
+			switch ($this->a)
+			{
 
 				// If the string opener (single or double quote) is used
 				// output it and break out of the while loop-
@@ -530,9 +572,12 @@ class CompojoomMinifier
 				// character, so those will be treated just fine using the switch
 				// block below.
 				case "\n":
-					if ($stringType === '`') {
+					if ($stringType === '`')
+					{
 						echo $this->a;
-					} else {
+					}
+					else
+					{
 						throw new \RuntimeException('Unclosed string at position: ' . $startpos);
 					}
 					break;
@@ -546,7 +591,8 @@ class CompojoomMinifier
 					$this->b = $this->getChar();
 
 					// If b is a new line we discard a and b and restart the loop.
-					if ($this->b === "\n") {
+					if ($this->b === "\n")
+					{
 						break;
 					}
 
@@ -573,17 +619,21 @@ class CompojoomMinifier
 	{
 		echo $this->a . $this->b;
 
-		while (($this->a = $this->getChar()) !== false) {
-			if ($this->a === '/') {
+		while (($this->a = $this->getChar()) !== false)
+		{
+			if ($this->a === '/')
+			{
 				break;
 			}
 
-			if ($this->a === '\\') {
+			if ($this->a === '\\')
+			{
 				echo $this->a;
 				$this->a = $this->getChar();
 			}
 
-			if ($this->a === "\n") {
+			if ($this->a === "\n")
+			{
 				throw new \RuntimeException('Unclosed regex pattern at position: ' . $this->index);
 			}
 
@@ -595,7 +645,8 @@ class CompojoomMinifier
 	/**
 	 * Checks to see if a character is alphanumeric.
 	 *
-	 * @param  string $char Just one character
+	 * @param   string  $char  Just one character
+	 *
 	 * @return bool
 	 */
 	protected static function isAlphaNumeric($char)
@@ -606,7 +657,8 @@ class CompojoomMinifier
 	/**
 	 * Replace patterns in the given string and store the replacement
 	 *
-	 * @param  string $js The string to lock
+	 * @param   string  $js  The string to lock
+	 *
 	 * @return bool
 	 */
 	protected function lock($js)
@@ -616,13 +668,15 @@ class CompojoomMinifier
 
 		$matches = array();
 		preg_match('/([+-])(\s+)([+-])/S', $js, $matches);
-		if (empty($matches)) {
+		if (empty($matches))
+		{
 			return $js;
 		}
 
 		$this->locks[$lock] = $matches[2];
 
 		$js = preg_replace('/([+-])\s+([+-])/S', "$1{$lock}$2", $js);
+
 		/* -- */
 
 		return $js;
@@ -631,16 +685,19 @@ class CompojoomMinifier
 	/**
 	 * Replace "locks" with the original characters
 	 *
-	 * @param  string $js The string to unlock
+	 * @param   string  $js  The string to unlock
+	 *
 	 * @return bool
 	 */
 	protected function unlock($js)
 	{
-		if (empty($this->locks)) {
+		if (empty($this->locks))
+		{
 			return $js;
 		}
 
-		foreach ($this->locks as $lock => $replacement) {
+		foreach ($this->locks as $lock => $replacement)
+		{
 			$js = str_replace($lock, $replacement, $js);
 		}
 
