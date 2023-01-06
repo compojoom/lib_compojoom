@@ -11,9 +11,8 @@
 defined('_JEXEC') or die('Restricted access');
 
 // We use Shariff plugin here, so first we need to check if it is existing
-$dispatcher = JDispatcher::getInstance();
 JPluginHelper::importPlugin('content');
-$results = $dispatcher->trigger('onContentAfterDisplay', array('shariff.general', &$displayData, &$displayData, 0));
+$results = JFactory::getApplication()->triggerEvent('onContentAfterDisplay', array('shariff.general', &$displayData, &$displayData, 0));
 ?>
 <div class="c_social_media">
 	<?php echo trim(implode("\n", $results)); ?>

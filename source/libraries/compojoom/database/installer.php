@@ -248,7 +248,7 @@ class CompojoomDatabaseInstaller
 						{
 							if (!$canFail)
 							{
-								JError::raise(E_WARNING, $this->db->getErrorNum(), $this->db->getErrorMsg());
+								throw new Exception('Error Updating', 500);
 							}
 						}
 						/**/

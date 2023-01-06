@@ -75,7 +75,7 @@ abstract class CompojoomModelCustomfield extends JModelAdmin
 
 		if (empty($pks))
 		{
-			return JError::raiseWarning(500, JText::_($this->text_prefix . '_ERROR_NO_ITEMS_SELECTED'));
+			throw new Exception(JText::_($this->text_prefix . '_ERROR_NO_ITEMS_SELECTED', 500);
 		}
 
 		// Update ordering values
