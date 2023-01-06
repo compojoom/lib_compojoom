@@ -14,12 +14,12 @@ JHTML::stylesheet('media/lib_compojoom/third/font-awesome/css/font-awesome.min.c
 JHtml::stylesheet('media/lib_compojoom/third/galleria/themes/compojoom/galleria.compojoom.css');
 JHtml::script('media/lib_compojoom/third/galleria/galleria.js');
 JHtml::script('media/lib_compojoom/third/galleria/themes/compojoom/galleria.compojoom.js');
-?>
-<div class="galleria"></div>
 
-<script type="text/javascript">
+JFactory::getDocument()->addScriptDeclaration("
 	Galleria.run('.galleria', {
-		dataSource: <?php echo $displayData['data']; ?>,
+	  dataSource: " . $displayData['data'] . ",
       imageCrop: true
 	});
-</script>
+");
+?>
+<div class="galleria"></div>
