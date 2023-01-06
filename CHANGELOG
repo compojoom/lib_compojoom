@@ -1,5 +1,9 @@
 Changelog lib_compojoom
 
+5.3.4
+- Fix crash on PHP 8.0.25
+- Fix crash on Joomla 4
+
 5.3.3
 - fix crash on joomla4 with CB avatars
 
