@@ -94,10 +94,8 @@ class CompojoomHtmlBehavior
 	{
 		if ($bootstrap)
 		{
-			if(version_compare(JVERSION, '4', 'lt')) {
-				// Don't use queue here, as wee already have that file minimized
-				JHtml::stylesheet('media/lib_compojoom/css/compojoom-bootstrap-3.3.6.min.css');
-			}
+			// Don't use queue here, as wee already have that file minimized
+			JHtml::stylesheet('media/lib_compojoom/css/compojoom-bootstrap-3.3.6.min.css');
 
 			// Load native (for js)
 			JHtml::_('bootstrap.framework', true);
