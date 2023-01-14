@@ -3142,28 +3142,23 @@
   border-color: #adadad;
 }
 .compojoom-bootstrap .btn-default:active,
-.compojoom-bootstrap .btn-default.active,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-default {
+.compojoom-bootstrap .btn-default.active {
   color: #333;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
 .compojoom-bootstrap .btn-default:active:hover,
 .compojoom-bootstrap .btn-default.active:hover,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-default:hover,
 .compojoom-bootstrap .btn-default:active:focus,
 .compojoom-bootstrap .btn-default.active:focus,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-default:focus,
 .compojoom-bootstrap .btn-default:active.focus,
-.compojoom-bootstrap .btn-default.active.focus,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-default.focus {
+.compojoom-bootstrap .btn-default.active.focus {
   color: #333;
   background-color: #d4d4d4;
   border-color: #8c8c8c;
 }
 .compojoom-bootstrap .btn-default:active,
-.compojoom-bootstrap .btn-default.active,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-default {
+.compojoom-bootstrap .btn-default.active {
   background-image: none;
 }
 .compojoom-bootstrap .btn-default.disabled:hover,
@@ -3199,28 +3194,23 @@
   border-color: #204d74;
 }
 .compojoom-bootstrap .btn-primary:active,
-.compojoom-bootstrap .btn-primary.active,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-primary {
+.compojoom-bootstrap .btn-primary.active {
   color: #fff;
   background-color: #286090;
   border-color: #204d74;
 }
 .compojoom-bootstrap .btn-primary:active:hover,
 .compojoom-bootstrap .btn-primary.active:hover,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-primary:hover,
 .compojoom-bootstrap .btn-primary:active:focus,
 .compojoom-bootstrap .btn-primary.active:focus,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-primary:focus,
 .compojoom-bootstrap .btn-primary:active.focus,
-.compojoom-bootstrap .btn-primary.active.focus,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-primary.focus {
+.compojoom-bootstrap .btn-primary.active.focus {
   color: #fff;
   background-color: #204d74;
   border-color: #122b40;
 }
 .compojoom-bootstrap .btn-primary:active,
-.compojoom-bootstrap .btn-primary.active,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-primary {
+.compojoom-bootstrap .btn-primary.active{
   background-image: none;
 }
 .compojoom-bootstrap .btn-primary.disabled:hover,
@@ -3256,28 +3246,23 @@
   border-color: #398439;
 }
 .compojoom-bootstrap .btn-success:active,
-.compojoom-bootstrap .btn-success.active,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-success {
+.compojoom-bootstrap .btn-success.active {
   color: #fff;
   background-color: #449d44;
   border-color: #398439;
 }
 .compojoom-bootstrap .btn-success:active:hover,
 .compojoom-bootstrap .btn-success.active:hover,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-success:hover,
 .compojoom-bootstrap .btn-success:active:focus,
 .compojoom-bootstrap .btn-success.active:focus,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-success:focus,
 .compojoom-bootstrap .btn-success:active.focus,
-.compojoom-bootstrap .btn-success.active.focus,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-success.focus {
+.compojoom-bootstrap .btn-success.active.focus {
   color: #fff;
   background-color: #398439;
   border-color: #255625;
 }
 .compojoom-bootstrap .btn-success:active,
-.compojoom-bootstrap .btn-success.active,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-success {
+.compojoom-bootstrap .btn-success.active {
   background-image: none;
 }
 .compojoom-bootstrap .btn-success.disabled:hover,
@@ -3313,28 +3298,23 @@
   border-color: #269abc;
 }
 .compojoom-bootstrap .btn-info:active,
-.compojoom-bootstrap .btn-info.active,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-info {
+.compojoom-bootstrap .btn-info.active {
   color: #fff;
   background-color: #31b0d5;
   border-color: #269abc;
 }
 .compojoom-bootstrap .btn-info:active:hover,
 .compojoom-bootstrap .btn-info.active:hover,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-info:hover,
 .compojoom-bootstrap .btn-info:active:focus,
 .compojoom-bootstrap .btn-info.active:focus,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-info:focus,
 .compojoom-bootstrap .btn-info:active.focus,
-.compojoom-bootstrap .btn-info.active.focus,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-info.focus {
+.compojoom-bootstrap .btn-info.active.focus {
   color: #fff;
   background-color: #269abc;
   border-color: #1b6d85;
 }
 .compojoom-bootstrap .btn-info:active,
-.compojoom-bootstrap .btn-info.active,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-info {
+.compojoom-bootstrap .btn-info.active {
   background-image: none;
 }
 .compojoom-bootstrap .btn-info.disabled:hover,
@@ -3370,28 +3350,23 @@
   border-color: #d58512;
 }
 .compojoom-bootstrap .btn-warning:active,
-.compojoom-bootstrap .btn-warning.active,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-warning {
+.compojoom-bootstrap .btn-warning.active {
   color: #fff;
   background-color: #ec971f;
   border-color: #d58512;
 }
 .compojoom-bootstrap .btn-warning:active:hover,
 .compojoom-bootstrap .btn-warning.active:hover,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-warning:hover,
 .compojoom-bootstrap .btn-warning:active:focus,
 .compojoom-bootstrap .btn-warning.active:focus,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-warning:focus,
 .compojoom-bootstrap .btn-warning:active.focus,
-.compojoom-bootstrap .btn-warning.active.focus,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-warning.focus {
+.compojoom-bootstrap .btn-warning.active.focus {
   color: #fff;
   background-color: #d58512;
   border-color: #985f0d;
 }
 .compojoom-bootstrap .btn-warning:active,
-.compojoom-bootstrap .btn-warning.active,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-warning {
+.compojoom-bootstrap .btn-warning.active {
   background-image: none;
 }
 .compojoom-bootstrap .btn-warning.disabled:hover,
@@ -3427,28 +3402,23 @@
   border-color: #ac2925;
 }
 .compojoom-bootstrap .btn-danger:active,
-.compojoom-bootstrap .btn-danger.active,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-danger {
+.compojoom-bootstrap .btn-danger.active {
   color: #fff;
   background-color: #c9302c;
   border-color: #ac2925;
 }
 .compojoom-bootstrap .btn-danger:active:hover,
 .compojoom-bootstrap .btn-danger.active:hover,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-danger:hover,
 .compojoom-bootstrap .btn-danger:active:focus,
 .compojoom-bootstrap .btn-danger.active:focus,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-danger:focus,
 .compojoom-bootstrap .btn-danger:active.focus,
-.compojoom-bootstrap .btn-danger.active.focus,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-danger.focus {
+.compojoom-bootstrap .btn-danger.active.focus {
   color: #fff;
   background-color: #ac2925;
   border-color: #761c19;
 }
 .compojoom-bootstrap .btn-danger:active,
-.compojoom-bootstrap .btn-danger.active,
-.compojoom-bootstrap .open > .dropdown-toggle.btn-danger {
+.compojoom-bootstrap .btn-danger.active {
   background-image: none;
 }
 .compojoom-bootstrap .btn-danger.disabled:hover,
@@ -3553,138 +3523,10 @@
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
 }
-.compojoom-bootstrap .dropup,
-.compojoom-bootstrap .dropdown {
+.compojoom-bootstrap .dropup {
   position: relative;
 }
-.compojoom-bootstrap .dropdown-toggle:focus {
-  outline: 0;
-}
-.compojoom-bootstrap .dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-  display: none;
-  float: left;
-  min-width: 160px;
-  padding: 5px 0;
-  margin: 2px 0 0;
-  font-size: 14px;
-  text-align: left;
-  list-style: none;
-  background-color: #fff;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-}
-.compojoom-bootstrap .dropdown-menu.pull-right {
-  right: 0;
-  left: auto;
-}
-.compojoom-bootstrap .dropdown-menu .divider {
-  height: 1px;
-  margin: 9px 0;
-  overflow: hidden;
-  background-color: #e5e5e5;
-}
-.compojoom-bootstrap .dropdown-menu > li > a {
-  display: block;
-  padding: 3px 20px;
-  clear: both;
-  font-weight: normal;
-  line-height: 1.42857143;
-  color: #333;
-  white-space: nowrap;
-}
-.compojoom-bootstrap .dropdown-menu > li > a:hover,
-.compojoom-bootstrap .dropdown-menu > li > a:focus {
-  color: #262626;
-  text-decoration: none;
-  background-color: #f5f5f5;
-}
-.compojoom-bootstrap .dropdown-menu > .active > a,
-.compojoom-bootstrap .dropdown-menu > .active > a:hover,
-.compojoom-bootstrap .dropdown-menu > .active > a:focus {
-  color: #fff;
-  text-decoration: none;
-  background-color: #337ab7;
-  outline: 0;
-}
-.compojoom-bootstrap .dropdown-menu > .disabled > a,
-.compojoom-bootstrap .dropdown-menu > .disabled > a:hover,
-.compojoom-bootstrap .dropdown-menu > .disabled > a:focus {
-  color: #777;
-}
-.compojoom-bootstrap .dropdown-menu > .disabled > a:hover,
-.compojoom-bootstrap .dropdown-menu > .disabled > a:focus {
-  text-decoration: none;
-  cursor: not-allowed;
-  background-color: transparent;
-  background-image: none;
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-}
-.compojoom-bootstrap .open > .dropdown-menu {
-  display: block;
-}
-.compojoom-bootstrap .open > a {
-  outline: 0;
-}
-.compojoom-bootstrap .dropdown-menu-right {
-  right: 0;
-  left: auto;
-}
-.compojoom-bootstrap .dropdown-menu-left {
-  right: auto;
-  left: 0;
-}
-.compojoom-bootstrap .dropdown-header {
-  display: block;
-  padding: 3px 20px;
-  font-size: 12px;
-  line-height: 1.42857143;
-  color: #777;
-  white-space: nowrap;
-}
-.compojoom-bootstrap .dropdown-backdrop {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 990;
-}
-.compojoom-bootstrap .pull-right > .dropdown-menu {
-  right: 0;
-  left: auto;
-}
-.compojoom-bootstrap .dropup .caret,
-.compojoom-bootstrap .navbar-fixed-bottom .dropdown .caret {
-  content: "";
-  border-top: 0;
-  border-bottom: 4px dashed;
-  border-bottom: 4px solid \9;
-}
-.compojoom-bootstrap .dropup .dropdown-menu,
-.compojoom-bootstrap .navbar-fixed-bottom .dropdown .dropdown-menu {
-  top: auto;
-  bottom: 100%;
-  margin-bottom: 2px;
-}
-@media (min-width: 768px) {
-  .compojoom-bootstrap .navbar-right .dropdown-menu {
-    right: 0;
-    left: auto;
-  }
-  .compojoom-bootstrap .navbar-right .dropdown-menu-left {
-    right: auto;
-    left: 0;
-  }
-}
+
 .compojoom-bootstrap .btn-group,
 .compojoom-bootstrap .btn-group-vertical {
   position: relative;
@@ -3725,18 +3567,11 @@
 .compojoom-bootstrap .btn-toolbar > .input-group {
   margin-left: 5px;
 }
-.compojoom-bootstrap .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
-  border-radius: 0;
-}
+
 .compojoom-bootstrap .btn-group > .btn:first-child {
   margin-left: 0;
 }
-.compojoom-bootstrap .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.compojoom-bootstrap .btn-group > .btn:last-child:not(:first-child),
-.compojoom-bootstrap .btn-group > .dropdown-toggle:not(:first-child) {
+.compojoom-bootstrap .btn-group > .btn:last-child:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -3746,34 +3581,13 @@
 .compojoom-bootstrap .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
   border-radius: 0;
 }
-.compojoom-bootstrap .btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
-.compojoom-bootstrap .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
+.compojoom-bootstrap .btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child{
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 .compojoom-bootstrap .btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-}
-.compojoom-bootstrap .btn-group .dropdown-toggle:active,
-.compojoom-bootstrap .btn-group.open .dropdown-toggle {
-  outline: 0;
-}
-.compojoom-bootstrap .btn-group > .btn + .dropdown-toggle {
-  padding-right: 8px;
-  padding-left: 8px;
-}
-.compojoom-bootstrap .btn-group > .btn-lg + .dropdown-toggle {
-  padding-right: 12px;
-  padding-left: 12px;
-}
-.compojoom-bootstrap .btn-group.open .dropdown-toggle {
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-.compojoom-bootstrap .btn-group.open .dropdown-toggle.btn-link {
-  -webkit-box-shadow: none;
-  box-shadow: none;
 }
 .compojoom-bootstrap .btn .caret {
   margin-left: 0;
@@ -3821,8 +3635,7 @@
 .compojoom-bootstrap .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
   border-radius: 0;
 }
-.compojoom-bootstrap .btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
-.compojoom-bootstrap .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
+.compojoom-bootstrap .btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -3845,9 +3658,7 @@
 .compojoom-bootstrap .btn-group-justified > .btn-group .btn {
   width: 100%;
 }
-.compojoom-bootstrap .btn-group-justified > .btn-group .dropdown-menu {
-  left: auto;
-}
+
 .compojoom-bootstrap [data-toggle="buttons"] > .btn input[type="radio"],
 .compojoom-bootstrap [data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
 .compojoom-bootstrap [data-toggle="buttons"] > .btn input[type="checkbox"],
@@ -3967,8 +3778,6 @@
 .compojoom-bootstrap .input-group-addon:first-child,
 .compojoom-bootstrap .input-group-btn:first-child > .btn,
 .compojoom-bootstrap .input-group-btn:first-child > .btn-group > .btn,
-.compojoom-bootstrap .input-group-btn:first-child > .dropdown-toggle,
-.compojoom-bootstrap .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 .compojoom-bootstrap .input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -3980,7 +3789,6 @@
 .compojoom-bootstrap .input-group-addon:last-child,
 .compojoom-bootstrap .input-group-btn:last-child > .btn,
 .compojoom-bootstrap .input-group-btn:last-child > .btn-group > .btn,
-.compojoom-bootstrap .input-group-btn:last-child > .dropdown-toggle,
 .compojoom-bootstrap .input-group-btn:first-child > .btn:not(:first-child),
 .compojoom-bootstrap .input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
   border-top-left-radius: 0;
@@ -4094,10 +3902,7 @@
   margin-bottom: 5px;
   text-align: center;
 }
-.compojoom-bootstrap .nav-tabs.nav-justified > .dropdown .dropdown-menu {
-  top: auto;
-  left: auto;
-}
+
 @media (min-width: 768px) {
   .compojoom-bootstrap .nav-tabs.nav-justified > li {
     display: table-cell;
@@ -4159,10 +3964,7 @@
   margin-bottom: 5px;
   text-align: center;
 }
-.compojoom-bootstrap .nav-justified > .dropdown .dropdown-menu {
-  top: auto;
-  left: auto;
-}
+
 @media (min-width: 768px) {
   .compojoom-bootstrap .nav-justified > li {
     display: table-cell;
@@ -4201,11 +4003,7 @@
 .compojoom-bootstrap .tab-content > .active {
   display: block;
 }
-.compojoom-bootstrap .nav-tabs .dropdown-menu {
-  margin-top: -1px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
+
 .compojoom-bootstrap .navbar {
   position: relative;
   min-height: 50px;
@@ -4371,29 +4169,7 @@
   padding-bottom: 10px;
   line-height: 20px;
 }
-@media (max-width: 767px) {
-  .compojoom-bootstrap .navbar-nav .open .dropdown-menu {
-    position: static;
-    float: none;
-    width: auto;
-    margin-top: 0;
-    background-color: transparent;
-    border: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-  .compojoom-bootstrap .navbar-nav .open .dropdown-menu > li > a,
-  .compojoom-bootstrap .navbar-nav .open .dropdown-menu .dropdown-header {
-    padding: 5px 15px 5px 25px;
-  }
-  .compojoom-bootstrap .navbar-nav .open .dropdown-menu > li > a {
-    line-height: 20px;
-  }
-  .compojoom-bootstrap .navbar-nav .open .dropdown-menu > li > a:hover,
-  .compojoom-bootstrap .navbar-nav .open .dropdown-menu > li > a:focus {
-    background-image: none;
-  }
-}
+
 @media (min-width: 768px) {
   .compojoom-bootstrap .navbar-nav {
     float: left;
@@ -4488,18 +4264,7 @@
     box-shadow: none;
   }
 }
-.compojoom-bootstrap .navbar-nav > li > .dropdown-menu {
-  margin-top: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-.compojoom-bootstrap .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
-  margin-bottom: 0;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
+
 .compojoom-bootstrap .navbar-btn {
   margin-top: 8px;
   margin-bottom: 8px;
@@ -4590,28 +4355,7 @@
   color: #555;
   background-color: #e7e7e7;
 }
-@media (max-width: 767px) {
-  .compojoom-bootstrap .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #777;
-  }
-  .compojoom-bootstrap .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
-  .compojoom-bootstrap .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #333;
-    background-color: transparent;
-  }
-  .compojoom-bootstrap .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
-  .compojoom-bootstrap .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
-  .compojoom-bootstrap .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #555;
-    background-color: #e7e7e7;
-  }
-  .compojoom-bootstrap .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
-  .compojoom-bootstrap .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
-  .compojoom-bootstrap .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #ccc;
-    background-color: transparent;
-  }
-}
+
 .compojoom-bootstrap .navbar-default .navbar-link {
   color: #777;
 }
@@ -4686,34 +4430,7 @@
   color: #fff;
   background-color: #080808;
 }
-@media (max-width: 767px) {
-  .compojoom-bootstrap .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
-    border-color: #080808;
-  }
-  .compojoom-bootstrap .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
-    background-color: #080808;
-  }
-  .compojoom-bootstrap .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-    color: #9d9d9d;
-  }
-  .compojoom-bootstrap .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
-  .compojoom-bootstrap .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #fff;
-    background-color: transparent;
-  }
-  .compojoom-bootstrap .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
-  .compojoom-bootstrap .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
-  .compojoom-bootstrap .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #fff;
-    background-color: #080808;
-  }
-  .compojoom-bootstrap .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,
-  .compojoom-bootstrap .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover,
-  .compojoom-bootstrap .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
-    color: #444;
-    background-color: transparent;
-  }
-}
+
 .compojoom-bootstrap .navbar-inverse .navbar-link {
   color: #9d9d9d;
 }
@@ -5507,9 +5224,7 @@
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
-.compojoom-bootstrap .panel-heading > .dropdown .dropdown-toggle {
-  color: inherit;
-}
+
 .compojoom-bootstrap .panel-title {
   margin-top: 0;
   margin-bottom: 0;
