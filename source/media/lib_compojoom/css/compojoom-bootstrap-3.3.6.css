@@ -3503,15 +3503,6 @@
 .compojoom-bootstrap input[type="button"].btn-block {
   width: 100%;
 }
-.compojoom-bootstrap .fade {
-  opacity: 0;
-  -webkit-transition: opacity .15s linear;
-  -o-transition: opacity .15s linear;
-  transition: opacity .15s linear;
-}
-.compojoom-bootstrap .fade.in {
-  opacity: 1;
-}
 .compojoom-bootstrap .caret {
   display: inline-block;
   width: 0;
@@ -4608,7 +4599,6 @@
   font-size: 75%;
   font-weight: bold;
   line-height: 1;
-  color: #fff;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
@@ -5621,15 +5611,6 @@
   background: transparent;
   border: 0;
 }
-.compojoom-bootstrap .modal.fade .modal-dialog {
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-  -o-transition: -o-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
-  -webkit-transform: translate(0, -25%);
-  -ms-transform: translate(0, -25%);
-  -o-transform: translate(0, -25%);
-  transform: translate(0, -25%);
-}
 .compojoom-bootstrap .modal.in .modal-dialog {
   -webkit-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
@@ -5666,10 +5647,7 @@
   z-index: 1040;
   background-color: #000;
 }
-.compojoom-bootstrap .modal-backdrop.fade {
-  filter: alpha(opacity=0);
-  opacity: 0;
-}
+
 .compojoom-bootstrap .modal-backdrop.in {
   filter: alpha(opacity=50);
   opacity: .5;
