@@ -243,7 +243,7 @@ class CompojoomHtmlCtemplate
             $app = JFactory::getApplication();
 
             if (!$app->isClient("site")) {
-                $app->JComponentTitle = $title;
+                $app->JComponentTitle = JText::_($title);
                 JFactory::getDocument()->setTitle(JFactory::getConfig()->get('sitename') . ' - ' . JText::_('JADMINISTRATION') . ' - ' . JText::_($title));
             }
         }
