@@ -66,3 +66,7 @@
 .modal .compojoom-changelog li.note {
     color: #d37e05;
 }
+
+.container-title {
+    margin-left: 20px;
+}
