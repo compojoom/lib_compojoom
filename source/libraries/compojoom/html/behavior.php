@@ -90,16 +90,18 @@ class CompojoomHtmlBehavior
 	 *
 	 * @return  void
 	 */
-	public static function bootstrap($bootstrap = true)
+	public static function bootstrap($bootstrap = true, $loadBootstrapCss = false)
 	{
 		if ($bootstrap)
 		{
-			// Don't use queue here, as wee already have that file minimized
-			JHtml::stylesheet('media/lib_compojoom/css/compojoom-bootstrap-3.3.6.min.css');
-
 			// Load native (for js)
 			JHtml::_('bootstrap.framework', true);
 			self::jquery();
+		}
+
+		if($loadBootstrapCss) {
+			// Don't use queue here, as wee already have that file minimized
+			JHtml::stylesheet('media/lib_compojoom/css/compojoom-bootstrap-3.3.6.min.css');
 		}
 
 		JHtml::stylesheet('media/lib_compojoom/css/compojoom.min.css');
