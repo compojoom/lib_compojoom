@@ -450,8 +450,9 @@ class CompojoomDatabaseInstaller
 					{
 						$coltype = strtolower($coltype);
 						$currentType = strtolower($tableColumns[$value]->Type);
-						$default = $attributes->default ? (string) $attributes->default : null;
-						$null = $attributes->null ? (string) $attributes->null : null;
+						$default = $attributes->default ? strtolower((string) $attributes->default) : null;
+						$null = $attributes->null ? strtolower((string) $attributes->null) : null;
+
 
 						$condition = ($coltype == $currentType);
 
