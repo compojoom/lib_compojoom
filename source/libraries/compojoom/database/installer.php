@@ -439,7 +439,7 @@ class CompojoomDatabaseInstaller
 
 			// Check if a column type matches the "coltype" attribute
 			case 'type':
-				$tableColumns = $this->db->getTableColumns($table, false);
+				$tableColumns = $this->db->getTableColumns($tableNormal, false);
 				$condition = false;
 
 				if (array_key_exists($value, $tableColumns))
@@ -450,8 +450,15 @@ class CompojoomDatabaseInstaller
 					{
 						$coltype = strtolower($coltype);
 						$currentType = strtolower($tableColumns[$value]->Type);
+						$default = $attributes->default ? (string) $attributes->default : null;
 
 						$condition = ($coltype == $currentType);
+
+						if(is_string($default)) {
+							$currentDefault = ($tableColumns[$value]->Default);
+							$currentDefault = is_null($currentDefault) ? 'null' : $currentDefault;
+							$condition = $condition && ($default == $currentDefault);
+						}
 					}
 				}
 
