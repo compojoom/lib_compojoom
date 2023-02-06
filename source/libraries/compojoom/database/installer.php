@@ -458,7 +458,7 @@ class CompojoomDatabaseInstaller
 
 						if(is_string($default)) {
 							$currentDefault = ($tableColumns[$value]->Default);
-							$currentDefault = is_null($currentDefault) ? 'null' : $currentDefault;
+							$currentDefault = is_null($currentDefault) ? 'null' : strtolower($currentDefault);
 							$condition = $condition && ($default == $currentDefault);
 						}
 
