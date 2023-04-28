@@ -9,6 +9,7 @@
  */
 
 defined('_JEXEC') or die('Restricted access');
+CompojoomHtmlBehavior::jquery();
 
 JHTML::stylesheet('media/lib_compojoom/third/font-awesome/css/font-awesome.min.css');
 JHtml::stylesheet('media/lib_compojoom/third/galleria/themes/compojoom/galleria.compojoom.css');
@@ -16,9 +17,11 @@ JHtml::script('media/lib_compojoom/third/galleria/galleria.js');
 JHtml::script('media/lib_compojoom/third/galleria/themes/compojoom/galleria.compojoom.js');
 
 JFactory::getDocument()->addScriptDeclaration("
-	Galleria.run('.galleria', {
-	  dataSource: " . $displayData['data'] . ",
-      imageCrop: true
+	jQuery(document).ready(function () {
+		Galleria.run('.galleria', {
+		  dataSource: " . $displayData['data'] . ",
+	      imageCrop: true
+		});
 	});
 ");
 ?>
