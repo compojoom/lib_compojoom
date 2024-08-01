@@ -20,7 +20,7 @@
     "joomla-projects/jorobo": "dev-develop",
     "codegyre/robo": "*",
     "joomla-projects/robo": "dev-master",
-    "twbs/bootstrap": "v3.3.6",
+    "twbs/bootstrap": "v3.4.1",
     "oyejorge/less.php": "~1.5",
     "patchwork/jsqueeze": "~1.0",
     "natxet/cssmin": "~3.0"
