@@ -10,12 +10,13 @@
 
 defined('_JEXEC') or die('Restricted access');
 
+use Joomla\CMS\Form\FormField;
 /**
  * Class JFormFieldLoadcompojoom
  *
  * @since  4.0.22
  */
-class JFormFieldLoadcompojoom extends JFormField
+class JFormFieldLoadcompojoom extends FormField
 {
 	/**
 	 * Overrides the input

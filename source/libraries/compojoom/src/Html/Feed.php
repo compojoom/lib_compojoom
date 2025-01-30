@@ -1,0 +1,217 @@
+<?php
+/**
+ * @package    Lib_Compojoom
+ * @author     DanielDimitrov <daniel@compojoom.com>
+ * @date       09.07.2014
+ *
+ * @copyright  Copyright (C) 2008 - 2013 compojoom.com . All rights reserved.
+ * @license    GNU General Public License version 2 or later; see LICENSE
+ */
+
+namespace Compojoom\Library\Html;
+
+defined('_JEXEC') or die('Restricted access');
+
+use Akeeba\S3\Input;
+use Joomla\CMS\Factory;
+use Joomla\CMS\Feed\FeedFactory;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Filter\InputFilter;
+use Joomla\CMS\Filter\OutputFilter;
+
+/**
+ * Class CompojooomHtmlFeed
+ *
+ * Renders the feed from the provided url
+ *
+ * @since  1.1
+ */
+class Feed
+{
+	/**
+	 * Renders a feed
+	 *
+	 * @param   CString  $url  - the feed url
+	 *
+	 * @return void
+	 */
+	public static function renderFeed($url)
+	{
+		$rssitems			= 5;
+		$rssitemdesc		= 1;
+
+		// Aaach, Joomla 2.5 please die faster...
+		if (JVERSION < '3')
+		{
+			jimport('simplepie.simplepie');
+
+			$cache = Factory::getCache('feed_parser', 'callback');
+			$cache->setLifeTime(600);
+
+			$simplepie = new \SimplePie(null, null, 0);
+			$simplepie->enable_cache(false);
+			$simplepie->set_feed_url($url);
+			$simplepie->force_feed(true);
+
+			$contents = $cache->get(array($simplepie, 'init'), null, false, false);
+
+			if ($contents)
+			{
+				$rssDoc = $simplepie;
+			}
+			else
+			{
+				return Text::_('LIB_COMPOJOOM_FEED_COULDNT_BE_FETCHED');
+			}
+		}
+		else
+		{
+			// Get RSS parsed object
+			try
+			{
+				jimport('joomla.feed.factory');
+				$feed   = new FeedFactory;
+				$rssDoc = $feed->getFeed($url);
+			}
+			catch (\Exception $e)
+			{
+				return Text::_('LIB_COMPOJOOM_FEED_COULDNT_BE_FETCHED');
+			}
+		}
+
+		$feed = $rssDoc;
+
+		if (JVERSION < 3)
+		{
+			if ($rssDoc != false)
+			{
+				$filter = InputFilter::getInstance();
+
+				// Channel header and link
+				$channel['title'] = $filter->clean($rssDoc->get_title());
+				$channel['link'] = $filter->clean($rssDoc->get_link());
+				$channel['description'] = $filter->clean($rssDoc->get_description());
+
+				// Items
+				$items = $rssDoc->get_items();
+
+				// Feed elements
+				$items = array_slice($items, 0, $rssitems);
+				?>
+				<div class="newsfeed">
+					<?php if (!is_null($channel['title'])): ?>
+						<h2>
+							<a href="<?php echo htmlspecialchars(str_replace('&', '&amp;', $channel['link'])); ?>" target="_blank">
+								<?php echo htmlspecialchars($channel['title']); ?></a>
+						</h2>
+					<?php endif; ?>
+
+					<?php echo $channel['description']; ?>
+
+					<?php
+
+						$actualItems = count($items);
+						$setItems = $rssitems;
+
+						if ($setItems > $actualItems)
+						{
+							$totalItems = $actualItems;
+						}
+						else
+						{
+							$totalItems = $setItems;
+						}
+						?>
+
+						<ul class="newsfeed">
+							<?php
+							for ($j = 0; $j < $totalItems; $j ++)
+							{
+								$currItem = $items[$j];
+								?>
+								<li>
+									<?php if (!is_null($currItem->get_link())): ?>
+										<a href="<?php echo htmlspecialchars($currItem->get_link()); ?>" target="_child">
+											<?php echo htmlspecialchars($currItem->get_title()); ?></a>
+									<?php endif; ?>
+
+									<?php
+									// Item description
+									if ($rssitemdesc)
+									{
+										// Item description
+										$text = $filter->clean(html_entity_decode($currItem->get_description(), ENT_COMPAT, 'UTF-8'));
+										$text = str_replace('&apos;', "'", $text);
+										?>
+										<div>
+											<?php echo CString::truncateComplex($text, 200); ?>
+										</div>
+									<?php
+									}
+									?>
+								</li>
+							<?php
+							}
+							?>
+						</ul>
+					</div>
+			<?php
+			}
+		}
+		else
+		{
+			if ($rssDoc != false)
+			{
+				?>
+				<div class="feed">
+					<?php if (!is_null($feed->title)): ?>
+						<h2>
+							<a href="<?php echo str_replace('&', '&amp;', $url); ?>" target="_blank">
+								<?php echo $feed->title; ?></a>
+						</h2>
+					<?php endif; ?>
+
+					<?php echo $feed->description; ?>
+
+
+					<ul class="newsfeed">
+						<?php for ($i = 0; $i < $rssitems; $i++)
+						{
+							if (!$feed->offsetExists($i))
+							{
+								break;
+							}
+							?>
+							<?php
+							$uri = (!empty($feed[$i]->uri) || !is_null($feed[$i]->uri)) ? $feed[$i]->uri : $feed[$i]->guid;
+							$text = !empty($feed[$i]->content) ||  !is_null($feed[$i]->content) ? $feed[$i]->content : $feed[$i]->description;
+							?>
+							<li>
+								<?php if (!empty($uri)) : ?>
+									<h5 class="feed-link">
+										<a href="<?php echo $uri; ?>" target="_blank">
+											<?php  echo $feed[$i]->title; ?></a></h5>
+								<?php else : ?>
+									<h5 class="feed-link"><?php  echo $feed[$i]->title; ?></h5>
+								<?php  endif; ?>
+
+								<?php if ($rssitemdesc && !empty($text)) : ?>
+									<div class="feed-item-description">
+										<?php
+										// Strip the images.
+										$text = OutputFilter::stripImages($text);
+
+										$text = CString::truncateComplex( $text, 200);
+										echo str_replace('&apos;', "'", $text);
+										?>
+									</div>
+								<?php endif; ?>
+							</li>
+						<?php } ?>
+					</ul>
+				</div>
+			<?php
+			}
+		}
+	}
+}

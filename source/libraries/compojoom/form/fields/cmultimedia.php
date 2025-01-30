@@ -9,12 +9,13 @@
  */
 defined('_JEXEC') or die('Restricted access');
 
+use Joomla\CMS\Form\FormField;
 /**
  * Class JFormFieldCMultimedia
  *
  * @since  4.0.31
  */
-class JFormFieldCMultimedia extends JFormField
+class JFormFieldCMultimedia extends FormField
 {
 	/**
 	 * The form field type.

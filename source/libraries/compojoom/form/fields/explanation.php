@@ -10,12 +10,13 @@
 
 defined('_JEXEC') or die('Restricted access');
 
+use Joomla\CMS\Form\FormField;
 /**
  * Class JFormFieldExplanation
  *
  * @since  4.0.50
  */
-class JFormFieldExplanation extends JFormField
+class JFormFieldExplanation extends FormField
 {
 	/**
 	 * Display the text we want

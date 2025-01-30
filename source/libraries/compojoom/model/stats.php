@@ -10,6 +10,9 @@
 
 defined('_JEXEC') or die('Restricted access');
 
+use Joomla\CMS\MVC\Model\BaseDatabaseModel;
+use Joomla\CMS\Factory;
+use Compojoom\library\Utils\Component as CompojoomComponentHelper;
 /**
  * Class CompojoomModelUpdate
  *
@@ -17,7 +20,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  4.0
  */
-abstract class CompojoomModelStats extends JModelLegacy
+abstract class CompojoomModelStats extends BaseDatabaseModel
 {
 	protected $extension = '';
 
@@ -51,7 +54,7 @@ abstract class CompojoomModelStats extends JModelLegacy
 	public function getData()
 	{
 		$data = array();
-		$db = JFactory::getDbo();
+		$db = Factory::getDbo();
 		$data['php'] = phpversion();
 		$data['mysql'] = $db->getVersion() . ' ' . $db->name;
 		$data['domain'] = Juri::root();
@@ -59,7 +62,7 @@ abstract class CompojoomModelStats extends JModelLegacy
 		$data['os'] = php_uname();
 		$data['server'] = $_SERVER['SERVER_SOFTWARE'] . ' ' . (function_exists('php_sapi_name') ? php_sapi_name() : '');
 		$data['language'] = implode(',', array_keys(JLanguage::getKnownLanguages(JPATH_BASE)));
-		$data['timezone'] = JFactory::getConfig()->get('offset');
+		$data['timezone'] = Factory::getConfig()->get('offset');
 		$data['extension'] = $this->extension;
 		$data['version'] = CompojoomComponentHelper::getManifest($this->extension)->get('version');
 		$data['config'] = $this->getConfig();
@@ -89,7 +92,7 @@ abstract class CompojoomModelStats extends JModelLegacy
 	public function dataGathered()
 	{
 		$data = CompojoomComponentHelper::getComponentCustomData($this->extension);
-		$data->set('update_report_sent', JFactory::getDate()->toSql());
+		$data->set('update_report_sent', Factory::getDate()->toSql());
 
 		CompojoomComponentHelper::updateComponentCustomData($this->extension, $data);
 	}
@@ -136,8 +139,8 @@ abstract class CompojoomModelStats extends JModelLegacy
 			}
 
 			// We have a date?
-			$now            = JFactory::getDate();
-			$reportSentDate = JFactory::getDate($reportSent);
+			$now            = Factory::getDate();
+			$reportSentDate = Factory::getDate($reportSent);
 			$diff           = $now->diff($reportSentDate);
 
 			if ($diff->days > 7)

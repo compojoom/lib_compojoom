@@ -10,7 +10,7 @@
     <copyright>(C) 2008 - 2017 Daniel Dimitrov and Yves Hoppe</copyright>
     <license>GNU GPLv2 or later</license>
     <version>5.3.6</version>
-
+    <namespace path="src">Compojoom\Library</namespace>
     <languages folder="language">
         <language tag="en-GB">en-GB/en-GB.lib_compojoom.ini</language>
         <language tag="en-GB">en-GB/en-GB.lib_compojoom.sys.ini</language>

@@ -10,6 +10,11 @@
 
 defined('_JEXEC') or die('Restricted access');
 
+use Joomla\CMS\MVC\Model\BaseDatabaseModel;
+use Joomla\CMS\Factory;
+use Joomla\CMS\Updater\Updater;
+use Compojoom\Library\Utils\Component as CompojoomUtilsComponent;
+
 /**
  * Class CompojoomModelUpdate
  *
@@ -17,9 +22,9 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  4.0
  */
-class CompojoomModelUpdate extends JModelLegacy
+class CompojoomModelUpdate extends BaseDatabaseModel
 {
-	/** @var JUpdater The Joomla! updater object */
+	/** @var Joomla\CMS\Updater\Updater The Joomla! updater object */
 	protected $updater = null;
 
 	/** @var int The extension_id of this component */
@@ -55,7 +60,7 @@ class CompojoomModelUpdate extends JModelLegacy
 		parent::__construct($config);
 
 		// Get an instance of the updater class
-		$this->updater = JUpdater::getInstance();
+		$this->updater = Updater::getInstance();
 
 		// Get the component name
 		if (isset($config['update_component']))
@@ -64,7 +69,7 @@ class CompojoomModelUpdate extends JModelLegacy
 		}
 		else
 		{
-			$this->component = JFactory::getApplication()->input->getCmd('option', '');
+			$this->component = Factory::getApplication()->input->getCmd('option', '');
 		}
 
 		// Get the component version
@@ -92,7 +97,7 @@ class CompojoomModelUpdate extends JModelLegacy
 		}
 
 		// Find the extension ID
-		$db = $this->getDbo();
+		$db = $this->getDatabase();
 		$query = $db->getQuery(true)
 			->select('*')
 			->from($db->qn('#__extensions'))
@@ -481,7 +486,7 @@ class CompojoomModelUpdate extends JModelLegacy
 	public function updateParams($params)
 	{
 		// Now let's update the Database
-		$db = JFactory::getDbo();
+		$db = Factory::getDbo();
 		$query = $db->getQuery(true)
 				->update($db->qn('#__extensions'))
 				->set($db->qn('params') . '=' . $db->q(json_encode($params)))

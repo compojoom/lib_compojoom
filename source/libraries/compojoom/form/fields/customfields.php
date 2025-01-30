@@ -9,6 +9,7 @@
  */
 defined('_JEXEC') or die('Restricted access');
 
+use Joomla\CMS\Form\Field\ListField;
 /**
  * Class JFormFieldCustomfields
  *
@@ -17,7 +18,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  * @since  4.0.33
  */
-class JFormFieldCustomfields extends JFormFieldList
+class JFormFieldCustomfields extends ListField
 {
 	/**
 	 * The form field type.

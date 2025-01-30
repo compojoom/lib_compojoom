@@ -8,16 +8,19 @@
  * @license    GNU General Public License version 2 or later; see LICENSE
  */
 
+namespace Compojoom\Library\Utils;
+
 defined('_JEXEC') or die('Restricted access');
 
-JLoader::import('joomla.application.component.helper');
+//JLoader::import('joomla.application.component.helper');
+use Joomla\CMS\Component\ComponentHelper;
 
 /**
  * Class CompojoomUtilsComponent
  *
  * @since  4.0
  */
-class CompojoomUtilsComponent
+class Component
 {
 	private static $instance = null;
 
@@ -28,7 +31,7 @@ class CompojoomUtilsComponent
 	 */
 	protected function __construct($component)
 	{
-		$this->config = JComponentHelper::getParams($component);
+		$this->config = ComponentHelper::getParams($component);
 	}
 
 	/**
@@ -36,13 +39,13 @@ class CompojoomUtilsComponent
 	 *
 	 * @param   string  $component  - the component name
 	 *
-	 * @return CompojoomUtilsComponent|null
+	 * @return Component|null
 	 */
 	public static function getInstance($component)
 	{
 		if (!self::$instance)
 		{
-			self::$instance = new CompojoomUtilsComponent($component);
+			self::$instance = new Component($component);
 		}
 
 		return self::$instance;

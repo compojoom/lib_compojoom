@@ -9,12 +9,19 @@
  */
 defined('_JEXEC') or die('Restricted access');
 
+use Joomla\CMS\Form\FormField;
+use Joomla\CMS\Language\Text;
+use Joomla\Filesystem\Folder;
+use Joomla\CMS\Html\HTMLHelper as Html;
+
+use Compojoom\Library\Component\Helper as CompojoomComponentHelper;
+
 /**
  * Class JFormFieldAvatars
  *
  * @since  4.0.22
  */
-class JFormFieldAvatars extends JFormField
+class JFormFieldAvatars extends FormField
 {
 	/**
 	 * The form field type.
@@ -49,7 +56,7 @@ class JFormFieldAvatars extends JFormField
 
 		$options = $this->getOptions();
 
-		return JHtml::_('select.genericlist', $options, $this->name, trim($attr), 'value', 'text', $this->value, $this->id);
+		return Html::_('select.genericlist', $options, $this->name, trim($attr), 'value', 'text', $this->value, $this->id);
 	}
 
 	/**
@@ -60,8 +67,8 @@ class JFormFieldAvatars extends JFormField
 	protected function getOptions()
 	{
 		jimport('joomla.filesystem.folder');
-		$options = array('0' => JText::_('LIB_COMPOJOOM_NONE'));
-		$components = JFolder::files(JPATH_LIBRARIES . '/compojoom/avatars/avatars');
+		$options = array('0' => Text::_('LIB_COMPOJOOM_NONE'));
+		$components = Folder::files(JPATH_LIBRARIES . '/compojoom/avatars/avatars');
 		$isPro = (int) $this->element['isPro'];
 
 		foreach ($components as $component)
@@ -75,7 +82,7 @@ class JFormFieldAvatars extends JFormField
 				$disabled = false;
 			}
 
-			$options[] = Jhtml::_('select.option', $component, JText::_('LIB_COMPOJOOM_COM_' . strtoupper($component)), 'value', 'text', $disabled);
+			$options[] = Html::_('select.option', $component, Text::_('LIB_COMPOJOOM_COM_' . strtoupper($component)), 'value', 'text', $disabled);
 		}
 
 		return $options;

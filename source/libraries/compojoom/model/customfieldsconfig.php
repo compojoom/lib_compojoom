@@ -12,12 +12,13 @@ defined('_JEXEC') or die('Restricted access');
 
 jimport('joomla.application.component.modellist');
 
+use Joomla\CMS\MVC\Model\ListModel;
 /**
  * Class HotspotsModelHotspots
  *
  * @since  3.0
  */
-class CompojoomModelCustomfieldsconfig extends JModelList
+class CompojoomModelCustomfieldsconfig extends ListModel
 {
 	/**
 	 * Method to get a JDatabaseQuery object for retrieving the data set from a database.
